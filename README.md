@@ -35,7 +35,6 @@ IMPERIAL Core
 **Founder • Owner • CEO • Chief Systems Architect — IMPERIAL Core**  
 **Copyright © 2026 Alexander Romaskevich**
 
----
 
 ## IMPERIAL AGI
 
@@ -3094,5 +3093,1367 @@ Copyright © 2026 Alexander Romaskevich.
 > **Memory gives intelligence continuity. It never gives intelligence authority.**
 
 > **Discover. Verify. Remember. Reason. Challenge. Govern. Prove.**
+
+**IMPERIAL AGI — Architected by Alexander Romaskevich.**
+---
+
+# 102. Sovereign Cognitive Runtime
+
+The next architectural layer of IMPERIAL AGI defines how verified cognition can participate in real execution without becoming execution authority itself.
+
+The governing principle is:
+
+> **Think broadly. Authorize narrowly. Execute inside bounded domains. Prove everything important.**
+
+```mermaid
+flowchart LR
+
+    ARCH[Architect]
+
+    ARCH --> H[HANTER]
+    H --> AGI[IMPERIAL AGI]
+
+    AGI --> R[Reasoner]
+    R --> C[Critic]
+    C --> V[Verifier]
+
+    V --> REC[Evidence-Bound Recommendation]
+
+    REC --> GC[Guardian Core]
+    GC --> AP[Approval Gateway]
+    AP --> RD[Runtime Domain]
+
+    RD --> EXEC[Execution]
+    EXEC --> AUD[Audit Ledger]
+
+    AGI -. no direct execution authority .-> EXEC
+```
+
+---
+
+# 103. Control Plane and Execution Plane
+
+IMPERIAL Core separates decision governance from workload execution.
+
+```mermaid
+flowchart TB
+
+    subgraph CONTROL[CONTROL PLANE]
+        ARCH[Architect]
+        H[HANTER]
+        AGI[IMPERIAL AGI]
+        GC[Guardian Core]
+        AP[Approval Gateway]
+    end
+
+    subgraph EXECUTION[EXECUTION PLANE]
+        FO[Federated Orchestrators]
+        NCA[Nano Core Agents]
+        RD[Runtime Domains]
+        TOOLS[Bounded Tools]
+    end
+
+    ARCH --> H
+    H --> AGI
+    AGI --> H
+    H --> GC
+    GC --> AP
+
+    AP --> FO
+    FO --> NCA
+    NCA --> RD
+    RD --> TOOLS
+
+    TOOLS --> AUD[Audit Evidence]
+    AUD --> H
+```
+
+A compromise of one execution worker must not automatically compromise the control plane.
+
+---
+
+# 104. Mission Envelope
+
+Every governed operation should originate from an explicit mission envelope.
+
+Conceptually:
+
+```text
+Mission ID
+Architect Authority
+Objective
+Scope
+Classification
+Allowed Capabilities
+Forbidden Capabilities
+Risk Tier
+Resource Budget
+Time Boundary
+Repository Boundary
+Data Boundary
+Approval Requirements
+Evidence Requirements
+Revocation State
+```
+
+The mission envelope is not a prompt.
+
+It is a security and governance object.
+
+---
+
+# 105. Mission Immutability
+
+Once admitted into cognition, mission-critical authority fields must not be silently rewritten by downstream agents.
+
+```mermaid
+flowchart LR
+
+    M[Canonical Mission Envelope]
+
+    M --> HASH[Mission Binding]
+
+    HASH --> AGI[Cognition]
+    HASH --> GOV[Governance]
+    HASH --> EXEC[Execution]
+    HASH --> AUDIT[Audit]
+
+    AGI -. cannot mutate .-> M
+    EXEC -. cannot mutate .-> M
+```
+
+Derived work may reference the mission.
+
+It must not redefine its authority.
+
+---
+
+# 106. Mission Decomposition
+
+Large objectives require hierarchical decomposition.
+
+```mermaid
+flowchart TD
+
+    OBJ[Architect Objective]
+
+    OBJ --> STRAT[Strategy]
+
+    STRAT --> M1[Mission A]
+    STRAT --> M2[Mission B]
+
+    M1 --> WP1[Work Package A1]
+    M1 --> WP2[Work Package A2]
+
+    M2 --> WP3[Work Package B1]
+    M2 --> WP4[Work Package B2]
+
+    WP1 --> T1[Task]
+    WP2 --> T2[Task]
+    WP3 --> T3[Task]
+    WP4 --> T4[Task]
+
+    T1 --> E1[Evidence]
+    T2 --> E2[Evidence]
+    T3 --> E3[Evidence]
+    T4 --> E4[Evidence]
+```
+
+Delegation creates narrower authority.
+
+It must never create broader authority than the parent mission.
+
+---
+
+# 107. Authority Monotonicity
+
+A fundamental security invariant is:
+
+```text
+Child Authority
+⊆
+Parent Authority
+```
+
+Delegation may reduce:
+
+- scope;
+- capabilities;
+- time;
+- budget;
+- repositories;
+- datasets;
+- network access.
+
+Delegation must not silently expand them.
+
+```mermaid
+flowchart LR
+
+    P[Parent Mission Authority]
+
+    P --> C1[Child Authority A]
+    P --> C2[Child Authority B]
+
+    C1 --> S1[Smaller Scope]
+    C2 --> S2[Smaller Scope]
+
+    C1 -. cannot exceed .-> P
+    C2 -. cannot exceed .-> P
+```
+
+---
+
+# 108. Federated Mission Orchestration
+
+HANTER must not become a scheduler for every individual agent operation.
+
+Instead, orchestration is federated.
+
+```mermaid
+flowchart TD
+
+    H[HANTER]
+
+    H --> D1[Domain Orchestrator A]
+    H --> D2[Domain Orchestrator B]
+    H --> DN[Domain Orchestrator N]
+
+    D1 --> T1[Professional Team]
+    D1 --> T2[Professional Team]
+
+    D2 --> T3[Professional Team]
+    D2 --> T4[Professional Team]
+
+    DN --> TN[Professional Team]
+
+    T1 --> P1[NCA Pool]
+    T2 --> P2[NCA Pool]
+    T3 --> P3[NCA Pool]
+    T4 --> P4[NCA Pool]
+    TN --> PN[NCA Pool]
+```
+
+HANTER retains executive governance without becoming the execution bottleneck.
+
+---
+
+# 109. Million-Agent Federation
+
+The long-term architecture is designed for potentially more than one million registered Nano Core Agents.
+
+That does not mean one million continuously running model processes.
+
+```text
+Registered NCA Population
+≠
+Simultaneously Active NCA Population
+```
+
+The architecture separates:
+
+```text
+Identity Population
+Capability Population
+Eligible Population
+Scheduled Population
+Active Population
+```
+
+---
+
+# 110. Agent Lifecycle
+
+```mermaid
+stateDiagram-v2
+
+    [*] --> REGISTERED
+
+    REGISTERED --> ELIGIBLE
+    ELIGIBLE --> ASSIGNED
+    ASSIGNED --> ACTIVE
+
+    ACTIVE --> PAUSED
+    PAUSED --> ACTIVE
+
+    ACTIVE --> COMPLETED
+    ACTIVE --> FAILED
+    ACTIVE --> QUARANTINED
+    ACTIVE --> REVOKED
+
+    FAILED --> ELIGIBLE
+    QUARANTINED --> REVIEW
+
+    REVIEW --> ELIGIBLE
+    REVIEW --> REVOKED
+
+    COMPLETED --> [*]
+    REVOKED --> [*]
+```
+
+Lifecycle state must remain distinct from identity.
+
+An inactive NCA can remain a registered identity without consuming active inference resources.
+
+---
+
+# 111. Nano Core Agent Identity
+
+Every NCA should eventually possess a deterministic identity.
+
+Conceptually:
+
+```text
+NCA ID
+Agent Class
+Generation
+AI Passport Identity
+Organization
+Professional Team
+Capability Profile
+Risk Tier
+Runtime Eligibility
+Memory Namespace
+Audit Identity
+Current Lifecycle State
+```
+
+Identity must not depend only on a mutable display name.
+
+---
+
+# 112. AI Passport Boundary
+
+AI Passport establishes identity and eligibility.
+
+It does not itself authorize arbitrary missions.
+
+```mermaid
+flowchart LR
+
+    NCA[Nano Core Agent]
+
+    NCA --> PASS[AI Passport]
+
+    PASS --> ID[Identity]
+    PASS --> ELIG[Eligibility]
+
+    ID --> AUTH{Mission Authorization?}
+    ELIG --> AUTH
+
+    AUTH -->|No| DENY[DENY]
+    AUTH -->|Yes| NEXT[Continue Governance]
+
+    PASS -. not sufficient alone .-> NEXT
+```
+
+---
+
+# 113. Enterprise IMPERIAL Skills
+
+Enterprise IMPERIAL Skills define bounded professional capability.
+
+Conceptually:
+
+```text
+Identity tells us WHO the agent is.
+
+Skill tells us WHAT the agent can do.
+
+Mission authorization tells us WHETHER it may do it now.
+```
+
+These must never collapse into a single trust decision.
+
+---
+
+# 114. Capability Intersection
+
+Effective execution authority should be derived from an intersection.
+
+```text
+Effective Capability
+=
+Identity Eligibility
+∩
+Mission Scope
+∩
+EIS Capability
+∩
+Guardian Policy
+∩
+Approval
+∩
+Runtime Domain Policy
+```
+
+No single input is sufficient.
+
+```mermaid
+flowchart TD
+
+    ID[AI Passport]
+    M[Mission Scope]
+    E[EIS]
+    G[Guardian Policy]
+    A[Approval]
+    R[Runtime Policy]
+
+    ID --> X[Capability Intersection]
+    M --> X
+    E --> X
+    G --> X
+    A --> X
+    R --> X
+
+    X --> EXEC[Effective Execution Capability]
+```
+
+---
+
+# 115. Guardian Core
+
+Guardian Core represents an independent defensive policy boundary.
+
+Its purpose is not to make cognition smarter.
+
+Its purpose is to determine whether a proposed action is admissible under current security policy.
+
+```mermaid
+flowchart LR
+
+    REC[Verified Recommendation]
+
+    REC --> G[Guardian Core]
+
+    G -->|ALLOW FOR APPROVAL| A[Approval Gateway]
+    G -->|DENY| D[Blocked]
+    G -->|REQUIRE MORE EVIDENCE| E[Re-evaluate]
+```
+
+A sophisticated recommendation must remain rejectable.
+
+---
+
+# 116. Approval Gateway
+
+Approval Gateway handles explicit approval requirements for sensitive operations.
+
+```mermaid
+flowchart TD
+
+    ACTION[Candidate Action]
+
+    ACTION --> RISK[Risk Classification]
+
+    RISK --> LOW[Bounded Policy Path]
+    RISK --> HIGH[Approval Required]
+
+    HIGH --> APPROVAL[Approval Gateway]
+
+    APPROVAL -->|Approved| EXEC[Eligible Execution]
+    APPROVAL -->|Denied| STOP[STOP]
+    APPROVAL -->|Expired| STOP
+    APPROVAL -->|Revoked| STOP
+```
+
+Approval must be bound to the exact eligible action or mission context.
+
+---
+
+# 117. Runtime Domain
+
+Runtime Domain is the execution isolation boundary.
+
+Each sensitive workload should execute inside a domain with explicit limits.
+
+```text
+Filesystem
+Network
+Processes
+Secrets
+Tools
+CPU
+Memory
+Time
+Storage
+Repository
+Data
+External APIs
+```
+
+---
+
+# 118. Runtime Isolation
+
+```mermaid
+flowchart TD
+
+    NCA[Nano Core Agent]
+
+    NCA --> RD[Runtime Domain]
+
+    RD --> FS[Bounded Filesystem]
+    RD --> NET[Bounded Network]
+    RD --> PROC[Bounded Processes]
+    RD --> SEC[Secret Boundary]
+    RD --> TOOL[Allowed Tools]
+    RD --> BUDGET[Resource Budget]
+
+    RD -. isolation .-> OTHER[Other Runtime Domains]
+```
+
+One Runtime Domain must not automatically inherit access from another.
+
+---
+
+# 119. Repository Runtime Isolation
+
+```mermaid
+flowchart LR
+
+    A[Mission A]
+
+    A --> RA[Repository A Runtime Domain]
+
+    B[Mission B]
+
+    B --> RB[Repository B Runtime Domain]
+
+    RA -. no implicit access .-> RB
+    RB -. no implicit access .-> RA
+```
+
+Cross-repository operations require explicit mission scope.
+
+---
+
+# 120. Secret Boundary
+
+Secrets should be delivered only to the narrowest eligible runtime context.
+
+```mermaid
+flowchart LR
+
+    SB[Secret Broker]
+
+    SB --> POLICY[Policy Evaluation]
+    POLICY --> MISSION[Mission Binding]
+    MISSION --> RD[Runtime Domain]
+
+    RD --> PROCESS[Eligible Process]
+
+    PROCESS -. no persistent ownership .-> SB
+```
+
+Agents should not accumulate permanent secret collections.
+
+---
+
+# 121. Resource Budgets
+
+Every mission and agent should operate under bounded resources.
+
+Possible budgets include:
+
+```text
+Token Budget
+Compute Budget
+Time Budget
+Network Budget
+Storage Budget
+API Budget
+Financial Budget
+Retry Budget
+Agent Spawn Budget
+```
+
+---
+
+# 122. Budget Hierarchy
+
+```mermaid
+flowchart TD
+
+    GLOBAL[Authorized Program Budget]
+
+    GLOBAL --> DOMAIN[Domain Budget]
+
+    DOMAIN --> TEAM[Team Budget]
+
+    TEAM --> MISSION[Mission Budget]
+
+    MISSION --> NCA[NCA Budget]
+
+    NCA --> ACTION[Action Budget]
+```
+
+A child budget cannot legitimately exceed the remaining parent budget without new authority.
+
+---
+
+# 123. Backpressure
+
+At million-agent scale, uncontrolled spawning or retry can destroy system stability.
+
+```mermaid
+flowchart LR
+
+    DEMAND[Mission Demand]
+
+    DEMAND --> QUEUE[Bounded Queue]
+    QUEUE --> SCHED[Scheduler]
+    SCHED --> CAP{Capacity Available?}
+
+    CAP -->|Yes| EXEC[Activate NCA]
+    CAP -->|No| WAIT[Backpressure]
+
+    WAIT --> QUEUE
+```
+
+Backpressure is a safety property.
+
+---
+
+# 124. Retry Storm Defense
+
+Retries must be bounded.
+
+```text
+Retry
++
+Exponential Backoff
++
+Jitter
++
+Attempt Limit
++
+Deadline
++
+Idempotency
+```
+
+should replace uncontrolled repeated execution.
+
+---
+
+# 125. Idempotent Mission Execution
+
+A duplicated request must not automatically duplicate external effects.
+
+```mermaid
+sequenceDiagram
+
+    participant H as HANTER
+    participant O as Orchestrator
+    participant R as Runtime
+    participant L as Audit Ledger
+
+    H->>O: Mission + Idempotency Identity
+    O->>R: Execute
+    R->>L: Record outcome
+
+    H->>O: Duplicate mission
+    O->>L: Check existing outcome
+    L-->>O: Already processed
+    O-->>H: Existing evidence
+```
+
+---
+
+# 126. Distributed Scheduling
+
+Large NCA populations require hierarchical scheduling.
+
+```mermaid
+flowchart TD
+
+    H[HANTER Mission Demand]
+
+    H --> DS[Domain Selection]
+
+    DS --> S1[Domain Scheduler A]
+    DS --> S2[Domain Scheduler B]
+    DS --> SN[Domain Scheduler N]
+
+    S1 --> P1[NCA Pool A]
+    S2 --> P2[NCA Pool B]
+    SN --> PN[NCA Pool N]
+
+    P1 --> R1[Runtime Domains]
+    P2 --> R2[Runtime Domains]
+    PN --> RN[Runtime Domains]
+```
+
+Scheduling policy can evolve independently by domain while preserving common security invariants.
+
+---
+
+# 127. Capability-Based Scheduling
+
+Agents should be selected by bounded capability requirements rather than arbitrary availability.
+
+```text
+Mission Requirements
+↓
+Domain
+↓
+Professional Role
+↓
+Required Capabilities
+↓
+Security Eligibility
+↓
+Resource Eligibility
+↓
+Candidate NCA Pool
+↓
+Selection
+```
+
+---
+
+# 128. Professional NCA Teams
+
+Nano Core Agents can form professional teams.
+
+Examples may include:
+
+```text
+Engineering Team
+Security Team
+Research Team
+Verification Team
+Legal Analysis Team
+Financial Analysis Team
+Operations Team
+Scientific Team
+Design Team
+Data Team
+```
+
+Team boundaries enable specialization without requiring a different global architecture for every business domain.
+
+---
+
+# 129. Independent Verification Teams
+
+High-impact work should support separation of duties.
+
+```mermaid
+flowchart LR
+
+    BUILD[Builder NCA Team]
+
+    BUILD --> RESULT[Candidate Result]
+
+    RESULT --> VERIFY[Independent Verifier Team]
+
+    VERIFY -->|PASS| EVIDENCE[Verification Evidence]
+    VERIFY -->|FAIL| RETURN[Return for Remediation]
+
+    RETURN --> BUILD
+```
+
+The builder should not be the sole authority declaring its own work correct.
+
+---
+
+# 130. NCA-to-NCA Communication
+
+One million agents must not form an unrestricted communication mesh.
+
+That would create excessive:
+
+- complexity;
+- attack surface;
+- cost;
+- information leakage;
+- routing ambiguity.
+
+Communication should occur through bounded mission channels.
+
+```mermaid
+flowchart TD
+
+    A[NCA A]
+
+    A --> CHANNEL[Mission Channel]
+
+    CHANNEL --> POLICY[Scope / Policy]
+    POLICY --> B[NCA B]
+
+    A -. no unrestricted mesh .-> C[Unrelated NCA]
+```
+
+---
+
+# 131. Communication Complexity
+
+Unrestricted all-to-all communication trends toward:
+
+```text
+O(N²)
+```
+
+relationships.
+
+Hierarchical federation instead targets bounded local communication and routed cross-domain interaction.
+
+```mermaid
+flowchart TD
+
+    H[Executive Layer]
+
+    H --> D1[Domain A]
+    H --> D2[Domain B]
+
+    D1 --> T1[Team A1]
+    D1 --> T2[Team A2]
+
+    D2 --> T3[Team B1]
+    D2 --> T4[Team B2]
+
+    T1 --> N1[NCA]
+    T2 --> N2[NCA]
+    T3 --> N3[NCA]
+    T4 --> N4[NCA]
+```
+
+---
+
+# 132. Cross-Domain Delegation
+
+Cross-domain work must preserve provenance and authority.
+
+```mermaid
+sequenceDiagram
+
+    participant A as Domain A
+    participant H as Federated Governance
+    participant B as Domain B
+
+    A->>H: Delegation request
+    H->>H: Validate mission scope
+    H->>B: Bounded delegated mission
+    B->>H: Evidence-bound result
+    H->>A: Verified result
+```
+
+No domain should silently inherit another domain's credentials or internal state.
+
+---
+
+# 133. Kill Switch Architecture
+
+Critical systems require bounded termination capability.
+
+```mermaid
+flowchart TD
+
+    AUTH[Authorized Kill Decision]
+
+    AUTH --> DOMAIN[Runtime Domain]
+
+    DOMAIN --> PROC[Terminate Processes]
+    DOMAIN --> NET[Revoke Network]
+    DOMAIN --> SECRET[Revoke Secrets]
+    DOMAIN --> QUEUE[Cancel Pending Work]
+
+    PROC --> AUD[Preserve Evidence]
+    NET --> AUD
+    SECRET --> AUD
+    QUEUE --> AUD
+```
+
+Termination should preserve forensic evidence where safely possible.
+
+---
+
+# 134. Revocation Propagation
+
+Revocation must propagate through dependent execution state.
+
+```mermaid
+flowchart TD
+
+    REV[Revocation]
+
+    REV --> M[Mission]
+    M --> CHILD[Child Missions]
+    CHILD --> TASK[Pending Tasks]
+    TASK --> CAP[Temporary Capabilities]
+    CAP --> SEC[Temporary Secrets]
+    SEC --> RUN[Runtime Admission]
+
+    RUN --> DENY[DENY]
+```
+
+Propagation should be bounded, deterministic and auditable.
+
+---
+
+# 135. Audit Ledger
+
+The Audit Ledger records security-relevant facts about the execution lifecycle.
+
+Conceptually:
+
+```text
+Who
+What
+Why
+Mission
+Policy
+Approval
+Capability
+Runtime Domain
+Time
+Outcome
+Evidence Digest
+Previous Record
+```
+
+---
+
+# 136. Evidence Chain
+
+```mermaid
+flowchart LR
+
+    M[Mission Evidence]
+
+    M --> C[Cognitive Evidence]
+    C --> G[Governance Evidence]
+    G --> R[Runtime Evidence]
+    R --> T[Test Evidence]
+    T --> A[Audit Evidence]
+
+    A --> RESULT[Evidence-Bound Result]
+```
+
+Evidence must remain attributable to the stage that produced it.
+
+---
+
+# 137. Architecture Is Not Runtime Evidence
+
+The following statements are different:
+
+```text
+The architecture defines Runtime Domains.
+
+Runtime Domain code exists.
+
+Runtime Domain tests pass.
+
+A Runtime Domain executed successfully.
+
+The Runtime Domain is deployed.
+
+The Runtime Domain is production verified.
+```
+
+Each requires different evidence.
+
+---
+
+# 138. Observability
+
+Large-scale agent systems require observability without leaking protected information.
+
+Useful signals include:
+
+```text
+Mission State
+Queue Depth
+Agent Activation
+Latency
+Retry Count
+Policy Denials
+Approval State
+Runtime Health
+Resource Consumption
+Error Class
+Evidence State
+```
+
+Logs should avoid unnecessary source-code, secret or private-data exposure.
+
+---
+
+# 139. High-Cardinality Telemetry
+
+Million-agent systems create enormous telemetry cardinality.
+
+Observability must therefore support aggregation.
+
+```mermaid
+flowchart LR
+
+    NCA[Many NCA Events]
+
+    NCA --> LOCAL[Domain Aggregation]
+    LOCAL --> TEAM[Team Metrics]
+    TEAM --> FED[Federated Metrics]
+    FED --> H[HANTER Executive View]
+```
+
+HANTER should consume executive signals rather than every raw event.
+
+---
+
+# 140. Executive Situational Awareness
+
+HANTER's role at scale is to understand the state of the federation.
+
+```mermaid
+flowchart TD
+
+    H[HANTER Executive Intelligence]
+
+    D1[Domain Health] --> H
+    D2[Mission Portfolio] --> H
+    D3[Risk State] --> H
+    D4[Resource State] --> H
+    D5[Verification State] --> H
+    D6[Security State] --> H
+
+    H --> DECISION[Executive Decision]
+```
+
+HANTER does not need to micromanage every NCA token.
+
+---
+
+# 141. Cognitive Situational Awareness
+
+IMPERIAL AGI provides reasoning over aggregated evidence.
+
+```mermaid
+flowchart LR
+
+    STATE[Federated State]
+
+    STATE --> AGI[IMPERIAL AGI]
+
+    AGI --> R[Reasoner]
+    R --> C[Critic]
+    C --> V[Verifier]
+
+    V --> REC[Strategic Recommendation]
+
+    REC --> H[HANTER]
+```
+
+Again:
+
+```text
+Strategic Recommendation
+≠
+Execution Authority
+```
+
+---
+
+# 142. Failure Domains
+
+The federation must assume failures will happen.
+
+Potential failures include:
+
+```text
+Agent failure
+Model failure
+Tool failure
+Runtime failure
+Network failure
+Scheduler failure
+Memory failure
+Repository failure
+Policy service failure
+Approval service failure
+Audit failure
+Domain orchestrator failure
+```
+
+The architecture should contain failures rather than assume perfect components.
+
+---
+
+# 143. No Single Global Failure Domain
+
+```mermaid
+flowchart TD
+
+    FED[Federation]
+
+    FED --> A[Domain A]
+    FED --> B[Domain B]
+    FED --> C[Domain C]
+
+    A --> FA[Failure A]
+
+    FA --> ISO[Contained]
+
+    ISO -. does not automatically fail .-> B
+    ISO -. does not automatically fail .-> C
+```
+
+Federation is a resilience mechanism as well as an organizational model.
+
+---
+
+# 144. Audit Failure Is Security-Relevant
+
+If required audit evidence cannot be produced, sensitive execution should not silently continue as if nothing happened.
+
+```mermaid
+flowchart LR
+
+    EXEC[Candidate Sensitive Execution]
+
+    EXEC --> AUD{Required Audit Available?}
+
+    AUD -->|Yes| RUN[Proceed]
+    AUD -->|No| FAIL[Fail Closed / Escalate]
+```
+
+The exact policy may depend on mission risk.
+
+---
+
+# 145. Runtime Evidence Feedback
+
+Execution evidence can improve future reasoning.
+
+```mermaid
+flowchart LR
+
+    EXEC[Execution]
+
+    EXEC --> EVID[Runtime Evidence]
+    EVID --> AUD[Audit Ledger]
+    AUD --> KG[Knowledge Graph]
+
+    KG --> FUTURE[Future Cognitive Context]
+```
+
+But runtime evidence becomes future context only after provenance and integrity validation.
+
+---
+
+# 146. Learning From Failure
+
+Failure is valuable when preserved correctly.
+
+```mermaid
+flowchart TD
+
+    FAIL[Failure]
+
+    FAIL --> E[Evidence]
+    E --> RCA[Root Cause Analysis]
+    RCA --> FIX[Candidate Improvement]
+    FIX --> TEST[Regression Test]
+    TEST --> VERIFY[Independent Verification]
+    VERIFY --> KNOW[Verified Knowledge]
+```
+
+The system should learn from failures without granting failures permanent control over future behavior.
+
+---
+
+# 147. Anti-Fragile Engineering Loop
+
+```mermaid
+flowchart LR
+
+    BUILD[Build]
+    BUILD --> TEST[Test]
+    TEST --> ATTACK[Challenge]
+    ATTACK --> VERIFY[Verify]
+    VERIFY --> RUN[Bounded Runtime]
+    RUN --> OBSERVE[Observe]
+    OBSERVE --> LEARN[Learn]
+    LEARN --> HARDEN[Harden]
+    HARDEN --> BUILD
+```
+
+Every cycle should increase evidence, not merely complexity.
+
+---
+
+# 148. Scale Without Authority Explosion
+
+A million-agent system must not create a million independent administrators.
+
+```text
+More Agents
+≠
+More Unbounded Authority
+```
+
+Instead:
+
+```text
+More Agents
+=
+More Specialized Bounded Capability
+```
+
+---
+
+# 149. Sovereign Runtime Invariant
+
+The complete runtime architecture preserves:
+
+```text
+Architect Authority
+        ↓
+HANTER Executive Governance
+        ↓
+IMPERIAL AGI Cognitive Intelligence
+        ↓
+Independent Verification
+        ↓
+Guardian Core
+        ↓
+Approval Gateway
+        ↓
+Federated Mission Delegation
+        ↓
+Nano Core Agents
+        ↓
+Independent Runtime Domains
+        ↓
+Audit Ledger
+```
+
+No downstream component may silently become the authority above the Architect.
+
+---
+
+# 150. Million-Agent Target State
+
+```mermaid
+flowchart TB
+
+    ARCH["Architect<br/>Alexander Romaskevich"]
+
+    ARCH --> H["HANTER<br/>Sovereign Executive Intelligence"]
+
+    H <--> AGI["IMPERIAL AGI<br/>Cognitive Intelligence"]
+
+    H --> FED["Federated Multi-Orchestrator Fabric"]
+
+    FED --> O1["Organization A"]
+    FED --> O2["Organization B"]
+    FED --> ON["Organization N"]
+
+    O1 --> T1["Professional Teams"]
+    O2 --> T2["Professional Teams"]
+    ON --> TN["Professional Teams"]
+
+    T1 --> P1["NCA Capability Pools"]
+    T2 --> P2["NCA Capability Pools"]
+    TN --> PN["NCA Capability Pools"]
+
+    P1 --> R1["Runtime Domains"]
+    P2 --> R2["Runtime Domains"]
+    PN --> RN["Runtime Domains"]
+
+    R1 --> AUD["Federated Audit Evidence"]
+    R2 --> AUD
+    RN --> AUD
+
+    AUD --> H
+    AUD --> AGI
+```
+
+The target is not one enormous artificial mind controlling everything.
+
+The target is a governed federation of specialized intelligence operating under explicit architectural authority.
+
+---
+
+# 151. Sovereign Cognitive Runtime Doctrine
+
+The runtime doctrine can be summarized as:
+
+```text
+Architect defines intent.
+
+HANTER governs missions.
+
+IMPERIAL AGI reasons.
+
+Critics challenge.
+
+Verifiers verify.
+
+Guardian Core enforces policy.
+
+Approval Gateway controls sensitive admission.
+
+Federated orchestrators coordinate bounded domains.
+
+Nano Core Agents perform specialized work.
+
+Runtime Domains contain execution.
+
+Audit Ledger preserves evidence.
+```
+
+---
+
+# 152. The Scaling Principle
+
+The architecture should make the following progression possible without fundamental redesign:
+
+```text
+10 agents
+↓
+1,000 agents
+↓
+100,000 agents
+↓
+1,000,000+ agents
+```
+
+Scaling should primarily require additional federated capacity, not abandonment of the security model.
+
+---
+
+# 153. Final Runtime Principle
+
+> **A powerful intelligence is not defined by how much unrestricted access it possesses.**
+
+> **It is defined by how much useful work it can accomplish while remaining bounded, verifiable, recoverable and governable.**
+
+---
+
+## Sovereign Runtime Authorship & Digital Provenance
+
+**Architect & Original Author:** Alexander Romaskevich  
+**Founder • Owner • CEO • Chief Systems Architect — IMPERIAL Core**
+
+The Sovereign Cognitive Runtime, Federated Multi-Orchestrator model, governed HANTER/IMPERIAL AGI relationship and million-scale Nano Core Agent architecture described in this public foundation form part of the IMPERIAL Core architectural program under the direction of Alexander Romaskevich.
+
+**Canonical authorship:** Alexander Romaskevich  
+**Architecture:** IMPERIAL Core  
+**Component:** IMPERIAL AGI  
+**Executive Intelligence:** HANTER  
+**Agent Architecture:** Nano Core Agents  
+**Repository:** IMPERIAL-AGI  
+**Year:** 2026
+
+Copyright © 2026 Alexander Romaskevich.
+
+---
+
+> **Maximum Intelligence. Minimum Implicit Authority.**
+
+> **Think. Challenge. Verify. Authorize. Execute. Audit. Learn. Scale.**
 
 **IMPERIAL AGI — Architected by Alexander Romaskevich.**
