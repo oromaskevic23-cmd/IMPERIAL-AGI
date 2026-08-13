@@ -2103,3 +2103,996 @@ Copyright © 2026 Alexander Romaskevich.
 > **Measure. Challenge. Verify. Govern. Scale. Prove.**
 
 **IMPERIAL AGI — Architected by Alexander Romaskevich.**
+---
+
+# 69. Persistent Engineering Intelligence
+
+Long-horizon intelligence requires more than model context.
+
+IMPERIAL AGI is designed to operate with a persistent engineering intelligence layer capable of preserving verified knowledge about repositories, architecture, decisions, dependencies, capabilities and evidence across bounded sessions.
+
+The fundamental rule remains:
+
+> **Memory provides context. Memory never provides authority.**
+
+```mermaid
+flowchart TD
+
+    A[Architect]
+
+    A --> H[HANTER]
+    H --> AGI[IMPERIAL AGI]
+
+    AGI --> CM[Codebase Memory]
+    AGI --> KG[IMPERIAL Knowledge Graph]
+    AGI --> CR[Capability Registry]
+
+    CM --> COG[Cognitive Context]
+    KG --> COG
+    CR --> COG
+
+    COG --> R[Reasoner]
+    R --> C[Critic]
+    C --> V[Verifier]
+
+    V --> REC[Evidence-Bound Recommendation]
+
+    REC --> GOV[Governance Boundary]
+```
+
+---
+
+# 70. Three Independent Knowledge Planes
+
+Persistent intelligence is separated into three planes.
+
+```text
+CODEBASE MEMORY
+    Repository structure
+    Symbols
+    Dependencies
+    Call relationships
+    Change impact
+
+IMPERIAL KNOWLEDGE GRAPH
+    Architecture
+    Decisions
+    Versions
+    Evidence
+    Supersession
+    Provenance
+
+CAPABILITY REGISTRY
+    Skills
+    MCP capabilities
+    Tools
+    Versions
+    Integrity
+    Eligibility
+```
+
+These planes must remain logically independent.
+
+No plane automatically becomes authorization authority.
+
+---
+
+# 71. Codebase Memory
+
+Codebase Memory provides structural understanding of software repositories.
+
+Target capabilities include:
+
+- repository indexing;
+- symbol discovery;
+- dependency analysis;
+- call-chain analysis;
+- architecture reconstruction;
+- impact analysis;
+- cross-file reasoning;
+- persistent repository knowledge.
+
+```mermaid
+flowchart LR
+
+    REPO[Repository]
+
+    REPO --> INDEX[Index]
+    INDEX --> SYMBOLS[Symbols]
+    INDEX --> DEPS[Dependencies]
+    INDEX --> CALLS[Call Graph]
+    INDEX --> IMPACT[Impact Graph]
+
+    SYMBOLS --> MEMORY[Codebase Memory]
+    DEPS --> MEMORY
+    CALLS --> MEMORY
+    IMPACT --> MEMORY
+
+    MEMORY --> AGI[IMPERIAL AGI]
+```
+
+Repository indexes must be isolated.
+
+Knowledge from Repository A must never silently appear as trusted knowledge for Repository B.
+
+---
+
+# 72. Repository Isolation
+
+```mermaid
+flowchart TD
+
+    AGI[IMPERIAL AGI]
+
+    AGI --> A[Repository A Namespace]
+    AGI --> B[Repository B Namespace]
+    AGI --> C[Repository C Namespace]
+
+    A --> IA[Index A]
+    B --> IB[Index B]
+    C --> IC[Index C]
+
+    IA -. isolated .- IB
+    IB -. isolated .- IC
+    IA -. isolated .- IC
+```
+
+Repository identity should eventually be deterministically bound to evidence such as:
+
+```text
+Repository Identity
+Remote Identity
+Branch
+Commit SHA
+Tree Identity
+Index Generation
+Index Digest
+Timestamp
+```
+
+---
+
+# 73. Source Authority Before Memory
+
+Persistent repository memory must never override current source authority.
+
+```mermaid
+flowchart LR
+
+    MEMORY[Stored Repository Memory]
+    SOURCE[Current Canonical Source]
+
+    MEMORY --> CHECK[Freshness / Identity Check]
+    SOURCE --> CHECK
+
+    CHECK --> MATCH{Identity Matches?}
+
+    MATCH -->|Yes| CONTEXT[Eligible Context]
+    MATCH -->|No| STALE[Mark Memory Stale]
+
+    STALE --> REINDEX[Require Re-index]
+```
+
+A previous index may describe history.
+
+It must not masquerade as the current repository.
+
+---
+
+# 74. IMPERIAL Knowledge Graph
+
+The IMPERIAL Knowledge Graph is intended to preserve relationships between engineering facts rather than merely storing conversation text.
+
+Core entity classes may include:
+
+```text
+COMPONENT
+DECISION
+ARTIFACT
+REPOSITORY
+VERSION
+WORK_PACKAGE
+CONTROL
+REQUIREMENT
+EVIDENCE
+CHAT
+TEST
+RUNTIME
+BLOCKER
+```
+
+---
+
+# 75. Knowledge Graph Relationships
+
+```mermaid
+graph TD
+
+    ARCH[Architect Decision]
+
+    ARCH -->|GOVERNS| COMP[Component]
+    COMP -->|IMPLEMENTED_BY| ART[Artifact]
+    ART -->|BELONGS_TO| REPO[Repository]
+    ART -->|TESTED_BY| TEST[Test Evidence]
+
+    TEST -->|EVIDENCES| STATUS[Engineering Status]
+
+    NEW[New Decision] -->|SUPERSEDES| OLD[Historical Decision]
+
+    BLOCK[Blocker] -->|BLOCKS| STATUS
+```
+
+Useful relationships include:
+
+```text
+PART_OF
+DEPENDS_ON
+GOVERNS
+IMPLEMENTS
+TESTS
+EVIDENCES
+SUPERSEDES
+REFERENCES
+CONFLICTS_WITH
+BOUND_TO
+BLOCKS
+DERIVED_FROM
+```
+
+---
+
+# 76. Provenance Is Mandatory
+
+A knowledge graph without provenance becomes an organized hallucination.
+
+Therefore significant graph claims should preserve provenance.
+
+```mermaid
+flowchart TD
+
+    CLAIM[Knowledge Claim]
+
+    CLAIM --> SOURCE[Source Identity]
+    CLAIM --> TIME[Observed Time]
+    CLAIM --> CLASS[Evidence Class]
+    CLAIM --> HASH[Evidence Digest]
+    CLAIM --> STATE[Truth State]
+
+    SOURCE --> VALID[Provenance Validation]
+    TIME --> VALID
+    CLASS --> VALID
+    HASH --> VALID
+    STATE --> VALID
+
+    VALID --> GRAPH[Eligible Knowledge Graph Entry]
+```
+
+---
+
+# 77. Historical Knowledge Is Not Deleted
+
+When a newer decision supersedes an older decision, history should remain visible.
+
+```mermaid
+flowchart LR
+
+    V1[Decision v1]
+
+    V2[Decision v2]
+
+    V3[Decision v3]
+
+    V2 -->|SUPERSEDES| V1
+    V3 -->|SUPERSEDES| V2
+
+    V1 --> HIST[Historical Evidence]
+    V2 --> HIST
+    V3 --> CURRENT[Current Candidate]
+```
+
+This enables reconstruction of architectural evolution.
+
+---
+
+# 78. Conflict-Aware Knowledge
+
+Two sources may disagree.
+
+The system must not silently choose whichever statement appeared last.
+
+```mermaid
+flowchart TD
+
+    S1[Source A]
+    S2[Source B]
+
+    S1 --> C1[Claim A]
+    S2 --> C2[Claim B]
+
+    C1 --> DETECT[Conflict Detection]
+    C2 --> DETECT
+
+    DETECT --> AUTH[Authority Evaluation]
+    AUTH --> EVID[Evidence Evaluation]
+
+    EVID --> RESULT{Resolvable?}
+
+    RESULT -->|Yes| CURRENT[Current Supported State]
+    RESULT -->|No| CONFLICT[CONFLICTED]
+```
+
+`CONFLICTED` is a valid engineering truth state.
+
+---
+
+# 79. Chat Intelligence
+
+Historical conversations can contain valuable architectural knowledge.
+
+They can also contain:
+
+- obsolete assumptions;
+- unfinished ideas;
+- superseded decisions;
+- inaccurate implementation claims;
+- incomplete evidence;
+- private information.
+
+Therefore chat recovery must be provenance-aware.
+
+```mermaid
+flowchart LR
+
+    CHAT[Historical Chats]
+
+    CHAT --> INGEST[Bounded Ingestion]
+    INGEST --> REDACT[Privacy Boundary]
+    REDACT --> CLAIMS[Candidate Claims]
+    CLAIMS --> PROV[Provenance]
+    PROV --> CONFLICT[Conflict Detection]
+    CONFLICT --> AUTH[Authority Evaluation]
+    AUTH --> KG[Knowledge Graph]
+```
+
+Chat history is evidence.
+
+Chat history is not automatically canonical truth.
+
+---
+
+# 80. Knowledge Authority Hierarchy
+
+A conceptual precedence model is:
+
+```text
+Explicit Architect Decision
+        ↓
+Canonical Physical Evidence
+        ↓
+Current Authoritative Repository / Artifact
+        ↓
+Verified Engineering Evidence
+        ↓
+Controlled Documentation
+        ↓
+Historical Chat Evidence
+        ↓
+Unverified Claim
+```
+
+Higher authority does not mean older evidence is destroyed.
+
+It means conflicting claims are resolved using explicit authority and stronger evidence.
+
+---
+
+# 81. Capability Registry
+
+IMPERIAL AGI requires machine-readable discovery of available capabilities.
+
+```mermaid
+flowchart TD
+
+    REG[Capability Registry]
+
+    REG --> SK[Skills]
+    REG --> MCP[MCP Services]
+    REG --> TOOL[Tools]
+    REG --> MODEL[Models]
+    REG --> NCA[Nano Core Agents]
+
+    SK --> RESOLVE[Capability Resolution]
+    MCP --> RESOLVE
+    TOOL --> RESOLVE
+    MODEL --> RESOLVE
+    NCA --> RESOLVE
+
+    RESOLVE --> ELIG[Eligibility Evaluation]
+    ELIG --> GOV[Governance Boundary]
+```
+
+Discovery does not grant execution authority.
+
+---
+
+# 82. Capability Identity
+
+A capability record should eventually contain evidence such as:
+
+```text
+Capability ID
+Name
+Type
+Version
+Provider
+Integrity Digest
+Source
+Classification
+Supported Operations
+Required Permissions
+Risk Tier
+Runtime Boundary
+Last Verification
+Status
+```
+
+A capability whose integrity cannot be established should not silently remain trusted.
+
+---
+
+# 83. Lazy Capability Loading
+
+Large systems should not inject every possible skill into every cognitive context.
+
+Instead:
+
+```mermaid
+flowchart LR
+
+    M[Mission]
+
+    M --> DISCOVER[Capability Discovery]
+    DISCOVER --> SELECT[Bounded Selection]
+    SELECT --> LOAD[Lazy Load]
+    LOAD --> VERIFY[Integrity / Eligibility]
+    VERIFY --> CONTEXT[Mission Context]
+```
+
+Benefits include:
+
+- smaller cognitive context;
+- reduced attack surface;
+- reduced capability confusion;
+- better specialization;
+- easier revocation;
+- lower resource consumption.
+
+---
+
+# 84. Skill Security Boundary
+
+Skills may influence reasoning.
+
+Therefore skill content must be treated as executable cognitive influence.
+
+A skill must not be trusted merely because it exists in a repository.
+
+```mermaid
+flowchart TD
+
+    SKILL[Candidate Skill]
+
+    SKILL --> SOURCE[Source Verification]
+    SOURCE --> LICENSE[License Review]
+    LICENSE --> SECURITY[Security Review]
+    SECURITY --> INTEGRITY[Integrity Digest]
+    INTEGRITY --> REGISTRY[Capability Registry]
+
+    REGISTRY --> LOAD[Eligible for Bounded Loading]
+```
+
+Unverified skill collections should remain quarantined.
+
+---
+
+# 85. MCP Capability Boundary
+
+Model Context Protocol integrations can provide powerful external capabilities.
+
+They also introduce external trust boundaries.
+
+```mermaid
+flowchart LR
+
+    AGI[IMPERIAL AGI]
+
+    AGI --> CLIENT[MCP Client Boundary]
+
+    CLIENT --> AUTH[Authentication]
+    AUTH --> POLICY[Capability Policy]
+    POLICY --> MCP[MCP Service]
+
+    MCP --> DATA[External Data / Capability]
+
+    DATA --> VALIDATE[Response Validation]
+    VALIDATE --> AGI
+```
+
+External MCP services may involve:
+
+- authentication;
+- data transmission;
+- account permissions;
+- usage costs;
+- external retention policies;
+- third-party availability.
+
+Such effects must remain explicit.
+
+---
+
+# 86. External Effects Require Explicit Governance
+
+```mermaid
+flowchart TD
+
+    CAP[External Capability]
+
+    CAP --> EFFECT{External Effect?}
+
+    EFFECT -->|No| LOCAL[Bounded Local Processing]
+
+    EFFECT -->|Yes| AUTH[Explicit Authorization]
+    AUTH --> POLICY[Policy Evaluation]
+    POLICY --> EXEC[Governed Invocation]
+
+    EXEC --> AUDIT[Audit Evidence]
+```
+
+Examples of external effects include:
+
+```text
+Network Transmission
+Remote API Calls
+Account Credit Consumption
+External File Upload
+External Data Retention
+Remote Execution
+Public Publication
+```
+
+---
+
+# 87. Supply-Chain Verification
+
+Persistent intelligence depends on software.
+
+Software supply chains must therefore be treated as security boundaries.
+
+```mermaid
+flowchart LR
+
+    PKG[Candidate Package]
+
+    PKG --> SOURCE[Canonical Source]
+    SOURCE --> VERSION[Version Pin]
+    VERSION --> HASH[Integrity Verification]
+    HASH --> LICENSE[License Review]
+    LICENSE --> SECURITY[Security Review]
+    SECURITY --> INSTALL[Controlled Installation]
+```
+
+Remote installer execution should not be treated as equivalent to verified artifact installation.
+
+---
+
+# 88. No Blind Remote Installers
+
+The preferred model is:
+
+```text
+Discover
+→ Identify canonical source
+→ Pin version
+→ Obtain artifact
+→ Verify digest
+→ Review
+→ Install
+→ Test
+→ Register
+```
+
+rather than:
+
+```text
+curl remote-script | shell
+```
+
+The convenience of installation must not override supply-chain integrity.
+
+---
+
+# 89. Persistent Bootstrap
+
+A long-horizon engineering system needs deterministic capability discovery across sessions.
+
+```mermaid
+sequenceDiagram
+
+    participant S as New Session
+    participant B as Bootstrap
+    participant R as Capability Registry
+    participant M as MCP Registry
+    participant C as Codebase Memory
+
+    S->>B: Discover persistent bootstrap
+    B->>R: Resolve skill capabilities
+    B->>M: Resolve MCP capabilities
+    M->>C: Resolve repository memory service
+    C-->>S: Existing repository index
+```
+
+A clean-session test is stronger evidence than same-session persistence.
+
+---
+
+# 90. Persistence Truth Boundary
+
+Persistence claims must distinguish:
+
+```text
+File persisted
+Registry persisted
+Configuration persisted
+Process restart persisted
+Application restart persisted
+Clean-session discovery persisted
+Hosted-runtime restart persisted
+```
+
+These are different claims.
+
+Evidence for one must not automatically prove another.
+
+---
+
+# 91. Clean-Session Verification Gate
+
+The strongest persistence test is:
+
+```mermaid
+flowchart TD
+
+    OLD[Original Session]
+
+    OLD --> INSTALL[Install / Register]
+    INSTALL --> CLOSE[End Session]
+
+    CLOSE --> NEW[Independent New Session]
+
+    NEW --> DISCOVER[Automatic Bootstrap Discovery]
+    DISCOVER --> REG[Registry Resolution]
+    REG --> MCP[MCP Discovery]
+    MCP --> INDEX[Existing Index Discovery]
+    INDEX --> QUERY[Repository Query]
+
+    QUERY --> PASS{Evidence Valid?}
+
+    PASS -->|Yes| VERIFIED[CROSS-SESSION VERIFIED]
+    PASS -->|No| PARTIAL[PARTIALLY VERIFIED]
+```
+
+If the environment cannot create an independent new session, the status remains partial.
+
+---
+
+# 92. Persistent Memory Must Be Revocable
+
+Persistence must not mean permanence of privilege.
+
+```mermaid
+flowchart LR
+
+    CAP[Registered Capability]
+
+    CAP --> ACTIVE[Active]
+
+    ACTIVE --> REVOKE[Revocation]
+
+    REVOKE --> DISABLED[Disabled]
+
+    DISABLED -. historical evidence retained .-> AUDIT[Audit History]
+```
+
+Capabilities, credentials and permissions must remain independently revocable.
+
+---
+
+# 93. Knowledge Freshness
+
+Persistent memory becomes dangerous when freshness is ignored.
+
+Every important persistent claim should support:
+
+```text
+Observed At
+Source Version
+Repository Commit
+Evidence Digest
+Freshness State
+Supersession State
+```
+
+Potential states:
+
+```text
+CURRENT
+STALE
+SUPERSEDED
+CONFLICTED
+REVOKED
+UNKNOWN
+```
+
+---
+
+# 94. Cognitive Context Compiler
+
+The long-term architecture should compile cognitive context rather than blindly concatenate retrieved text.
+
+```mermaid
+flowchart TD
+
+    M[Mission]
+    KG[Knowledge Graph]
+    CM[Codebase Memory]
+    CR[Capability Registry]
+    POLICY[Policy Context]
+
+    M --> CC[Context Compiler]
+    KG --> CC
+    CM --> CC
+    CR --> CC
+    POLICY --> CC
+
+    CC --> VALIDATE[Provenance / Freshness / Scope Validation]
+
+    VALIDATE --> CTX[Compiled Context]
+
+    CTX --> R[Reasoner]
+    R --> C[Critic]
+    C --> V[Verifier]
+```
+
+The compiler creates a bounded mission-specific view.
+
+---
+
+# 95. Context Isolation
+
+Context from one mission must not silently contaminate another mission.
+
+```mermaid
+flowchart LR
+
+    M1[Mission A]
+    M2[Mission B]
+
+    M1 --> C1[Compiled Context A]
+    M2 --> C2[Compiled Context B]
+
+    C1 --> R1[Reasoning A]
+    C2 --> R2[Reasoning B]
+
+    C1 -. isolated .- C2
+```
+
+Shared knowledge may be referenced only through explicit validated provenance.
+
+---
+
+# 96. Persistent Intelligence Attack Surface
+
+Persistent intelligence introduces new security threats:
+
+```text
+Memory poisoning
+Registry poisoning
+Index substitution
+Repository identity confusion
+Stale-state replay
+Cross-repository leakage
+Malicious skill persistence
+MCP capability substitution
+Credential leakage
+Dependency compromise
+False provenance
+Supersession manipulation
+```
+
+These threats must be part of continuous security evaluation.
+
+---
+
+# 97. Knowledge Is Not Permission
+
+This invariant applies across the entire persistent intelligence layer:
+
+```text
+Repository Knowledge
+≠
+Repository Write Permission
+
+Skill Discovery
+≠
+Skill Authorization
+
+Tool Discovery
+≠
+Tool Execution Permission
+
+Memory Retrieval
+≠
+Truth
+
+Historical Approval
+≠
+Current Approval
+
+Capability
+≠
+Authority
+```
+
+---
+
+# 98. Persistent Intelligence Architecture
+
+```mermaid
+flowchart TB
+
+    ARCH["Architect<br/>Alexander Romaskevich"]
+
+    ARCH --> H["HANTER"]
+
+    H --> AGI["IMPERIAL AGI"]
+
+    AGI --> CTX["Cognitive Context Compiler"]
+
+    CM["Codebase Memory"] --> CTX
+    KG["IMPERIAL Knowledge Graph"] --> CTX
+    REG["Capability Registry"] --> CTX
+    POLICY["Governed Policy Context"] --> CTX
+
+    CTX --> R["Reasoner"]
+    R --> C["Critic"]
+    C --> V["Verifier"]
+
+    V --> REC["Evidence-Bound Recommendation"]
+
+    REC --> GC["Guardian Core"]
+    GC --> AP["Approval Gateway"]
+    AP --> RD["Runtime Domain"]
+
+    RD --> AUD["Audit Ledger"]
+
+    AUD -. evidence .-> KG
+```
+
+The Audit Ledger may contribute evidence back into knowledge.
+
+It does not allow knowledge to bypass governance.
+
+---
+
+# 99. Million-Agent Capability Discovery
+
+At very large NCA scale, HANTER must not enumerate every agent for every mission.
+
+Capability discovery should be hierarchical.
+
+```mermaid
+flowchart TD
+
+    M[Mission Requirement]
+
+    M --> DOMAIN[Resolve Domain]
+    DOMAIN --> TEAM[Resolve Professional Team]
+    TEAM --> CAP[Resolve Capability Class]
+    CAP --> POOL[Eligible NCA Pool]
+    POOL --> SELECT[Bounded Agent Selection]
+    SELECT --> AUTH[Mission Authorization]
+    AUTH --> EXEC[Runtime Domain]
+```
+
+This enables large populations without global all-to-all discovery.
+
+---
+
+# 100. Toward a Persistent Cognitive Operating Layer
+
+The long-term objective is a persistent cognitive operating layer capable of maintaining:
+
+```text
+Who we are
+What exists
+What changed
+Why it changed
+Which source proves it
+Which version is current
+What remains uncertain
+Which capabilities exist
+Which capabilities are eligible
+Which missions are active
+Which decisions were revoked
+Which evidence proves completion
+```
+
+while never confusing any of those facts with execution authority.
+
+---
+
+# 101. Persistent Intelligence Doctrine
+
+```mermaid
+flowchart LR
+
+    DISCOVER[Discover]
+
+    DISCOVER --> VERIFY[Verify]
+    VERIFY --> INDEX[Index]
+    INDEX --> REMEMBER[Remember]
+    REMEMBER --> RETRIEVE[Retrieve]
+    RETRIEVE --> REASON[Reason]
+    REASON --> CHALLENGE[Challenge]
+    CHALLENGE --> PROVE[Verify Evidence]
+    PROVE --> GOVERN[Govern]
+    GOVERN --> EXECUTE[Execute]
+    EXECUTE --> AUDIT[Audit]
+    AUDIT --> LEARN[Learn]
+
+    LEARN --> VERIFY
+```
+
+Persistence closes the engineering loop.
+
+Governance keeps the loop safe.
+
+---
+
+## Persistent Intelligence Truth Boundary
+
+The architecture described in this section distinguishes design objectives from verified implementation.
+
+Verified capability evidence must remain separately recorded.
+
+A locally demonstrated capability must not be represented as globally persistent until clean-session discovery has been independently demonstrated.
+
+A functioning MCP protocol does not by itself prove hosted-runtime registration.
+
+A persistent index does not by itself prove authorization.
+
+---
+
+## Authorship & Digital Provenance
+
+**Architect & Original Author:** Alexander Romaskevich  
+**Founder • Owner • CEO • Chief Systems Architect — IMPERIAL Core**
+
+The persistent engineering intelligence, governed cognitive memory, capability discovery and knowledge architecture described here form part of the original IMPERIAL AGI architectural program under the direction of Alexander Romaskevich.
+
+**Canonical authorship:** Alexander Romaskevich  
+**Architecture:** IMPERIAL Core  
+**Component:** IMPERIAL AGI  
+**Repository:** IMPERIAL-AGI  
+**Year:** 2026
+
+Copyright © 2026 Alexander Romaskevich.
+
+---
+
+> **Memory gives intelligence continuity. It never gives intelligence authority.**
+
+> **Discover. Verify. Remember. Reason. Challenge. Govern. Prove.**
+
+**IMPERIAL AGI — Architected by Alexander Romaskevich.**
