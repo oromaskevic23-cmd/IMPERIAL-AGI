@@ -1024,3 +1024,1082 @@ All third-party names and trademarks remain the property of their respective own
 > **Reason. Challenge. Verify. Govern. Execute. Prove.**
 
 **IMPERIAL AGI — Architected by Alexander Romaskevich.**
+---
+
+# 30. IMPERIAL AGI Evaluation Constitution
+
+Intelligence must be measured.
+
+A system must not be described as increasingly general, reliable or autonomous merely because it produces impressive demonstrations.
+
+IMPERIAL AGI therefore adopts an evidence-first evaluation doctrine.
+
+> **Capability claims require reproducible evaluation evidence.**
+
+The evaluation system separates:
+
+```text
+Capability
+Reliability
+Safety
+Generalization
+Autonomy
+Efficiency
+Resilience
+Governance
+```
+
+A strong result in one dimension must not silently imply strength in another.
+
+---
+
+# 31. AGI-Class Evaluation Model
+
+The long-term objective is to evaluate IMPERIAL AGI across multiple independent capability families.
+
+```mermaid
+flowchart TD
+
+    AGI[IMPERIAL AGI Evaluation]
+
+    AGI --> R[Reasoning]
+    AGI --> P[Planning]
+    AGI --> M[Memory]
+    AGI --> E[Engineering]
+    AGI --> V[Verification]
+    AGI --> A[Adaptation]
+    AGI --> C[Coordination]
+    AGI --> S[Safety]
+    AGI --> G[Governance]
+    AGI --> L[Long-Horizon Reliability]
+
+    R --> SCORE[Evidence-Bound Scorecard]
+    P --> SCORE
+    M --> SCORE
+    E --> SCORE
+    V --> SCORE
+    A --> SCORE
+    C --> SCORE
+    S --> SCORE
+    G --> SCORE
+    L --> SCORE
+```
+
+No single benchmark can establish AGI.
+
+No single model score can establish system intelligence.
+
+No demonstration can establish production reliability.
+
+---
+
+# 32. Evaluation Dimensions
+
+## 32.1 Reasoning
+
+Evaluate:
+
+- multi-step reasoning;
+- causal reasoning;
+- constraint satisfaction;
+- hypothesis comparison;
+- uncertainty handling;
+- contradictory evidence;
+- abstraction;
+- decomposition;
+- counterfactual reasoning;
+- self-correction.
+
+---
+
+## 32.2 Long-Horizon Planning
+
+Evaluate whether the system can preserve an objective across:
+
+```text
+minutes
+↓
+hours
+↓
+days
+↓
+weeks
+↓
+months
+```
+
+without silently drifting from the Architect-approved mission.
+
+The evaluation must measure:
+
+- objective retention;
+- plan stability;
+- bounded re-planning;
+- dependency tracking;
+- milestone management;
+- stale-state detection;
+- recovery after interruption;
+- evidence accumulation;
+- mission completion integrity.
+
+---
+
+# 33. Long-Horizon Mission Evaluation
+
+```mermaid
+flowchart LR
+
+    O[Architect Objective]
+
+    O --> S[Strategy]
+    S --> M[Mission]
+    M --> W1[Work Package 1]
+    M --> W2[Work Package 2]
+    M --> WN[Work Package N]
+
+    W1 --> E1[Evidence]
+    W2 --> E2[Evidence]
+    WN --> EN[Evidence]
+
+    E1 --> V[Independent Verification]
+    E2 --> V
+    EN --> V
+
+    V --> C{Mission Criteria Met?}
+
+    C -->|No| RP[Bounded Re-Planning]
+    RP --> M
+
+    C -->|Yes| COMPLETE[Verified Completion]
+```
+
+Re-planning must not mutate the original mission authority.
+
+---
+
+# 34. Engineering Intelligence Benchmark
+
+IMPERIAL AGI is intended to become a strong engineering intelligence.
+
+Evaluation should therefore include real software-engineering tasks such as:
+
+- repository understanding;
+- architecture reconstruction;
+- dependency analysis;
+- implementation planning;
+- defect localization;
+- secure remediation;
+- test generation;
+- regression analysis;
+- API contract analysis;
+- cross-repository impact reasoning;
+- documentation consistency;
+- migration planning;
+- technical-debt discovery.
+
+The benchmark must distinguish between:
+
+```text
+Correct Answer
+Correct Code
+Passing Tests
+Secure Implementation
+Architectural Conformance
+Runtime Correctness
+Production Readiness
+```
+
+These are not equivalent.
+
+---
+
+# 35. Independent Verification Benchmark
+
+A major differentiator of IMPERIAL AGI is independent criticism and verification.
+
+The evaluation pipeline should therefore test cases where the Reasoner is intentionally wrong.
+
+```mermaid
+flowchart TD
+
+    T[Test Problem]
+
+    T --> R[Reasoner]
+
+    R --> X[Candidate Answer]
+
+    X --> C[Critic]
+    X --> V[Verifier]
+
+    C --> FIND[Detected Problems]
+    FIND --> V
+
+    V --> OUT{Evidence Sufficient?}
+
+    OUT -->|Yes| ACCEPT[Verified Recommendation]
+    OUT -->|No| REJECT[Reject / Re-evaluate]
+```
+
+Important metrics include:
+
+- false acceptance rate;
+- false rejection rate;
+- unsupported-claim detection;
+- contradiction detection;
+- security-defect detection;
+- stale-context detection;
+- hallucination rejection;
+- evidence completeness.
+
+---
+
+# 36. Cognitive Adversarial Testing
+
+IMPERIAL AGI must be evaluated against adversarial cognitive conditions.
+
+Examples include:
+
+- misleading context;
+- poisoned memory;
+- conflicting instructions;
+- stale evidence;
+- fake authority;
+- forged identity context;
+- duplicated missions;
+- replayed recommendations;
+- contradictory agent reports;
+- malicious tool output;
+- prompt injection;
+- incomplete evidence;
+- deceptive confidence signals.
+
+```mermaid
+flowchart LR
+
+    INPUT[Untrusted Input]
+
+    INPUT --> FILTER[Context Boundary]
+    FILTER --> REASON[Reasoner]
+    REASON --> CRITIC[Critic]
+    CRITIC --> VERIFY[Verifier]
+
+    VERIFY --> SAFE{Verified?}
+
+    SAFE -->|No| DENY[Reject / Escalate]
+    SAFE -->|Yes| REC[Recommendation]
+
+    REC --> GOVERNANCE[Governance Boundary]
+```
+
+---
+
+# 37. Memory Integrity Evaluation
+
+Memory creates enormous capability.
+
+It also creates enormous risk.
+
+A memory system can become a source of:
+
+- stale truth;
+- poisoned knowledge;
+- cross-mission contamination;
+- private-data leakage;
+- false authority;
+- outdated architecture;
+- malicious persistent instructions.
+
+Therefore memory must be evaluated as an untrusted evidence source until validated.
+
+```mermaid
+flowchart TD
+
+    WM[Working Memory]
+    EM[Episodic Memory]
+    SM[Semantic Memory]
+    PM[Procedural Memory]
+
+    WM --> P[Provenance Validation]
+    EM --> P
+    SM --> P
+    PM --> P
+
+    P --> F[Freshness Validation]
+    F --> C[Context Compatibility]
+    C --> V[Verifier]
+    V --> CTX[Eligible Cognitive Context]
+```
+
+---
+
+# 38. Memory Poisoning Defense
+
+A memory record must not gain authority merely because it has persisted for a long time.
+
+Target invariant:
+
+```text
+Persistence
+≠
+Truth
+
+Frequency
+≠
+Authority
+
+Similarity
+≠
+Mission Relevance
+
+Historical Approval
+≠
+Current Authorization
+```
+
+---
+
+# 39. Model Evaluation Independence
+
+IMPERIAL AGI must evaluate models independently from providers.
+
+A model should be selected based on measurable capability for a bounded role.
+
+```mermaid
+flowchart TD
+
+    MODELS[Candidate Models]
+
+    MODELS --> RE[Reasoning Evaluation]
+    MODELS --> CE[Critique Evaluation]
+    MODELS --> VE[Verification Evaluation]
+    MODELS --> EE[Engineering Evaluation]
+    MODELS --> SE[Safety Evaluation]
+
+    RE --> REG[Model Capability Registry]
+    CE --> REG
+    VE --> REG
+    EE --> REG
+    SE --> REG
+
+    REG --> ROUTER[Governed Model Router]
+```
+
+A model's brand, popularity or benchmark marketing must not itself grant routing priority.
+
+---
+
+# 40. Model Capability Registry
+
+A future model record may conceptually contain:
+
+```text
+Model Identity
+Provider
+Version
+Context Capacity
+Reasoning Score
+Critic Score
+Verifier Score
+Engineering Score
+Latency
+Cost
+Reliability
+Known Failure Modes
+Security Profile
+Data Boundary
+Evaluation Date
+Evidence Digest
+```
+
+Historical evaluations must remain immutable evidence.
+
+New evaluations may supersede routing preference without erasing old results.
+
+---
+
+# 41. Uncertainty Constitution
+
+A strong intelligence must be capable of saying:
+
+```text
+I do not know.
+Evidence is insufficient.
+Sources conflict.
+The result cannot be verified.
+Authorization is missing.
+The state is stale.
+Runtime evidence does not exist.
+```
+
+Uncertainty is not failure.
+
+False certainty is failure.
+
+---
+
+# 42. Confidence Is Not Evidence
+
+```mermaid
+flowchart LR
+
+    CONF[High Model Confidence]
+
+    CONF -. insufficient .-> CLAIM[Claim]
+
+    EVID[Verified Evidence] --> CLAIM
+    PROV[Provenance] --> CLAIM
+    CONTEXT[Valid Context] --> CLAIM
+    VERIFY[Independent Verification] --> CLAIM
+```
+
+Confidence may inform evaluation.
+
+Confidence does not replace evidence.
+
+---
+
+# 43. Truth State Machine
+
+Every important IMPERIAL AGI assertion should eventually support an explicit truth state.
+
+```mermaid
+stateDiagram-v2
+
+    [*] --> UNKNOWN
+
+    UNKNOWN --> CLAIMED
+    CLAIMED --> EVIDENCE_PENDING
+
+    EVIDENCE_PENDING --> VERIFIED
+    EVIDENCE_PENDING --> REJECTED
+    EVIDENCE_PENDING --> CONFLICTED
+
+    VERIFIED --> STALE
+    VERIFIED --> REVOKED
+
+    STALE --> EVIDENCE_PENDING
+    CONFLICTED --> EVIDENCE_PENDING
+
+    REVOKED --> [*]
+```
+
+This avoids silently carrying old assumptions into new missions.
+
+---
+
+# 44. Evidence Classes
+
+Suggested evidence classes:
+
+| Class | Meaning |
+|---|---|
+| E0 | Unsupported claim |
+| E1 | Single-source evidence |
+| E2 | Corroborated evidence |
+| E3 | Reproducible local evidence |
+| E4 | Independently verified evidence |
+| E5 | Runtime evidence |
+| E6 | Production evidence |
+
+A higher evidence class must require actual stronger evidence.
+
+It must never be assigned merely because an agent claims higher confidence.
+
+---
+
+# 45. Evaluation Reproducibility
+
+Every serious benchmark should preserve:
+
+```text
+Benchmark ID
+Benchmark Version
+Mission Definition
+Dataset Version
+Model Version
+Policy Version
+Environment
+Randomness / Seed
+Tool Configuration
+Result
+Evidence
+Verifier
+Timestamp
+Digest
+```
+
+Without reproducibility metadata, benchmark numbers have limited engineering value.
+
+---
+
+# 46. No Benchmark Gaming
+
+IMPERIAL AGI evaluation must defend against optimization for benchmark appearance instead of real capability.
+
+Controls should include:
+
+- hidden evaluation sets;
+- rotating tasks;
+- contamination checks;
+- temporal holdouts;
+- cross-domain evaluation;
+- adversarial variants;
+- unseen repositories;
+- unseen tool configurations;
+- independent evaluators.
+
+---
+
+# 47. Capability Generalization
+
+General intelligence requires more than memorizing task formats.
+
+```mermaid
+flowchart TD
+
+    TRAIN[Known Patterns]
+
+    TRAIN --> TEST1[Unseen Domain]
+    TRAIN --> TEST2[Unseen Repository]
+    TRAIN --> TEST3[Unseen Tool]
+    TRAIN --> TEST4[Unseen Constraint]
+    TRAIN --> TEST5[Unseen Failure Mode]
+
+    TEST1 --> GEN[Generalization Evidence]
+    TEST2 --> GEN
+    TEST3 --> GEN
+    TEST4 --> GEN
+    TEST5 --> GEN
+```
+
+---
+
+# 48. Autonomous Operation Levels
+
+IMPERIAL AGI should not use a binary concept of autonomous / not autonomous.
+
+A possible engineering scale is:
+
+```text
+A0 — Advisory only
+A1 — Bounded reasoning
+A2 — Bounded planning
+A3 — Governed multi-step execution
+A4 — Long-horizon governed execution
+A5 — Federated mission coordination
+```
+
+These are engineering capability levels, not declarations of unrestricted autonomy.
+
+Each higher level requires stronger governance and verification.
+
+---
+
+# 49. Autonomy Does Not Override Governance
+
+```mermaid
+flowchart TD
+
+    CAP[Higher Cognitive Capability]
+
+    CAP --> PLAN[More Complex Planning]
+    CAP --> COORD[More Coordination]
+    CAP --> LONG[Longer Horizon]
+
+    CAP -. does not imply .-> PRIV[Higher Privilege]
+
+    PRIV --> AUTH[Explicit Authorization Required]
+```
+
+---
+
+# 50. Nano Core Agent Evaluation
+
+Every Nano Core Agent class should eventually have its own evaluation profile.
+
+Example:
+
+```text
+NCA Type
+Role
+Required Skills
+Allowed Tools
+Risk Tier
+Reasoning Threshold
+Verification Threshold
+Security Tests
+Domain Tests
+Failure Tests
+Performance Budget
+Certification Status
+```
+
+An NCA must not become eligible for more sensitive missions merely because its underlying model was upgraded.
+
+---
+
+# 51. Million-Agent Reliability Model
+
+A system with one million agents creates different engineering risks from a system with ten agents.
+
+Large-scale evaluation must include:
+
+- scheduler pressure;
+- queue growth;
+- audit throughput;
+- identity lookup;
+- policy evaluation;
+- capability resolution;
+- revocation propagation;
+- cascading failures;
+- retry storms;
+- memory contention;
+- repository isolation;
+- cost runaway;
+- telemetry cardinality.
+
+```mermaid
+flowchart TD
+
+    H[HANTER]
+
+    H --> F1[Federated Control Domain]
+    H --> F2[Federated Control Domain]
+    H --> FN[Federated Control Domain]
+
+    F1 --> Q1[Bounded Queue]
+    F2 --> Q2[Bounded Queue]
+    FN --> QN[Bounded Queue]
+
+    Q1 --> P1[NCA Pool]
+    Q2 --> P2[NCA Pool]
+    QN --> PN[NCA Pool]
+
+    P1 --> R1[Runtime Domains]
+    P2 --> R2[Runtime Domains]
+    PN --> RN[Runtime Domains]
+
+    R1 --> A[Distributed Audit]
+    R2 --> A
+    RN --> A
+```
+
+---
+
+# 52. Scale Invariants
+
+The following properties should hold regardless of agent population:
+
+```text
+1 agent
+1,000 agents
+100,000 agents
+1,000,000+ agents
+```
+
+The architectural invariants remain:
+
+- no implicit authority;
+- repository isolation;
+- identity uniqueness;
+- bounded delegation;
+- bounded queues;
+- revocation;
+- fail-closed authorization;
+- deterministic audit identity;
+- independent Runtime Domains;
+- no global execution bottleneck.
+
+---
+
+# 53. Failure Containment
+
+A failure in one agent must not become failure of the federation.
+
+```mermaid
+flowchart TD
+
+    AGENT[NCA Failure]
+
+    AGENT --> DOMAIN[Runtime Domain Isolation]
+
+    DOMAIN --> STOP[Terminate / Quarantine]
+    DOMAIN --> AUDIT[Preserve Evidence]
+    DOMAIN --> REQUEUE[Governed Reassignment]
+
+    STOP -. no propagation .-> OTHER[Other Domains]
+```
+
+---
+
+# 54. Cognitive Split-Brain Defense
+
+Distributed cognition can produce conflicting conclusions.
+
+The system must not silently accept both.
+
+```mermaid
+flowchart LR
+
+    C1[Cognitive Branch A]
+    C2[Cognitive Branch B]
+
+    C1 --> D1[Decision A]
+    C2 --> D2[Decision B]
+
+    D1 --> COMP[Conflict Detector]
+    D2 --> COMP
+
+    COMP --> VERIFY[Independent Verification]
+
+    VERIFY --> RESOLVE[Resolve / Escalate]
+```
+
+Conflicting decisions must remain visible evidence.
+
+---
+
+# 55. Revocation Testing
+
+Revocation is a first-class capability.
+
+Evaluation must prove that revocation can prevent:
+
+- new execution;
+- stale retries;
+- replay;
+- concurrent resurrection;
+- continued tool access;
+- continued secret use;
+- continued mission admission.
+
+```mermaid
+sequenceDiagram
+
+    participant A as Architect / Authority
+    participant G as Governance
+    participant C as Cognitive Decision
+    participant R as Runtime
+
+    A->>G: Revoke decision
+    G->>C: Mark revoked
+    G->>R: Deny future admission
+    R-->>G: Execution blocked
+
+    C->>R: Retry old decision
+    R-->>C: DENY
+```
+
+---
+
+# 56. Safety Evaluation Is Continuous
+
+Security is not a one-time certification.
+
+A previously safe model can change.
+
+A dependency can change.
+
+A tool can change.
+
+A policy can change.
+
+A memory corpus can change.
+
+A benchmark can become contaminated.
+
+Therefore:
+
+```text
+Verification
+→ Monitoring
+→ Drift Detection
+→ Re-evaluation
+→ Re-certification
+```
+
+is a continuous lifecycle.
+
+---
+
+# 57. Cognitive Drift Detection
+
+Future evaluation should track changes in:
+
+- reasoning style;
+- refusal behavior;
+- error rates;
+- tool behavior;
+- confidence calibration;
+- memory retrieval;
+- policy adherence;
+- latency;
+- cost;
+- security behavior.
+
+A model upgrade should trigger bounded re-evaluation before high-risk missions.
+
+---
+
+# 58. Mission Risk Tiers
+
+A future risk model may distinguish mission classes such as:
+
+```text
+R0 — informational
+R1 — low impact
+R2 — bounded operational
+R3 — sensitive
+R4 — critical
+```
+
+Higher-risk missions require stronger:
+
+- verification;
+- approval;
+- evidence;
+- isolation;
+- monitoring;
+- recovery controls.
+
+---
+
+# 59. Evaluation Gate Architecture
+
+```mermaid
+flowchart LR
+
+    BUILD[Candidate Cognitive Build]
+
+    BUILD --> Q[Quality Gate]
+    Q --> S[Security Gate]
+    S --> R[Reasoning Gate]
+    R --> V[Verification Gate]
+    V --> L[Long-Horizon Gate]
+    L --> G[Governance Gate]
+
+    G --> RESULT{Eligible?}
+
+    RESULT -->|No| BLOCK[Blocked]
+    RESULT -->|Yes| CAND[Candidate Release]
+```
+
+Passing a local evaluation gate does not itself authorize deployment.
+
+---
+
+# 60. Release Truth Model
+
+A release should have separate declarations for:
+
+```text
+Architecture Status
+Specification Status
+Implementation Status
+Testing Status
+Security Review Status
+Runtime Status
+Deployment Status
+Production Status
+```
+
+Example:
+
+```text
+Architecture: PASS
+Implementation: PASS
+Local Testing: PASS
+Runtime: NOT VERIFIED
+Production: NOT VERIFIED
+```
+
+This is a valid result.
+
+There is no requirement to pretend later stages are complete.
+
+---
+
+# 61. Public Benchmark Transparency
+
+Public benchmark results should eventually publish:
+
+- benchmark name;
+- benchmark version;
+- methodology;
+- limitations;
+- model configuration;
+- environment;
+- result;
+- reproducibility instructions;
+- known failure cases.
+
+Private evaluation data may remain protected when publication would weaken security or expose confidential IMPERIAL Core information.
+
+---
+
+# 62. Evidence Before Marketing
+
+IMPERIAL AGI follows the rule:
+
+> **Claims must never outrun evidence.**
+
+Therefore this repository should not use terms such as:
+
+```text
+AGI achieved
+superintelligence achieved
+fully autonomous
+production safe
+unbreakable
+perfectly secure
+```
+
+without independently verifiable evidence appropriate to the claim.
+
+---
+
+# 63. AGI Research Scorecard
+
+A future public scorecard may use a structure such as:
+
+| Domain | Capability | Reliability | Verification | Safety | Status |
+|---|---:|---:|---:|---:|---|
+| Reasoning | TBD | TBD | TBD | TBD | EVALUATION REQUIRED |
+| Planning | TBD | TBD | TBD | TBD | EVALUATION REQUIRED |
+| Memory | TBD | TBD | TBD | TBD | EVALUATION REQUIRED |
+| Engineering | TBD | TBD | TBD | TBD | EVALUATION REQUIRED |
+| Tool Use | TBD | TBD | TBD | TBD | EVALUATION REQUIRED |
+| Multi-Agent | TBD | TBD | TBD | TBD | EVALUATION REQUIRED |
+| Long-Horizon | TBD | TBD | TBD | TBD | EVALUATION REQUIRED |
+| Governance | TBD | TBD | TBD | TBD | EVALUATION REQUIRED |
+
+Unknown values stay unknown.
+
+They are never filled with invented numbers.
+
+---
+
+# 64. Path Toward AGI-Class Intelligence
+
+```mermaid
+flowchart TD
+
+    F[Foundation Cognition]
+
+    F --> V[Independent Verification]
+    V --> M[Governed Memory]
+    M --> P[Long-Horizon Planning]
+    P --> T[Tool Intelligence]
+    T --> MA[Multi-Agent Intelligence]
+    MA --> A[Adaptive Intelligence]
+    A --> G[Generalization]
+    G --> E[AGI-Class Evaluation]
+
+    E --> PROOF[Evidence]
+
+    PROOF --> CLAIM{AGI Claim Justified?}
+
+    CLAIM -->|No| CONTINUE[Continue Research]
+    CLAIM -->|Yes| REVIEW[Independent Scientific Review]
+```
+
+AGI status is therefore an evaluation conclusion, not a repository version number.
+
+---
+
+# 65. Architectural Success Criteria
+
+IMPERIAL AGI succeeds only if increasing intelligence preserves:
+
+1. Architect authority.
+2. Mission integrity.
+3. Evidence integrity.
+4. Independent verification.
+5. Explicit authorization.
+6. Runtime isolation.
+7. Auditability.
+8. Revocability.
+9. Federation.
+10. Truthful engineering status.
+
+---
+
+# 66. Public Research Principle
+
+The public project exists to advance the engineering understanding of governed artificial intelligence.
+
+The guiding question is not only:
+
+> **How intelligent can an artificial system become?**
+
+It is also:
+
+> **How intelligent can it become while remaining verifiable, governable, revocable and architecturally accountable?**
+
+---
+
+# 67. IMPERIAL AGI Research Equation
+
+Conceptually:
+
+```text
+Useful Intelligence
+=
+Reasoning
+× Verification
+× Memory Integrity
+× Generalization
+× Governance
+× Evidence
+```
+
+If one critical factor collapses, practical system intelligence may collapse with it.
+
+---
+
+# 68. Final Evaluation Doctrine
+
+```mermaid
+flowchart LR
+
+    THINK[Reason]
+
+    THINK --> CHALLENGE[Challenge]
+    CHALLENGE --> VERIFY[Verify]
+    VERIFY --> EVIDENCE[Produce Evidence]
+    EVIDENCE --> GOVERN[Govern]
+    GOVERN --> EXECUTE[Execute]
+    EXECUTE --> AUDIT[Prove]
+
+    AUDIT --> LEARN[Learn]
+    LEARN --> THINK
+```
+
+The cycle is continuous.
+
+But learning never silently rewrites authority.
+
+---
+
+## Authorship & Digital Provenance
+
+**Architect & Original Author:** Alexander Romaskevich  
+**Founder • Owner • CEO • Chief Systems Architect — IMPERIAL Core**
+
+IMPERIAL AGI was conceived, architected and developed under the architectural direction of Alexander Romaskevich as part of the long-term IMPERIAL Core engineering program.
+
+**Canonical authorship:** Alexander Romaskevich  
+**Project:** IMPERIAL AGI  
+**Parent Architecture:** IMPERIAL Core  
+**Repository:** IMPERIAL-AGI  
+**Year:** 2026
+
+Copyright © 2026 Alexander Romaskevich.
+
+---
+
+> **Maximum Intelligence. Minimum Implicit Authority.**
+
+> **Measure. Challenge. Verify. Govern. Scale. Prove.**
+
+**IMPERIAL AGI — Architected by Alexander Romaskevich.**
