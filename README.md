@@ -4457,3 +4457,1246 @@ Copyright © 2026 Alexander Romaskevich.
 > **Think. Challenge. Verify. Authorize. Execute. Audit. Learn. Scale.**
 
 **IMPERIAL AGI — Architected by Alexander Romaskevich.**
+---
+
+# 154. Autonomous Research Intelligence
+
+IMPERIAL AGI is intended to evolve beyond reactive question answering into a governed research intelligence capable of investigating complex problems over long time horizons.
+
+The research loop is:
+
+```mermaid
+flowchart LR
+
+    Q[Research Question]
+    Q --> D[Decompose]
+    D --> R[Research]
+    R --> H[Generate Hypotheses]
+    H --> C[Challenge]
+    C --> E[Design Evaluation]
+    E --> X[Bounded Experiment]
+    X --> V[Verify Evidence]
+    V --> K[Knowledge Update]
+    K --> N[Next Research Question]
+    N --> D
+```
+
+Research autonomy does not imply operational autonomy.
+
+---
+
+# 155. Scientific Reasoning Loop
+
+A strong research intelligence should distinguish observation from interpretation.
+
+```text
+Observation
+↓
+Evidence
+↓
+Hypothesis
+↓
+Prediction
+↓
+Experiment
+↓
+Result
+↓
+Independent Verification
+↓
+Conclusion
+```
+
+A conclusion that cannot be supported remains provisional.
+
+---
+
+# 156. Hypothesis Lifecycle
+
+```mermaid
+stateDiagram-v2
+
+    [*] --> PROPOSED
+
+    PROPOSED --> TESTABLE
+    PROPOSED --> REJECTED
+
+    TESTABLE --> EVALUATING
+
+    EVALUATING --> SUPPORTED
+    EVALUATING --> REFUTED
+    EVALUATING --> INCONCLUSIVE
+    EVALUATING --> CONFLICTED
+
+    SUPPORTED --> REPLICATING
+    REPLICATING --> VERIFIED
+    REPLICATING --> REFUTED
+
+    INCONCLUSIVE --> TESTABLE
+    CONFLICTED --> TESTABLE
+
+    VERIFIED --> SUPERSEDED
+```
+
+A supported hypothesis is not automatically scientific truth.
+
+---
+
+# 157. Research Evidence Graph
+
+```mermaid
+flowchart TD
+
+    QUESTION[Research Question]
+
+    QUESTION --> H1[Hypothesis A]
+    QUESTION --> H2[Hypothesis B]
+    QUESTION --> H3[Hypothesis C]
+
+    H1 --> P1[Prediction]
+    H2 --> P2[Prediction]
+    H3 --> P3[Prediction]
+
+    P1 --> E1[Experiment]
+    P2 --> E2[Experiment]
+    P3 --> E3[Experiment]
+
+    E1 --> R1[Evidence]
+    E2 --> R2[Evidence]
+    E3 --> R3[Evidence]
+
+    R1 --> V[Independent Verification]
+    R2 --> V
+    R3 --> V
+
+    V --> CONCLUSION[Evidence-Bound Conclusion]
+```
+
+Competing explanations should remain visible until evidence resolves them.
+
+---
+
+# 158. Research Provenance
+
+Every significant research conclusion should preserve:
+
+```text
+Research Question
+Hypothesis
+Sources
+Source Versions
+Observations
+Assumptions
+Experiment Definition
+Environment
+Inputs
+Outputs
+Model Identity
+Tool Identity
+Critic Result
+Verifier Result
+Uncertainty
+Evidence Digest
+Timestamp
+```
+
+This makes research reproducible and challengeable.
+
+---
+
+# 159. Source Reliability
+
+Not every information source deserves equal trust.
+
+```mermaid
+flowchart LR
+
+    S[Candidate Source]
+
+    S --> ID[Identity]
+    ID --> AUTH[Authority]
+    AUTH --> DATE[Freshness]
+    DATE --> CORR[Corroboration]
+    CORR --> CONFLICT[Conflict Check]
+    CONFLICT --> SCORE[Evidence Eligibility]
+```
+
+Source popularity must not substitute for source quality.
+
+---
+
+# 160. Independent Source Corroboration
+
+High-impact conclusions should prefer independent evidence.
+
+```mermaid
+flowchart TD
+
+    CLAIM[Candidate Claim]
+
+    S1[Independent Source A] --> CLAIM
+    S2[Independent Source B] --> CLAIM
+    S3[Experimental Evidence] --> CLAIM
+
+    CLAIM --> V[Verifier]
+
+    V --> RESULT{Sufficient Evidence?}
+
+    RESULT -->|Yes| SUPPORTED[Supported]
+    RESULT -->|No| OPEN[Remain Open]
+```
+
+Multiple copies of the same originating claim do not constitute independent corroboration.
+
+---
+
+# 161. Research Conflict Detection
+
+```mermaid
+flowchart LR
+
+    A[Evidence A]
+    B[Evidence B]
+
+    A --> C[Conflict Detector]
+    B --> C
+
+    C --> CAUSE[Analyze Cause]
+
+    CAUSE --> VERSION[Version Difference]
+    CAUSE --> METHOD[Method Difference]
+    CAUSE --> SOURCE[Source Reliability]
+    CAUSE --> UNKNOWN[Unresolved]
+
+    UNKNOWN --> ESC[Escalate / Further Research]
+```
+
+The system must be capable of preserving uncertainty rather than manufacturing agreement.
+
+---
+
+# 162. Experimental Boundary
+
+Research may require experiments.
+
+Experiments must be bounded by their risk.
+
+```mermaid
+flowchart TD
+
+    EXP[Proposed Experiment]
+
+    EXP --> RISK[Risk Classification]
+
+    RISK --> SIM[Simulation]
+    RISK --> LOCAL[Local Sandbox]
+    RISK --> EXT[External Effect]
+
+    SIM --> RUN[Bounded Execution]
+    LOCAL --> RUN
+
+    EXT --> GOV[Governance / Approval]
+    GOV --> RUN
+
+    RUN --> EVID[Experiment Evidence]
+```
+
+External effects remain governed even when they are performed for research.
+
+---
+
+# 163. Simulation First
+
+Where practical, dangerous or expensive hypotheses should be evaluated first through lower-risk methods.
+
+```text
+Reasoning
+↓
+Static Analysis
+↓
+Simulation
+↓
+Sandbox
+↓
+Controlled Runtime
+↓
+Authorized External Experiment
+```
+
+Higher-impact execution requires stronger evidence and governance.
+
+---
+
+# 164. Counterfactual Intelligence
+
+IMPERIAL AGI should reason not only about what happened but what might happen under alternative actions.
+
+```mermaid
+flowchart TD
+
+    STATE[Current State]
+
+    STATE --> A[Action A]
+    STATE --> B[Action B]
+    STATE --> C[Action C]
+
+    A --> OA[Predicted Outcome A]
+    B --> OB[Predicted Outcome B]
+    C --> OC[Predicted Outcome C]
+
+    OA --> COMP[Compare]
+    OB --> COMP
+    OC --> COMP
+
+    COMP --> REC[Recommendation]
+```
+
+Predictions remain hypotheses until validated.
+
+---
+
+# 165. World Model
+
+Long-horizon reasoning benefits from a structured representation of the environment.
+
+The target World Model may represent:
+
+```text
+Entities
+Relationships
+State
+Dependencies
+Constraints
+Capabilities
+Resources
+Risks
+Events
+Evidence
+Uncertainty
+Time
+```
+
+---
+
+# 166. World Model Architecture
+
+```mermaid
+flowchart TD
+
+    KG[Knowledge Graph]
+    CM[Codebase Memory]
+    OBS[Runtime Observations]
+    EXT[Verified External Evidence]
+    HIST[Historical Evidence]
+
+    KG --> WM[World Model]
+    CM --> WM
+    OBS --> WM
+    EXT --> WM
+    HIST --> WM
+
+    WM --> PLAN[Planning]
+    WM --> SIM[Simulation]
+    WM --> RISK[Risk Analysis]
+    WM --> AGI[Cognition]
+```
+
+The World Model is an inference structure.
+
+It is not absolute truth.
+
+---
+
+# 167. Temporal World State
+
+State changes over time.
+
+```text
+State(t0)
+→ Event
+→ State(t1)
+→ Event
+→ State(t2)
+```
+
+A fact valid at `t0` may be invalid at `t2`.
+
+Therefore important state should preserve temporal provenance.
+
+---
+
+# 168. Prediction vs Observation
+
+```mermaid
+flowchart LR
+
+    MODEL[World Model]
+
+    MODEL --> PRED[Prediction]
+
+    REAL[Observed Result] --> COMPARE[Compare]
+    PRED --> COMPARE
+
+    COMPARE --> ERROR[Prediction Error]
+    ERROR --> LEARN[Model Improvement]
+```
+
+Prediction error is valuable evidence.
+
+It should not be hidden.
+
+---
+
+# 169. Research Memory
+
+Research memory should preserve:
+
+```text
+Questions asked
+Hypotheses tested
+Experiments performed
+Failed approaches
+Contradictions found
+Sources evaluated
+Results reproduced
+Unknowns remaining
+```
+
+Failed research paths are valuable when their provenance is preserved.
+
+---
+
+# 170. Unknowns Registry
+
+A mature intelligence must maintain explicit unknowns.
+
+```mermaid
+flowchart TD
+
+    UNKNOWN[Known Unknown]
+
+    UNKNOWN --> PRIORITY[Priority]
+    PRIORITY --> RESEARCH[Research Mission]
+    RESEARCH --> EVIDENCE[New Evidence]
+
+    EVIDENCE --> STATE{Resolved?}
+
+    STATE -->|Yes| KNOWLEDGE[Verified Knowledge]
+    STATE -->|No| UNKNOWN
+```
+
+This prevents uncertainty from disappearing merely because a conversation ended.
+
+---
+
+# 171. Question Generation
+
+Advanced research intelligence should be capable of identifying missing knowledge.
+
+Potential triggers include:
+
+```text
+Evidence conflict
+Low confidence
+Missing dependency
+Unexpected runtime result
+Unexplained benchmark regression
+Architecture inconsistency
+Unverified assumption
+Prediction error
+Security anomaly
+```
+
+These can generate candidate research questions.
+
+---
+
+# 172. Research Priority
+
+Not every unknown deserves immediate computation.
+
+Priority may depend on:
+
+```text
+Mission relevance
+Potential impact
+Risk
+Uncertainty
+Expected information gain
+Cost
+Time
+Dependency importance
+Architect priority
+```
+
+---
+
+# 173. Information Gain
+
+A research action should ideally reduce meaningful uncertainty.
+
+```mermaid
+flowchart LR
+
+    U[Current Uncertainty]
+
+    U --> Q[Candidate Question]
+    Q --> E[Experiment / Research]
+    E --> RESULT[Evidence]
+    RESULT --> U2[Reduced or Refined Uncertainty]
+```
+
+Research that produces large amounts of information but little useful knowledge should not dominate resources.
+
+---
+
+# 174. Self-Evaluation
+
+IMPERIAL AGI should evaluate its own cognitive performance.
+
+```mermaid
+flowchart TD
+
+    TASK[Completed Cognitive Task]
+
+    TASK --> RESULT[Result]
+    TASK --> PRED[Expected Performance]
+
+    RESULT --> EVAL[Evaluation]
+    PRED --> EVAL
+
+    EVAL --> ERROR[Error Analysis]
+    ERROR --> IMPROVE[Improvement Proposal]
+```
+
+Self-evaluation produces proposals.
+
+It does not authorize self-modification.
+
+---
+
+# 175. Cognitive Failure Taxonomy
+
+Failure analysis should distinguish categories such as:
+
+```text
+Reasoning Failure
+Context Failure
+Memory Failure
+Retrieval Failure
+Planning Failure
+Tool Failure
+Model Failure
+Verification Failure
+Policy Failure
+Execution Failure
+Evidence Failure
+Coordination Failure
+```
+
+Different failures require different remediation.
+
+---
+
+# 176. Root Cause Before Self-Modification
+
+A poor result should not automatically trigger prompt or code modification.
+
+```mermaid
+flowchart TD
+
+    FAIL[Observed Failure]
+
+    FAIL --> RCA[Root Cause Analysis]
+
+    RCA --> DATA[Bad Evidence]
+    RCA --> MODEL[Model Limitation]
+    RCA --> PROMPT[Reasoning Procedure]
+    RCA --> TOOL[Tool Failure]
+    RCA --> ARCH[Architecture]
+    RCA --> POLICY[Policy]
+    RCA --> UNKNOWN[Unknown]
+
+    PROMPT --> PROPOSAL[Improvement Proposal]
+    ARCH --> PROPOSAL
+
+    PROPOSAL --> TEST[Evaluation]
+```
+
+Modification without root-cause evidence can make systems worse.
+
+---
+
+# 177. Governed Self-Improvement
+
+IMPERIAL AGI may generate candidate improvements.
+
+It may not silently install them into its own trusted runtime.
+
+```mermaid
+flowchart LR
+
+    AGI[Current IMPERIAL AGI]
+
+    AGI --> OBS[Observe Performance]
+    OBS --> IDEA[Improvement Proposal]
+    IDEA --> BUILD[Candidate Build]
+    BUILD --> TEST[Evaluation]
+    TEST --> RED[Adversarial Review]
+    RED --> VERIFY[Independent Verification]
+
+    VERIFY --> GOV[Governed Adoption]
+
+    GOV --> NEXT[Next Version]
+```
+
+---
+
+# 178. Self-Improvement Authority Boundary
+
+The system may propose changes to:
+
+```text
+Reasoning strategies
+Prompt structures
+Context compilation
+Memory retrieval
+Planning algorithms
+Model routing
+Evaluation procedures
+Tool selection
+Performance optimization
+```
+
+The system must not independently remove or weaken:
+
+```text
+Architect Authority
+AI Passport
+EIS Boundaries
+Guardian Core
+Approval Gateway
+Runtime Isolation
+Audit Requirements
+Public/Private Boundary
+Revocation
+Evidence Requirements
+```
+
+---
+
+# 179. No Self-Granted Privilege
+
+```mermaid
+flowchart LR
+
+    AGI[IMPERIAL AGI]
+
+    AGI --> IMP[Improvement Proposal]
+
+    IMP -. cannot grant .-> PRIV[New Privilege]
+
+    PRIV --> AUTH[Explicit Authority Required]
+```
+
+A self-improvement mechanism that can increase its own authority without independent authorization violates the architecture.
+
+---
+
+# 180. Versioned Intelligence
+
+Every accepted cognitive evolution should produce a new identifiable generation.
+
+```text
+Version
+Source Identity
+Configuration
+Evaluation Evidence
+Security Evidence
+Known Limitations
+Compatibility
+Migration Evidence
+```
+
+This enables rollback and comparison.
+
+---
+
+# 181. Candidate vs Trusted Version
+
+```mermaid
+stateDiagram-v2
+
+    [*] --> CANDIDATE
+
+    CANDIDATE --> TESTING
+    TESTING --> REJECTED
+    TESTING --> VERIFIED
+
+    VERIFIED --> APPROVED
+    APPROVED --> ACTIVE
+
+    ACTIVE --> SUPERSEDED
+    ACTIVE --> REVOKED
+
+    SUPERSEDED --> [*]
+    REVOKED --> [*]
+```
+
+A candidate improvement is not the active trusted version.
+
+---
+
+# 182. Regression Memory
+
+Every confirmed defect should ideally become durable regression knowledge.
+
+```mermaid
+flowchart LR
+
+    BUG[Confirmed Failure]
+
+    BUG --> TEST[Regression Test]
+    TEST --> FIX[Remediation]
+    FIX --> VERIFY[Verification]
+    VERIFY --> REG[Regression Registry]
+
+    REG --> FUTURE[Future Releases]
+```
+
+Future generations should be tested against historical failures.
+
+---
+
+# 183. Evolution Without Forgetting
+
+A stronger version must not casually lose previously verified capabilities.
+
+Evaluation should therefore include:
+
+```text
+New Capability Tests
++
+Historical Regression Tests
++
+Security Regression Tests
++
+Governance Regression Tests
++
+Performance Regression Tests
+```
+
+---
+
+# 184. Cognitive Diversity
+
+Independent reasoning benefits from diversity.
+
+Future configurations may intentionally use different:
+
+```text
+Models
+Reasoning strategies
+Context views
+Critic strategies
+Verification methods
+```
+
+to reduce correlated failure.
+
+---
+
+# 185. Correlated Failure Defense
+
+```mermaid
+flowchart TD
+
+    PROBLEM[Problem]
+
+    PROBLEM --> R1[Reasoner A]
+    PROBLEM --> R2[Reasoner B]
+
+    R1 --> V1[Verifier A]
+    R2 --> V2[Verifier B]
+
+    V1 --> META[Meta Verification]
+    V2 --> META
+
+    META --> RESULT[Evidence-Bound Result]
+```
+
+Two identical systems making the same mistake are not strong independent confirmation.
+
+---
+
+# 186. Model Council Governance
+
+A multi-model council may generate competing recommendations.
+
+```mermaid
+flowchart TD
+
+    M[Mission]
+
+    M --> A[Model A]
+    M --> B[Model B]
+    M --> C[Model C]
+
+    A --> REC1[Recommendation A]
+    B --> REC2[Recommendation B]
+    C --> REC3[Recommendation C]
+
+    REC1 --> CRITIC[Independent Critic]
+    REC2 --> CRITIC
+    REC3 --> CRITIC
+
+    CRITIC --> VERIFY[Verifier]
+    VERIFY --> FINAL[Evidence-Bound Recommendation]
+```
+
+Voting alone is insufficient.
+
+Evidence matters more than majority.
+
+---
+
+# 187. Minority Report Preservation
+
+If one credible verifier disagrees with the majority, the disagreement should remain visible.
+
+```text
+Consensus
+≠
+Truth
+```
+
+Minority evidence may reveal correlated failure.
+
+---
+
+# 188. Scientific Reproducibility
+
+An experiment should be reproducible where technically possible.
+
+```mermaid
+sequenceDiagram
+
+    participant R as Researcher
+    participant E as Experiment
+    participant V as Independent Verifier
+
+    R->>E: Experiment definition
+    E-->>R: Result + evidence
+    R->>V: Definition + evidence
+    V->>E: Reproduce
+    E-->>V: Independent result
+    V-->>R: Reproduction status
+```
+
+---
+
+# 189. Negative Results
+
+Negative results should not be discarded merely because they are less impressive.
+
+Examples:
+
+```text
+Hypothesis refuted
+Benchmark regressed
+Model failed
+Tool unreliable
+Memory poisoned
+Plan unstable
+Experiment inconclusive
+```
+
+These are valuable engineering evidence.
+
+---
+
+# 190. Research Integrity
+
+IMPERIAL AGI should preserve a strict distinction between:
+
+```text
+Observed
+Inferred
+Predicted
+Simulated
+Claimed
+Verified
+```
+
+These states must not be silently collapsed.
+
+---
+
+# 191. Scientific Truth Boundary
+
+```mermaid
+flowchart LR
+
+    OBS[Observation]
+
+    OBS --> H[Hypothesis]
+    H --> TEST[Test]
+    TEST --> RESULT[Result]
+    RESULT --> VERIFY[Verification]
+    VERIFY --> CLAIM[Supported Claim]
+
+    CLAIM -. not automatically .-> TRUTH[Absolute Truth]
+```
+
+Scientific knowledge remains challengeable by stronger evidence.
+
+---
+
+# 192. Autonomous Research Budget
+
+Research autonomy must remain resource bounded.
+
+Potential controls include:
+
+```text
+Maximum research duration
+Maximum model tokens
+Maximum experiments
+Maximum parallel branches
+Maximum external calls
+Maximum compute
+Maximum financial cost
+Maximum storage
+```
+
+---
+
+# 193. Research Branch Control
+
+```mermaid
+flowchart TD
+
+    QUESTION[Research Question]
+
+    QUESTION --> B1[Branch A]
+    QUESTION --> B2[Branch B]
+    QUESTION --> B3[Branch C]
+
+    B1 --> SCORE[Information Gain Evaluation]
+    B2 --> SCORE
+    B3 --> SCORE
+
+    SCORE --> KEEP[Continue Valuable Branches]
+    SCORE --> STOP[Terminate Low-Value Branches]
+```
+
+This prevents uncontrolled recursive research expansion.
+
+---
+
+# 194. Recursive Cognition Boundary
+
+Recursive reasoning can improve difficult problem solving.
+
+It can also create runaway computation.
+
+Therefore recursive cognition requires:
+
+```text
+Depth Limit
+Time Limit
+Token Limit
+Branch Limit
+Evidence Threshold
+Termination Condition
+```
+
+---
+
+# 195. Research Stop Conditions
+
+A research mission should be capable of terminating when:
+
+```text
+Objective achieved
+Evidence threshold reached
+Budget exhausted
+Deadline reached
+Risk increased
+Required authority unavailable
+No meaningful information gain remains
+Architect revokes mission
+```
+
+---
+
+# 196. Discovery to Engineering
+
+Research becomes valuable when verified discoveries can become engineering proposals.
+
+```mermaid
+flowchart LR
+
+    DISC[Discovery]
+
+    DISC --> VERIFY[Scientific Verification]
+    VERIFY --> SPEC[Engineering Specification]
+    SPEC --> BUILD[Candidate Implementation]
+    BUILD --> TEST[Testing]
+    TEST --> SECURITY[Security Review]
+    SECURITY --> ADOPT[Governed Adoption]
+```
+
+Research evidence and implementation evidence remain distinct.
+
+---
+
+# 197. Research to NCA Evolution
+
+Specialized discoveries may eventually improve Nano Core Agent classes.
+
+```mermaid
+flowchart TD
+
+    RESEARCH[Verified Research]
+
+    RESEARCH --> SKILL[Candidate Skill]
+    RESEARCH --> MODEL[Model Routing Update]
+    RESEARCH --> PROC[Procedure]
+    RESEARCH --> EVAL[New Evaluation]
+
+    SKILL --> TEST[Certification]
+    MODEL --> TEST
+    PROC --> TEST
+    EVAL --> TEST
+
+    TEST --> NCA[Next NCA Generation]
+```
+
+No research result automatically changes a million-agent population.
+
+---
+
+# 198. Safe Fleet Evolution
+
+At very large scale, upgrades should be gradual.
+
+```mermaid
+flowchart LR
+
+    NEW[Candidate NCA Generation]
+
+    NEW --> LAB[Lab Evaluation]
+    LAB --> CANARY[Canary Population]
+    CANARY --> LIMITED[Limited Deployment]
+    LIMITED --> SCALE[Progressive Scale]
+    SCALE --> FLEET[Eligible Fleet]
+
+    CANARY -->|Regression| ROLLBACK[Rollback]
+    LIMITED -->|Regression| ROLLBACK
+    SCALE -->|Regression| ROLLBACK
+```
+
+---
+
+# 199. Intelligence Evolution Loop
+
+```mermaid
+flowchart LR
+
+    OBSERVE[Observe]
+
+    OBSERVE --> QUESTION[Question]
+    QUESTION --> RESEARCH[Research]
+    RESEARCH --> HYPOTHESIS[Hypothesize]
+    HYPOTHESIS --> EXPERIMENT[Experiment]
+    EXPERIMENT --> VERIFY[Verify]
+    VERIFY --> LEARN[Learn]
+    LEARN --> PROPOSE[Propose Improvement]
+    PROPOSE --> TEST[Test]
+    TEST --> GOVERN[Govern]
+    GOVERN --> EVOLVE[Evolve]
+
+    EVOLVE --> OBSERVE
+```
+
+The loop may continue indefinitely.
+
+Authority remains external to the loop.
+
+---
+
+# 200. IMPERIAL AGI Cognitive Evolution Architecture
+
+```mermaid
+flowchart TB
+
+    ARCH["Architect<br/>Alexander Romaskevich"]
+
+    ARCH --> H["HANTER<br/>Sovereign Executive Intelligence"]
+
+    H --> AGI["IMPERIAL AGI"]
+
+    AGI --> WORLD["World Model"]
+    AGI --> RESEARCH["Research Engine"]
+    AGI --> MEMORY["Evidence-Bound Memory"]
+
+    WORLD --> R["Reasoner"]
+    RESEARCH --> R
+    MEMORY --> R
+
+    R --> C["Critic"]
+    C --> V["Verifier"]
+
+    V --> KNOW["Verified Knowledge"]
+    KNOW --> IMP["Improvement Proposals"]
+
+    IMP --> EVAL["Evaluation & Adversarial Testing"]
+    EVAL --> GOV["Governed Adoption"]
+
+    GOV --> NEXT["Next Cognitive Generation"]
+
+    NEXT --> AGI
+
+    GOV -. cannot supersede .-> ARCH
+```
+
+---
+
+# 201. The Self-Improvement Invariant
+
+The defining invariant is:
+
+> **IMPERIAL AGI may become better at thinking without becoming independently entitled to decide what authority it possesses.**
+
+This separates cognitive evolution from privilege escalation.
+
+---
+
+# 202. Research Intelligence Target
+
+The long-term objective is an intelligence capable of:
+
+```text
+Finding what it does not know
+↓
+Forming competing hypotheses
+↓
+Designing bounded tests
+↓
+Gathering evidence
+↓
+Detecting contradictions
+↓
+Reproducing results
+↓
+Updating its world model
+↓
+Proposing improvements
+↓
+Testing those improvements
+↓
+Preserving regressions
+↓
+Repeating the cycle
+```
+
+while remaining governed.
+
+---
+
+# 203. Beyond Static Intelligence
+
+A static model answers using capabilities frozen at training time.
+
+The long-term IMPERIAL AGI architecture instead aims for a governed system that can continuously acquire **verified engineering knowledge** without silently retraining authority.
+
+```text
+Static Model
++
+Persistent Evidence
++
+Research
++
+Verification
++
+World Model
++
+Governed Evolution
+=
+Long-Horizon Adaptive Intelligence
+```
+
+This is an architectural objective, not a current production claim.
+
+---
+
+# 204. Final Research Doctrine
+
+```mermaid
+flowchart LR
+
+    ASK[Ask]
+
+    ASK --> THINK[Reason]
+    THINK --> DOUBT[Challenge]
+    DOUBT --> TEST[Test]
+    TEST --> VERIFY[Verify]
+    VERIFY --> LEARN[Learn]
+    LEARN --> IMPROVE[Propose Improvement]
+    IMPROVE --> GOVERN[Govern]
+    GOVERN --> EVOLVE[Evolve]
+    EVOLVE --> ASK
+```
+
+At every stage:
+
+```text
+Knowledge
+≠
+Authority
+
+Intelligence
+≠
+Privilege
+
+Self-Improvement
+≠
+Self-Authorization
+```
+
+---
+
+## Research & Cognitive Evolution Truth Boundary
+
+This section defines the architectural direction for autonomous research, world modelling, scientific reasoning and governed self-improvement.
+
+It does not claim unrestricted autonomous research, autonomous self-modification, AGI achievement, runtime deployment or production operation.
+
+Architecture, implementation, testing, runtime evidence and production evidence remain separate engineering states.
+
+---
+
+## Research Authorship & Digital Provenance
+
+**Architect & Original Author:** Alexander Romaskevich  
+**Founder • Owner • CEO • Chief Systems Architect — IMPERIAL Core**
+
+The Autonomous Research Intelligence, World Model, Scientific Reasoning, Unknowns Registry, Governed Self-Improvement and Cognitive Evolution architecture described here form part of the original IMPERIAL AGI architectural program under the direction of Alexander Romaskevich.
+
+**Canonical authorship:** Alexander Romaskevich  
+**Architecture:** IMPERIAL Core  
+**Component:** IMPERIAL AGI  
+**Executive Intelligence:** HANTER  
+**Repository:** IMPERIAL-AGI  
+**Year:** 2026
+
+Copyright © 2026 Alexander Romaskevich.
+
+---
+
+> **Discover what is unknown. Challenge what appears known. Prove what can be proved.**
+
+> **Learn continuously. Improve deliberately. Never self-authorize.**
+
+**IMPERIAL AGI — Architected by Alexander Romaskevich.**
