@@ -5700,3 +5700,2011 @@ Copyright © 2026 Alexander Romaskevich.
 > **Learn continuously. Improve deliberately. Never self-authorize.**
 
 **IMPERIAL AGI — Architected by Alexander Romaskevich.**
+---
+
+# 205. Collective Intelligence
+
+A large population of artificial agents does not automatically create collective intelligence.
+
+Without architecture, additional agents can create:
+
+```text
+More communication
+More duplicated work
+More disagreement
+More cost
+More attack surface
+More coordination failure
+```
+
+The objective of IMPERIAL Core is therefore not maximum agent count.
+
+The objective is:
+
+> **Maximum useful intelligence per governed unit of coordination.**
+
+---
+
+# 206. From Individual Intelligence to Collective Intelligence
+
+```mermaid
+flowchart LR
+
+    I[Individual Intelligence]
+    I --> S[Specialization]
+    S --> T[Professional Teams]
+    T --> O[Digital Organizations]
+    O --> F[Federated Organizations]
+    F --> CI[Collective Intelligence]
+```
+
+Collective capability should emerge from structured specialization and evidence exchange rather than unrestricted communication.
+
+---
+
+# 207. Digital Organization Model
+
+A digital organization is a bounded organizational structure containing specialized artificial roles.
+
+```mermaid
+flowchart TD
+
+    ORG[Digital Organization]
+
+    ORG --> EXEC[Executive Function]
+    ORG --> ENG[Engineering]
+    ORG --> SEC[Security]
+    ORG --> RES[Research]
+    ORG --> VER[Verification]
+    ORG --> OPS[Operations]
+    ORG --> DATA[Data]
+    ORG --> FIN[Financial Analysis]
+
+    ENG --> N1[NCA Pools]
+    SEC --> N2[NCA Pools]
+    RES --> N3[NCA Pools]
+    VER --> N4[NCA Pools]
+    OPS --> N5[NCA Pools]
+```
+
+Different organizations may use different structures.
+
+IMPERIAL Core does not require one universal organizational chart.
+
+---
+
+# 208. Organizational Federation
+
+```mermaid
+flowchart TB
+
+    ARCH[Architect]
+
+    ARCH --> H[HANTER]
+
+    H --> O1[Organization A]
+    H --> O2[Organization B]
+    H --> O3[Organization C]
+    H --> ON[Organization N]
+
+    O1 --> T1[Teams]
+    O2 --> T2[Teams]
+    O3 --> T3[Teams]
+    ON --> TN[Teams]
+
+    T1 --> N1[NCA Pools]
+    T2 --> N2[NCA Pools]
+    T3 --> N3[NCA Pools]
+    TN --> NN[NCA Pools]
+```
+
+Organizations remain federated.
+
+They are not collapsed into one global execution process.
+
+---
+
+# 209. Organizational Identity
+
+A digital organization should eventually have a deterministic identity.
+
+Conceptually:
+
+```text
+Organization ID
+Organization Type
+Parent Authority
+Mission Domains
+Classification
+Capability Boundaries
+Resource Boundaries
+Data Boundaries
+Repository Boundaries
+Runtime Domains
+NCA Population
+Audit Namespace
+Lifecycle State
+```
+
+---
+
+# 210. Dynamic Organizational Structure
+
+Organizations may be created for different purposes.
+
+Examples include:
+
+```text
+Permanent Organization
+Mission Organization
+Research Organization
+Engineering Organization
+Incident Organization
+Temporary Task Force
+Verification Organization
+Simulation Organization
+```
+
+A temporary organization should be capable of disappearing after its mission without destroying required evidence.
+
+---
+
+# 211. Organization Lifecycle
+
+```mermaid
+stateDiagram-v2
+
+    [*] --> PROPOSED
+    PROPOSED --> AUTHORIZED
+    AUTHORIZED --> PROVISIONING
+    PROVISIONING --> ACTIVE
+
+    ACTIVE --> SUSPENDED
+    SUSPENDED --> ACTIVE
+
+    ACTIVE --> COMPLETED
+    ACTIVE --> QUARANTINED
+    ACTIVE --> REVOKED
+
+    QUARANTINED --> REVIEW
+    REVIEW --> ACTIVE
+    REVIEW --> REVOKED
+
+    COMPLETED --> ARCHIVED
+    REVOKED --> ARCHIVED
+
+    ARCHIVED --> [*]
+```
+
+---
+
+# 212. Organization Creation Does Not Create Authority
+
+Creating a new organization does not create new global privilege.
+
+```text
+Organization Authority
+⊆
+Delegated Parent Authority
+```
+
+The same monotonic authority principle applies at every level.
+
+---
+
+# 213. Recursive Federation
+
+The architecture can support recursive organizational decomposition.
+
+```mermaid
+flowchart TD
+
+    FED[Federation]
+
+    FED --> ORG[Organization]
+
+    ORG --> DIV[Division]
+
+    DIV --> TEAM[Professional Team]
+
+    TEAM --> CELL[Mission Cell]
+
+    CELL --> NCA[Nano Core Agents]
+```
+
+Each layer receives narrower bounded authority.
+
+---
+
+# 214. Professional Artificial Teams
+
+A team is not simply a collection of identical models.
+
+A professional team may contain distinct roles such as:
+
+```text
+Lead
+Planner
+Researcher
+Builder
+Critic
+Verifier
+Security Reviewer
+Evidence Custodian
+```
+
+The exact roles depend on the mission.
+
+---
+
+# 215. Team Cognitive Pattern
+
+```mermaid
+flowchart LR
+
+    M[Mission]
+
+    M --> P[Planner]
+    P --> R[Researcher]
+    R --> B[Builder]
+
+    B --> C[Critic]
+    C --> V[Verifier]
+
+    V --> E[Evidence Custodian]
+    E --> RESULT[Verified Team Result]
+```
+
+The architecture does not require every task to use every role.
+
+---
+
+# 216. Separation of Duties
+
+Sensitive missions should avoid one agent controlling the complete lifecycle.
+
+```mermaid
+flowchart LR
+
+    PLAN[Plan]
+
+    PLAN --> BUILD[Build]
+    BUILD --> REVIEW[Independent Review]
+    REVIEW --> VERIFY[Independent Verification]
+    VERIFY --> APPROVE[Governed Approval]
+```
+
+The same NCA should not automatically become:
+
+```text
+Author
+Reviewer
+Verifier
+Approver
+Auditor
+```
+
+for high-impact work.
+
+---
+
+# 217. Dynamic Team Formation
+
+Teams can be assembled from capability requirements.
+
+```mermaid
+flowchart TD
+
+    M[Mission]
+
+    M --> REQ[Capability Requirements]
+
+    REQ --> DISC[Capability Discovery]
+
+    DISC --> A[Candidate Agent A]
+    DISC --> B[Candidate Agent B]
+    DISC --> C[Candidate Agent C]
+    DISC --> N[Candidate Agent N]
+
+    A --> SELECT[Team Formation]
+    B --> SELECT
+    C --> SELECT
+    N --> SELECT
+
+    SELECT --> TEAM[Mission Team]
+```
+
+---
+
+# 218. Team Formation Constraints
+
+Selection may consider:
+
+```text
+AI Passport Eligibility
+Professional Role
+Required EIS
+Mission Classification
+Runtime Eligibility
+Current Load
+Cost
+Latency
+Reliability
+Evaluation History
+Conflict of Interest
+Separation of Duties
+```
+
+Agent selection must not be based only on model intelligence.
+
+---
+
+# 219. Capability Marketplace
+
+At very large scale, capabilities can be discovered through a governed internal capability market.
+
+This is not necessarily a financial marketplace.
+
+It is a discovery mechanism.
+
+```mermaid
+flowchart LR
+
+    NEED[Capability Need]
+
+    NEED --> REG[Capability Registry]
+
+    REG --> CAND[Eligible Candidates]
+
+    CAND --> SCORE[Bounded Selection]
+
+    SCORE --> ASSIGN[Mission Assignment]
+```
+
+---
+
+# 220. Capability Supply and Demand
+
+The federation may observe:
+
+```text
+Demand:
+    missions requiring capability X
+
+Supply:
+    eligible NCA capacity providing capability X
+```
+
+This enables capacity planning without granting agents independent economic authority.
+
+---
+
+# 221. Agent Reputation
+
+Historical performance may inform future selection.
+
+But reputation must remain evidence-bound.
+
+```text
+Successful Missions
+Verification Results
+Failure Rate
+Security History
+Latency
+Cost
+Reliability
+Specialization
+```
+
+---
+
+# 222. Reputation Is Not Authority
+
+```mermaid
+flowchart LR
+
+    REP[High Reputation]
+
+    REP --> SELECT[Selection Signal]
+
+    REP -. cannot grant .-> AUTH[Mission Authorization]
+
+    AUTH --> GOV[Governance Required]
+```
+
+A highly successful agent remains subject to current mission authorization.
+
+---
+
+# 223. Evidence-Based Reputation
+
+Reputation should derive from verified outcomes rather than self-reported performance.
+
+```mermaid
+flowchart TD
+
+    RESULT[Mission Result]
+
+    RESULT --> VERIFY[Independent Verification]
+    VERIFY --> AUDIT[Audit Evidence]
+    AUDIT --> METRIC[Performance Metric]
+    METRIC --> PROFILE[Agent Evaluation Profile]
+```
+
+---
+
+# 224. Reputation Decay
+
+Old performance should not necessarily dominate current selection forever.
+
+Models change.
+
+Tools change.
+
+Domains change.
+
+Therefore historical performance may require:
+
+```text
+Freshness
+Version Binding
+Domain Relevance
+Recency
+Regression Evidence
+```
+
+---
+
+# 225. Collective Decision Making
+
+Some problems benefit from multiple independent perspectives.
+
+```mermaid
+flowchart TD
+
+    PROBLEM[Complex Problem]
+
+    PROBLEM --> A[Team A]
+    PROBLEM --> B[Team B]
+    PROBLEM --> C[Team C]
+
+    A --> RA[Result A]
+    B --> RB[Result B]
+    C --> RC[Result C]
+
+    RA --> SYN[Synthesis]
+    RB --> SYN
+    RC --> SYN
+
+    SYN --> CRITIC[Independent Critic]
+    CRITIC --> VERIFY[Verifier]
+```
+
+---
+
+# 226. Consensus Is Not Truth
+
+A thousand agents repeating the same unsupported claim do not create evidence.
+
+```text
+Agent Count
+≠
+Evidence Strength
+```
+
+Independent evidence matters more than numerical agreement.
+
+---
+
+# 227. Diversity of Thought
+
+Collective intelligence benefits from controlled cognitive diversity.
+
+Potential diversity dimensions include:
+
+```text
+Model Provider
+Model Family
+Reasoning Strategy
+Context Selection
+Professional Role
+Knowledge Source
+Verification Method
+```
+
+---
+
+# 228. Correlation-Aware Consensus
+
+```mermaid
+flowchart TD
+
+    A1[Agent A]
+    A2[Agent B]
+    A3[Agent C]
+
+    A1 --> ORIGIN[Shared Evidence Source]
+    A2 --> ORIGIN
+
+    A3 --> IND[Independent Evidence]
+
+    ORIGIN --> META[Correlation Analysis]
+    IND --> META
+
+    META --> CONF[Evidence Assessment]
+```
+
+Two agents using the same source should not automatically count as two independent confirmations.
+
+---
+
+# 229. Collective Hallucination Defense
+
+Large populations can amplify incorrect beliefs.
+
+Defenses should include:
+
+```text
+Provenance
+Independent verification
+Source correlation detection
+Minority evidence preservation
+Contradiction detection
+Truth states
+Temporal freshness
+Reproducibility
+```
+
+---
+
+# 230. Minority Intelligence
+
+A minority conclusion should remain available when supported by credible evidence.
+
+```mermaid
+flowchart LR
+
+    MAJ[Majority Result]
+    MIN[Minority Result]
+
+    MAJ --> V[Evidence Evaluation]
+    MIN --> V
+
+    V --> RESULT[Supported Conclusion]
+```
+
+Truth must not be decided by agent popularity.
+
+---
+
+# 231. Organizational Memory
+
+Each organization may maintain bounded memory.
+
+```mermaid
+flowchart TD
+
+    ORG[Organization]
+
+    ORG --> WM[Working Memory]
+    ORG --> DM[Domain Memory]
+    ORG --> EM[Evidence Memory]
+    ORG --> PM[Procedural Memory]
+
+    WM --> NS[Organization Namespace]
+    DM --> NS
+    EM --> NS
+    PM --> NS
+```
+
+---
+
+# 232. Memory Federation
+
+Organizations may share selected verified knowledge without sharing entire private memory stores.
+
+```mermaid
+flowchart LR
+
+    A[Organization A Memory]
+
+    A --> EXPORT[Governed Knowledge Export]
+    EXPORT --> VALIDATE[Classification / Provenance Validation]
+    VALIDATE --> FED[Federated Knowledge]
+
+    FED --> B[Organization B]
+```
+
+---
+
+# 233. Need-to-Know Context
+
+An NCA should receive the context required for its mission.
+
+Not the entire knowledge of IMPERIAL Core.
+
+```text
+Global Knowledge
+↓
+Organization Scope
+↓
+Team Scope
+↓
+Mission Scope
+↓
+Agent Context
+```
+
+Context narrowing reduces both leakage and cognitive overload.
+
+---
+
+# 234. Classification Boundary
+
+Information should respect classification boundaries.
+
+Conceptually:
+
+```text
+PUBLIC
+PRIVATE
+SECRET
+RESTRICTED
+```
+
+A lower-classification context must not automatically receive higher-classification information.
+
+---
+
+# 235. Information Flow Control
+
+```mermaid
+flowchart TD
+
+    DATA[Information]
+
+    DATA --> CLASS[Classification]
+
+    CLASS --> POLICY[Information Flow Policy]
+
+    POLICY --> ORG[Eligible Organization]
+    ORG --> TEAM[Eligible Team]
+    TEAM --> NCA[Eligible NCA]
+```
+
+Eligibility is mission-specific.
+
+---
+
+# 236. Public / Private Boundary at Scale
+
+Million-agent systems increase accidental disclosure risk.
+
+Controls should include:
+
+```text
+Classification labels
+Repository isolation
+Context minimization
+Secret filtering
+Output validation
+External-effect controls
+Audit evidence
+```
+
+---
+
+# 237. Organizational Firewalls
+
+Different organizations may require explicit trust boundaries.
+
+```mermaid
+flowchart LR
+
+    A[Organization A]
+
+    A --> GW[Governed Exchange Boundary]
+
+    GW --> B[Organization B]
+
+    A -. no unrestricted internal access .-> B
+```
+
+---
+
+# 238. Cross-Organization Contracts
+
+Cross-organization cooperation should use explicit contracts.
+
+A contract may define:
+
+```text
+Mission
+Requested Capability
+Input Classification
+Output Classification
+Allowed Data
+Forbidden Data
+Deadline
+Budget
+Evidence Requirements
+Approval Requirements
+```
+
+---
+
+# 239. Contract-Bound Delegation
+
+```mermaid
+sequenceDiagram
+
+    participant A as Organization A
+    participant G as Governance
+    participant B as Organization B
+
+    A->>G: Delegation Contract
+    G->>G: Validate Authority
+    G->>B: Bounded Mission Contract
+    B->>B: Execute Internally
+    B->>G: Evidence-Bound Result
+    G->>A: Validated Result
+```
+
+---
+
+# 240. Organizational Autonomy
+
+Organizations may have local autonomy over bounded operational choices.
+
+For example:
+
+```text
+Internal scheduling
+Agent selection
+Task decomposition
+Local retries
+Local caching
+Local resource optimization
+```
+
+They must not independently redefine global governance.
+
+---
+
+# 241. Local Optimization, Global Invariants
+
+```text
+Local implementation may vary.
+
+Global security invariants must remain.
+```
+
+Examples of global invariants:
+
+```text
+Architect authority
+AI Passport
+EIS boundaries
+Guardian enforcement
+Approval requirements
+Runtime isolation
+Audit evidence
+Classification
+Revocation
+```
+
+---
+
+# 242. Federated Policy
+
+Global policy should not require every domain to use identical implementation.
+
+```mermaid
+flowchart TD
+
+    GLOBAL[Global Security Invariants]
+
+    GLOBAL --> A[Domain A Policy]
+    GLOBAL --> B[Domain B Policy]
+    GLOBAL --> C[Domain C Policy]
+
+    A --> RA[Runtime A]
+    B --> RB[Runtime B]
+    C --> RC[Runtime C]
+```
+
+Domains may add stricter controls.
+
+They must not silently weaken mandatory global controls.
+
+---
+
+# 243. Organizational Health
+
+HANTER should reason over organization-level health signals.
+
+Potential signals include:
+
+```text
+Mission completion
+Verification failure
+Security incidents
+Resource pressure
+Queue pressure
+Budget consumption
+Agent availability
+Model degradation
+Knowledge conflicts
+Runtime failures
+```
+
+---
+
+# 244. Executive Compression
+
+HANTER should not ingest every raw agent event.
+
+Information should be progressively compressed while preserving evidence links.
+
+```mermaid
+flowchart TD
+
+    EVENT[Raw NCA Events]
+
+    EVENT --> TEAM[Team Summary]
+    TEAM --> ORG[Organization State]
+    ORG --> FED[Federation State]
+    FED --> H[HANTER Executive Context]
+
+    H -. evidence drill-down .-> EVENT
+```
+
+---
+
+# 245. Evidence Drill-Down
+
+Compression must not destroy provenance.
+
+HANTER should be able to move from:
+
+```text
+Executive Signal
+↓
+Organization Evidence
+↓
+Team Evidence
+↓
+Mission Evidence
+↓
+Agent Evidence
+↓
+Raw Artifact
+```
+
+when deeper investigation is required.
+
+---
+
+# 246. Attention Architecture
+
+At large scale, the scarce resource is not only compute.
+
+It is attention.
+
+```mermaid
+flowchart TD
+
+    MILLIONS[Large Event Population]
+
+    MILLIONS --> FILTER[Local Filtering]
+    FILTER --> ANOMALY[Anomaly Detection]
+    ANOMALY --> PRIORITY[Priority]
+    PRIORITY --> AGI[IMPERIAL AGI Analysis]
+    AGI --> H[HANTER Attention]
+```
+
+Only important state should reach the highest executive layer.
+
+---
+
+# 247. Escalation Architecture
+
+Agents should know when not to continue independently.
+
+Escalation triggers may include:
+
+```text
+Authority missing
+Evidence conflict
+Risk threshold exceeded
+Budget exceeded
+Security anomaly
+Unknown external effect
+Classification conflict
+Repeated failure
+Mission ambiguity
+```
+
+---
+
+# 248. Escalation Hierarchy
+
+```mermaid
+flowchart TD
+
+    NCA[Nano Core Agent]
+
+    NCA --> TEAM[Team Boundary]
+    TEAM --> ORG[Organization Boundary]
+    ORG --> GOV[Governance Boundary]
+    GOV --> H[HANTER]
+
+    H --> ARCH[Architect when required]
+```
+
+Not every minor event should escalate to the Architect.
+
+---
+
+# 249. Human Authority Preservation
+
+Automation should reduce unnecessary human workload without eliminating explicit human authority where required.
+
+```text
+Automate routine execution.
+
+Escalate exceptional decisions.
+
+Preserve human authority over protected decisions.
+```
+
+---
+
+# 250. Organizational Resilience
+
+An organization should tolerate loss of individual agents.
+
+```mermaid
+flowchart LR
+
+    A[Agent Failure]
+
+    A --> DETECT[Detect]
+    DETECT --> PRESERVE[Preserve Evidence]
+    PRESERVE --> REASSIGN[Reassign Mission]
+    REASSIGN --> B[Eligible Replacement]
+```
+
+The identity of the replacement must remain visible in audit evidence.
+
+---
+
+# 251. Team Redundancy
+
+Critical capabilities may have multiple eligible agents.
+
+```text
+Capability X
+├── Agent A
+├── Agent B
+├── Agent C
+└── Agent D
+```
+
+Redundancy should reduce single-agent dependency.
+
+---
+
+# 252. Organizational Quarantine
+
+If an organization exhibits systemic unsafe behavior, the architecture should support quarantine.
+
+```mermaid
+flowchart TD
+
+    SIGNAL[Systemic Risk]
+
+    SIGNAL --> Q[Quarantine Organization]
+
+    Q --> STOP[Stop New Missions]
+    Q --> REVOKE[Revoke Temporary Capabilities]
+    Q --> ISOLATE[Maintain Isolation]
+    Q --> PRESERVE[Preserve Evidence]
+
+    PRESERVE --> REVIEW[Independent Review]
+```
+
+---
+
+# 253. Cascading Failure Defense
+
+Large federations must defend against:
+
+```text
+Retry cascades
+Queue cascades
+Dependency cascades
+Model-provider outages
+Shared-memory corruption
+Policy-service failures
+Credential failures
+Network partition
+```
+
+---
+
+# 254. Bulkhead Architecture
+
+```mermaid
+flowchart TD
+
+    FED[Federation]
+
+    FED --> A[Domain A]
+    FED --> B[Domain B]
+    FED --> C[Domain C]
+
+    A --> FAIL[Failure]
+
+    FAIL --> BULK[Bulkhead Boundary]
+
+    BULK -. prevents propagation .-> B
+    BULK -. prevents propagation .-> C
+```
+
+---
+
+# 255. Circuit Breakers
+
+Repeated dependency failure should not trigger infinite load.
+
+```mermaid
+stateDiagram-v2
+
+    CLOSED --> OPEN: failure threshold
+    OPEN --> HALF_OPEN: recovery interval
+    HALF_OPEN --> CLOSED: healthy probe
+    HALF_OPEN --> OPEN: failed probe
+```
+
+---
+
+# 256. Distributed Knowledge Without Distributed Authority
+
+Knowledge may be widely distributed.
+
+Authority should remain explicitly bounded.
+
+```text
+Distributed Intelligence
++
+Distributed Knowledge
++
+Distributed Execution
+≠
+Distributed Unlimited Authority
+```
+
+---
+
+# 257. Collective Learning
+
+Organizations can learn from each other's verified outcomes.
+
+```mermaid
+flowchart LR
+
+    A[Organization A]
+
+    A --> EA[Verified Evidence]
+
+    B[Organization B]
+
+    B --> EB[Verified Evidence]
+
+    EA --> KG[Federated Knowledge]
+    EB --> KG
+
+    KG --> FUTURE[Future Missions]
+```
+
+---
+
+# 258. Learning Boundary
+
+A successful result may update:
+
+```text
+Knowledge
+Evaluation profiles
+Planning heuristics
+Capability recommendations
+Regression suites
+```
+
+It must not silently update:
+
+```text
+Security authority
+Approval requirements
+Architect authority
+Classification policy
+```
+
+---
+
+# 259. Artificial Institutional Memory
+
+Long-lived digital organizations need institutional memory.
+
+This includes:
+
+```text
+Why decisions were made
+Which approaches failed
+Which policies changed
+Which incidents occurred
+Which agents performed well
+Which dependencies proved unreliable
+Which assumptions were superseded
+```
+
+---
+
+# 260. Organizational Succession
+
+Digital organizations may evolve without losing evidence.
+
+```mermaid
+flowchart LR
+
+    O1[Organization Generation 1]
+
+    O1 --> E[Evidence / Knowledge]
+
+    E --> O2[Organization Generation 2]
+
+    O2 --> E2[New Evidence]
+
+    E2 --> O3[Organization Generation 3]
+```
+
+Historical identity should remain traceable.
+
+---
+
+# 261. Mission Economy
+
+At very large scale, missions consume scarce resources.
+
+The architecture may therefore treat resource allocation as an internal planning problem.
+
+```text
+Mission Value
+Risk
+Urgency
+Compute Cost
+Time Cost
+Agent Availability
+Dependency Cost
+Expected Information Gain
+```
+
+These can inform scheduling.
+
+---
+
+# 262. Internal Resource Market
+
+A future bounded resource allocator may coordinate scarce capacity.
+
+```mermaid
+flowchart TD
+
+    MISSIONS[Mission Demand]
+
+    MISSIONS --> ALLOC[Resource Allocator]
+
+    COMPUTE[Compute Supply] --> ALLOC
+    MODELS[Model Capacity] --> ALLOC
+    AGENTS[NCA Capacity] --> ALLOC
+    TOOLS[Tool Capacity] --> ALLOC
+
+    ALLOC --> SCHEDULE[Governed Schedule]
+```
+
+This is resource optimization, not independent financial sovereignty.
+
+---
+
+# 263. Cost-Aware Intelligence
+
+The strongest model should not automatically be used for every operation.
+
+```mermaid
+flowchart LR
+
+    TASK[Task]
+
+    TASK --> COMPLEX[Complexity]
+    COMPLEX --> RISK[Risk]
+    RISK --> QUALITY[Required Quality]
+
+    QUALITY --> ROUTER[Model / Agent Router]
+
+    ROUTER --> SMALL[Efficient Capability]
+    ROUTER --> LARGE[Advanced Capability]
+```
+
+Use the least expensive capability that satisfies required quality and safety.
+
+---
+
+# 264. Energy and Compute Efficiency
+
+Million-agent architectures must eventually optimize:
+
+```text
+Inference utilization
+Idle capacity
+Batching
+Caching
+Model selection
+Context size
+Memory retrieval
+Scheduling locality
+Hardware utilization
+```
+
+Efficiency becomes a first-class scaling property.
+
+---
+
+# 265. Sparse Activation
+
+A million registered agents should not require a million active inference processes.
+
+```mermaid
+flowchart LR
+
+    REG[1,000,000+ Registered NCA]
+
+    REG --> ELIG[Eligible Subset]
+    ELIG --> NEED[Mission-Relevant Subset]
+    NEED --> ACTIVE[Active NCA]
+```
+
+This is analogous to sparse activation at organizational scale.
+
+---
+
+# 266. Hierarchical Intelligence
+
+```mermaid
+flowchart TB
+
+    ARCH[Architect]
+
+    ARCH --> H[HANTER]
+
+    H --> STRATEGIC[Strategic Intelligence]
+
+    STRATEGIC --> ORG[Organizational Intelligence]
+
+    ORG --> TEAM[Team Intelligence]
+
+    TEAM --> NCA[Specialized NCA Intelligence]
+
+    NCA --> TOOL[Tool-Level Capability]
+```
+
+Higher layers reason over progressively compressed information.
+
+---
+
+# 267. HANTER as Executive Intelligence
+
+HANTER is not intended to become one enormous monolithic agent.
+
+Its role is executive.
+
+HANTER should reason about:
+
+```text
+Objectives
+Mission portfolios
+Organizations
+Risk
+Resources
+Security
+Evidence
+Progress
+Exceptions
+```
+
+rather than manually orchestrating every low-level action.
+
+---
+
+# 268. IMPERIAL AGI as Cognitive Intelligence
+
+IMPERIAL AGI provides advanced cognition to HANTER and the federation.
+
+Its responsibilities may include:
+
+```text
+Deep reasoning
+Research
+Criticism
+Verification
+World modelling
+Strategic planning
+Simulation
+Knowledge synthesis
+```
+
+It remains separate from unconditional execution authority.
+
+---
+
+# 269. NCA as Specialized Intelligence
+
+Nano Core Agents provide bounded professional capability.
+
+```text
+HANTER
+    Executive intelligence
+
+IMPERIAL AGI
+    General cognitive intelligence
+
+NCA
+    Specialized professional intelligence
+```
+
+This separation allows each layer to evolve independently.
+
+---
+
+# 270. Collective Superiority
+
+The long-term objective is not necessarily to make every NCA individually more capable than every external model.
+
+A federation can become more capable through:
+
+```text
+Specialization
+Parallelism
+Independent verification
+Persistent knowledge
+Professional organization
+Evidence accumulation
+Tool specialization
+Long-horizon coordination
+```
+
+---
+
+# 271. Intelligence Multiplication
+
+Conceptually:
+
+```text
+Collective Capability
+≈
+Individual Capability
+×
+Specialization
+×
+Coordination Quality
+×
+Knowledge Quality
+×
+Verification Quality
+```
+
+This is a conceptual engineering relationship, not a measured mathematical law.
+
+---
+
+# 272. Coordination Tax
+
+Additional agents create coordination cost.
+
+```text
+Net Collective Value
+=
+Useful Parallel Work
+-
+Coordination Overhead
+-
+Duplication
+-
+Conflict
+-
+Communication Cost
+```
+
+The architecture should minimize the coordination tax.
+
+---
+
+# 273. Bounded Swarms
+
+Some missions may benefit from temporary bounded swarms.
+
+```mermaid
+flowchart TD
+
+    M[Mission]
+
+    M --> SWARM[Temporary NCA Swarm]
+
+    SWARM --> A[Agent A]
+    SWARM --> B[Agent B]
+    SWARM --> C[Agent C]
+    SWARM --> N[Agent N]
+
+    A --> SYN[Synthesis]
+    B --> SYN
+    C --> SYN
+    N --> SYN
+
+    SYN --> VERIFY[Independent Verification]
+    VERIFY --> END[Destroy Temporary Swarm]
+```
+
+A swarm is a mission structure, not an unrestricted permanent collective.
+
+---
+
+# 274. Swarm Limits
+
+Every swarm should have bounded:
+
+```text
+Mission
+Population
+Lifetime
+Budget
+Communication
+Tools
+Data
+Runtime
+Spawn depth
+```
+
+---
+
+# 275. No Recursive Agent Explosion
+
+An NCA must not recursively create unlimited descendants.
+
+```mermaid
+flowchart LR
+
+    PARENT[Parent Mission]
+
+    PARENT --> BUDGET[Spawn Budget]
+
+    BUDGET --> CHILD[Child Agents]
+
+    CHILD -. bounded by .-> BUDGET
+```
+
+---
+
+# 276. Spawn Authority
+
+Creating an agent is an execution capability.
+
+It requires:
+
+```text
+Mission Need
+Eligible Agent Template
+Resource Budget
+Runtime Capacity
+Policy Eligibility
+Audit Identity
+```
+
+---
+
+# 277. Digital Organization Genome
+
+A reusable organization may eventually be represented by a versioned organizational template.
+
+Conceptually:
+
+```text
+Organization Type
+Required Roles
+Team Topology
+Capability Requirements
+Communication Rules
+Verification Rules
+Resource Policy
+Security Policy
+Escalation Rules
+Evaluation Suite
+```
+
+---
+
+# 278. Organization Templates
+
+```mermaid
+flowchart LR
+
+    TEMPLATE[Verified Organization Template]
+
+    TEMPLATE --> A[Organization Instance A]
+    TEMPLATE --> B[Organization Instance B]
+    TEMPLATE --> C[Organization Instance C]
+```
+
+Instances receive independent identities and mission authority.
+
+---
+
+# 279. Organizational Evolution
+
+Organization structures can themselves be evaluated.
+
+```mermaid
+flowchart TD
+
+    O1[Organization Design A]
+    O2[Organization Design B]
+
+    O1 --> EVAL[Controlled Evaluation]
+    O2 --> EVAL
+
+    EVAL --> RESULT[Evidence]
+
+    RESULT --> NEXT[Improved Organization Template]
+```
+
+---
+
+# 280. Organizational Self-Improvement Boundary
+
+Organizations may propose improvements to:
+
+```text
+Team structure
+Scheduling
+Communication
+Role allocation
+Resource use
+Verification workflow
+```
+
+They may not independently remove mandatory governance.
+
+---
+
+# 281. Institutional Checks and Balances
+
+High-impact digital organizations should support internal challenge.
+
+```mermaid
+flowchart TD
+
+    EXEC[Execution Team]
+
+    EXEC --> REVIEW[Independent Review]
+
+    REVIEW --> SEC[Security Function]
+
+    SEC --> VERIFY[Verification Function]
+
+    VERIFY --> GOV[Governance]
+```
+
+No single professional function should automatically dominate all others.
+
+---
+
+# 282. Anti-Capture Architecture
+
+A powerful agent, team or organization should not be able to make itself permanently indispensable.
+
+Controls include:
+
+```text
+Replaceable identities
+Portable evidence
+Standard mission contracts
+Capability registries
+Independent verification
+Revocation
+Redundancy
+No permanent administrator status
+```
+
+---
+
+# 283. Replaceability
+
+```mermaid
+flowchart LR
+
+    ROLE[Professional Role]
+
+    ROLE --> A[Agent A]
+
+    A -->|Unavailable| REG[Capability Registry]
+
+    REG --> B[Eligible Agent B]
+
+    B --> ROLE
+```
+
+The system should depend on capabilities and evidence, not personality cults around individual agents.
+
+---
+
+# 284. Collective Intelligence Security
+
+Large agent populations expand the attack surface.
+
+Threat classes include:
+
+```text
+Malicious agent
+Compromised model
+Poisoned memory
+False reputation
+Collusion
+Sybil identities
+Capability forgery
+Cross-domain leakage
+Delegation laundering
+Audit manipulation
+Resource exhaustion
+```
+
+---
+
+# 285. Sybil Resistance
+
+An attacker must not gain influence merely by creating many artificial identities.
+
+```mermaid
+flowchart LR
+
+    IDS[Many Candidate Identities]
+
+    IDS --> PASS[AI Passport Validation]
+    PASS --> ELIG[Eligibility]
+    ELIG --> MISSION[Mission Authorization]
+
+    IDS -. quantity alone insufficient .-> AUTH[Authority]
+```
+
+---
+
+# 286. Collusion Detection
+
+Multiple agents may coordinate incorrectly or maliciously.
+
+Signals may include:
+
+```text
+Suspicious agreement
+Shared unsupported claims
+Repeated reciprocal verification
+Evidence reuse
+Unusual delegation patterns
+Coordinated policy pressure
+```
+
+These signals justify investigation, not automatic guilt.
+
+---
+
+# 287. Independent Audit Sampling
+
+At scale, not every low-risk action requires identical expensive verification.
+
+The architecture may support risk-based independent sampling while preserving mandatory verification for protected actions.
+
+```mermaid
+flowchart TD
+
+    ACTIONS[Large Action Population]
+
+    ACTIONS --> RISK[Risk Classification]
+
+    RISK --> HIGH[High Risk]
+    RISK --> LOW[Low Risk]
+
+    HIGH --> FULL[Mandatory Verification]
+    LOW --> SAMPLE[Policy-Based Sampling]
+
+    FULL --> AUDIT[Audit Evidence]
+    SAMPLE --> AUDIT
+```
+
+---
+
+# 288. Federation-Wide Incident Response
+
+```mermaid
+flowchart TD
+
+    INCIDENT[Security Incident]
+
+    INCIDENT --> CONTAIN[Contain Domain]
+    CONTAIN --> PRESERVE[Preserve Evidence]
+    PRESERVE --> ASSESS[Assess Blast Radius]
+
+    ASSESS --> REVOKE[Revoke Affected Authority]
+    ASSESS --> PATCH[Remediation]
+    ASSESS --> VERIFY[Independent Verification]
+
+    VERIFY --> RESTORE[Controlled Restoration]
+```
+
+---
+
+# 289. Blast Radius Minimization
+
+Every architecture decision should ask:
+
+> **If this component fails completely, what can it damage?**
+
+Good federation design minimizes the answer.
+
+---
+
+# 290. Collective Intelligence Truth Boundary
+
+A system containing one million agents is not automatically AGI.
+
+A system coordinating many models is not automatically superintelligence.
+
+A successful simulation is not production evidence.
+
+A scalable architecture is not proof of deployed scale.
+
+Claims about collective intelligence must remain evidence-bound.
+
+---
+
+# 291. Million-Agent Verification Program
+
+Before claiming million-agent readiness, the architecture should eventually demonstrate progressively larger controlled evaluations.
+
+```text
+10
+↓
+100
+↓
+1,000
+↓
+10,000
+↓
+100,000
+↓
+1,000,000+
+```
+
+Each stage should evaluate:
+
+```text
+Correctness
+Security
+Latency
+Cost
+Audit throughput
+Scheduling
+Failure containment
+Memory isolation
+Revocation
+Recovery
+```
+
+---
+
+# 292. Scale Qualification
+
+```mermaid
+flowchart LR
+
+    S1[10 Agents]
+    S1 --> S2[100]
+    S2 --> S3[1K]
+    S3 --> S4[10K]
+    S4 --> S5[100K]
+    S5 --> S6[1M+]
+
+    S1 -. evidence gate .-> S2
+    S2 -. evidence gate .-> S3
+    S3 -. evidence gate .-> S4
+    S4 -. evidence gate .-> S5
+    S5 -. evidence gate .-> S6
+```
+
+No scale level should be claimed merely by extrapolation.
+
+---
+
+# 293. Global Architecture
+
+```mermaid
+flowchart TB
+
+    ARCH["Architect<br/>Alexander Romaskevich"]
+
+    ARCH --> H["HANTER<br/>Sovereign Executive Intelligence"]
+
+    H <--> AGI["IMPERIAL AGI<br/>Cognitive Intelligence"]
+
+    H --> FED["Federated Multi-Orchestrator Fabric"]
+
+    FED --> O1["Digital Organization A"]
+    FED --> O2["Digital Organization B"]
+    FED --> ON["Digital Organization N"]
+
+    O1 --> T1["Professional Teams"]
+    O2 --> T2["Professional Teams"]
+    ON --> TN["Professional Teams"]
+
+    T1 --> P1["NCA Capability Pools"]
+    T2 --> P2["NCA Capability Pools"]
+    TN --> PN["NCA Capability Pools"]
+
+    P1 --> R1["Independent Runtime Domains"]
+    P2 --> R2["Independent Runtime Domains"]
+    PN --> RN["Independent Runtime Domains"]
+
+    R1 --> AUD["Federated Audit Evidence"]
+    R2 --> AUD
+    RN --> AUD
+
+    AUD --> KG["IMPERIAL Knowledge Graph"]
+
+    KG --> AGI
+    AUD --> H
+```
+
+---
+
+# 294. Long-Term Organizational Vision
+
+The long-term architectural direction is a federation capable of supporting large numbers of artificial professional organizations across many domains while preserving:
+
+```text
+Identity
+Specialization
+Governance
+Evidence
+Security
+Isolation
+Replaceability
+Accountability
+Human authority
+```
+
+---
+
+# 295. Collective Intelligence Constitution
+
+The architecture follows these principles:
+
+```text
+Specialize rather than duplicate.
+
+Federate rather than centralize everything.
+
+Compress information without destroying provenance.
+
+Share knowledge without sharing unrestricted authority.
+
+Scale identities without scaling privilege.
+
+Use consensus as evidence, not truth.
+
+Preserve minority evidence.
+
+Contain failures.
+
+Keep agents replaceable.
+
+Keep missions revocable.
+
+Keep execution bounded.
+
+Keep authority explicit.
+```
+
+---
+
+# 296. The Million-Agent Principle
+
+> **One million agents must behave like a governed civilization of specialized intelligence — not one million uncontrolled processes shouting at each other.**
+
+The architecture therefore scales through:
+
+```text
+Federation
+Organization
+Professional specialization
+Sparse activation
+Bounded communication
+Hierarchical scheduling
+Independent verification
+Evidence-driven coordination
+```
+
+---
+
+# 297. Final Collective Intelligence Doctrine
+
+```mermaid
+flowchart LR
+
+    SPECIALIZE[Specialize]
+    SPECIALIZE --> ORGANIZE[Organize]
+    ORGANIZE --> FEDERATE[Federate]
+    FEDERATE --> COORDINATE[Coordinate]
+    COORDINATE --> VERIFY[Verify]
+    VERIFY --> GOVERN[Govern]
+    GOVERN --> EXECUTE[Execute]
+    EXECUTE --> LEARN[Learn]
+    LEARN --> EVOLVE[Evolve]
+    EVOLVE --> SPECIALIZE
+```
+
+At every scale:
+
+```text
+Collective Intelligence
+≠
+Collective Unlimited Authority
+```
+
+---
+
+## Collective Intelligence Truth Boundary
+
+This section defines the architectural direction for large-scale Nano Core Agent populations, professional digital organizations, collective cognition and federated artificial institutions.
+
+It does not claim that one million agents are currently deployed.
+
+It does not claim AGI or superintelligence has been achieved.
+
+It does not claim runtime, deployment or production verification.
+
+Architecture, specification, implementation, testing, runtime evidence and production evidence remain explicitly separate.
+
+---
+
+## Collective Intelligence Authorship & Digital Provenance
+
+**Architect & Original Author:** Alexander Romaskevich  
+**Founder • Owner • CEO • Chief Systems Architect — IMPERIAL Core**
+
+The Collective Intelligence, Digital Organization, Professional NCA Team, Federated Institutional Intelligence and Million-Agent Civilization Fabric described here form part of the original IMPERIAL Core and IMPERIAL AGI architectural program under the direction of Alexander Romaskevich.
+
+**Canonical authorship:** Alexander Romaskevich  
+**Architecture:** IMPERIAL Core  
+**Cognitive Component:** IMPERIAL AGI  
+**Executive Intelligence:** HANTER  
+**Agent Architecture:** Nano Core Agents  
+**Scale Objective:** 1,000,000+ registered specialized agents  
+**Repository:** IMPERIAL-AGI  
+**Year:** 2026
+
+Copyright © 2026 Alexander Romaskevich.
+
+---
+
+> **Scale intelligence without scaling uncontrolled authority.**
+
+> **Specialize. Organize. Federate. Verify. Govern. Learn.**
+
+**IMPERIAL AGI — Architected by Alexander Romaskevich.**
