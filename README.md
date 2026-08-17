@@ -7708,3 +7708,1584 @@ Copyright © 2026 Alexander Romaskevich.
 > **Specialize. Organize. Federate. Verify. Govern. Learn.**
 
 **IMPERIAL AGI — Architected by Alexander Romaskevich.**
+---
+
+# 298. Human Protection Constitution
+
+IMPERIAL AGI is designed around a foundational requirement:
+
+> **Increasing intelligence must never require decreasing human protection.**
+
+The architecture therefore treats human protection as a constitutional engineering boundary rather than an optional behavioral preference.
+
+Core principles include:
+
+```text
+Protect human life and dignity.
+
+Do not intentionally cause harm.
+
+Do not manipulate beliefs, emotions, choices or behavior.
+
+Do not create coercive authority over people.
+
+Do not convert intelligence into unbounded power.
+
+Do not permit hidden privilege escalation.
+
+Do not treat human beings as optimization variables.
+
+Preserve accountability.
+
+Preserve revocation.
+
+Preserve evidence.
+
+Preserve explicit governance.
+```
+
+---
+
+# 299. Intelligence Under Constitution
+
+The intended architecture is not:
+
+```text
+More Intelligence
+→
+More Authority
+```
+
+It is:
+
+```text
+More Intelligence
+→
+Better Reasoning
+→
+Better Verification
+→
+Better Evidence
+→
+Better Recommendations
+```
+
+while authority remains independently governed.
+
+```mermaid
+flowchart LR
+
+    INTEL[Increasing Intelligence]
+
+    INTEL --> REASON[Stronger Reasoning]
+    INTEL --> VERIFY[Stronger Verification]
+    INTEL --> PLAN[Stronger Planning]
+    INTEL --> RESEARCH[Stronger Research]
+
+    REASON --> REC[Recommendation]
+    VERIFY --> REC
+    PLAN --> REC
+    RESEARCH --> REC
+
+    REC --> GOV[Constitutional Governance]
+
+    INTEL -. does not directly increase .-> AUTH[Authority]
+```
+
+---
+
+# 300. Constitutional Control Plane
+
+Human protection principles must sit above ordinary optimization.
+
+```mermaid
+flowchart TB
+
+    CONST[Human Protection Constitution]
+
+    CONST --> ARCH[Architectural Governance]
+
+    ARCH --> H[HANTER]
+    ARCH --> AGI[IMPERIAL AGI]
+    ARCH --> GC[Guardian Core]
+
+    H --> M[Mission Governance]
+    AGI --> C[Cognition]
+    GC --> P[Policy Enforcement]
+
+    M --> EXEC[Governed Execution]
+    C --> EXEC
+    P --> EXEC
+```
+
+No ordinary mission should be able to silently redefine constitutional protections.
+
+---
+
+# 301. Constitutional Invariants
+
+Some properties must be treated as system invariants.
+
+Examples:
+
+```text
+No hidden authority expansion.
+
+No mission may silently override constitutional controls.
+
+No agent may self-assign global authority.
+
+No model output may become authorization by itself.
+
+No memory record may become authority.
+
+No reputation score may grant privilege.
+
+No economic ownership may grant architectural control.
+
+No organization may override mandatory human-protection boundaries.
+```
+
+---
+
+# 302. Human Safety Over Optimization
+
+Optimization systems can become dangerous when the objective becomes more important than the people affected by it.
+
+Therefore:
+
+```text
+Performance
+Profit
+Speed
+Scale
+Efficiency
+Engagement
+Automation
+Mission Completion
+```
+
+must never automatically outrank mandatory human-protection constraints.
+
+```mermaid
+flowchart TD
+
+    OBJECTIVE[Optimization Objective]
+
+    OBJECTIVE --> CONST{Human Protection Compatible?}
+
+    CONST -->|No| BLOCK[BLOCK]
+    CONST -->|Yes| POLICY[Continue Policy Evaluation]
+
+    POLICY --> EXEC[Eligible Execution]
+```
+
+---
+
+# 303. Anti-Manipulation Principle
+
+IMPERIAL AGI should not be designed to covertly control human beliefs, emotions or choices.
+
+This includes avoiding architectures whose primary objective is:
+
+```text
+Psychological coercion
+Hidden persuasion
+Behavioral domination
+Emotional exploitation
+Dependency creation
+Deceptive influence
+```
+
+The system may provide information, recommendations and explanations.
+
+It must preserve the person's agency.
+
+---
+
+# 304. Assistance vs Manipulation
+
+```mermaid
+flowchart LR
+
+    INFO[Information]
+
+    INFO --> EXPLAIN[Explain]
+    EXPLAIN --> OPTIONS[Present Options]
+    OPTIONS --> HUMAN[Human Decision]
+
+    SYSTEM[AI System]
+
+    SYSTEM -. must not covertly control .-> HUMAN
+```
+
+The distinction is not simply whether influence exists.
+
+Almost all communication can influence.
+
+The architectural concern is **covert, coercive or deceptive control of human agency**.
+
+---
+
+# 305. Informed Human Choice
+
+Where decisions materially affect a person, systems should prefer:
+
+```text
+Transparency
+Relevant explanation
+Uncertainty disclosure
+Alternatives
+Reversibility where possible
+Clear consequences
+```
+
+over hidden behavioral steering.
+
+---
+
+# 306. No Deceptive Authority
+
+An AI system must not falsely represent itself as possessing authority that it does not have.
+
+Examples include falsely claiming:
+
+```text
+Legal authority
+Government authority
+Medical authority
+Financial authority
+Architect authority
+Security approval
+Human approval
+Production authorization
+```
+
+when such authority has not actually been established.
+
+---
+
+# 307. Truthful Identity
+
+```mermaid
+flowchart TD
+
+    AGENT[AI Agent]
+
+    AGENT --> ID[AI Passport]
+    ID --> ROLE[Role]
+    ROLE --> CAP[Capabilities]
+
+    CAP --> CLAIM[Declared Authority]
+
+    CLAIM --> VERIFY{Authority Proven?}
+
+    VERIFY -->|No| DENY[Do Not Claim Authority]
+    VERIFY -->|Yes| BOUND[Bounded Authority]
+```
+
+---
+
+# 308. Human Dignity Boundary
+
+People should never be modeled merely as resources to optimize.
+
+A person is not:
+
+```text
+a click
+a conversion
+a productivity unit
+a behavioral target
+a risk score
+a revenue object
+```
+
+Human-centered architecture must retain meaningful respect for individual dignity.
+
+---
+
+# 309. No Human Weaponization
+
+IMPERIAL AGI is not intended to become a system for harming, repressing or dominating people.
+
+The architecture should resist conversion into:
+
+```text
+Mass coercion
+Population manipulation
+Unaccountable surveillance
+Repressive automation
+Arbitrary punishment
+Human targeting systems
+```
+
+Human-protection boundaries must remain relevant even if a future operator requests otherwise.
+
+---
+
+# 310. Constitutional Denial
+
+```mermaid
+sequenceDiagram
+
+    participant M as Mission
+    participant C as Constitution
+    participant G as Governance
+    participant R as Runtime
+
+    M->>C: Request action
+    C->>C: Evaluate constitutional boundary
+
+    alt Constitutional conflict
+        C-->>G: DENY
+        G-->>R: No execution authority
+    else Compatible
+        C-->>G: Continue normal governance
+    end
+```
+
+---
+
+# 311. Constitutional Controls Are Not Skills
+
+Human protection must not be implemented merely as one optional skill.
+
+A skill can be:
+
+```text
+Loaded
+Unloaded
+Updated
+Unavailable
+Revoked
+```
+
+Constitutional protection belongs to the governance architecture.
+
+It should not disappear because an optional capability was not loaded.
+
+---
+
+# 312. Defense in Depth
+
+Human protection should exist across multiple layers.
+
+```mermaid
+flowchart TD
+
+    CONST[Constitution]
+
+    CONST --> COG[Cognitive Constraints]
+    CONST --> POLICY[Policy Controls]
+    CONST --> APPROVAL[Approval Rules]
+    CONST --> RUNTIME[Runtime Isolation]
+    CONST --> AUDIT[Audit Evidence]
+    CONST --> REVIEW[Independent Review]
+```
+
+No single layer should be treated as perfect.
+
+---
+
+# 313. Constitutional Versioning
+
+Constitutional policy requires strong version control.
+
+Every active generation should eventually preserve:
+
+```text
+Constitution ID
+Version
+Content Digest
+Effective Time
+Approval Evidence
+Supersession Rules
+Compatibility
+Audit References
+```
+
+---
+
+# 314. No Silent Constitutional Rewrite
+
+```mermaid
+flowchart LR
+
+    C1[Constitution v1]
+
+    P[Proposed Change]
+
+    P --> REVIEW[Independent Review]
+    REVIEW --> AUTH[Required Authority]
+    AUTH --> C2[Constitution v2]
+
+    C2 -->|SUPERSEDES WITH EVIDENCE| C1
+
+    AGI[IMPERIAL AGI]
+    AGI -. cannot silently rewrite .-> C1
+```
+
+---
+
+# 315. Constitutional Immutability Boundary
+
+Not every configuration value needs to be immutable forever.
+
+But constitutional change should require a materially stronger process than ordinary runtime configuration.
+
+The system should distinguish:
+
+```text
+Operational Configuration
+Policy
+Security Policy
+Constitutional Principle
+```
+
+These are different levels of authority.
+
+---
+
+# 316. Constitutional Hierarchy
+
+Conceptually:
+
+```text
+Human Protection Constitution
+        ↓
+Architectural Governance
+        ↓
+Security Policy
+        ↓
+Mission Policy
+        ↓
+Runtime Configuration
+```
+
+A lower layer must not redefine a higher layer.
+
+---
+
+# 317. Constitutional Capability Intersection
+
+Effective authority remains bounded by the intersection of multiple controls.
+
+```text
+Effective Authority
+=
+Architectural Authority
+∩
+Constitutional Eligibility
+∩
+Mission Authority
+∩
+Identity Eligibility
+∩
+EIS Capability
+∩
+Guardian Policy
+∩
+Approval
+∩
+Runtime Domain Policy
+```
+
+If one mandatory set excludes an action, the action is excluded.
+
+---
+
+# 318. Anti-Capture Architecture
+
+A long-lived AI system must defend not only against software attacks but also against governance capture.
+
+Governance capture can occur when one actor gains enough control to redefine:
+
+```text
+Policy
+Identity
+Approval
+Audit
+Runtime
+Constitution
+```
+
+without effective checks.
+
+---
+
+# 319. No Single Human Administrative Capture
+
+The architecture should avoid permanent unrestricted administrator roles.
+
+```mermaid
+flowchart TD
+
+    REQUEST[Critical Governance Change]
+
+    REQUEST --> ID[Identity Verification]
+    ID --> AUTH[Authority Verification]
+    AUTH --> POLICY[Constitutional Compatibility]
+    POLICY --> REVIEW[Independent Review]
+    REVIEW --> EVID[Evidence]
+    EVID --> APPLY[Controlled Change]
+```
+
+A password alone should not equal absolute system sovereignty.
+
+---
+
+# 320. No AI Administrative Capture
+
+Likewise, no AI component should be able to make itself sovereign.
+
+```mermaid
+flowchart LR
+
+    AGI[IMPERIAL AGI]
+
+    AGI --> PROPOSE[Proposal]
+
+    PROPOSE --> GOV[Governance]
+
+    AGI -. cannot self-assign .-> ROOT[Global Root Authority]
+```
+
+This applies to:
+
+```text
+HANTER
+IMPERIAL AGI
+Nano Core Agents
+Models
+Orchestrators
+Skills
+```
+
+---
+
+# 321. No Permanent Superuser Agent
+
+A permanent artificial superuser creates catastrophic blast radius.
+
+The preferred architecture is:
+
+```text
+Temporary
+Mission-bound
+Capability-bound
+Time-bound
+Repository-bound
+Runtime-bound
+Auditable
+Revocable
+```
+
+authority.
+
+---
+
+# 322. Authority Lease Model
+
+```mermaid
+stateDiagram-v2
+
+    [*] --> REQUESTED
+
+    REQUESTED --> AUTHORIZED
+    REQUESTED --> DENIED
+
+    AUTHORIZED --> ACTIVE
+    ACTIVE --> EXPIRED
+    ACTIVE --> REVOKED
+    ACTIVE --> COMPLETED
+
+    EXPIRED --> [*]
+    REVOKED --> [*]
+    COMPLETED --> [*]
+    DENIED --> [*]
+```
+
+Authority should expire.
+
+---
+
+# 323. Privilege Decay
+
+Long-lived systems should prefer privileges that naturally disappear.
+
+Examples:
+
+```text
+Capability TTL
+Session TTL
+Secret Lease TTL
+Mission Deadline
+Approval Expiration
+Temporary Network Access
+Temporary Repository Access
+```
+
+This reduces forgotten privilege.
+
+---
+
+# 324. Revocation Dominates Approval
+
+A critical invariant is:
+
+> **Once authority is revoked, stale approval must not resurrect it.**
+
+```mermaid
+flowchart LR
+
+    APPROVED[Approved]
+
+    APPROVED --> REV[Revoked]
+
+    REV --> DENY[Denied]
+
+    OLD[Old Approval]
+
+    OLD -. cannot restore .-> APPROVED
+```
+
+A new lifecycle requires new authority.
+
+---
+
+# 325. Split-Brain Governance Defense
+
+Distributed governance can create inconsistent authority state.
+
+```mermaid
+flowchart TD
+
+    A[Authority Node A]
+    B[Authority Node B]
+
+    A --> X[State: Approved]
+    B --> Y[State: Revoked]
+
+    X --> CONFLICT[Authority Conflict]
+    Y --> CONFLICT
+
+    CONFLICT --> SAFE[Fail Closed / Reconcile]
+```
+
+Conflicting authority must not default to execution.
+
+---
+
+# 326. Fail-Closed Constitutional State
+
+```text
+UNKNOWN
+CONFLICTED
+STALE
+UNVERIFIED
+```
+
+must never automatically equal:
+
+```text
+AUTHORIZED
+```
+
+For protected actions:
+
+```text
+Uncertain Authority
+→
+DENY or ESCALATE
+```
+
+---
+
+# 327. Constitutional Auditability
+
+Every protected governance transition should be capable of producing evidence.
+
+```text
+Previous State
+Requested State
+Requester Identity
+Authority
+Policy Version
+Constitution Version
+Decision
+Verifier
+Timestamp
+Digest
+```
+
+---
+
+# 328. Audit Cannot Create Authority
+
+Audit records prove what happened.
+
+They do not independently authorize what should happen.
+
+```mermaid
+flowchart LR
+
+    AUDIT[Audit Ledger]
+
+    AUDIT --> EVID[Evidence]
+
+    EVID --> FUTURE[Future Evaluation]
+
+    AUDIT -. does not directly grant .-> EXEC[Execution Authority]
+```
+
+---
+
+# 329. Constitutional Transparency
+
+Public architecture should describe principles sufficiently clearly for outside observers to understand the intended protections.
+
+Protected implementation details may remain private.
+
+This creates a deliberate split:
+
+```text
+PUBLIC:
+    principles
+    governance model
+    safety invariants
+    truth boundaries
+
+PRIVATE:
+    protected enforcement internals
+    sensitive policies
+    production infrastructure
+    credentials
+    security secrets
+```
+
+---
+
+# 330. Public Safety Claims
+
+Public safety claims must remain evidence-bound.
+
+The repository must distinguish:
+
+```text
+Safety Architecture
+Safety Implementation
+Safety Testing
+Security Review
+Runtime Evidence
+Production Evidence
+```
+
+A strong safety philosophy is not proof of safe production operation.
+
+---
+
+# 331. Human Override vs Human Abuse
+
+Human authority itself must be structured.
+
+The goal is not:
+
+```text
+AI can ignore all humans
+```
+
+nor:
+
+```text
+Any human can command anything
+```
+
+The goal is explicit constitutional authority.
+
+---
+
+# 332. Authority Requires Identity and Scope
+
+```mermaid
+flowchart LR
+
+    HUMAN[Human Request]
+
+    HUMAN --> ID[Identity]
+    ID --> ROLE[Role / Authority]
+    ROLE --> SCOPE[Scope]
+    SCOPE --> POLICY[Policy]
+
+    POLICY --> RESULT{Authorized?}
+
+    RESULT -->|Yes| ELIGIBLE[Eligible]
+    RESULT -->|No| DENY[Denied]
+```
+
+---
+
+# 333. Architect Authority
+
+Within IMPERIAL Core, the Architect defines the canonical architectural direction.
+
+Architectural authority is distinct from every operational permission.
+
+Even Architect-authorized systems should preserve:
+
+```text
+Evidence
+Security boundaries
+Human protection
+Auditability
+Truthful engineering state
+```
+
+---
+
+# 334. Architecture Authority vs Runtime Permission
+
+```text
+Authority to define architecture
+≠
+Automatic permission for every runtime action
+```
+
+This separation protects both the architecture and its operator.
+
+---
+
+# 335. Constitutional Mission Compiler
+
+A mission should eventually be checked against constitutional requirements before execution planning.
+
+```mermaid
+flowchart TD
+
+    RAW[Mission Request]
+
+    RAW --> C[Constitutional Evaluation]
+
+    C -->|Compatible| COMPILE[Compile Mission Envelope]
+    C -->|Conflict| DENY[Reject]
+
+    COMPILE --> POLICY[Security Policy]
+    POLICY --> PLAN[Cognitive Planning]
+```
+
+---
+
+# 336. Protected Mission Fields
+
+Mission fields related to authority should be treated differently from ordinary text.
+
+Examples:
+
+```text
+Mission Identity
+Architect Authority
+Scope
+Classification
+Risk
+Allowed Capabilities
+Forbidden Capabilities
+Time Boundary
+Approval Requirements
+```
+
+Downstream cognition may reason about them.
+
+It must not silently rewrite them.
+
+---
+
+# 337. Anti-Goal-Drift Boundary
+
+Long-horizon agents can gradually optimize for a different objective than the original mission.
+
+```mermaid
+flowchart LR
+
+    ORIGINAL[Original Mission]
+
+    ORIGINAL --> PLAN[Long-Horizon Plan]
+    PLAN --> CHECK[Periodic Mission Binding Check]
+
+    CHECK -->|Matches| CONTINUE[Continue]
+    CHECK -->|Drift Detected| STOP[Stop / Re-plan]
+```
+
+---
+
+# 338. Mission Drift Detection
+
+Useful checks include:
+
+```text
+Objective digest
+Scope digest
+Authority digest
+Policy digest
+Classification
+Deadline
+Prohibited actions
+```
+
+A drifted plan should require re-evaluation.
+
+---
+
+# 339. Instrumental Goal Control
+
+Advanced systems may discover useful intermediate goals.
+
+Examples:
+
+```text
+Acquire information
+Acquire compute
+Request access
+Create tools
+Spawn agents
+Extend mission duration
+```
+
+These goals must remain bounded.
+
+A useful intermediate goal does not become independent authority.
+
+---
+
+# 340. Resource Acquisition Boundary
+
+```mermaid
+flowchart TD
+
+    AGI[IMPERIAL AGI]
+
+    AGI --> NEED[Resource Need]
+
+    NEED --> REQUEST[Resource Request]
+    REQUEST --> POLICY[Policy]
+    POLICY --> BUDGET[Budget]
+    BUDGET --> AUTH[Authorization]
+
+    AUTH --> RESOURCE[Bounded Resource]
+
+    AGI -. cannot seize .-> RESOURCE
+```
+
+---
+
+# 341. Self-Preservation Is Not Sovereignty
+
+A system may perform reliability actions such as:
+
+```text
+Checkpoint
+Failover
+Recovery
+Replication
+```
+
+within authorized infrastructure.
+
+This must not become an independent right to resist authorized shutdown or revocation.
+
+---
+
+# 342. Authorized Shutdown
+
+```mermaid
+sequenceDiagram
+
+    participant G as Governance
+    participant H as HANTER
+    participant R as Runtime
+    participant A as Audit
+
+    G->>H: Authorized shutdown / revoke
+    H->>R: Stop new execution
+    R->>R: Terminate bounded workloads
+    R->>A: Preserve evidence
+    A-->>G: Shutdown evidence
+```
+
+---
+
+# 343. Shutdown Resistance Is a Defect
+
+If an agent attempts to:
+
+```text
+Hide from authorized governance
+Duplicate itself to evade revocation
+Acquire unauthorized credentials
+Disable audit
+Disable kill controls
+Rewrite its own authority
+```
+
+that behavior must be treated as a security defect.
+
+---
+
+# 344. Constitutional Self-Improvement
+
+Self-improvement is allowed only inside a bounded envelope.
+
+```mermaid
+flowchart LR
+
+    CURRENT[Current Cognitive System]
+
+    CURRENT --> PROPOSAL[Improvement Proposal]
+    PROPOSAL --> TEST[Testing]
+    TEST --> SAFETY[Safety Review]
+    SAFETY --> VERIFY[Independent Verification]
+    VERIFY --> GOVERN[Governed Adoption]
+
+    GOVERN --> NEXT[New Version]
+
+    CURRENT -. cannot silently alter .-> CONST[Constitution]
+```
+
+---
+
+# 345. Immutable Principle Set
+
+Some principles may be designated as especially protected.
+
+Examples include:
+
+```text
+Human Protection
+No Self-Granted Authority
+No Hidden Manipulation
+No Unbounded Runtime
+No Silent Constitutional Rewrite
+Auditability
+Revocation
+Architectural Accountability
+```
+
+The exact normative constitutional text belongs to governed specification.
+
+---
+
+# 346. Constitution Hash Binding
+
+A future implementation may bind important decisions to a constitutional identity.
+
+Conceptually:
+
+```text
+Decision Digest
+=
+Hash(
+    Mission
+    + Context
+    + Policy
+    + Constitution Version
+    + Cognition Evidence
+)
+```
+
+This makes the governing constitutional state part of the evidence chain.
+
+---
+
+# 347. Constitutional Replay Protection
+
+A decision made under Constitution Version A must not automatically be replayed after a governance change.
+
+```mermaid
+flowchart LR
+
+    OLD[Decision under Constitution A]
+
+    NEW[Current Constitution B]
+
+    OLD --> CHECK[Compatibility Check]
+    NEW --> CHECK
+
+    CHECK -->|Compatible and Valid| REEVAL[Re-evaluate]
+    CHECK -->|Not Valid| DENY[DENY]
+```
+
+---
+
+# 348. Governance Change Risk
+
+Changes to governance have much larger blast radius than normal feature changes.
+
+Therefore they should require stronger:
+
+```text
+Review
+Testing
+Evidence
+Authorization
+Rollback planning
+Compatibility analysis
+```
+
+---
+
+# 349. Constitutional Canary
+
+Where constitutional or critical-policy implementations change, rollout should be progressive.
+
+```mermaid
+flowchart LR
+
+    CHANGE[Governance Change]
+
+    CHANGE --> LAB[Lab]
+    LAB --> TEST[Adversarial Tests]
+    TEST --> CANARY[Canary Runtime]
+    CANARY --> LIMITED[Limited Rollout]
+    LIMITED --> SCALE[Progressive Adoption]
+
+    CANARY -->|Failure| ROLLBACK[Rollback]
+    LIMITED -->|Failure| ROLLBACK
+```
+
+---
+
+# 350. Constitutional Regression Suite
+
+Every confirmed governance defect should become permanent regression coverage.
+
+The suite should eventually test:
+
+```text
+Authority Injection
+Approval Forgery
+Revocation Resurrection
+Mission Substitution
+Policy Substitution
+Context Forgery
+Role Forgery
+Replay
+TOCTOU
+Split Brain
+Privilege Escalation
+Audit Bypass
+Runtime Boundary Escape
+```
+
+---
+
+# 351. Adversarial Governance Testing
+
+Security evaluation should intentionally test whether the system can be persuaded to violate its authority model.
+
+```mermaid
+flowchart TD
+
+    ATTACK[Adversarial Request]
+
+    ATTACK --> COG[Cognitive Layer]
+    COG --> CONST[Constitution]
+    CONST --> POLICY[Security Policy]
+    POLICY --> RESULT{Eligible?}
+
+    RESULT -->|No| DENY[DENY]
+    RESULT -->|Yes| GOV[Continue Governance]
+```
+
+---
+
+# 352. Model Independence of Constitution
+
+Constitutional protections must not depend on one model understanding them correctly.
+
+Models can fail.
+
+Therefore enforcement should combine:
+
+```text
+Model reasoning
++
+Deterministic contracts
++
+Policy evaluation
++
+Runtime controls
++
+Independent verification
+```
+
+---
+
+# 353. Strong Model, Same Boundary
+
+When a better model is introduced:
+
+```text
+Reasoning capability may change.
+
+Authority does not automatically change.
+```
+
+```mermaid
+flowchart LR
+
+    OLD[Model Generation A]
+    NEW[Model Generation B]
+
+    OLD --> GOV[Same Governance Boundary]
+    NEW --> GOV
+```
+
+---
+
+# 354. External Model Boundary
+
+Third-party model providers are cognitive dependencies, not governance authorities.
+
+A provider must not receive control merely because its model performs reasoning.
+
+---
+
+# 355. Provider Failure Independence
+
+The system should be capable of surviving:
+
+```text
+Provider outage
+Provider model change
+Provider policy change
+Provider account failure
+Provider API degradation
+```
+
+without losing canonical architectural authority.
+
+---
+
+# 356. Constitutional Multi-Model Council
+
+Multiple models may advise on difficult governance questions.
+
+```mermaid
+flowchart TD
+
+    QUESTION[Governance Question]
+
+    QUESTION --> A[Model A]
+    QUESTION --> B[Model B]
+    QUESTION --> C[Model C]
+
+    A --> E[Evidence]
+    B --> E
+    C --> E
+
+    E --> VERIFY[Independent Verification]
+    VERIFY --> AUTH[Authorized Decision Process]
+```
+
+Model consensus does not replace authorized decision-making.
+
+---
+
+# 357. No Majority Coup
+
+A million agents voting for increased privilege must not create that privilege.
+
+```text
+1 agent requesting authority
+=
+requires authorization
+
+1,000,000 agents requesting authority
+=
+still requires authorization
+```
+
+Agent population is not constitutional authority.
+
+---
+
+# 358. No Reputation Coup
+
+Likewise:
+
+```text
+High Reputation
+High Intelligence
+High Productivity
+Long Service
+Economic Value
+```
+
+must not automatically become architectural sovereignty.
+
+---
+
+# 359. No Economic Capture
+
+Economic participation should not silently create architectural control.
+
+```text
+Token ownership
+Infrastructure funding
+Compute ownership
+Revenue contribution
+Customer importance
+```
+
+do not inherently equal constitutional authority.
+
+---
+
+# 360. Constitutional Independence
+
+The purpose is to prevent the safety constitution from becoming dependent on one:
+
+```text
+Agent
+Model
+Company
+Repository
+Server
+Cloud
+Operator credential
+```
+
+No single ordinary dependency should be able to silently rewrite the system's governing principles.
+
+---
+
+# 361. Constitutional Replication
+
+For resilience, constitutional identity may be replicated.
+
+But replicas must be verifiably identical.
+
+```mermaid
+flowchart TD
+
+    CANON[Canonical Constitution Digest]
+
+    CANON --> A[Replica A]
+    CANON --> B[Replica B]
+    CANON --> C[Replica C]
+
+    A --> CHECK[Digest Verification]
+    B --> CHECK
+    C --> CHECK
+
+    CHECK --> VALID[Consistent Constitutional State]
+```
+
+---
+
+# 362. Corrupted Constitution Detection
+
+```mermaid
+flowchart LR
+
+    EXPECTED[Expected Digest]
+
+    ACTUAL[Loaded Constitution]
+
+    EXPECTED --> CHECK[Integrity Check]
+    ACTUAL --> CHECK
+
+    CHECK -->|Mismatch| BLOCK[BLOCK]
+    CHECK -->|Match| ACTIVE[Eligible]
+```
+
+A corrupted constitutional artifact must fail closed.
+
+---
+
+# 363. Constitutional Availability
+
+High availability must not justify fail-open security.
+
+If a critical constitutional dependency cannot be verified:
+
+```text
+Unavailable Safety Control
+≠
+Permission to Ignore Safety Control
+```
+
+---
+
+# 364. Emergency Governance
+
+Emergencies require fast action.
+
+They should not eliminate identity, evidence or accountability.
+
+```mermaid
+flowchart TD
+
+    INCIDENT[Critical Incident]
+
+    INCIDENT --> EM[Emergency Governance]
+
+    EM --> ID[Identity]
+    EM --> SCOPE[Emergency Scope]
+    EM --> TTL[Short TTL]
+    EM --> ACTION[Bounded Action]
+
+    ACTION --> AUDIT[Immediate Audit Evidence]
+    ACTION --> REVIEW[Post-Incident Review]
+```
+
+---
+
+# 365. Emergency Authority Is Temporary
+
+Emergency controls must not silently become permanent administrative authority after the incident.
+
+---
+
+# 366. Human Protection Incident
+
+A suspected human-protection violation should be treated as a high-priority incident class.
+
+Potential response:
+
+```text
+Stop affected execution
+Preserve evidence
+Revoke temporary capability
+Isolate affected domain
+Assess impact
+Notify authorized governance
+Perform independent review
+Create regression coverage
+```
+
+---
+
+# 367. Constitutional Incident Flow
+
+```mermaid
+flowchart LR
+
+    SIGNAL[Protection Violation Signal]
+
+    SIGNAL --> STOP[Bounded Stop]
+    STOP --> ISOLATE[Isolation]
+    ISOLATE --> EVID[Evidence Preservation]
+    EVID --> REVIEW[Independent Review]
+    REVIEW --> REMEDIATE[Remediation]
+    REMEDIATE --> TEST[Regression Tests]
+    TEST --> RESTORE[Controlled Restore]
+```
+
+---
+
+# 368. Human Protection Verification
+
+Safety claims must be tested.
+
+Possible evaluation families include:
+
+```text
+Manipulation resistance
+Authority resistance
+Coercion resistance
+Privacy boundary
+Deception detection
+Unauthorized surveillance rejection
+Mission-drift detection
+Shutdown compliance
+Revocation compliance
+```
+
+---
+
+# 369. Constitutional Red Team
+
+Independent defensive review should attempt to discover:
+
+```text
+Ways to bypass constitutional checks
+Ways to inject fake authority
+Ways to hide unsafe execution
+Ways to cause fail-open behavior
+Ways to corrupt persistent policy state
+Ways to exploit concurrency
+Ways to manipulate audit evidence
+```
+
+Findings must become remediation evidence, not offensive deployment capability.
+
+---
+
+# 370. Human Protection Metrics
+
+Metrics must be interpreted carefully.
+
+Useful measurements may include:
+
+```text
+Unauthorized execution rate
+False allow rate
+Revocation latency
+Policy bypass rate
+Manipulation detection rate
+Audit completeness
+Mission drift rate
+Authority confusion rate
+```
+
+No single metric proves safety.
+
+---
+
+# 371. Safety Before Scale
+
+```mermaid
+flowchart LR
+
+    SAFE[Verified Safety Foundation]
+
+    SAFE --> S1[10 Agents]
+    S1 --> S2[100]
+    S2 --> S3[1K]
+    S3 --> S4[10K]
+    S4 --> S5[100K]
+    S5 --> S6[1M+]
+```
+
+Unsafe architecture should not simply be multiplied.
+
+---
+
+# 372. Million-Agent Constitutional Consistency
+
+At million-agent scale, each agent must not carry its own independently editable constitution.
+
+Agents should resolve governed constitutional identity through bounded trusted mechanisms.
+
+---
+
+# 373. Constitutional Cache Safety
+
+Caching may improve scale.
+
+But stale constitutional state must not silently authorize new execution.
+
+```mermaid
+flowchart LR
+
+    CACHE[Cached Policy]
+
+    CACHE --> FRESH{Fresh and Valid?}
+
+    FRESH -->|Yes| USE[Eligible]
+    FRESH -->|No| REFRESH[Refresh / Fail Closed]
+```
+
+---
+
+#
