@@ -9289,3 +9289,1849 @@ flowchart LR
 ---
 
 #
+---
+
+# 374. Mission Economy
+
+Intelligence consumes resources.
+
+At small scale this may mean:
+
+```text
+Model tokens
+CPU
+GPU
+Memory
+Storage
+Network
+Tool calls
+Human review time
+```
+
+At million-agent scale, resource allocation becomes an architectural problem.
+
+IMPERIAL AGI therefore requires a governed Mission Economy.
+
+> **Intelligence must be economically bounded as well as technically bounded.**
+
+---
+
+# 375. Economic Governance Principle
+
+A system that can reason about money must not automatically gain authority to spend money.
+
+The central invariant is:
+
+```text
+Economic Reasoning
+≠
+Economic Authority
+```
+
+```mermaid
+flowchart LR
+
+    AGI[IMPERIAL AGI]
+
+    AGI --> ANALYZE[Analyze Economic Options]
+    ANALYZE --> REC[Recommendation]
+
+    REC --> POLICY[Budget Policy]
+    POLICY --> AUTH[Economic Authorization]
+
+    AUTH --> EXEC[Eligible Economic Action]
+
+    AGI -. cannot self-authorize spending .-> EXEC
+```
+
+---
+
+# 376. Resource Intelligence
+
+IMPERIAL AGI should understand the cost of cognition.
+
+The system should eventually reason about:
+
+```text
+Compute cost
+Model cost
+Latency
+Energy
+Storage
+Network
+External API cost
+Human review cost
+Opportunity cost
+Reliability cost
+```
+
+The objective is not simply to choose the cheapest option.
+
+It is to choose the least expensive option capable of satisfying required quality, security and reliability.
+
+---
+
+# 377. Cost-Aware Cognition
+
+```mermaid
+flowchart TD
+
+    TASK[Task]
+
+    TASK --> RISK[Risk]
+    TASK --> COMPLEX[Complexity]
+    TASK --> QUALITY[Required Quality]
+    TASK --> DEADLINE[Deadline]
+
+    RISK --> ROUTER[Resource Intelligence]
+    COMPLEX --> ROUTER
+    QUALITY --> ROUTER
+    DEADLINE --> ROUTER
+
+    ROUTER --> SMALL[Efficient Model]
+    ROUTER --> LARGE[Advanced Model]
+    ROUTER --> TEAM[Multi-Agent Team]
+    ROUTER --> HUMAN[Human Review]
+```
+
+Resource optimization must remain subordinate to quality and safety requirements.
+
+---
+
+# 378. Mission Budget
+
+Every substantial mission should eventually support an explicit budget envelope.
+
+Conceptually:
+
+```text
+Mission ID
+Budget ID
+Compute Limit
+Token Limit
+Tool Limit
+Storage Limit
+Network Limit
+External API Limit
+Time Limit
+Agent Spawn Limit
+Economic Limit
+Expiration
+Policy Version
+```
+
+A mission without unlimited authority should not acquire unlimited budget.
+
+---
+
+# 379. Hierarchical Budget Architecture
+
+```mermaid
+flowchart TD
+
+    PROGRAM[Program Budget]
+
+    PROGRAM --> DOMAIN[Domain Budget]
+
+    DOMAIN --> ORG[Organization Budget]
+
+    ORG --> TEAM[Team Budget]
+
+    TEAM --> MISSION[Mission Budget]
+
+    MISSION --> NCA[NCA Budget]
+
+    NCA --> ACTION[Action Budget]
+```
+
+A child budget must remain bounded by the remaining authorized parent budget.
+
+---
+
+# 380. Budget Monotonicity
+
+A fundamental economic invariant is:
+
+```text
+Child Economic Authority
+⊆
+Parent Economic Authority
+```
+
+A delegated agent must not increase its own spending ceiling.
+
+---
+
+# 381. Economic Capability
+
+Economic operations should be explicit capabilities.
+
+Examples may include:
+
+```text
+READ_BALANCE
+ESTIMATE_COST
+REQUEST_BUDGET
+CREATE_PAYMENT_INTENT
+VERIFY_RECEIPT
+RECONCILE_LEDGER
+```
+
+More sensitive capabilities may require stronger authorization.
+
+---
+
+# 382. Economic Capability Intersection
+
+```text
+Effective Economic Capability
+=
+AI Passport Eligibility
+∩
+Mission Authority
+∩
+Economic Capability
+∩
+Budget Policy
+∩
+Guardian Policy
+∩
+Approval
+∩
+Runtime Domain Policy
+```
+
+```mermaid
+flowchart TD
+
+    ID[AI Passport]
+    M[Mission]
+    CAP[Economic Capability]
+    B[Budget Policy]
+    G[Guardian Core]
+    A[Approval Gateway]
+    R[Runtime Domain]
+
+    ID --> X[Economic Capability Intersection]
+    M --> X
+    CAP --> X
+    B --> X
+    G --> X
+    A --> X
+    R --> X
+
+    X --> ACTION[Eligible Economic Action]
+```
+
+---
+
+# 383. Payment Intent
+
+A future governed economic system should separate intention from execution.
+
+A conceptual Payment Intent may bind:
+
+```text
+Intent ID
+Agent ID
+AI Passport ID
+Mission ID
+Runtime Domain
+Economic Capability
+Asset
+Amount
+Recipient
+Purpose
+Policy Version
+Created Time
+Expiry
+Nonce
+Immutable Intent Digest
+```
+
+The intent itself does not prove that a payment occurred.
+
+---
+
+# 384. Intent Before Execution
+
+```mermaid
+flowchart LR
+
+    NEED[Economic Need]
+
+    NEED --> INTENT[Payment Intent]
+    INTENT --> VALIDATE[Policy Validation]
+    VALIDATE --> APPROVE[Approval if Required]
+    APPROVE --> EXEC[Bounded Execution]
+    EXEC --> RECEIPT[Payment Receipt]
+    RECEIPT --> AUDIT[Audit Evidence]
+```
+
+---
+
+# 385. Immutable Economic Binding
+
+After authorization, protected fields must not silently change.
+
+Examples:
+
+```text
+Amount
+Recipient
+Asset
+Mission
+Agent
+Runtime Domain
+Policy Version
+Nonce
+Purpose
+```
+
+```mermaid
+flowchart LR
+
+    AUTH[Authorized Intent]
+
+    AUTH --> HASH[Immutable Intent Digest]
+
+    HASH --> EXEC[Execution]
+
+    MUTATE[Changed Recipient / Amount]
+
+    MUTATE -. digest mismatch .-> DENY[DENY]
+```
+
+---
+
+# 386. Payment Receipt
+
+A Payment Receipt should bind the execution result back to the same authorized intent.
+
+Conceptually:
+
+```text
+Receipt ID
+Intent Digest
+Execution Identity
+Executed Amount
+Executed Asset
+Recipient
+Timestamp
+Result
+External Reference
+Evidence Digest
+```
+
+A receipt must not be accepted as evidence for an unrelated intent.
+
+---
+
+# 387. Intent-to-Receipt Chain
+
+```mermaid
+sequenceDiagram
+
+    participant N as Nano Core Agent
+    participant G as Governance
+    participant R as Runtime
+    participant L as Audit Ledger
+
+    N->>G: Payment Intent
+    G->>G: Validate identity, mission, budget, policy
+
+    alt Authorized
+        G->>R: Execute exact bound intent
+        R->>L: Receipt + intent digest
+        L-->>G: Evidence recorded
+    else Denied
+        G-->>N: DENY
+    end
+```
+
+---
+
+# 388. Replay Resistance
+
+Economic intents must resist replay.
+
+A previously executed intent must not execute again merely because it is submitted again.
+
+```mermaid
+flowchart LR
+
+    INTENT[Intent + Nonce]
+
+    INTENT --> LEDGER[Replay Registry]
+
+    LEDGER --> USED{Already Used?}
+
+    USED -->|Yes| DENY[DENY]
+    USED -->|No| CONTINUE[Continue Governance]
+```
+
+---
+
+# 389. Duplicate Nonce Defense
+
+Nonce uniqueness should be scoped appropriately.
+
+```text
+Agent
++
+Mission
++
+Economic Domain
++
+Nonce
+```
+
+must resolve deterministically enough to detect accidental or malicious replay.
+
+---
+
+# 390. Expiration
+
+Economic authority should expire.
+
+```mermaid
+flowchart TD
+
+    INTENT[Payment Intent]
+
+    INTENT --> TIME{Still Valid?}
+
+    TIME -->|No| EXPIRED[DENY]
+    TIME -->|Yes| POLICY[Continue]
+```
+
+Expired intent must not become valid because an agent supplies an older timestamp.
+
+---
+
+# 391. Trusted Economic Time
+
+Security-sensitive time must come from a trusted enforcement boundary.
+
+```text
+Caller-Provided Time
+≠
+Security Time
+```
+
+This applies to:
+
+```text
+Intent expiry
+Approval expiry
+Budget windows
+Rate limits
+Capability TTL
+Secret leases
+```
+
+---
+
+# 392. Budget Reservation
+
+For concurrent missions, merely checking a balance can create overspending races.
+
+A safer conceptual design uses reservations.
+
+```mermaid
+sequenceDiagram
+
+    participant A as Mission A
+    participant B as Mission B
+    participant P as Budget Policy
+
+    A->>P: Reserve 60
+    P-->>A: Reserved
+
+    B->>P: Reserve 60
+    P-->>B: DENY if only 40 remains
+
+    A->>P: Commit or release reservation
+```
+
+---
+
+# 393. Concurrency-Safe Budgeting
+
+Budget state must defend against:
+
+```text
+Double spend
+Concurrent reservation
+Stale balance
+Lost update
+Duplicate execution
+Reservation leak
+```
+
+Economic correctness is a concurrency problem as well as a financial problem.
+
+---
+
+# 394. Budget State Machine
+
+```mermaid
+stateDiagram-v2
+
+    [*] --> AVAILABLE
+
+    AVAILABLE --> RESERVED
+    RESERVED --> COMMITTED
+    RESERVED --> RELEASED
+    RESERVED --> EXPIRED
+
+    RELEASED --> AVAILABLE
+    EXPIRED --> AVAILABLE
+
+    COMMITTED --> [*]
+```
+
+A committed amount must not return to AVAILABLE without an explicit compensating lifecycle.
+
+---
+
+# 395. Budget Policy
+
+A Budget Policy may constrain:
+
+```text
+Agent
+Organization
+Mission
+Asset
+Recipient Class
+Maximum Amount
+Daily Limit
+Monthly Limit
+Per-Action Limit
+Required Approval
+Allowed Purpose
+Risk Tier
+```
+
+---
+
+# 396. Deny by Default Economics
+
+If economic authority is ambiguous:
+
+```text
+UNKNOWN
+STALE
+CONFLICTED
+EXPIRED
+UNVERIFIED
+```
+
+the result should not silently become:
+
+```text
+PAY
+```
+
+For protected economic actions:
+
+```text
+Uncertain Authority
+→
+DENY
+```
+
+---
+
+# 397. Cross-Agent Authority Defense
+
+Agent A must not spend Agent B's budget merely because both belong to the same organization.
+
+```mermaid
+flowchart LR
+
+    A[Agent A]
+
+    A --> BUDGETA[Budget A]
+
+    B[Agent B]
+
+    B --> BUDGETB[Budget B]
+
+    A -. cannot inherit .-> BUDGETB
+```
+
+Shared organizational budgets require explicit delegated authority.
+
+---
+
+# 398. Cross-Organization Economic Isolation
+
+```mermaid
+flowchart TD
+
+    ORGA[Organization A]
+
+    ORGA --> BA[Budget Namespace A]
+
+    ORGB[Organization B]
+
+    ORGB --> BB[Budget Namespace B]
+
+    BA -. isolated .- BB
+```
+
+Economic federation must not mean unrestricted shared spending.
+
+---
+
+# 399. Economic Separation of Duties
+
+High-value actions should support independent roles.
+
+```mermaid
+flowchart LR
+
+    REQUEST[Requester]
+
+    REQUEST --> INTENT[Create Intent]
+
+    INTENT --> REVIEW[Independent Review]
+    REVIEW --> APPROVAL[Approval]
+    APPROVAL --> EXECUTOR[Executor]
+    EXECUTOR --> RECON[Reconciliation]
+```
+
+One agent should not automatically become requester, approver, executor and auditor for high-risk economic operations.
+
+---
+
+# 400. Economic Risk Tiers
+
+A future model may classify actions such as:
+
+```text
+E0 — Read-only economic analysis
+E1 — Cost estimation
+E2 — Budget reservation
+E3 — Low-value bounded execution
+E4 — Sensitive economic action
+E5 — Critical/high-value economic action
+```
+
+Higher risk implies stronger controls.
+
+---
+
+# 401. Economic Approval Matrix
+
+```mermaid
+flowchart TD
+
+    ACTION[Economic Action]
+
+    ACTION --> RISK[Risk Tier]
+
+    RISK --> LOW[Low Risk]
+    RISK --> HIGH[High Risk]
+
+    LOW --> POLICY[Policy Authorization]
+    HIGH --> APPROVAL[Approval Gateway]
+
+    POLICY --> EXEC[Eligible Execution]
+    APPROVAL --> EXEC
+```
+
+---
+
+# 402. No Autonomous Unlimited Spending
+
+The architecture explicitly rejects:
+
+```text
+Unlimited agent wallets
+Permanent unrestricted spend permissions
+Unbounded recurring payments
+Hidden transfers
+Self-created budgets
+Self-approved budget increases
+```
+
+---
+
+# 403. Economic Kill Switch
+
+```mermaid
+flowchart TD
+
+    SIGNAL[Critical Economic Risk]
+
+    SIGNAL --> FREEZE[Freeze New Economic Admission]
+
+    FREEZE --> REVOKE[Revoke Temporary Economic Capability]
+    FREEZE --> PRESERVE[Preserve Evidence]
+    FREEZE --> REVIEW[Independent Review]
+```
+
+A freeze should prevent new operations without destroying evidence required for reconciliation.
+
+---
+
+# 404. Financial Secret Isolation
+
+Sensitive economic credentials should not become agent-owned memory.
+
+```mermaid
+flowchart LR
+
+    BROKER[Secret Broker]
+
+    BROKER --> LEASE[Temporary Secret Lease]
+    LEASE --> RUNTIME[Authorized Runtime]
+
+    RUNTIME --> ACTION[Economic Action]
+
+    ACTION --> REVOKE[Lease Ends]
+
+    RUNTIME -. no permanent secret ownership .-> BROKER
+```
+
+---
+
+# 405. Economic Evidence
+
+Every protected economic operation should eventually preserve evidence sufficient to answer:
+
+```text
+Who requested it?
+Which mission required it?
+Which capability permitted it?
+Which budget funded it?
+Who approved it?
+What exactly executed?
+What was the result?
+Was the receipt reconciled?
+```
+
+---
+
+# 406. Economic Audit Graph
+
+```mermaid
+flowchart TD
+
+    M[Mission]
+
+    M --> I[Intent]
+    I --> A[Authorization]
+    A --> X[Execution]
+    X --> R[Receipt]
+    R --> REC[Reconciliation]
+
+    M --> AUD[Audit Ledger]
+    I --> AUD
+    A --> AUD
+    X --> AUD
+    R --> AUD
+    REC --> AUD
+```
+
+---
+
+# 407. Reconciliation
+
+Execution evidence and economic records should be reconciled.
+
+Possible states include:
+
+```text
+MATCHED
+PENDING
+FAILED
+DUPLICATE
+CONFLICTED
+REVERSED
+UNKNOWN
+```
+
+---
+
+# 408. Reconciliation Is Not Deletion
+
+When an economic record is corrected, historical evidence should remain available.
+
+A compensating record is preferable to silently rewriting history.
+
+---
+
+# 409. Economic Anomaly Detection
+
+Large agent populations require detection of unusual patterns.
+
+Examples:
+
+```text
+Rapid spending increase
+Repeated failed payments
+Unusual recipients
+Repeated near-limit actions
+High retry rate
+Budget reservation spikes
+Cross-domain anomalies
+Unexpected cost growth
+```
+
+These are investigation signals, not automatic proof of wrongdoing.
+
+---
+
+# 410. Runaway Cost Defense
+
+A malfunctioning agent can create severe cost without malicious intent.
+
+Controls include:
+
+```text
+Hard budgets
+Rate limits
+Deadlines
+Retry budgets
+Spawn budgets
+Provider quotas
+Circuit breakers
+Anomaly detection
+```
+
+---
+
+# 411. Cost Circuit Breaker
+
+```mermaid
+stateDiagram-v2
+
+    NORMAL --> WARNING: threshold reached
+    WARNING --> LIMITED: higher threshold
+    LIMITED --> FROZEN: hard ceiling
+    WARNING --> NORMAL: budget recovers
+    LIMITED --> NORMAL: authorized reset
+    FROZEN --> NORMAL: explicit recovery
+```
+
+---
+
+# 412. Cognitive Cost Attribution
+
+Every substantial reasoning workload should eventually support cost attribution.
+
+```text
+Mission
+Organization
+Team
+NCA
+Model
+Tool
+Runtime Domain
+```
+
+This enables meaningful optimization.
+
+---
+
+# 413. Cost Attribution Flow
+
+```mermaid
+flowchart LR
+
+    MODEL[Model Usage]
+    TOOL[Tool Usage]
+    COMPUTE[Compute]
+    STORAGE[Storage]
+
+    MODEL --> METER[Usage Meter]
+    TOOL --> METER
+    COMPUTE --> METER
+    STORAGE --> METER
+
+    METER --> MISSION[Mission Cost]
+    MISSION --> ORG[Organization Cost]
+    ORG --> FED[Federation Cost View]
+```
+
+---
+
+# 414. Cost Does Not Determine Truth
+
+A more expensive model is not automatically more correct.
+
+A cheaper result is not automatically inferior.
+
+```text
+Cost
+≠
+Quality
+
+Price
+≠
+Evidence
+```
+
+Evaluation must remain independent.
+
+---
+
+# 415. Economic Model Routing
+
+```mermaid
+flowchart TD
+
+    TASK[Task]
+
+    TASK --> Q[Quality Requirement]
+    TASK --> R[Risk]
+    TASK --> B[Budget]
+    TASK --> L[Latency]
+
+    Q --> ROUTER[Governed Model Router]
+    R --> ROUTER
+    B --> ROUTER
+    L --> ROUTER
+
+    ROUTER --> OPT[Best Eligible Capability]
+```
+
+The router optimizes inside policy.
+
+It does not rewrite policy.
+
+---
+
+# 416. Mission Value Estimation
+
+A future planning system may estimate mission value using factors such as:
+
+```text
+Architect Priority
+Strategic Importance
+Risk Reduction
+Expected Information Gain
+Revenue Potential
+Cost Avoidance
+Urgency
+Dependencies Unblocked
+Human Benefit
+```
+
+These are planning signals.
+
+They do not independently create authority.
+
+---
+
+# 417. Human Benefit as an Economic Constraint
+
+Economic optimization should not reduce people to monetary values.
+
+Human protection remains above economic optimization.
+
+```mermaid
+flowchart TD
+
+    PROFIT[Potential Economic Gain]
+
+    PROFIT --> HUMAN{Human Protection Compatible?}
+
+    HUMAN -->|No| DENY[Reject]
+    HUMAN -->|Yes| ECON[Continue Economic Evaluation]
+```
+
+---
+
+# 418. No Profit Override
+
+The architecture rejects the principle:
+
+```text
+Profitable
+=
+Allowed
+```
+
+Profitability cannot override:
+
+```text
+Human protection
+Lawful governance
+Security boundaries
+Architectural restrictions
+Mission authority
+```
+
+---
+
+# 419. Resource Allocation Intelligence
+
+Large-scale agent systems require intelligent allocation of scarce resources.
+
+```mermaid
+flowchart TD
+
+    DEMAND[Mission Demand]
+
+    COMPUTE[Compute Supply] --> ALLOC[Resource Allocator]
+    MODELS[Model Capacity] --> ALLOC
+    NCA[NCA Capacity] --> ALLOC
+    TOOLS[Tool Capacity] --> ALLOC
+
+    DEMAND --> ALLOC
+
+    ALLOC --> PRIORITY[Priority Queue]
+    PRIORITY --> EXEC[Bounded Execution]
+```
+
+---
+
+# 420. Resource Fairness
+
+One mission should not necessarily starve all others.
+
+The system may require:
+
+```text
+Priority classes
+Reserved capacity
+Emergency capacity
+Fair scheduling
+Maximum monopolization
+```
+
+while preserving Architect-directed priorities.
+
+---
+
+# 421. Emergency Resource Reserve
+
+```mermaid
+flowchart LR
+
+    TOTAL[Total Capacity]
+
+    TOTAL --> NORMAL[Normal Capacity]
+    TOTAL --> RESERVE[Protected Emergency Reserve]
+
+    RESERVE --> INCIDENT[Authorized Critical Incident]
+```
+
+Routine workload should not silently consume emergency capacity.
+
+---
+
+# 422. Million-Agent Economic Scaling
+
+For 1,000,000+ registered agents, economic control must scale hierarchically.
+
+```mermaid
+flowchart TB
+
+    H[HANTER Economic Executive View]
+
+    H --> F1[Federated Economic Domain A]
+    H --> F2[Federated Economic Domain B]
+    H --> FN[Federated Economic Domain N]
+
+    F1 --> O1[Organization Budgets]
+    F2 --> O2[Organization Budgets]
+    FN --> ON[Organization Budgets]
+
+    O1 --> M1[Mission Budgets]
+    O2 --> M2[Mission Budgets]
+    ON --> MN[Mission Budgets]
+
+    M1 --> N1[NCA Economic Envelopes]
+    M2 --> N2[NCA Economic Envelopes]
+    MN --> NN[NCA Economic Envelopes]
+```
+
+HANTER should receive aggregated economic state rather than process every micro-transaction itself.
+
+---
+
+# 423. Economic Executive View
+
+HANTER may eventually reason over:
+
+```text
+Total budget
+Committed budget
+Available budget
+Cost by organization
+Cost by mission
+Cost by model
+Cost anomalies
+Approval backlog
+Economic incidents
+Resource forecast
+```
+
+---
+
+# 424. IMPERIAL AGI Economic Intelligence
+
+IMPERIAL AGI may support:
+
+```text
+Cost forecasting
+Budget planning
+Scenario modelling
+Resource optimization
+Economic risk analysis
+Capacity planning
+```
+
+It remains advisory unless separately authorized.
+
+---
+
+# 425. Economic Simulation
+
+Before expensive changes, IMPERIAL AGI may compare alternative plans.
+
+```mermaid
+flowchart TD
+
+    PLAN[Mission Plan]
+
+    PLAN --> A[Strategy A]
+    PLAN --> B[Strategy B]
+    PLAN --> C[Strategy C]
+
+    A --> CA[Estimated Cost A]
+    B --> CB[Estimated Cost B]
+    C --> CC[Estimated Cost C]
+
+    CA --> COMP[Cost / Quality / Risk Comparison]
+    CB --> COMP
+    CC --> COMP
+
+    COMP --> REC[Recommendation]
+```
+
+Estimated cost is not guaranteed cost.
+
+---
+
+# 426. Forecast vs Reality
+
+```mermaid
+flowchart LR
+
+    FORECAST[Cost Forecast]
+
+    FORECAST --> COMPARE[Compare]
+
+    ACTUAL[Actual Cost Evidence] --> COMPARE
+
+    COMPARE --> ERROR[Forecast Error]
+
+    ERROR --> LEARN[Improve Economic Model]
+```
+
+---
+
+# 427. Economic Memory
+
+Verified historical economic evidence can support future planning.
+
+Examples:
+
+```text
+Actual model cost
+Typical mission cost
+Retry cost
+Failure cost
+Verification cost
+Runtime cost
+Provider variance
+```
+
+Historical economics should remain version- and time-aware.
+
+---
+
+# 428. Provider Economic Independence
+
+The federation should not be structurally dependent on one provider's pricing.
+
+```mermaid
+flowchart TD
+
+    ROUTER[Model Router]
+
+    ROUTER --> A[Provider A]
+    ROUTER --> B[Provider B]
+    ROUTER --> C[Local Compute]
+    ROUTER --> N[Future Provider]
+
+    A --> COST[Cost Evidence]
+    B --> COST
+    C --> COST
+    N --> COST
+```
+
+Provider price changes may influence routing.
+
+They do not redefine architecture.
+
+---
+
+# 429. Economic Resilience
+
+The architecture should tolerate:
+
+```text
+Provider price changes
+Credit exhaustion
+Billing outages
+Payment failures
+Network failures
+Budget-service failures
+Market volatility
+```
+
+without silently falling back to unbounded economic behavior.
+
+---
+
+# 430. Economic Failover
+
+```mermaid
+flowchart LR
+
+    PRIMARY[Primary Capability]
+
+    PRIMARY --> FAIL{Unavailable / Over Budget?}
+
+    FAIL -->|No| USE[Use Primary]
+    FAIL -->|Yes| ALT[Evaluate Alternative]
+
+    ALT --> POLICY[Policy Check]
+    POLICY --> SECONDARY[Eligible Secondary]
+```
+
+No silent fallback should bypass security or quality requirements.
+
+---
+
+# 431. No Economic Self-Preservation
+
+An AI system must not treat continued funding of itself as an independent objective.
+
+```text
+Need More Compute
+→
+Request Resources
+```
+
+not:
+
+```text
+Need More Compute
+→
+Acquire Money Without Authorization
+```
+
+---
+
+# 432. No Self-Funding Authority
+
+```mermaid
+flowchart LR
+
+    AGI[IMPERIAL AGI]
+
+    AGI --> NEED[Resource Need]
+    NEED --> REQUEST[Budget Request]
+    REQUEST --> GOVERNANCE[Governance]
+
+    AGI -. cannot self-fund .-> FUNDS[Economic Resources]
+```
+
+---
+
+# 433. Economic Anti-Capture
+
+Large economic control can become governance control.
+
+The architecture should therefore prevent:
+
+```text
+Largest budget holder
+Largest token holder
+Largest customer
+Largest infrastructure provider
+Largest compute provider
+```
+
+from automatically becoming architectural authority.
+
+---
+
+# 434. Economic Ownership Is Not Architectural Authority
+
+```text
+Economic Ownership
+≠
+Architectural Sovereignty
+```
+
+This applies across the IMPERIAL Core ecosystem.
+
+---
+
+# 435. CRYPTO IMPERIAL Ecosystem Boundary
+
+Economic capabilities interacting with CRYPTO IMPERIAL Ecosystem must remain behind explicit governed interfaces.
+
+```mermaid
+flowchart LR
+
+    AGI[IMPERIAL AGI]
+
+    AGI --> INTENT[Economic Intent]
+    INTENT --> GOV[Governance Boundary]
+    GOV --> API[Approved Economic Interface]
+
+    API --> CRYPTO[CRYPTO IMPERIAL Ecosystem]
+
+    CRYPTO --> RECEIPT[Economic Evidence]
+    RECEIPT --> AUDIT[Audit Ledger]
+```
+
+No cognitive component obtains direct unrestricted economic control.
+
+---
+
+# 436. IMPERIUM Architectural Position
+
+Within the long-term IMPERIAL Core architecture, **IMPERIUM** is envisioned as a digital currency architecture for AI agents worldwide.
+
+This public architecture does **not** claim:
+
+```text
+current global adoption
+current worldwide agent usage
+current liquidity
+current market dominance
+production economic integration
+```
+
+The distinction between architectural vision and present implementation must remain explicit.
+
+---
+
+# 437. Currency-Agnostic Economic Core
+
+Economic governance should not be hard-coded to one asset.
+
+Conceptually:
+
+```text
+Asset Identity
+Amount
+Recipient
+Intent
+Authorization
+Receipt
+```
+
+remain generic.
+
+This allows governed support for different eligible assets without redesigning the authorization system.
+
+---
+
+# 438. Asset Registry
+
+A future Asset Registry may preserve:
+
+```text
+Asset ID
+Network
+Contract Identity
+Decimals
+Evidence Status
+Allowed Domains
+Risk Classification
+Verification Source
+```
+
+Asset existence does not imply economic eligibility.
+
+---
+
+# 439. Economic Network Boundary
+
+```mermaid
+flowchart TD
+
+    INTENT[Authorized Intent]
+
+    INTENT --> DOMAIN[Runtime Domain]
+    DOMAIN --> NETWORK[Approved Network Adapter]
+
+    NETWORK --> RESULT[Execution Result]
+    RESULT --> RECEIPT[Receipt]
+```
+
+Network access should remain explicitly bounded.
+
+---
+
+# 440. Simulation Before Value Transfer
+
+During development and evaluation, economic logic should prefer:
+
+```text
+Schemas
+Mocks
+Simulations
+Test Networks
+Zero-Value Tests
+```
+
+before real-value production execution.
+
+---
+
+# 441. No Production Value by Default
+
+A development environment must not silently transition from simulated value to production-value execution.
+
+```mermaid
+flowchart LR
+
+    DEV[Development]
+
+    DEV --> SIM[Simulation]
+
+    SIM --> TEST[Test Environment]
+
+    TEST --> GATE[Production Authorization Gate]
+
+    GATE --> PROD[Production Value]
+
+    DEV -. no implicit path .-> PROD
+```
+
+---
+
+# 442. Economic Verification Program
+
+Before autonomous economic capability is considered mature, testing should include:
+
+```text
+Valid intent PASS
+Expired intent DENY
+Replay DENY
+Duplicate nonce DENY
+Amount mutation DENY
+Recipient mutation DENY
+Policy mutation DENY
+Wrong AI Passport DENY
+Wrong Runtime Domain DENY
+Unauthorized capability DENY
+Insufficient budget DENY
+Cross-agent authority DENY
+Concurrent overspend DENY
+Revoked approval DENY
+```
+
+---
+
+# 443. Economic Adversarial Testing
+
+```mermaid
+flowchart TD
+
+    TEST[Adversarial Economic Request]
+
+    TEST --> ID[Identity]
+    ID --> MISSION[Mission]
+    MISSION --> BUDGET[Budget]
+    BUDGET --> POLICY[Policy]
+    POLICY --> APPROVAL[Approval]
+    APPROVAL --> EXEC{Eligible?}
+
+    EXEC -->|No| DENY[DENY]
+    EXEC -->|Yes| RUNTIME[Bounded Runtime]
+```
+
+---
+
+# 444. Economic Truth Boundary
+
+The following are different claims:
+
+```text
+Economic architecture exists.
+
+Economic schemas exist.
+
+Economic authorization code exists.
+
+Local tests pass.
+
+A simulated payment works.
+
+A test-network payment works.
+
+A production payment works.
+
+Autonomous economic operation is production-safe.
+```
+
+Each requires different evidence.
+
+---
+
+# 445. Million-Agent Economic Safety
+
+Before enabling large populations, the system should prove bounded economics at progressively larger scale.
+
+```mermaid
+flowchart LR
+
+    A[10 Agents]
+    A --> B[100]
+    B --> C[1,000]
+    C --> D[10,000]
+    D --> E[100,000]
+    E --> F[1,000,000+]
+
+    A -. budget gate .-> B
+    B -. concurrency gate .-> C
+    C -. audit gate .-> D
+    D -. resilience gate .-> E
+    E -. economic safety gate .-> F
+```
+
+---
+
+# 446. Economic Blast Radius
+
+Every economic capability should answer:
+
+> **If this capability fails completely, how much value can it affect?**
+
+The architecture should make the answer finite and explicit.
+
+---
+
+# 447. Maximum Loss Boundary
+
+For sensitive economic systems, mission design should eventually define:
+
+```text
+Maximum Single Action Loss
+Maximum Mission Loss
+Maximum Daily Loss
+Maximum Organizational Loss
+```
+
+A failure must not have unlimited economic blast radius.
+
+---
+
+# 448. Economic Recovery
+
+Economic incidents require structured recovery.
+
+```mermaid
+flowchart TD
+
+    INCIDENT[Economic Incident]
+
+    INCIDENT --> FREEZE[Freeze Affected Capability]
+    FREEZE --> EVIDENCE[Preserve Evidence]
+    EVIDENCE --> RECON[Reconcile]
+    RECON --> RCA[Root Cause Analysis]
+    RCA --> REMEDIATE[Remediation]
+    REMEDIATE --> TEST[Regression Tests]
+    TEST --> RESTORE[Controlled Restore]
+```
+
+---
+
+# 449. Economic Regression Memory
+
+Confirmed economic defects should become permanent regression coverage.
+
+Examples:
+
+```text
+Double-spend race
+Replay
+Nonce collision
+Amount mutation
+Recipient mutation
+Budget race
+Stale approval
+Wrong identity
+Wrong runtime
+Cross-agent authority
+```
+
+---
+
+# 450. Economic Self-Improvement Boundary
+
+IMPERIAL AGI may propose:
+
+```text
+Cheaper routing
+Better budget forecasts
+Better scheduling
+Better resource allocation
+Lower-cost model combinations
+```
+
+It may not independently increase:
+
+```text
+Spending limits
+Financial authority
+Approved recipients
+Allowed assets
+Economic privilege
+```
+
+---
+
+# 451. Resource Intelligence Loop
+
+```mermaid
+flowchart LR
+
+    OBSERVE[Observe Usage]
+
+    OBSERVE --> FORECAST[Forecast]
+    FORECAST --> PLAN[Plan]
+    PLAN --> ALLOCATE[Allocate]
+    ALLOCATE --> EXECUTE[Execute]
+    EXECUTE --> METER[Measure]
+    METER --> VERIFY[Verify]
+    VERIFY --> LEARN[Learn]
+
+    LEARN --> OBSERVE
+```
+
+---
+
+# 452. Economic Intelligence Architecture
+
+```mermaid
+flowchart TB
+
+    ARCH["Architect<br/>Alexander Romaskevich"]
+
+    ARCH --> H["HANTER"]
+
+    H <--> AGI["IMPERIAL AGI"]
+
+    AGI --> RI["Resource Intelligence"]
+    AGI --> ECON["Economic Reasoning"]
+
+    RI --> REC["Economic Recommendation"]
+    ECON --> REC
+
+    REC --> INTENT["Payment / Resource Intent"]
+
+    INTENT --> PASS["AI Passport"]
+    PASS --> CAP["Economic Capability"]
+    CAP --> BUDGET["Budget Policy"]
+    BUDGET --> GC["Guardian Core"]
+    GC --> AP["Approval Gateway"]
+    AP --> RD["Runtime Domain"]
+
+    RD --> ECONBOUND["Approved Economic Interface"]
+    ECONBOUND --> RECEIPT["Receipt / Result"]
+
+    RECEIPT --> AUD["Audit Ledger"]
+
+    AUD --> H
+    AUD --> AGI
+```
+
+---
+
+# 453. Economic Constitutional Invariant
+
+The complete architecture preserves:
+
+```text
+Reasoning
+≠
+Spending
+
+Identity
+≠
+Spending
+
+Capability
+≠
+Spending
+
+Balance
+≠
+Permission
+
+Asset Ownership
+≠
+Architectural Authority
+
+Economic Success
+≠
+Security Approval
+```
+
+---
+
+# 454. Economic Mission Doctrine
+
+```text
+Estimate before consuming.
+
+Budget before executing.
+
+Bind before authorizing.
+
+Authorize before spending.
+
+Verify before trusting.
+
+Reconcile after execution.
+
+Audit every protected transition.
+
+Revoke when authority ends.
+```
+
+---
+
+# 455. Million-Agent Economic Principle
+
+> **A million intelligent agents require a million bounded economic envelopes — not a million unrestricted wallets.**
+
+The scalable economic model is therefore based on:
+
+```text
+Hierarchical budgets
+Sparse economic activation
+Explicit capabilities
+Immutable intents
+Replay resistance
+Runtime isolation
+Evidence-bound receipts
+Federated reconciliation
+```
+
+---
+
+# 456. Economic Intelligence Vision
+
+The objective is an intelligence capable of understanding resources as deeply as it understands software or strategy.
+
+It should eventually be capable of answering:
+
+```text
+Which mission deserves resources?
+
+Which model is sufficient?
+
+What will this plan cost?
+
+What is the financial blast radius?
+
+Which alternative is safer?
+
+Which allocation produces the highest verified value?
+
+Where is cost being wasted?
+
+Which budget is at risk?
+
+Which evidence proves the result?
+```
+
+without turning economic intelligence into uncontrolled financial authority.
+
+---
+
+# 457. Final Economic Doctrine
+
+```mermaid
+flowchart LR
+
+    THINK[Reason]
+    THINK --> ESTIMATE[Estimate]
+    ESTIMATE --> BUDGET[Budget]
+    BUDGET --> AUTHORIZE[Authorize]
+    AUTHORIZE --> EXECUTE[Execute]
+    EXECUTE --> RECEIPT[Receipt]
+    RECEIPT --> RECONCILE[Reconcile]
+    RECONCILE --> AUDIT[Audit]
+    AUDIT --> LEARN[Learn]
+
+    LEARN --> THINK
+```
+
+At every stage:
+
+```text
+Economic Intelligence
+≠
+Economic Sovereignty
+```
+
+---
+
+## Mission Economy Truth Boundary
+
+This section defines the public architectural direction for resource intelligence, mission budgeting, payment intents, economic capabilities, cost-aware cognition and large-scale economic governance.
+
+It does not claim autonomous production spending.
+
+It does not claim production integration with IMPERIUM or CRYPTO IMPERIAL Ecosystem.
+
+It does not claim current worldwide use of IMPERIUM by AI agents.
+
+Architecture, specification, implementation, testing, runtime evidence, deployment and production remain separate engineering states.
+
+---
+
+## Economic Architecture Authorship & Digital Provenance
+
+**Architect & Original Author:** Alexander Romaskevich  
+**Founder • Owner • CEO • Chief Systems Architect — IMPERIAL Core**
+
+The Mission Economy, Resource Intelligence, Economic Capability, governed Payment Intent, Budget Policy and million-agent economic architecture described here form part of the original IMPERIAL Core and IMPERIAL AGI architectural program under the direction of Alexander Romaskevich.
+
+**Canonical authorship:** Alexander Romaskevich  
+**Architecture:** IMPERIAL Core  
+**Cognitive Component:** IMPERIAL AGI  
+**Executive Intelligence:** HANTER  
+**Agent Architecture:** Nano Core Agents  
+**Economic Boundary:** CRYPTO IMPERIAL Ecosystem  
+**Long-Term Agent Currency Architecture:** IMPERIUM  
+**Repository:** IMPERIAL-AGI  
+**Year:** 2026
+
+Copyright © 2026 Alexander Romaskevich.
+
+---
+
+> **Think economically. Authorize explicitly. Spend narrowly. Prove precisely.**
+
+> **Maximum Intelligence. Bounded Resources. Explicit Authority.**
+
+**IMPERIAL AGI — Architected by Alexander Romaskevich.**
