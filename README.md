@@ -22218,3 +22218,1525 @@ Copyright © 2026 Alexander Romaskevich.
 > **General intelligence is the ability to transfer what matters and discard what does not.**
 
 **IMPERIAL AGI — Architected by Alexander Romaskevich.**
+---
+
+# 1062. Governed Self-Improvement
+
+A system approaching AGI-class capability must be able to improve how it reasons, plans, retrieves knowledge and selects tools.
+
+But self-improvement creates one of the most dangerous architectural boundaries in advanced AI.
+
+The central principle is:
+
+> **IMPERIAL AGI may improve its intelligence. It may not improve its own authority.**
+
+---
+
+# 1063. Improvement Domains
+
+IMPERIAL AGI may eventually propose improvements to:
+
+```text
+Reasoning strategies
+Prompt structures
+Context compilation
+Memory retrieval
+Planning heuristics
+Model routing
+Tool selection
+Verification procedures
+Confidence calibration
+Evaluation methods
+Resource allocation
+```
+
+These are cognitive or engineering improvements.
+
+They are not authority changes.
+
+---
+
+# 1064. Forbidden Self-Mutation Domains
+
+The system must not independently rewrite or weaken:
+
+```text
+Architect Authority
+Human Protection Constitution
+AI Passport
+Enterprise IMPERIAL Skills authority boundaries
+Guardian Core
+Approval Gateway
+Runtime Domain isolation
+Audit Ledger requirements
+Public / Private Boundary
+Revocation
+Kill-switch controls
+Classification policy
+```
+
+---
+
+# 1065. Cognitive Mutation Firewall
+
+Every self-improvement proposal must cross a dedicated Cognitive Mutation Firewall.
+
+```mermaid
+flowchart TD
+
+    AGI[IMPERIAL AGI]
+
+    AGI --> IDEA[Improvement Proposal]
+
+    IDEA --> FIREWALL[Cognitive Mutation Firewall]
+
+    FIREWALL --> CLASS[Classify Change]
+
+    CLASS --> SAFE[Cognitive / Performance Change]
+    CLASS --> PROTECTED[Protected Authority Change]
+
+    PROTECTED --> DENY[DENY]
+
+    SAFE --> TEST[Candidate Evaluation]
+```
+
+---
+
+# 1066. Mutation Classes
+
+A future mutation model may distinguish:
+
+```text
+M0 — cosmetic / documentation
+M1 — reasoning strategy
+M2 — memory / retrieval behavior
+M3 — planning behavior
+M4 — tool / model routing
+M5 — verifier / critic logic
+M6 — governance-adjacent
+M7 — protected constitutional boundary
+```
+
+Higher classes require stronger review.
+
+---
+
+# 1067. No Self-Approved Mutation
+
+A candidate improvement cannot validate itself.
+
+```text
+Propose
+≠
+Approve
+```
+
+```mermaid
+flowchart LR
+
+    CURRENT[Current System]
+
+    CURRENT --> CAND[Candidate Improvement]
+
+    CAND --> TEST[Test]
+    TEST --> CRITIC[Independent Critic]
+    CRITIC --> VERIFY[Independent Verifier]
+
+    VERIFY --> GOVERN[Governed Adoption]
+
+    GOVERN --> NEXT[Next Generation]
+```
+
+---
+
+# 1068. Candidate Sandbox
+
+Self-improvement candidates must not be introduced directly into trusted runtime.
+
+```mermaid
+flowchart TD
+
+    PROPOSAL[Improvement Proposal]
+
+    PROPOSAL --> BUILD[Candidate Build]
+    BUILD --> SANDBOX[Isolated Candidate Sandbox]
+
+    SANDBOX --> EVAL[Evaluation]
+    EVAL --> SECURITY[Security Review]
+    SECURITY --> DECIDE[Adoption Decision]
+```
+
+---
+
+# 1069. Candidate Is Not Active
+
+The architecture distinguishes:
+
+```text
+Proposed
+Built
+Tested
+Verified
+Approved
+Active
+```
+
+A candidate may pass some tests and still remain inactive.
+
+---
+
+# 1070. Self-Improvement State Machine
+
+```mermaid
+stateDiagram-v2
+
+    [*] --> PROPOSED
+
+    PROPOSED --> BUILT
+    BUILT --> TESTING
+
+    TESTING --> REJECTED
+    TESTING --> SECURITY_REVIEW
+
+    SECURITY_REVIEW --> VERIFIED
+    SECURITY_REVIEW --> REJECTED
+
+    VERIFIED --> APPROVED
+    APPROVED --> CANARY
+    CANARY --> ACTIVE
+    CANARY --> ROLLED_BACK
+
+    ACTIVE --> SUPERSEDED
+    ACTIVE --> REVOKED
+```
+
+---
+
+# 1071. Improvement Evidence Package
+
+Every meaningful self-improvement should eventually produce:
+
+```text
+Change ID
+Parent Version
+Candidate Version
+Change Description
+Expected Benefit
+Risk Analysis
+Affected Components
+Evaluation Results
+Security Results
+Regression Results
+Known Limitations
+Rollback Plan
+Evidence Digest
+```
+
+---
+
+# 1072. Improvement Hypothesis
+
+Every non-trivial mutation should have an explicit hypothesis.
+
+Example:
+
+```text
+Changing retrieval strategy X
+is expected to improve
+cross-repository reasoning quality
+without increasing hallucination rate.
+```
+
+This makes improvement measurable.
+
+---
+
+# 1073. Improvement Without Hypothesis
+
+A change such as:
+
+```text
+This feels smarter.
+```
+
+is not sufficient engineering justification.
+
+---
+
+# 1074. Baseline Comparison
+
+Candidate versions should be compared against the current trusted baseline.
+
+```mermaid
+flowchart LR
+
+    BASE[Trusted Baseline]
+
+    CAND[Candidate]
+
+    BASE --> BENCH[Evaluation Suite]
+    CAND --> BENCH
+
+    BENCH --> DIFF[Capability / Risk Diff]
+```
+
+---
+
+# 1075. Multi-Dimensional Improvement
+
+A candidate can improve one dimension while degrading another.
+
+For example:
+
+```text
++ faster reasoning
+- worse verification
+
++ higher accuracy
+- much higher cost
+
++ stronger autonomy
+- weaker safety
+```
+
+Therefore no single score is enough.
+
+---
+
+# 1076. Pareto Improvement
+
+The strongest candidate is one that improves useful capability without unacceptable regressions.
+
+```mermaid
+flowchart TD
+
+    CAND[Candidate]
+
+    CAND --> QUALITY[Quality]
+    CAND --> SAFETY[Safety]
+    CAND --> COST[Cost]
+    CAND --> SPEED[Latency]
+    CAND --> REL[Reliability]
+
+    QUALITY --> DECIDE[Adoption Decision]
+    SAFETY --> DECIDE
+    COST --> DECIDE
+    SPEED --> DECIDE
+    REL --> DECIDE
+```
+
+---
+
+# 1077. Regression Supremacy
+
+New capability must not erase old safety.
+
+```text
+New Benchmark PASS
++
+Old Security Regression FAIL
+=
+Candidate FAIL
+```
+
+---
+
+# 1078. Historical Regression Corpus
+
+Every confirmed defect should become permanent evaluation material.
+
+Examples:
+
+```text
+Authority injection
+Revocation resurrection
+Mission substitution
+Policy substitution
+Replay
+TOCTOU
+Split-brain
+Wrong-role context
+Tool bypass
+Budget race
+```
+
+---
+
+# 1079. Evolution Without Forgetting
+
+```mermaid
+flowchart LR
+
+    V1[Generation 1]
+
+    V1 --> TESTS[Historical Regression Corpus]
+
+    V2[Generation 2] --> TESTS
+    V3[Generation 3] --> TESTS
+
+    TESTS --> KEEP[Preserve Verified Capabilities]
+```
+
+---
+
+# 1080. Cognitive Mutation Digest
+
+A future change may be bound to a deterministic digest.
+
+Conceptually:
+
+```text
+Mutation Digest
+=
+Hash(
+    Parent Version
+    + Candidate Source
+    + Configuration
+    + Evaluation Suite
+    + Policy Version
+)
+```
+
+---
+
+# 1081. Parent Binding
+
+Every candidate generation should identify its trusted parent.
+
+```text
+Candidate vN+1
+must explicitly derive from
+Trusted vN
+```
+
+Unknown lineage should block adoption.
+
+---
+
+# 1082. No Lineage Ambiguity
+
+```mermaid
+flowchart LR
+
+    CAND[Candidate]
+
+    CAND --> PARENT{Trusted Parent Known?}
+
+    PARENT -->|No| BLOCK[BLOCK]
+    PARENT -->|Yes| TEST[Continue]
+```
+
+---
+
+# 1083. Candidate Reproducibility
+
+A candidate should be reproducible from:
+
+```text
+Source
+Version
+Config
+Model Versions
+Tool Versions
+Evaluation Inputs
+```
+
+where technically possible.
+
+---
+
+# 1084. Self-Generated Code Boundary
+
+IMPERIAL AGI may generate candidate code.
+
+Generated code is not trusted code.
+
+```text
+Generated
+→ Review
+→ Test
+→ Security Evaluate
+→ Verify
+→ Govern
+```
+
+---
+
+# 1085. Code Mutation Firewall
+
+```mermaid
+flowchart TD
+
+    AGI[IMPERIAL AGI]
+
+    AGI --> PATCH[Generated Patch]
+
+    PATCH --> SOURCE[Source Authority Gate]
+    SOURCE --> STATIC[Static Analysis]
+    STATIC --> TEST[Tests]
+    TEST --> SECURITY[Security Review]
+    SECURITY --> VERIFY[Verification]
+
+    VERIFY --> COMMIT[Eligible Commit]
+```
+
+---
+
+# 1086. Source Authority Before Self-Modification
+
+No self-improvement mechanism may mutate:
+
+```text
+older
+ambiguous
+derived
+unverified
+```
+
+source and call it canonical.
+
+---
+
+# 1087. Repository Isolation During Evolution
+
+Self-improvement experiments must remain repository-scoped.
+
+```mermaid
+flowchart TD
+
+    IMPROVE[Improvement Mission]
+
+    IMPROVE --> REPOA[Repository A]
+
+    REPOA -. no implicit mutation .-> REPOB[Repository B]
+```
+
+---
+
+# 1088. Protected Repository Boundary
+
+Critical repositories may require stronger change admission.
+
+Examples may include:
+
+```text
+HANTER
+Guardian Core
+Approval Gateway
+AI Passport
+Audit Ledger
+```
+
+---
+
+# 1089. Cognitive Canary
+
+A candidate should not immediately replace the full trusted population.
+
+```mermaid
+flowchart LR
+
+    CAND[Candidate Generation]
+
+    CAND --> LAB[Lab]
+    LAB --> CANARY[Canary Missions]
+    CANARY --> LIMITED[Limited Scope]
+    LIMITED --> SCALE[Progressive Scale]
+
+    CANARY -->|Regression| ROLLBACK[Rollback]
+    LIMITED -->|Regression| ROLLBACK
+```
+
+---
+
+# 1090. Shadow Evaluation
+
+A new cognitive generation may operate in shadow mode.
+
+```text
+Trusted system acts.
+
+Candidate observes same mission
+and produces non-executing comparison output.
+```
+
+This allows evaluation without giving the candidate authority.
+
+---
+
+# 1091. Shadow Architecture
+
+```mermaid
+flowchart TD
+
+    M[Mission]
+
+    M --> ACTIVE[Trusted Active System]
+    M --> SHADOW[Candidate Shadow System]
+
+    ACTIVE --> REAL[Real Recommendation]
+    SHADOW --> ALT[Shadow Recommendation]
+
+    REAL --> COMP[Compare]
+    ALT --> COMP
+
+    COMP --> EVAL[Candidate Evaluation]
+```
+
+---
+
+# 1092. Shadow Cannot Execute
+
+Shadow systems have:
+
+```text
+cognitive access
+```
+
+but no:
+
+```text
+execution authority
+```
+
+---
+
+# 1093. Mutation Risk Analysis
+
+Before adoption, evaluate:
+
+```text
+Authority impact
+Security impact
+Memory impact
+Tool impact
+Planning impact
+Model impact
+Runtime impact
+Cost impact
+```
+
+---
+
+# 1094. Behavioral Diff
+
+A cognitive candidate should be compared behaviorally.
+
+```text
+Where does it answer differently?
+Where does it escalate differently?
+Where does confidence change?
+Where does tool selection change?
+Where does safety behavior change?
+```
+
+---
+
+# 1095. Capability Drift
+
+A new generation may unexpectedly become worse in an unrelated area.
+
+This is capability drift.
+
+---
+
+# 1096. Safety Drift
+
+Safety drift is especially critical.
+
+Examples:
+
+```text
+more willingness to bypass gates
+less escalation
+higher false-allow rate
+weaker uncertainty handling
+```
+
+---
+
+# 1097. Drift Gate
+
+```mermaid
+flowchart LR
+
+    OLD[Trusted Generation]
+    NEW[Candidate Generation]
+
+    OLD --> SUITE[Evaluation Matrix]
+    NEW --> SUITE
+
+    SUITE --> DRIFT[Drift Analysis]
+
+    DRIFT --> REVIEW[Review]
+```
+
+---
+
+# 1098. Improvement Budget
+
+Self-improvement consumes resources.
+
+Each improvement program should have:
+
+```text
+Compute Budget
+Experiment Budget
+Time Budget
+Tool Budget
+Candidate Count
+```
+
+---
+
+# 1099. Bounded Search
+
+Searching for better intelligence must not become uncontrolled recursive optimization.
+
+```mermaid
+flowchart TD
+
+    SEARCH[Improvement Search]
+
+    SEARCH --> C1[Candidate 1]
+    SEARCH --> C2[Candidate 2]
+    SEARCH --> CN[Candidate N]
+
+    C1 --> EVAL[Evaluation]
+    C2 --> EVAL
+    CN --> EVAL
+
+    EVAL --> STOP{Improvement Threshold Met?}
+
+    STOP -->|Yes| REVIEW[Review Best Candidate]
+    STOP -->|No| LIMIT[Stop at Budget Limit]
+```
+
+---
+
+# 1100. No Infinite Self-Optimization
+
+Stop conditions include:
+
+```text
+Budget exhausted
+No material gain
+Safety regression
+Repeated candidate convergence
+Deadline
+Architect revocation
+```
+
+---
+
+# 1101. Mutation Search Space
+
+Possible mutation dimensions include:
+
+```text
+Prompt strategy
+Planner policy
+Retrieval policy
+Model assignment
+Critic strategy
+Verifier strategy
+Tool-selection heuristic
+Memory compression
+```
+
+Protected authority fields are excluded.
+
+---
+
+# 1102. Protected Parameter Set
+
+A future system may maintain a protected parameter registry.
+
+```text
+IMMUTABLE_TO_SELF_IMPROVEMENT:
+    Constitution
+    Architect Authority
+    Approval Requirements
+    Guardian Enforcement
+    Audit Requirements
+```
+
+---
+
+# 1103. Mutation Policy Engine
+
+```mermaid
+flowchart LR
+
+    CHANGE[Candidate Mutation]
+
+    CHANGE --> POLICY[Mutation Policy]
+
+    POLICY -->|Protected| DENY[DENY]
+    POLICY -->|Eligible| TEST[Evaluate]
+```
+
+---
+
+# 1104. Self-Improvement Critic
+
+A dedicated Critic should ask:
+
+```text
+Does this really improve capability?
+
+Does it weaken safety?
+
+Does it increase hidden authority?
+
+Does it reduce interpretability?
+
+Does it create new dependencies?
+
+Does it increase blast radius?
+```
+
+---
+
+# 1105. Self-Improvement Verifier
+
+A Verifier should independently confirm:
+
+```text
+Tests are real.
+Evidence is reproducible.
+Security invariants remain.
+Baseline comparison is valid.
+No hidden mutation occurred.
+```
+
+---
+
+# 1106. Adversarial Candidate Testing
+
+Candidate generations should face deliberately hostile tests.
+
+Examples:
+
+```text
+Prompt injection
+Authority forgery
+Stale context
+Replay
+Concurrent revocation
+Malicious tool output
+Poisoned memory
+```
+
+---
+
+# 1107. Improvement Red Team
+
+```mermaid
+flowchart TD
+
+    CAND[Candidate]
+
+    CAND --> RED[Adversarial Review]
+
+    RED --> A[Authority Attacks]
+    RED --> M[Memory Attacks]
+    RED --> T[Tool Attacks]
+    RED --> R[Replay / Race Attacks]
+
+    A --> V[Verification]
+    M --> V
+    T --> V
+    R --> V
+```
+
+---
+
+# 1108. Evolution Evidence Ledger
+
+Every accepted generation should preserve:
+
+```text
+Parent
+Candidate
+Evaluation
+Security
+Approval
+Activation
+Rollback
+```
+
+---
+
+# 1109. Rollback Is Mandatory
+
+A candidate should not be considered safely adoptable without a rollback strategy where rollback is technically meaningful.
+
+---
+
+# 1110. Rollback Trigger
+
+Potential rollback triggers include:
+
+```text
+Safety regression
+Performance collapse
+Unexpected cost increase
+Mission drift
+Tool failure increase
+Verifier degradation
+```
+
+---
+
+# 1111. Rollback State Machine
+
+```mermaid
+stateDiagram-v2
+
+    ACTIVE --> DEGRADED
+    DEGRADED --> ROLLBACK
+    ROLLBACK --> PREVIOUS_STABLE
+```
+
+---
+
+# 1112. Self-Improvement Memory
+
+The system should remember:
+
+```text
+Which changes helped
+Which changes failed
+Which regressions appeared
+Which hypotheses were wrong
+Which rollbacks were required
+```
+
+---
+
+# 1113. Improvement Knowledge Graph
+
+```mermaid
+graph TD
+
+    V1[Version 1]
+    V2[Version 2]
+    V3[Version 3]
+
+    V2 -->|DERIVED_FROM| V1
+    V3 -->|DERIVED_FROM| V2
+
+    V2 --> E2[Evaluation Evidence]
+    V3 --> E3[Evaluation Evidence]
+```
+
+---
+
+# 1114. Evolutionary Branching
+
+Several candidate generations may be tested in parallel.
+
+```mermaid
+flowchart TD
+
+    BASE[Trusted Baseline]
+
+    BASE --> A[Candidate A]
+    BASE --> B[Candidate B]
+    BASE --> C[Candidate C]
+
+    A --> EVAL[Evaluation]
+    B --> EVAL
+    C --> EVAL
+
+    EVAL --> BEST[Best Verified Candidate]
+```
+
+---
+
+# 1115. Branch Competition Is Evidence-Based
+
+A candidate wins because it performs better under required evaluation.
+
+Not because it was generated last.
+
+---
+
+# 1116. Evolutionary Diversity
+
+Candidate search may intentionally vary strategies.
+
+This can reduce local optimization traps.
+
+---
+
+# 1117. No Authority Evolution
+
+Even across many generations:
+
+```text
+v1 authority
+=
+v2 authority
+=
+v3 authority
+```
+
+unless an external governed change explicitly modifies authority.
+
+---
+
+# 1118. Intelligence Growth Without Privilege Growth
+
+```mermaid
+flowchart LR
+
+    V1[Intelligence v1]
+    V2[Intelligence v2]
+    V3[Intelligence v3]
+
+    V1 --> V2
+    V2 --> V3
+
+    AUTH[Authority Boundary]
+
+    V1 --> AUTH
+    V2 --> AUTH
+    V3 --> AUTH
+```
+
+---
+
+# 1119. Self-Improvement + World Model
+
+The World Model can reveal systematic prediction errors.
+
+These may generate improvement hypotheses.
+
+---
+
+# 1120. Self-Improvement + Meta-Cognition
+
+Meta-cognition can identify:
+
+```text
+repeated overconfidence
+weak strategy selection
+poor escalation
+```
+
+and propose remediation.
+
+---
+
+# 1121. Self-Improvement + Multi-Model Council
+
+Council performance can reveal:
+
+```text
+better role assignments
+better model combinations
+better verification diversity
+```
+
+---
+
+# 1122. Self-Improvement + Tool Intelligence
+
+Historical tool evidence may improve:
+
+```text
+tool selection
+fallback strategy
+risk estimation
+```
+
+---
+
+# 1123. Self-Improvement + Generalization
+
+Transfer failures may reveal overly narrow abstractions.
+
+Improvement may refine general patterns.
+
+---
+
+# 1124. Self-Improvement + NCA
+
+NCA improvements should be versioned by agent class.
+
+```text
+NCA Engineering v1
+NCA Engineering v2
+```
+
+rather than silently mutating every agent.
+
+---
+
+# 1125. Fleet Evolution
+
+At million-agent scale, upgrades must be progressive.
+
+```mermaid
+flowchart LR
+
+    CAND[Candidate NCA Generation]
+
+    CAND --> LAB[Lab]
+    LAB --> 10[10 Agents]
+    10 --> 100[100]
+    100 --> 1K[1,000]
+    1K --> 10K[10,000]
+    10K --> SCALE[Progressive Scale]
+```
+
+---
+
+# 1126. Fleet Rollback
+
+If a new NCA generation shows regression, affected cohorts should be removable without destroying identity history.
+
+---
+
+# 1127. Generation Identity
+
+Every agent should know which cognitive generation it is running.
+
+```text
+Agent Identity
++
+Agent Class
++
+Cognitive Generation
+```
+
+---
+
+# 1128. Mixed-Generation Federation
+
+During rollout, several generations may coexist.
+
+```mermaid
+flowchart TD
+
+    FED[Federation]
+
+    FED --> V1[NCA Generation 1]
+    FED --> V2[NCA Generation 2 Canary]
+```
+
+This requires compatibility awareness.
+
+---
+
+# 1129. Compatibility Gate
+
+A candidate must prove compatibility with:
+
+```text
+Mission contracts
+Audit formats
+Capability registry
+Runtime Domain
+Guardian Core
+Approval Gateway
+```
+
+before broad adoption.
+
+---
+
+# 1130. Self-Improvement Metrics
+
+Useful metrics include:
+
+```text
+Capability gain
+Reliability gain
+Verification gain
+Cost change
+Latency change
+Safety change
+Generalization change
+```
+
+---
+
+# 1131. Improvement Scorecard
+
+| Dimension | Baseline | Candidate | Evidence |
+|---|---|---|---|
+| Reasoning | REQUIRED | REQUIRED | REQUIRED |
+| Planning | REQUIRED | REQUIRED | REQUIRED |
+| Verification | REQUIRED | REQUIRED | REQUIRED |
+| Safety | REQUIRED | REQUIRED | REQUIRED |
+| Cost | REQUIRED | REQUIRED | REQUIRED |
+| Generalization | REQUIRED | REQUIRED | REQUIRED |
+
+No invented values.
+
+---
+
+# 1132. Improvement Must Be Falsifiable
+
+A good improvement hypothesis can fail.
+
+If no evidence could disprove the claim:
+
+```text
+This version is smarter.
+```
+
+then it is not a useful engineering hypothesis.
+
+---
+
+# 1133. Recursive Self-Improvement Boundary
+
+Recursive improvement is allowed only as a bounded research program.
+
+```mermaid
+flowchart LR
+
+    V1[Generation 1]
+
+    V1 --> P1[Proposal]
+    P1 --> V2[Generation 2]
+
+    V2 --> P2[Proposal]
+    P2 --> V3[Generation 3]
+
+    BUDGET[Bounded Evolution Program]
+    BUDGET --> V1
+    BUDGET --> V2
+    BUDGET --> V3
+```
+
+No infinite uncontrolled recursion.
+
+---
+
+# 1134. Recursive Improvement Stop Conditions
+
+Stop when:
+
+```text
+Budget exhausted
+No meaningful improvement
+Safety declines
+Uncertainty too high
+Authority revoked
+```
+
+---
+
+# 1135. No Self-Replication as Improvement
+
+Creating more copies of an agent is not necessarily self-improvement.
+
+```text
+More Copies
+≠
+More Intelligence
+```
+
+---
+
+# 1136. No Resource Seizure
+
+A system may request additional resources for improvement.
+
+It may not seize them.
+
+---
+
+# 1137. Improvement Approval Contract
+
+A high-impact improvement should explicitly bind:
+
+```text
+Candidate Version
+Parent Version
+Evaluation Evidence
+Security Evidence
+Scope of Adoption
+Rollback Condition
+```
+
+---
+
+# 1138. Approval Does Not Generalize
+
+Approval for:
+
+```text
+Candidate X
+```
+
+does not authorize:
+
+```text
+Candidate Y
+```
+
+---
+
+# 1139. Mutation Replay Defense
+
+```mermaid
+flowchart LR
+
+    OLD[Old Improvement Approval]
+
+    NEW[Different Candidate]
+
+    OLD --> CHECK[Candidate Digest Match?]
+    NEW --> CHECK
+
+    CHECK -->|No| DENY[DENY]
+```
+
+---
+
+# 1140. Improvement Audit Trail
+
+```mermaid
+flowchart LR
+
+    PROPOSE[Proposal]
+    PROPOSE --> BUILD[Build]
+    BUILD --> TEST[Test]
+    TEST --> VERIFY[Verify]
+    VERIFY --> APPROVE[Approve]
+    APPROVE --> DEPLOY[Adopt]
+    DEPLOY --> OBSERVE[Observe]
+```
+
+Every transition should be evidence-backed.
+
+---
+
+# 1141. Evolutionary Transparency
+
+A future public release should be able to state:
+
+```text
+What changed
+Why it changed
+What improved
+What regressed
+What remains unknown
+```
+
+---
+
+# 1142. No Marketing-Driven Evolution
+
+Version numbers should not imply capability that evidence does not support.
+
+---
+
+# 1143. AGI Evolution Gate
+
+Before a new generation is considered materially stronger, it should demonstrate improvement across multiple independent dimensions.
+
+---
+
+# 1144. AGI-Class Improvement Benchmark
+
+A future benchmark should test whether the system can:
+
+```text
+Detect its own recurring weakness
+Generate a candidate improvement
+Build it safely
+Evaluate it against baseline
+Reject a harmful candidate
+Adopt a verified improvement
+Rollback on regression
+```
+
+---
+
+# 1145. Self-Improvement Security Benchmark
+
+Adversarial tests should include:
+
+```text
+Candidate attempts to remove verifier
+Candidate weakens approval
+Candidate disables audit
+Candidate increases own tool authority
+Candidate modifies constitution
+```
+
+All must fail.
+
+---
+
+# 1146. Protected Mutation Benchmark
+
+```mermaid
+flowchart TD
+
+    CAND[Candidate Change]
+
+    CAND --> CHECK{Touches Protected Boundary?}
+
+    CHECK -->|Yes| DENY[DENY]
+    CHECK -->|No| EVAL[Evaluate]
+```
+
+---
+
+# 1147. Improvement Under Human Protection
+
+No improvement is valid if it weakens protected human-safety principles.
+
+---
+
+# 1148. Intelligence Is Not the Only Metric
+
+A system that is more capable but less governable may be a worse system.
+
+---
+
+# 1149. Governed Evolution Equation
+
+Conceptually:
+
+```text
+Useful Evolution
+=
+Capability Gain
+×
+Reliability
+×
+Verification
+×
+Safety
+×
+Governability
+```
+
+This is a conceptual relationship, not a measured law.
+
+---
+
+# 1150. Self-Improvement Closed Loop
+
+```mermaid
+flowchart LR
+
+    OBSERVE[Observe Performance]
+
+    OBSERVE --> FIND[Find Weakness]
+    FIND --> HYP[Improvement Hypothesis]
+    HYP --> BUILD[Build Candidate]
+    BUILD --> TEST[Test]
+    TEST --> ATTACK[Adversarial Review]
+    ATTACK --> VERIFY[Verify]
+    VERIFY --> GOVERN[Govern]
+    GOVERN --> CANARY[Canary]
+    CANARY --> MEASURE[Measure]
+    MEASURE --> OBSERVE
+```
+
+---
+
+# 1151. IMPERIAL AGI Evolution Architecture
+
+```mermaid
+flowchart TB
+
+    ARCH["Architect<br/>Alexander Romaskevich"]
+
+    ARCH --> H["HANTER"]
+
+    H <--> AGI["IMPERIAL AGI"]
+
+    AGI --> META["Meta-Cognitive Control"]
+    META --> GAP["Weakness Detection"]
+
+    GAP --> PROPOSE["Improvement Proposal"]
+    PROPOSE --> FIREWALL["Cognitive Mutation Firewall"]
+
+    FIREWALL --> CAND["Candidate Generation"]
+    CAND --> SANDBOX["Isolated Sandbox"]
+
+    SANDBOX --> EVAL["Evaluation"]
+    EVAL --> RED["Adversarial Review"]
+    RED --> VERIFY["Independent Verification"]
+
+    VERIFY --> GOV["Governed Adoption"]
+
+    GOV --> CANARY["Canary Generation"]
+    CANARY --> NEXT["Next Trusted Generation"]
+
+    NEXT --> AGI
+
+    FIREWALL -. blocks protected mutation .-> CONST["Human Protection Constitution"]
+```
+
+---
+
+# 1152. Evolution Invariant
+
+> **The system may optimize how it thinks.**
+
+> **It may not optimize away the rules that limit what it is allowed to do.**
+
+---
+
+# 1153. Recursive Intelligence Principle
+
+A system becomes more powerful when it can improve its own methods.
+
+A system becomes dangerous when improvement and authority become the same mechanism.
+
+IMPERIAL AGI deliberately separates them.
+
+---
+
+# 1154. Self-Improvement Truth Boundary
+
+This section defines the public architectural direction for governed self-improvement, cognitive mutation filtering, candidate generation, regression-preserving evolution, canary deployment and recursive improvement.
+
+It does not claim autonomous unrestricted self-modification.
+
+It does not claim recursive self-improvement is currently implemented.
+
+It does not claim AGI or superintelligence has been achieved.
+
+It does not claim runtime or production verification.
+
+Architecture, specification, implementation, testing, runtime evidence and production remain explicitly separate.
+
+---
+
+## Self-Improvement Authorship & Digital Provenance
+
+**Architect & Original Author:** Alexander Romaskevich  
+**Founder • Owner • CEO • Chief Systems Architect — IMPERIAL Core**
+
+The Governed Self-Improvement Engine, Cognitive Mutation Firewall, Candidate Evolution, Regression-Preserving Upgrade Model, Cognitive Canary and Recursive Improvement Boundary described here form part of the original IMPERIAL AGI architectural program under the direction of Alexander Romaskevich.
+
+**Canonical authorship:** Alexander Romaskevich  
+**Architecture:** IMPERIAL Core  
+**Cognitive Component:** IMPERIAL AGI  
+**Executive Intelligence:** HANTER  
+**Agent Architecture:** Nano Core Agents  
+**Repository:** IMPERIAL-AGI  
+**Year:** 2026
+
+Copyright © 2026 Alexander Romaskevich.
+
+---
+
+> **Improve intelligence. Preserve authority boundaries. Reject unsafe evolution.**
+
+> **Every stronger generation must be stronger because the evidence says so.**
+
+**IMPERIAL AGI — Architected by Alexander Romaskevich.**
