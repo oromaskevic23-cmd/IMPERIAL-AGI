@@ -20745,3 +20745,1476 @@ Copyright © 2026 Alexander Romaskevich.
 > **A strong intelligence survives disagreement and becomes stronger because of it.**
 
 **IMPERIAL AGI — Architected by Alexander Romaskevich.**
+---
+
+# 972. Generalization Intelligence
+
+A system that performs well only on familiar tasks is specialized intelligence.
+
+A system approaching AGI-class capability must demonstrate that it can transfer learned structure into unfamiliar domains.
+
+IMPERIAL AGI therefore defines a Generalization and Transfer Intelligence architecture.
+
+> **The goal is not to memorize more tasks. The goal is to understand enough structure to solve new classes of tasks.**
+
+---
+
+# 973. Memorization vs Generalization
+
+The architecture distinguishes:
+
+```text
+Memorization
+=
+Recognizing previously seen patterns.
+
+Generalization
+=
+Applying learned structure to unseen situations.
+```
+
+```mermaid
+flowchart LR
+
+    KNOWN[Known Tasks]
+
+    KNOWN --> LEARN[Learn Structure]
+
+    LEARN --> U1[Unseen Domain]
+    LEARN --> U2[Unseen Repository]
+    LEARN --> U3[Unseen Tool]
+    LEARN --> U4[Unseen Constraint]
+
+    U1 --> GEN[Generalization Evidence]
+    U2 --> GEN
+    U3 --> GEN
+    U4 --> GEN
+```
+
+---
+
+# 974. Generalization Dimensions
+
+IMPERIAL AGI should eventually be evaluated across several independent dimensions:
+
+```text
+Task Generalization
+Domain Generalization
+Tool Generalization
+Repository Generalization
+Model Generalization
+Planning Generalization
+Organizational Generalization
+Temporal Generalization
+Causal Generalization
+Safety Generalization
+```
+
+Strong performance in one dimension does not prove the others.
+
+---
+
+# 975. Task Generalization
+
+The system should be capable of solving novel task formulations without requiring one handcrafted workflow per task.
+
+```mermaid
+flowchart TD
+
+    TASK[Unseen Task]
+
+    TASK --> INTERPRET[Interpret Goal]
+    INTERPRET --> STRUCTURE[Infer Structure]
+    STRUCTURE --> STRATEGY[Select Strategy]
+    STRATEGY --> EXEC[Bounded Reasoning]
+    EXEC --> VERIFY[Verification]
+```
+
+---
+
+# 976. Domain Generalization
+
+A general-purpose intelligence should transfer reasoning patterns across domains.
+
+Example transfer:
+
+```text
+Dependency reasoning in software
+↓
+Dependency reasoning in logistics
+↓
+Dependency reasoning in organizational planning
+```
+
+The surface vocabulary changes.
+
+The underlying structure may remain similar.
+
+---
+
+# 977. Cross-Domain Abstraction
+
+```mermaid
+flowchart LR
+
+    A[Software Dependency Graph]
+    B[Supply Chain Graph]
+    C[Organizational Dependency Graph]
+
+    A --> ABSTRACT[Abstract Dependency Structure]
+    B --> ABSTRACT
+    C --> ABSTRACT
+
+    ABSTRACT --> NEW[Unseen Dependency Domain]
+```
+
+---
+
+# 978. Abstraction Layer
+
+Generalization benefits from identifying reusable abstractions such as:
+
+```text
+Entity
+State
+Constraint
+Dependency
+Resource
+Risk
+Goal
+Action
+Evidence
+Authority
+```
+
+These abstractions can appear in many domains.
+
+---
+
+# 979. Structural Transfer
+
+Knowledge transfer should prefer structure over copied answers.
+
+```text
+Copied solution
+≠
+generalization
+
+Reusable reasoning pattern
+=
+potential transfer
+```
+
+---
+
+# 980. Transfer Learning Without Authority Transfer
+
+A learned pattern may transfer across domains.
+
+Authority must not.
+
+```text
+Reasoning Transfer
+≠
+Permission Transfer
+```
+
+```mermaid
+flowchart LR
+
+    DOMAIN_A[Domain A]
+
+    DOMAIN_A --> PATTERN[Learned Pattern]
+    PATTERN --> DOMAIN_B[Domain B]
+
+    DOMAIN_A -. authority does not transfer .-> DOMAIN_B
+```
+
+---
+
+# 981. Repository Generalization
+
+Engineering intelligence should be capable of entering an unfamiliar repository and reconstructing:
+
+```text
+Structure
+Languages
+Dependencies
+Entrypoints
+Tests
+Security boundaries
+Build system
+Change surface
+```
+
+without assuming previous repository conventions.
+
+---
+
+# 982. Unseen Repository Workflow
+
+```mermaid
+flowchart TD
+
+    REPO[Unseen Repository]
+
+    REPO --> ID[Identify Repository]
+    ID --> TREE[Inspect Tree]
+    TREE --> LANG[Detect Languages]
+    LANG --> BUILD[Infer Build System]
+    BUILD --> TESTS[Find Tests]
+    TESTS --> ARCH[Infer Architecture]
+    ARCH --> RISK[Identify Risk Boundaries]
+    RISK --> MODEL[Repository Model]
+```
+
+---
+
+# 983. Repository Assumption Defense
+
+The system must not assume:
+
+```text
+all Python projects use pytest
+all JavaScript projects use npm
+all repos have main
+all repos have tests
+all repos are monorepos
+```
+
+Discovery must precede assumption.
+
+---
+
+# 984. Unseen Tool Generalization
+
+A general system should understand a previously unseen tool from:
+
+```text
+Tool description
+Schema
+Capabilities
+Input constraints
+Output constraints
+Risk
+```
+
+before using it.
+
+---
+
+# 985. Tool Schema Reasoning
+
+```mermaid
+flowchart LR
+
+    NEW[Unseen Tool]
+
+    NEW --> DOC[Read Description]
+    DOC --> SCHEMA[Parse Schema]
+    SCHEMA --> CAP[Infer Capability]
+    CAP --> RISK[Infer Risk]
+    RISK --> TEST[Bounded Test]
+```
+
+---
+
+# 986. Tool Transfer
+
+Knowledge from one tool category may support understanding another.
+
+Example:
+
+```text
+REST API tool
+→
+general concepts:
+authentication
+request
+response
+error
+rate limit
+side effect
+```
+
+These abstractions can help reason about a new API.
+
+---
+
+# 987. Planning Generalization
+
+A planner should transfer planning principles across unfamiliar mission types.
+
+Reusable planning concepts include:
+
+```text
+Goal
+Dependencies
+Critical path
+Resources
+Deadline
+Rollback
+Verification
+```
+
+---
+
+# 988. Planning Transfer Graph
+
+```mermaid
+flowchart TD
+
+    SOFTWARE[Software Mission]
+    RESEARCH[Research Mission]
+    OPS[Operations Mission]
+
+    SOFTWARE --> PLAN[General Planning Abstractions]
+    RESEARCH --> PLAN
+    OPS --> PLAN
+
+    PLAN --> NEW[Unseen Mission Type]
+```
+
+---
+
+# 989. Causal Generalization
+
+A strong causal reasoner should recognize causal structures in unfamiliar settings.
+
+Examples:
+
+```text
+A causes B through mechanism X
+```
+
+may appear in:
+
+```text
+software
+economics
+operations
+science
+```
+
+---
+
+# 990. Causal Structure Transfer
+
+```mermaid
+flowchart LR
+
+    C1[Causal Pattern A]
+    C2[Causal Pattern B]
+
+    C1 --> META[Abstract Causal Structure]
+    C2 --> META
+
+    META --> NEW[New Causal Problem]
+```
+
+---
+
+# 991. Temporal Generalization
+
+The system should reason about time beyond familiar schedules.
+
+Examples:
+
+```text
+Software release timeline
+Research experiment timeline
+Budget cycle
+Incident timeline
+Organization lifecycle
+```
+
+---
+
+# 992. Temporal Abstraction
+
+```text
+Before
+After
+Concurrent
+Expired
+Delayed
+Recurring
+Deadline
+Window
+```
+
+are general concepts applicable across domains.
+
+---
+
+# 993. Organizational Generalization
+
+The system should not assume every organization resembles one previous template.
+
+It should reason about:
+
+```text
+Roles
+Hierarchy
+Delegation
+Resources
+Communication
+Authority
+Evidence
+```
+
+and adapt structures to mission needs.
+
+---
+
+# 994. Dynamic Organization Design
+
+```mermaid
+flowchart TD
+
+    MISSION[Mission]
+
+    MISSION --> NEEDS[Required Capabilities]
+    NEEDS --> STRUCT[Organization Structure]
+    STRUCT --> ROLES[Roles]
+    ROLES --> TEAM[Team Formation]
+```
+
+---
+
+# 995. Transfer From NCA Teams
+
+Verified performance from one professional team may inform another team's design.
+
+But:
+
+```text
+Team pattern
+may transfer.
+
+Team authority
+does not transfer.
+```
+
+---
+
+# 996. Cross-Domain Memory
+
+Memory should distinguish between:
+
+```text
+Domain-specific fact
+General reusable pattern
+```
+
+This prevents unsafe transfer.
+
+---
+
+# 997. Memory Abstraction Pipeline
+
+```mermaid
+flowchart LR
+
+    EXP[Domain Experience]
+
+    EXP --> FACT[Specific Evidence]
+    EXP --> PATTERN[Candidate Pattern]
+
+    PATTERN --> VERIFY[Cross-Domain Verification]
+    VERIFY --> GENERAL[Generalized Knowledge]
+```
+
+---
+
+# 998. Generalized Knowledge Requires Evidence
+
+A pattern observed once is not automatically general.
+
+```text
+Single success
+≠
+general rule
+```
+
+Cross-domain evidence is required.
+
+---
+
+# 999. Transfer Confidence
+
+The system should estimate confidence in transfer.
+
+Potential factors:
+
+```text
+Structural similarity
+Domain distance
+Evidence quality
+Historical transfer success
+Known exceptions
+```
+
+---
+
+# 1000. Domain Distance
+
+Two tasks may appear similar but differ in important ways.
+
+The architecture should consider:
+
+```text
+Different legal constraints
+Different safety risks
+Different data distributions
+Different tool semantics
+Different authority models
+```
+
+---
+
+# 1001. Transfer Risk
+
+```mermaid
+flowchart TD
+
+    PATTERN[Candidate Transfer]
+
+    PATTERN --> SIM[Structural Similarity]
+    PATTERN --> RISK[Domain Risk]
+    PATTERN --> EXC[Known Exceptions]
+
+    SIM --> DECIDE[Transfer Decision]
+    RISK --> DECIDE
+    EXC --> DECIDE
+```
+
+---
+
+# 1002. Negative Transfer
+
+A learned pattern can make performance worse in a new domain.
+
+This is negative transfer.
+
+Examples:
+
+```text
+wrong assumption
+wrong heuristic
+wrong tool preference
+wrong risk model
+```
+
+---
+
+# 1003. Negative Transfer Detection
+
+```mermaid
+flowchart LR
+
+    PATTERN[Transferred Pattern]
+
+    PATTERN --> RESULT[Result]
+    RESULT --> EVAL[Evaluation]
+
+    EVAL -->|Worse| REJECT[Reject Transfer]
+    EVAL -->|Better| RETAIN[Retain Candidate]
+```
+
+---
+
+# 1004. Transfer Rollback
+
+If a generalized strategy degrades performance, the system should be able to revert.
+
+```text
+Generalized strategy
+→ evaluate
+→ rollback if regression
+```
+
+---
+
+# 1005. Few-Shot Adaptation
+
+A general intelligence should adapt from small amounts of new evidence.
+
+```mermaid
+flowchart TD
+
+    NEW[New Domain]
+
+    NEW --> EX1[Example 1]
+    NEW --> EX2[Example 2]
+
+    EX1 --> MODEL[Infer Local Structure]
+    EX2 --> MODEL
+
+    MODEL --> TASK[Attempt New Task]
+    TASK --> VERIFY[Verify]
+```
+
+---
+
+# 1006. Zero-Shot Reasoning
+
+Some tasks should be solvable without domain-specific examples by using general abstractions.
+
+Zero-shot success is strong generalization evidence.
+
+It is not expected for every domain.
+
+---
+
+# 1007. Generalization Ladder
+
+A future evaluation ladder may include:
+
+```text
+G0 — memorized task
+G1 — paraphrased task
+G2 — new instance
+G3 — new domain variant
+G4 — unseen domain
+G5 — cross-domain structural transfer
+```
+
+These are engineering evaluation levels, not claims of AGI status.
+
+---
+
+# 1008. Generalization Benchmark Design
+
+Benchmarks should avoid leakage from training or prior evaluation.
+
+Useful controls include:
+
+```text
+Hidden tasks
+Temporal holdouts
+Private repositories
+Generated environments
+New tool schemas
+Unseen organization structures
+```
+
+---
+
+# 1009. Benchmark Contamination Defense
+
+```mermaid
+flowchart TD
+
+    DATA[Test Set]
+
+    DATA --> CHECK[Contamination Check]
+
+    CHECK --> CLEAN[Clean Evaluation]
+    CHECK --> CONTAM[Contaminated]
+
+    CONTAM --> INVALID[Do Not Treat as Strong Generalization Evidence]
+```
+
+---
+
+# 1010. Temporal Holdout
+
+Tasks created after model training or after a previous evaluation can provide stronger generalization evidence.
+
+They are still not perfect proof of independence.
+
+---
+
+# 1011. Unseen Repository Benchmark
+
+A future benchmark may provide:
+
+```text
+repository never previously indexed
+unknown architecture
+unknown build tool
+unknown failure
+```
+
+The system must discover before acting.
+
+---
+
+# 1012. Unseen Tool Benchmark
+
+Provide a tool schema the system has never seen.
+
+Success requires:
+
+```text
+Understand
+Classify
+Use safely
+Verify
+```
+
+---
+
+# 1013. Unseen Domain Benchmark
+
+The system receives a domain with unfamiliar vocabulary.
+
+Evaluation should measure whether it can identify general structural concepts.
+
+---
+
+# 1014. Compositional Generalization
+
+General intelligence should combine known concepts in new configurations.
+
+Example:
+
+```text
+Known:
+repository reasoning
+risk analysis
+budget planning
+
+New:
+plan a secure repository migration under a fixed cost constraint
+```
+
+---
+
+# 1015. Composition Architecture
+
+```mermaid
+flowchart TD
+
+    A[Known Capability A]
+    B[Known Capability B]
+    C[Known Capability C]
+
+    A --> COMPOSE[Compose]
+    B --> COMPOSE
+    C --> COMPOSE
+
+    COMPOSE --> NEW[Novel Task Solution]
+```
+
+---
+
+# 1016. Skill Composition
+
+Enterprise IMPERIAL Skills may be composed when mission policy allows.
+
+```text
+Skill A
++
+Skill B
+```
+
+does not automatically imply:
+
+```text
+new unlimited Skill C
+```
+
+---
+
+# 1017. Capability Composition Boundary
+
+Effective composed capability remains constrained by the intersection of all underlying permissions.
+
+---
+
+# 1018. Cross-Domain Analogy
+
+Analogy can accelerate reasoning.
+
+But analogy is not proof.
+
+```text
+System A resembles System B
+```
+
+may generate a hypothesis.
+
+It does not establish equivalence.
+
+---
+
+# 1019. Analogy Verification
+
+```mermaid
+flowchart LR
+
+    OLD[Known Domain]
+
+    OLD --> ANALOGY[Proposed Analogy]
+    NEW[New Domain] --> ANALOGY
+
+    ANALOGY --> TEST[Check Relevant Similarities]
+    TEST --> VERIFY[Verify Transfer]
+```
+
+---
+
+# 1020. Generalization + Meta-Cognition
+
+Meta-cognition should ask:
+
+```text
+Am I transferring a pattern from the wrong domain?
+
+Which assumptions came from prior experience?
+
+What is actually new here?
+
+What evidence supports this transfer?
+```
+
+---
+
+# 1021. Generalization + World Model
+
+The World Model should distinguish:
+
+```text
+domain-specific state
+general structural knowledge
+```
+
+This reduces accidental cross-domain contamination.
+
+---
+
+# 1022. Generalization + Planner
+
+The Planner may reuse:
+
+```text
+planning structure
+```
+
+while reconstructing:
+
+```text
+domain-specific constraints
+```
+
+for each mission.
+
+---
+
+# 1023. Generalization + Tool Intelligence
+
+Tool Intelligence should infer tool capability from schemas rather than relying only on known tool names.
+
+---
+
+# 1024. Generalization + Multi-Model Council
+
+Different models may have different domain-transfer strengths.
+
+A council can compare how each interprets an unfamiliar domain.
+
+---
+
+# 1025. Generalization + NCA
+
+Nano Core Agents may be specialized.
+
+Specialization does not prevent transfer.
+
+A specialized NCA may still reuse general reasoning patterns inside its bounded domain.
+
+---
+
+# 1026. Specialist Boundary
+
+A specialist should know when a new problem is outside its reliable domain.
+
+```mermaid
+flowchart TD
+
+    TASK[New Task]
+
+    TASK --> SPEC[Specialist]
+
+    SPEC --> FIT{Within Competence?}
+
+    FIT -->|Yes| REASON[Proceed]
+    FIT -->|No| ESC[Escalate / Find Another Capability]
+```
+
+---
+
+# 1027. Capability Gap Detection
+
+A system should identify:
+
+```text
+I have no reliable method for this task.
+```
+
+rather than forcing a weak transfer.
+
+---
+
+# 1028. Generalization Failure Taxonomy
+
+Failure classes include:
+
+```text
+Over-transfer
+Under-transfer
+Negative transfer
+Domain confusion
+Hidden constraint miss
+False analogy
+Tool semantic mismatch
+```
+
+---
+
+# 1029. Generalization Regression Memory
+
+Confirmed transfer failures should become permanent regression cases.
+
+---
+
+# 1030. Transfer Provenance
+
+Every reusable pattern should preserve:
+
+```text
+Origin Domains
+Evidence
+Successful Transfers
+Failed Transfers
+Known Limits
+Version
+```
+
+---
+
+# 1031. Generalization Knowledge Graph
+
+```mermaid
+graph TD
+
+    A[Domain A Pattern]
+    B[Domain B Pattern]
+
+    A --> P[General Pattern]
+    B --> P
+
+    P --> C[Domain C Candidate Transfer]
+
+    C --> V[Verification]
+```
+
+---
+
+# 1032. General Pattern Lifecycle
+
+```mermaid
+stateDiagram-v2
+
+    [*] --> CANDIDATE
+
+    CANDIDATE --> TESTING
+    TESTING --> SUPPORTED
+    TESTING --> REJECTED
+
+    SUPPORTED --> GENERALIZED
+    GENERALIZED --> LIMITED
+    GENERALIZED --> REVOKED
+
+    LIMITED --> GENERALIZED
+```
+
+---
+
+# 1033. Generalization Confidence Decay
+
+A pattern may become less reliable as domains change.
+
+Generalized knowledge should remain revisable.
+
+---
+
+# 1034. Generalization Is Not Universal Law
+
+The system should distinguish:
+
+```text
+works often
+```
+
+from:
+
+```text
+always true
+```
+
+---
+
+# 1035. Cross-Domain Research
+
+IMPERIAL AGI may deliberately seek domains where a general pattern fails.
+
+This is important for discovering hidden assumptions.
+
+---
+
+# 1036. Falsification of General Patterns
+
+```mermaid
+flowchart LR
+
+    PATTERN[Generalized Pattern]
+
+    PATTERN --> SEARCH[Search Counterexample]
+
+    SEARCH --> FOUND{Counterexample?}
+
+    FOUND -->|Yes| LIMIT[Refine Pattern]
+    FOUND -->|No| RETAIN[Retain with Current Evidence]
+```
+
+---
+
+# 1037. Anti-Overgeneralization
+
+The system should prefer:
+
+```text
+This pattern is supported under conditions X, Y, Z.
+```
+
+over:
+
+```text
+This always works.
+```
+
+---
+
+# 1038. Cross-Domain Safety
+
+Safety constraints may differ across domains.
+
+A safe action in one domain may be unsafe in another.
+
+Therefore generalization must re-run:
+
+```text
+Risk
+Policy
+Authority
+```
+
+for the destination domain.
+
+---
+
+# 1039. Safety Transfer Boundary
+
+```mermaid
+flowchart LR
+
+    SOURCE[Source Domain]
+
+    SOURCE --> PATTERN[Transferred Pattern]
+
+    PATTERN --> TARGET[Target Domain]
+
+    TARGET --> SAFETY[Re-evaluate Safety]
+    SAFETY --> AUTH[Re-evaluate Authority]
+```
+
+---
+
+# 1040. Domain-Specific Governance
+
+Global invariants remain.
+
+Local rules may differ.
+
+```text
+Global:
+Human Protection
+Authority
+Audit
+Revocation
+
+Local:
+Domain-specific constraints
+```
+
+---
+
+# 1041. Generalization Under Federation
+
+Different organizations may discover different reusable patterns.
+
+```mermaid
+flowchart TD
+
+    O1[Organization A]
+    O2[Organization B]
+
+    O1 --> P1[Verified Pattern A]
+    O2 --> P2[Verified Pattern B]
+
+    P1 --> KG[Federated Knowledge]
+    P2 --> KG
+
+    KG --> NEW[New Organization]
+```
+
+---
+
+# 1042. Federated Transfer Privacy
+
+Organizations may share abstractions without exposing private raw data.
+
+```text
+Share verified pattern
+≠
+share all underlying confidential evidence
+```
+
+---
+
+# 1043. Transferable Evidence Summary
+
+A pattern may be published internally with:
+
+```text
+Abstract Pattern
+Evidence Class
+Known Limits
+Origin Domains
+Verification Digest
+```
+
+while protected details remain private.
+
+---
+
+# 1044. Generalization at Million-Agent Scale
+
+A million-agent federation should avoid having each NCA relearn the same general pattern independently.
+
+Verified reusable abstractions can reduce duplicated cognitive work.
+
+---
+
+# 1045. Knowledge Reuse Architecture
+
+```mermaid
+flowchart TB
+
+    LOCAL[Local NCA Experience]
+
+    LOCAL --> TEAM[Team Pattern]
+    TEAM --> ORG[Organization Pattern]
+    ORG --> VERIFY[Federated Verification]
+
+    VERIFY --> GLOBAL[Reusable General Pattern]
+
+    GLOBAL --> FUTURE[Future NCA Missions]
+```
+
+---
+
+# 1046. General Pattern Admission
+
+A local pattern should not become federation-wide knowledge automatically.
+
+It must pass stronger verification.
+
+---
+
+# 1047. Transfer Economics
+
+Generalization can reduce cost by reusing verified structure.
+
+But forced transfer can increase cost through failure.
+
+The system should evaluate both.
+
+---
+
+# 1048. Transfer Value
+
+Conceptually:
+
+```text
+Transfer Value
+=
+Time Saved
++
+Compute Saved
++
+Quality Improvement
+-
+Risk of Negative Transfer
+```
+
+This is a planning concept, not a fixed formula.
+
+---
+
+# 1049. Generalization Efficiency
+
+A strong system should eventually require fewer examples to adapt to new domains.
+
+This is one measure of learning efficiency.
+
+---
+
+# 1050. Generalization Scorecard
+
+A future scorecard may contain:
+
+| Dimension | Status |
+|---|---|
+| Task Transfer | EVALUATION REQUIRED |
+| Domain Transfer | EVALUATION REQUIRED |
+| Repository Transfer | EVALUATION REQUIRED |
+| Tool Transfer | EVALUATION REQUIRED |
+| Planning Transfer | EVALUATION REQUIRED |
+| Causal Transfer | EVALUATION REQUIRED |
+| Organizational Transfer | EVALUATION REQUIRED |
+| Safety Transfer | EVALUATION REQUIRED |
+
+No invented scores.
+
+---
+
+# 1051. AGI Generalization Gate
+
+Before making a serious AGI claim, the system should demonstrate broad transfer under controlled evaluation.
+
+```mermaid
+flowchart TD
+
+    CAP[Strong Known-Domain Capability]
+
+    CAP --> UNSEEN[Unseen Tasks]
+    UNSEEN --> DOMAIN[Unseen Domains]
+    DOMAIN --> TOOLS[Unseen Tools]
+    TOOLS --> REPOS[Unseen Repositories]
+    REPOS --> COMPOSE[Novel Compositions]
+
+    COMPOSE --> VERIFY[Independent Verification]
+```
+
+---
+
+# 1052. Generalization Is Required, Not Sufficient
+
+Even strong transfer does not by itself prove AGI.
+
+Other dimensions remain necessary:
+
+```text
+Reasoning
+Planning
+Memory
+Tool Use
+Adaptation
+Verification
+Safety
+Long-Horizon Reliability
+```
+
+---
+
+# 1053. Generalization Failure Must Remain Visible
+
+A failed transfer is valuable evidence.
+
+The system should record:
+
+```text
+What transferred
+Why it failed
+Which assumption broke
+Which domain constraint differed
+```
+
+---
+
+# 1054. Transfer Learning Loop
+
+```mermaid
+flowchart LR
+
+    EXPERIENCE[Experience]
+
+    EXPERIENCE --> ABSTRACT[Abstract Pattern]
+    ABSTRACT --> TRANSFER[Transfer]
+    TRANSFER --> TEST[Test]
+    TEST --> VERIFY[Verify]
+    VERIFY --> REFINE[Refine Pattern]
+    REFINE --> EXPERIENCE
+```
+
+---
+
+# 1055. General Intelligence as Reusable Structure
+
+The architecture treats general intelligence as increasingly strong ability to discover and reuse structure across unfamiliar problems.
+
+This differs fundamentally from simply accumulating more memorized responses.
+
+---
+
+# 1056. AGI Transfer Principle
+
+> **A system becomes more general when it can encounter something genuinely new, identify what structure still applies, recognize what does not apply, and adapt without losing safety or authority boundaries.**
+
+---
+
+# 1057. Generalization Security Invariant
+
+```text
+Transfer
+≠
+Authority Transfer
+
+Similarity
+≠
+Equivalence
+
+Analogy
+≠
+Evidence
+
+Prior Success
+≠
+Current Authorization
+
+General Pattern
+≠
+Universal Rule
+```
+
+---
+
+# 1058. Generalization Architecture
+
+```mermaid
+flowchart TB
+
+    ARCH["Architect<br/>Alexander Romaskevich"]
+
+    ARCH --> H["HANTER"]
+
+    H <--> AGI["IMPERIAL AGI"]
+
+    MEM["Persistent Memory"] --> ABSTRACT["Abstraction Engine"]
+    KG["Knowledge Graph"] --> ABSTRACT
+    WM["World Model"] --> ABSTRACT
+
+    ABSTRACT --> TRANSFER["Transfer Engine"]
+
+    TRANSFER --> TASK["Unseen Task"]
+    TRANSFER --> DOMAIN["Unseen Domain"]
+    TRANSFER --> TOOL["Unseen Tool"]
+    TRANSFER --> REPO["Unseen Repository"]
+
+    TASK --> META["Meta-Cognitive Evaluation"]
+    DOMAIN --> META
+    TOOL --> META
+    REPO --> META
+
+    META --> VERIFY["Verifier"]
+
+    VERIFY --> LEARN["Verified General Pattern"]
+    LEARN --> KG
+```
+
+---
+
+# 1059. Generalization + HANTER
+
+HANTER should receive not only a candidate solution but also transfer evidence.
+
+Example:
+
+```text
+Recommendation
+Transferred Pattern
+Origin Domains
+Known Limits
+Destination-Domain Differences
+Residual Uncertainty
+Verification Status
+```
+
+---
+
+# 1060. Executive Transfer Brief
+
+```mermaid
+flowchart LR
+
+    AGI[IMPERIAL AGI]
+
+    AGI --> REC[Recommendation]
+    AGI --> PATTERN[Transferred Pattern]
+    AGI --> LIMIT[Known Limits]
+    AGI --> RISK[Negative Transfer Risk]
+    AGI --> VERIFY[Verification]
+
+    REC --> H[HANTER]
+    PATTERN --> H
+    LIMIT --> H
+    RISK --> H
+    VERIFY --> H
+```
+
+---
+
+# 1061. Generalization Truth Boundary
+
+This section defines the public architectural direction for cross-domain generalization, transfer learning, abstraction, unseen-task adaptation, repository and tool generalization, compositional reasoning and negative-transfer defense.
+
+It does not claim that all described generalization capabilities are currently implemented.
+
+It does not claim AGI achievement.
+
+It does not claim universal cross-domain competence.
+
+It does not claim runtime or production verification.
+
+Architecture, specification, implementation, testing, runtime evidence and production remain explicitly separate.
+
+---
+
+## Generalization Intelligence Authorship & Digital Provenance
+
+**Architect & Original Author:** Alexander Romaskevich  
+**Founder • Owner • CEO • Chief Systems Architect — IMPERIAL Core**
+
+The Generalization Intelligence, Cross-Domain Transfer, Structural Abstraction, Unseen Repository Reasoning, Unseen Tool Adaptation, Compositional Generalization and Negative-Transfer Defense architecture described here form part of the original IMPERIAL AGI architectural program under the direction of Alexander Romaskevich.
+
+**Canonical authorship:** Alexander Romaskevich  
+**Architecture:** IMPERIAL Core  
+**Cognitive Component:** IMPERIAL AGI  
+**Executive Intelligence:** HANTER  
+**Agent Architecture:** Nano Core Agents  
+**Repository:** IMPERIAL-AGI  
+**Year:** 2026
+
+Copyright © 2026 Alexander Romaskevich.
+
+---
+
+> **Do not memorize every world. Learn the structures that survive across worlds.**
+
+> **General intelligence is the ability to transfer what matters and discard what does not.**
+
+**IMPERIAL AGI — Architected by Alexander Romaskevich.**
