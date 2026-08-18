@@ -11135,3 +11135,2072 @@ Copyright © 2026 Alexander Romaskevich.
 > **Maximum Intelligence. Bounded Resources. Explicit Authority.**
 
 **IMPERIAL AGI — Architected by Alexander Romaskevich.**
+---
+
+# 458. World Model & Temporal Intelligence
+
+A powerful general-purpose intelligence requires more than retrieval and reasoning over static context.
+
+It requires a structured model of:
+
+```text
+What exists
+What changed
+What caused the change
+What may happen next
+What remains uncertain
+What alternatives are possible
+What evidence supports each state
+```
+
+IMPERIAL AGI therefore defines a governed World Model and Temporal Causal Reasoning architecture.
+
+> **Reason about the world as changing state — not as a static prompt.**
+
+---
+
+# 459. World Model Purpose
+
+The World Model provides a structured representation of the current believed state of relevant systems.
+
+It may contain:
+
+```text
+Entities
+Relationships
+Events
+State
+Time
+Dependencies
+Constraints
+Resources
+Capabilities
+Risks
+Evidence
+Uncertainty
+Predictions
+```
+
+The World Model is not absolute truth.
+
+It is an evidence-bound cognitive representation.
+
+---
+
+# 460. World Model Architecture
+
+```mermaid
+flowchart TD
+
+    SRC[Verified Sources]
+    KG[IMPERIAL Knowledge Graph]
+    CM[Codebase Memory]
+    RUNTIME[Runtime Evidence]
+    MEMORY[Historical Memory]
+
+    SRC --> WM[World Model]
+    KG --> WM
+    CM --> WM
+    RUNTIME --> WM
+    MEMORY --> WM
+
+    WM --> REASON[Reasoner]
+    WM --> PLAN[Planner]
+    WM --> SIM[Simulation Engine]
+    WM --> RISK[Risk Engine]
+    WM --> VERIFY[Verifier]
+```
+
+Every input should preserve provenance and freshness.
+
+---
+
+# 461. State Is Temporal
+
+A statement can be correct at one time and incorrect later.
+
+Conceptually:
+
+```text
+State(t0)
+→ Event e1
+→ State(t1)
+→ Event e2
+→ State(t2)
+```
+
+Therefore important facts should support:
+
+```text
+Valid From
+Valid Until
+Observed At
+Source
+Version
+Evidence Digest
+Freshness State
+```
+
+---
+
+# 462. Temporal Knowledge
+
+```mermaid
+flowchart LR
+
+    S0[State t0]
+    S0 --> E1[Event]
+    E1 --> S1[State t1]
+    S1 --> E2[Event]
+    E2 --> S2[State t2]
+
+    S0 -. historical .-> HISTORY[Temporal Evidence]
+    S1 -. historical .-> HISTORY
+    S2 --> CURRENT[Current Candidate State]
+```
+
+Historical state should not be deleted merely because current state changed.
+
+---
+
+# 463. Event Model
+
+An event represents a state transition.
+
+A future event record may contain:
+
+```text
+Event ID
+Event Type
+Actor
+Target
+Pre-State
+Post-State
+Observed Time
+Effective Time
+Source
+Evidence
+Confidence
+Causal Links
+```
+
+---
+
+# 464. State Transition Integrity
+
+```mermaid
+flowchart LR
+
+    BEFORE[Pre-State]
+
+    BEFORE --> EVENT[Event]
+
+    EVENT --> EXPECT[Expected Transition]
+    EVENT --> OBS[Observed Transition]
+
+    EXPECT --> COMPARE[Compare]
+    OBS --> COMPARE
+
+    COMPARE --> RESULT[Transition Evidence]
+```
+
+If observed state does not match expected state, the discrepancy becomes evidence.
+
+---
+
+# 465. Causal Reasoning
+
+Correlation alone is insufficient for many engineering decisions.
+
+IMPERIAL AGI should attempt to distinguish:
+
+```text
+A happened before B
+```
+
+from:
+
+```text
+A contributed causally to B
+```
+
+Causal claims require stronger evidence than temporal ordering.
+
+---
+
+# 466. Causal Graph
+
+```mermaid
+graph LR
+
+    A[Cause Candidate A]
+    B[Cause Candidate B]
+    C[Cause Candidate C]
+
+    A --> EFFECT[Observed Effect]
+    B --> EFFECT
+    C --> EFFECT
+
+    EFFECT --> VERIFY[Causal Verification]
+```
+
+Multiple possible causes must remain visible until evidence separates them.
+
+---
+
+# 467. Causal Evidence
+
+Causal confidence may draw from:
+
+```text
+Temporal ordering
+Mechanistic evidence
+Controlled experiments
+Counterfactual analysis
+Repeated observations
+Intervention evidence
+Independent corroboration
+```
+
+A model's intuition is not sufficient by itself.
+
+---
+
+# 468. Correlation Warning
+
+```text
+Correlation
+≠
+Causation
+```
+
+This principle applies to:
+
+```text
+Agent behavior
+Software failures
+Security incidents
+Economic outcomes
+Model performance
+Human outcomes
+System telemetry
+```
+
+---
+
+# 469. Counterfactual Reasoning
+
+General intelligence benefits from reasoning about alternatives.
+
+The key question is:
+
+> **What might have happened if a different action had been taken?**
+
+```mermaid
+flowchart TD
+
+    STATE[Current State]
+
+    STATE --> A[Action A]
+    STATE --> B[Action B]
+    STATE --> C[Action C]
+
+    A --> OA[Outcome A]
+    B --> OB[Outcome B]
+    C --> OC[Outcome C]
+
+    OA --> COMP[Compare Outcomes]
+    OB --> COMP
+    OC --> COMP
+
+    COMP --> REC[Evidence-Bound Recommendation]
+```
+
+Counterfactual outputs are predictions.
+
+They must not be represented as observations.
+
+---
+
+# 470. Prediction State
+
+A future World Model should distinguish:
+
+```text
+OBSERVED
+INFERRED
+PREDICTED
+SIMULATED
+HYPOTHETICAL
+UNKNOWN
+```
+
+These states must never be silently collapsed into one truth category.
+
+---
+
+# 471. Predictive Intelligence
+
+IMPERIAL AGI should eventually predict future states.
+
+Examples:
+
+```text
+Mission completion probability
+Resource exhaustion
+Dependency failure
+Security risk
+Cost growth
+Runtime degradation
+Repository impact
+Agent demand
+Capacity pressure
+```
+
+Predictions require later comparison with actual outcomes.
+
+---
+
+# 472. Prediction Lifecycle
+
+```mermaid
+stateDiagram-v2
+
+    [*] --> CREATED
+
+    CREATED --> ACTIVE
+    ACTIVE --> OBSERVABLE
+
+    OBSERVABLE --> CONFIRMED
+    OBSERVABLE --> PARTIAL
+    OBSERVABLE --> REFUTED
+    OBSERVABLE --> UNRESOLVED
+
+    CONFIRMED --> ARCHIVED
+    PARTIAL --> ARCHIVED
+    REFUTED --> ARCHIVED
+    UNRESOLVED --> ARCHIVED
+```
+
+---
+
+# 473. Prediction Record
+
+A prediction should eventually preserve:
+
+```text
+Prediction ID
+Question
+Predicted Outcome
+Probability / Uncertainty
+Time Horizon
+Model Identity
+Context Identity
+World Model Version
+Evidence
+Assumptions
+Created Time
+Resolution Time
+Observed Outcome
+Error
+```
+
+---
+
+# 474. Forecast Calibration
+
+A useful intelligence should know whether its confidence is calibrated.
+
+For example:
+
+```text
+Predictions assigned ~80% confidence
+```
+
+should eventually succeed approximately at the expected rate under comparable evaluation conditions.
+
+This must be measured rather than assumed.
+
+---
+
+# 475. Confidence Calibration Loop
+
+```mermaid
+flowchart LR
+
+    PRED[Prediction + Confidence]
+
+    PRED --> WAIT[Observe Outcome]
+
+    WAIT --> ACTUAL[Actual Result]
+
+    ACTUAL --> CAL[Calibration Analysis]
+    PRED --> CAL
+
+    CAL --> UPDATE[Improve Confidence Model]
+```
+
+---
+
+# 476. Uncertainty Representation
+
+A strong AGI should not force every question into a confident answer.
+
+World Model states may include:
+
+```text
+Known
+Probable
+Possible
+Conflicted
+Unknown
+Stale
+Unobservable
+```
+
+---
+
+# 477. Unknown Is Information
+
+```mermaid
+flowchart TD
+
+    QUESTION[Question]
+
+    QUESTION --> EVID{Evidence Sufficient?}
+
+    EVID -->|Yes| ANSWER[Supported State]
+    EVID -->|No| UNKNOWN[Explicit Unknown]
+
+    UNKNOWN --> RESEARCH[Generate Research Need]
+```
+
+Explicit unknowns are superior to fabricated certainty.
+
+---
+
+# 478. Assumption Registry
+
+Predictions often depend on assumptions.
+
+Important assumptions should remain visible.
+
+Examples:
+
+```text
+Provider remains available
+Policy remains unchanged
+Repository remains at commit X
+Budget remains available
+Network latency remains bounded
+Model behavior remains stable
+```
+
+---
+
+# 479. Assumption Dependency Graph
+
+```mermaid
+flowchart TD
+
+    A1[Assumption A]
+    A2[Assumption B]
+    A3[Assumption C]
+
+    A1 --> PLAN[Plan]
+    A2 --> PLAN
+    A3 --> PLAN
+
+    PLAN --> RESULT[Expected Outcome]
+
+    A2 -->|invalidated| REPLAN[Require Re-evaluation]
+```
+
+A plan should not remain trusted after critical assumptions fail.
+
+---
+
+# 480. Assumption Monitoring
+
+Long-horizon missions should periodically verify critical assumptions.
+
+```text
+Assumption
+→ Monitor
+→ Still Valid?
+→ Continue or Re-plan
+```
+
+---
+
+# 481. Temporal Mission Reasoning
+
+Mission progress must be interpreted over time.
+
+```mermaid
+flowchart LR
+
+    START[Mission Start]
+
+    START --> CP1[Checkpoint 1]
+    CP1 --> CP2[Checkpoint 2]
+    CP2 --> CP3[Checkpoint 3]
+    CP3 --> END[Target State]
+
+    CP1 --> VERIFY[Mission Integrity Check]
+    CP2 --> VERIFY
+    CP3 --> VERIFY
+```
+
+---
+
+# 482. Deadline Intelligence
+
+A deadline is not merely metadata.
+
+It influences:
+
+```text
+Planning
+Resource allocation
+Priority
+Model selection
+Parallelism
+Escalation
+```
+
+But urgency must not disable governance.
+
+---
+
+# 483. Urgency Does Not Override Safety
+
+```mermaid
+flowchart LR
+
+    URGENT[Urgent Mission]
+
+    URGENT --> FAST[Accelerated Planning]
+
+    FAST --> GOV[Same Mandatory Governance]
+
+    URGENT -. cannot bypass .-> SECURITY[Security Boundary]
+```
+
+---
+
+# 484. Time Horizon Decomposition
+
+Long-horizon planning may use multiple time scales.
+
+```text
+Immediate
+↓
+Tactical
+↓
+Operational
+↓
+Strategic
+↓
+Long-Term
+```
+
+Different horizons may require different models and planning resolutions.
+
+---
+
+# 485. Multi-Horizon Planning
+
+```mermaid
+flowchart TD
+
+    OBJ[Long-Term Objective]
+
+    OBJ --> STRATEGIC[Strategic Horizon]
+    STRATEGIC --> OP[Operational Horizon]
+    OP --> TACT[Tactical Horizon]
+    TACT --> NOW[Immediate Actions]
+
+    NOW --> EVID[Evidence]
+    EVID --> OP
+    EVID --> STRATEGIC
+```
+
+Short-term evidence can update longer-term plans.
+
+It must not silently redefine the original objective.
+
+---
+
+# 486. Scenario Simulation Engine
+
+Before selecting a high-impact plan, IMPERIAL AGI should be capable of evaluating multiple scenarios.
+
+```mermaid
+flowchart TD
+
+    CURRENT[Current World State]
+
+    CURRENT --> S1[Scenario A]
+    CURRENT --> S2[Scenario B]
+    CURRENT --> S3[Scenario C]
+
+    S1 --> SIM1[Simulation A]
+    S2 --> SIM2[Simulation B]
+    S3 --> SIM3[Simulation C]
+
+    SIM1 --> EVAL[Outcome Evaluation]
+    SIM2 --> EVAL
+    SIM3 --> EVAL
+
+    EVAL --> REC[Recommendation]
+```
+
+---
+
+# 487. Simulation Is Not Reality
+
+```text
+Simulation Result
+≠
+Runtime Evidence
+```
+
+Simulation can inform decisions.
+
+It cannot prove production behavior.
+
+---
+
+# 488. Simulation Metadata
+
+A reproducible simulation should preserve:
+
+```text
+Scenario ID
+World Model Version
+Initial State
+Assumptions
+Policy
+Models
+Random Seed
+Parameters
+Time Horizon
+Outcome
+Uncertainty
+Evidence Digest
+```
+
+---
+
+# 489. Monte Carlo Reasoning
+
+Where uncertainty is material, future simulation may evaluate distributions rather than one deterministic outcome.
+
+Conceptually:
+
+```text
+Scenario
+→ many bounded runs
+→ outcome distribution
+→ risk estimate
+```
+
+This is useful for risk analysis but still requires validation against reality.
+
+---
+
+# 490. Outcome Distribution
+
+```mermaid
+flowchart TD
+
+    SCENARIO[Scenario]
+
+    SCENARIO --> R1[Run 1]
+    SCENARIO --> R2[Run 2]
+    SCENARIO --> R3[Run 3]
+    SCENARIO --> RN[Run N]
+
+    R1 --> DIST[Outcome Distribution]
+    R2 --> DIST
+    R3 --> DIST
+    RN --> DIST
+
+    DIST --> RISK[Risk Assessment]
+```
+
+---
+
+# 491. Tail Risk
+
+Average expected outcome can hide catastrophic low-probability outcomes.
+
+Therefore planning should consider:
+
+```text
+Expected outcome
+Worst credible outcome
+Tail risk
+Recovery cost
+Irreversibility
+Blast radius
+```
+
+---
+
+# 492. Risk-Aware Planning
+
+```mermaid
+flowchart LR
+
+    PLAN[Candidate Plan]
+
+    PLAN --> EXPECTED[Expected Value]
+    PLAN --> RISK[Risk]
+    PLAN --> TAIL[Tail Risk]
+    PLAN --> REV[Reversibility]
+
+    EXPECTED --> DECIDE[Decision]
+    RISK --> DECIDE
+    TAIL --> DECIDE
+    REV --> DECIDE
+```
+
+---
+
+# 493. Reversibility Intelligence
+
+When uncertainty is high, reversible actions may be preferable.
+
+```text
+If two actions have similar expected benefit,
+prefer the action with lower irreversible blast radius.
+```
+
+This is a planning heuristic, not an absolute rule.
+
+---
+
+# 494. Reversible Experiment Pattern
+
+```mermaid
+flowchart LR
+
+    UNKNOWN[Uncertainty]
+
+    UNKNOWN --> SMALL[Small Reversible Test]
+
+    SMALL --> EVID[Evidence]
+
+    EVID --> DECIDE{Continue?}
+
+    DECIDE -->|Yes| SCALE[Progressively Scale]
+    DECIDE -->|No| ROLLBACK[Rollback]
+```
+
+---
+
+# 495. Prediction Error
+
+Prediction error is one of the strongest signals for improving a World Model.
+
+```text
+Prediction Error
+=
+Predicted State
+vs
+Observed State
+```
+
+---
+
+# 496. Prediction Error Loop
+
+```mermaid
+flowchart LR
+
+    WM[World Model]
+
+    WM --> PRED[Prediction]
+    PRED --> REAL[Observed Reality]
+
+    REAL --> ERROR[Prediction Error]
+    ERROR --> RCA[Root Cause Analysis]
+    RCA --> UPDATE[World Model Update]
+
+    UPDATE --> WM
+```
+
+---
+
+# 497. Error Attribution
+
+A failed prediction may result from:
+
+```text
+Bad data
+Missing variable
+Wrong causal assumption
+Model limitation
+Unexpected external event
+Stale context
+Simulation error
+Tool error
+```
+
+Do not automatically change the reasoning model until root cause is understood.
+
+---
+
+# 498. Model-of-Models
+
+The World Model may eventually include knowledge about model behavior itself.
+
+Examples:
+
+```text
+Model A performs well on code reasoning.
+Model B has stronger critique performance.
+Model C fails under context pressure.
+```
+
+Such knowledge should be evidence-bound and version-specific.
+
+---
+
+# 499. Tool World Model
+
+Tools themselves have state.
+
+```text
+Available
+Unavailable
+Degraded
+Rate-Limited
+Changed
+Deprecated
+Revoked
+```
+
+Planning should account for current tool state.
+
+---
+
+# 500. Infrastructure World Model
+
+```mermaid
+flowchart TD
+
+    INFRA[Infrastructure State]
+
+    INFRA --> COMPUTE[Compute]
+    INFRA --> NETWORK[Network]
+    INFRA --> STORAGE[Storage]
+    INFRA --> MODELS[Models]
+    INFRA --> TOOLS[Tools]
+    INFRA --> REPOS[Repositories]
+
+    COMPUTE --> WM[World Model]
+    NETWORK --> WM
+    STORAGE --> WM
+    MODELS --> WM
+    TOOLS --> WM
+    REPOS --> WM
+```
+
+---
+
+# 501. Agent World Model
+
+At large scale, the World Model may track aggregated NCA state.
+
+```text
+Available population
+Capability distribution
+Current load
+Failure rate
+Risk state
+Team assignments
+Resource usage
+```
+
+HANTER does not require raw state from every individual agent for every decision.
+
+---
+
+# 502. Hierarchical World Model
+
+```mermaid
+flowchart TB
+
+    GLOBAL[Global Executive State]
+
+    GLOBAL --> ORG[Organization State]
+    ORG --> TEAM[Team State]
+    TEAM --> MISSION[Mission State]
+    MISSION --> NCA[Agent State]
+    NCA --> RUNTIME[Runtime State]
+```
+
+Higher layers consume summarized state while retaining evidence links.
+
+---
+
+# 503. World Model Compression
+
+Compression should preserve the ability to drill down.
+
+```mermaid
+flowchart LR
+
+    RAW[Raw Evidence]
+
+    RAW --> LOCAL[Local State]
+    LOCAL --> TEAM[Team State]
+    TEAM --> ORG[Organization State]
+    ORG --> EXEC[Executive State]
+
+    EXEC -. evidence drill-down .-> RAW
+```
+
+---
+
+# 504. Causal Mission Graph
+
+A complex mission contains dependencies.
+
+```mermaid
+graph TD
+
+    A[Requirement A] --> C[Work Package C]
+    B[Requirement B] --> C
+
+    C --> D[Test D]
+    D --> E[Deployment Candidate]
+
+    X[Security Blocker] -->|blocks| E
+```
+
+A planner should reason about blockers causally rather than merely listing tasks.
+
+---
+
+# 505. Critical Path Intelligence
+
+The system should identify tasks whose delay blocks the mission.
+
+```text
+Not all unfinished work is equally important.
+```
+
+Critical-path reasoning helps prioritize resources.
+
+---
+
+# 506. Dependency Failure Propagation
+
+```mermaid
+flowchart LR
+
+    DEP[Dependency Failure]
+
+    DEP --> WP[Work Package Blocked]
+    WP --> MISSION[Mission Delay]
+    MISSION --> PROGRAM[Program Impact]
+
+    DEP --> ALT[Alternative Path Evaluation]
+```
+
+---
+
+# 507. Dynamic Re-Planning
+
+When reality changes, plans should adapt.
+
+```mermaid
+flowchart TD
+
+    PLAN[Current Plan]
+
+    PLAN --> OBS[New Evidence]
+
+    OBS --> VALID{Assumptions Still Valid?}
+
+    VALID -->|Yes| CONTINUE[Continue]
+    VALID -->|No| REPLAN[Bounded Re-Planning]
+
+    REPLAN --> VERIFY[Verify New Plan]
+    VERIFY --> PLAN2[Updated Plan]
+```
+
+---
+
+# 508. Re-Planning Does Not Rewrite Authority
+
+A plan may change.
+
+Mission authority may not silently change with it.
+
+```text
+Plan Mutation
+≠
+Mission Authority Mutation
+```
+
+---
+
+# 509. Strategy Branching
+
+For uncertain long-term problems, IMPERIAL AGI may maintain several candidate strategies.
+
+```mermaid
+flowchart TD
+
+    OBJECTIVE[Objective]
+
+    OBJECTIVE --> A[Strategy A]
+    OBJECTIVE --> B[Strategy B]
+    OBJECTIVE --> C[Strategy C]
+
+    A --> EA[Evidence A]
+    B --> EB[Evidence B]
+    C --> EC[Evidence C]
+
+    EA --> REVIEW[Strategy Review]
+    EB --> REVIEW
+    EC --> REVIEW
+
+    REVIEW --> SELECT[Current Preferred Strategy]
+```
+
+Rejected strategies remain useful historical evidence.
+
+---
+
+# 510. Temporal Consistency
+
+A World Model should detect impossible or contradictory timelines.
+
+Examples:
+
+```text
+Event occurred before prerequisite existed.
+Artifact claims a version before its creation.
+Approval appears after execution but is claimed as prior authorization.
+```
+
+Such inconsistencies should trigger verification.
+
+---
+
+# 511. Temporal Security
+
+Time is a security input.
+
+Security-sensitive decisions should not trust arbitrary caller timestamps.
+
+```mermaid
+flowchart LR
+
+    CALLER[Caller Timestamp]
+
+    CALLER -. not authority .-> DECISION[Security Decision]
+
+    TRUSTED[Trusted Time Authority] --> DECISION
+```
+
+---
+
+# 512. Freshness Budget
+
+Different knowledge types have different acceptable freshness.
+
+Example:
+
+```text
+Architecture decision: may remain valid for months.
+Repository HEAD: may become stale in seconds.
+Security approval: may expire in minutes.
+Market price: may become stale almost immediately.
+```
+
+Freshness must be domain-aware.
+
+---
+
+# 513. Stale State Defense
+
+```mermaid
+flowchart LR
+
+    STATE[Retrieved State]
+
+    STATE --> AGE[Freshness Check]
+
+    AGE -->|Fresh| USE[Eligible Context]
+    AGE -->|Stale| REFRESH[Refresh]
+    AGE -->|Cannot Refresh| UNKNOWN[Mark Unknown / Block]
+```
+
+---
+
+# 514. World Model Conflict Resolution
+
+Different sensors may report different state.
+
+```mermaid
+flowchart TD
+
+    S1[Source A]
+    S2[Source B]
+    S3[Source C]
+
+    S1 --> CONFLICT[Conflict Engine]
+    S2 --> CONFLICT
+    S3 --> CONFLICT
+
+    CONFLICT --> PROV[Provenance]
+    PROV --> AUTH[Authority]
+    AUTH --> TIME[Freshness]
+    TIME --> VERIFY[Verifier]
+
+    VERIFY --> STATE[Supported / Conflicted State]
+```
+
+---
+
+# 515. Sensor Fusion
+
+The term sensor may refer broadly to:
+
+```text
+API
+Repository
+Runtime telemetry
+Database
+Human report
+Agent report
+File artifact
+External source
+```
+
+Source fusion must preserve each source independently.
+
+---
+
+# 516. Observation Integrity
+
+An observation should preserve enough identity to prevent accidental substitution.
+
+Conceptually:
+
+```text
+Observation ID
+Source Identity
+Observed Entity
+Observed Property
+Value
+Timestamp
+Evidence Digest
+```
+
+---
+
+# 517. Prediction vs Recommendation
+
+A prediction says:
+
+```text
+What may happen.
+```
+
+A recommendation says:
+
+```text
+What may be preferable to do.
+```
+
+These are separate cognitive outputs.
+
+---
+
+# 518. Recommendation Composition
+
+```mermaid
+flowchart TD
+
+    PRED[Predicted Outcomes]
+    VALUE[Mission Objectives]
+    RISK[Risk]
+    BUDGET[Resources]
+    POLICY[Policy]
+
+    PRED --> REC[Recommendation]
+    VALUE --> REC
+    RISK --> REC
+    BUDGET --> REC
+    POLICY --> REC
+```
+
+Recommendation still does not create authorization.
+
+---
+
+# 519. Strategic Simulation
+
+Long-term plans may be compared across many dimensions.
+
+```text
+Expected mission success
+Time
+Cost
+Risk
+Human impact
+Security
+Reversibility
+Resource pressure
+Dependency fragility
+```
+
+---
+
+# 520. Scenario Matrix
+
+A future system may compare scenarios such as:
+
+| Scenario | Success | Risk | Cost | Time | Reversibility |
+|---|---|---|---|---|---|
+| A | Evidence Required | Evidence Required | Evidence Required | Evidence Required | Evidence Required |
+| B | Evidence Required | Evidence Required | Evidence Required | Evidence Required | Evidence Required |
+| C | Evidence Required | Evidence Required | Evidence Required | Evidence Required | Evidence Required |
+
+Unknown values remain unknown.
+
+---
+
+# 521. No Fabricated Precision
+
+The World Model must not produce precise-looking numbers without evidence.
+
+```text
+Unsupported 73.42%
+```
+
+is not better than:
+
+```text
+Uncertain / insufficient evidence
+```
+
+Precision must be earned.
+
+---
+
+# 522. Probability Provenance
+
+Where probabilities are used, preserve:
+
+```text
+Method
+Model
+Dataset
+Calibration
+Sample Size
+Time Horizon
+Confidence Interval where appropriate
+```
+
+---
+
+# 523. Causal Intervention
+
+Strong causal evidence often comes from intervention.
+
+Conceptually:
+
+```text
+Observe system
+↓
+Change one bounded variable
+↓
+Observe response
+↓
+Compare with control
+```
+
+External interventions remain subject to governance.
+
+---
+
+# 524. Digital Twin Architecture
+
+A future advanced World Model may support digital-twin-like representations of selected systems.
+
+```mermaid
+flowchart LR
+
+    REAL[Real System]
+
+    REAL --> OBS[Observed State]
+    OBS --> TWIN[Digital Representation]
+
+    TWIN --> SIM[Simulation]
+    SIM --> PRED[Prediction]
+
+    REAL --> FUTURE[Future Observation]
+    FUTURE --> COMPARE[Compare]
+
+    PRED --> COMPARE
+```
+
+Digital representation is an approximation, not identity with reality.
+
+---
+
+# 525. Repository Digital Twin
+
+For engineering, the World Model may model:
+
+```text
+Repository
+Branches
+Components
+Dependencies
+Tests
+Build state
+Security state
+Release state
+```
+
+This enables change-impact simulation before source mutation.
+
+---
+
+# 526. Change Impact Prediction
+
+```mermaid
+flowchart TD
+
+    CHANGE[Proposed Change]
+
+    CHANGE --> DEPS[Dependency Graph]
+    DEPS --> TESTS[Impacted Tests]
+    DEPS --> API[Impacted Interfaces]
+    DEPS --> SECURITY[Security Boundaries]
+
+    TESTS --> RISK[Change Risk]
+    API --> RISK
+    SECURITY --> RISK
+
+    RISK --> PLAN[Implementation Plan]
+```
+
+---
+
+# 527. Pre-Mutation Reasoning
+
+Before modifying high-value source:
+
+```text
+Identify canonical source
+Understand dependency graph
+Predict impact
+Define rollback
+Define tests
+Define security invariants
+Then mutate
+```
+
+This principle applies strongly to HANTER and Nano Core Agents.
+
+---
+
+# 528. World Model for HANTER
+
+HANTER should eventually receive a compact executive World Model containing:
+
+```text
+Mission portfolio
+System state
+Open blockers
+Risk
+Resource state
+NCA capacity
+Verification state
+Runtime health
+Critical predictions
+Unresolved uncertainty
+```
+
+---
+
+# 529. HANTER Executive Prediction
+
+```mermaid
+flowchart TD
+
+    FED[Federated State]
+
+    FED --> WM[World Model]
+    WM --> AGI[IMPERIAL AGI]
+
+    AGI --> FORECAST[Forecast]
+    AGI --> RISK[Risk Analysis]
+    AGI --> OPTIONS[Strategic Options]
+
+    FORECAST --> H[HANTER]
+    RISK --> H
+    OPTIONS --> H
+```
+
+---
+
+# 530. Nano Core Agent Local World Models
+
+Specialized NCA may maintain narrow domain-specific models.
+
+Examples:
+
+```text
+Software repository state
+Security incident state
+Research experiment state
+Financial analysis state
+Operations state
+```
+
+Local models must remain scoped to mission and domain boundaries.
+
+---
+
+# 531. World Model Federation
+
+```mermaid
+flowchart TB
+
+    GLOBAL[Executive World Model]
+
+    GLOBAL --> O1[Organization Model A]
+    GLOBAL --> O2[Organization Model B]
+
+    O1 --> T1[Team Models]
+    O2 --> T2[Team Models]
+
+    T1 --> N1[NCA Local Models]
+    T2 --> N2[NCA Local Models]
+```
+
+Lower-level models provide evidence upward.
+
+Higher-level models should not expose all private internal detail downward.
+
+---
+
+# 532. World Model Poisoning Defense
+
+World Models create a critical attack surface.
+
+Threats include:
+
+```text
+Fake observations
+Stale state
+Memory poisoning
+False causal links
+Manipulated telemetry
+Forged agent reports
+Source substitution
+```
+
+---
+
+# 533. World Model Admission Gate
+
+```mermaid
+flowchart LR
+
+    INPUT[Candidate World State]
+
+    INPUT --> SOURCE[Source Validation]
+    SOURCE --> PROV[Provenance]
+    PROV --> FRESH[Freshness]
+    FRESH --> CONFLICT[Conflict Check]
+    CONFLICT --> VERIFY[Verification]
+
+    VERIFY --> WM[World Model]
+```
+
+---
+
+# 534. No Single Observation Dominance
+
+A single observation may update state when authoritative and appropriate.
+
+But high-impact state changes may require stronger corroboration.
+
+The required evidence strength should be risk-dependent.
+
+---
+
+# 535. Temporal Attack Detection
+
+Potential temporal attacks include:
+
+```text
+Backdating
+Future dating
+Replay
+Stale approval reuse
+Clock manipulation
+Event reordering
+```
+
+Trusted temporal boundaries are required for security-sensitive state.
+
+---
+
+# 536. Timeline Audit
+
+```mermaid
+flowchart LR
+
+    EVENTS[Events]
+
+    EVENTS --> ORDER[Trusted Ordering]
+    ORDER --> CHECK[Temporal Consistency]
+    CHECK --> AUDIT[Timeline Evidence]
+```
+
+---
+
+# 537. World Model Versioning
+
+Each significant World Model snapshot should eventually support:
+
+```text
+World Model ID
+Generation
+Parent Generation
+Evidence Set
+Created Time
+Digest
+Known Unknowns
+Conflicts
+```
+
+---
+
+# 538. Branching World Models
+
+When evidence is insufficient to choose one state, the system may preserve multiple hypotheses.
+
+```mermaid
+flowchart TD
+
+    EVID[Ambiguous Evidence]
+
+    EVID --> W1[World Hypothesis A]
+    EVID --> W2[World Hypothesis B]
+
+    W1 --> P1[Prediction A]
+    W2 --> P2[Prediction B]
+
+    P1 --> FUTURE[Future Evidence]
+    P2 --> FUTURE
+
+    FUTURE --> RESOLVE[Resolve]
+```
+
+---
+
+# 539. Belief Revision
+
+A strong intelligence must update beliefs when stronger evidence arrives.
+
+```text
+Changing a belief because evidence changed
+≠
+Failure
+```
+
+Refusing to update despite superior evidence is a failure.
+
+---
+
+# 540. Evidence-Driven Belief Revision
+
+```mermaid
+flowchart LR
+
+    OLD[Current Belief]
+
+    NEW[New Evidence]
+
+    OLD --> VERIFY[Re-evaluation]
+    NEW --> VERIFY
+
+    VERIFY --> KEEP[Keep]
+    VERIFY --> UPDATE[Update]
+    VERIFY --> CONFLICT[Mark Conflicted]
+```
+
+---
+
+# 541. No Historical Erasure
+
+Updating the World Model should not erase why previous beliefs existed.
+
+Historical evidence remains useful for:
+
+```text
+Root cause
+Learning
+Audit
+Prediction calibration
+Architecture evolution
+```
+
+---
+
+# 542. Predictive Safety
+
+Prediction engines can influence high-impact decisions.
+
+Therefore predictions should themselves be challenged.
+
+```mermaid
+flowchart LR
+
+    MODEL[Prediction Model]
+
+    MODEL --> PRED[Prediction]
+
+    PRED --> CRITIC[Prediction Critic]
+    CRITIC --> VERIFY[Prediction Verifier]
+
+    VERIFY --> USE[Eligible Decision Input]
+```
+
+---
+
+# 543. Adversarial Scenario Generation
+
+A Critic may intentionally generate failure scenarios.
+
+Examples:
+
+```text
+What if the primary model fails?
+What if a repository becomes unavailable?
+What if an approval is revoked?
+What if network access disappears?
+What if cost doubles?
+What if one organization is compromised?
+```
+
+---
+
+# 544. Stress Scenario Engine
+
+```mermaid
+flowchart TD
+
+    PLAN[Plan]
+
+    PLAN --> NORMAL[Normal Scenario]
+    PLAN --> FAIL1[Dependency Failure]
+    PLAN --> FAIL2[Resource Exhaustion]
+    PLAN --> FAIL3[Security Incident]
+    PLAN --> FAIL4[Model Outage]
+
+    NORMAL --> EVAL[Resilience Evaluation]
+    FAIL1 --> EVAL
+    FAIL2 --> EVAL
+    FAIL3 --> EVAL
+    FAIL4 --> EVAL
+```
+
+---
+
+# 545. Resilience Prediction
+
+A plan should ideally answer:
+
+```text
+Can it succeed normally?
+Can it recover from bounded failure?
+What causes irreversible failure?
+What is the fallback?
+```
+
+---
+
+# 546. Recovery Simulation
+
+Before relying on disaster recovery, recovery plans should be tested.
+
+```mermaid
+flowchart LR
+
+    FAILURE[Simulated Failure]
+
+    FAILURE --> RECOVERY[Recovery Procedure]
+
+    RECOVERY --> VERIFY[Verify Restored State]
+
+    VERIFY --> EVID[Recovery Evidence]
+```
+
+---
+
+# 547. Predictive Governance
+
+Governance itself can benefit from simulation.
+
+Before adopting a major architecture change, the system may evaluate:
+
+```text
+Security impact
+Authority impact
+Failure modes
+Migration risk
+Compatibility
+Rollback
+```
+
+---
+
+# 548. Governance Simulation Boundary
+
+Simulation can reveal risk.
+
+It cannot approve the change.
+
+```text
+Governance Simulation
+≠
+Governance Authorization
+```
+
+---
+
+# 549. AGI World Model Evaluation
+
+A World Model should be evaluated on:
+
+```text
+State accuracy
+Temporal consistency
+Causal accuracy
+Prediction calibration
+Conflict handling
+Unknown recognition
+Freshness handling
+Counterfactual quality
+Recovery after wrong belief
+```
+
+---
+
+# 550. Temporal Generalization Benchmark
+
+Future evaluation should include unseen dynamic systems where IMPERIAL AGI must:
+
+```text
+Observe
+Infer state
+Predict
+Receive new evidence
+Revise belief
+Re-plan
+```
+
+This tests adaptation rather than static memorization.
+
+---
+
+# 551. Causal Generalization Benchmark
+
+The system should also encounter unfamiliar causal structures.
+
+Success requires more than recognizing previously memorized correlations.
+
+---
+
+# 552. Predictive Scorecard
+
+A future evidence-driven scorecard may include:
+
+| Dimension | Status |
+|---|---|
+| State Tracking | EVALUATION REQUIRED |
+| Temporal Reasoning | EVALUATION REQUIRED |
+| Causal Reasoning | EVALUATION REQUIRED |
+| Counterfactual Reasoning | EVALUATION REQUIRED |
+| Forecast Calibration | EVALUATION REQUIRED |
+| Scenario Simulation | EVALUATION REQUIRED |
+| Belief Revision | EVALUATION REQUIRED |
+| Unknown Detection | EVALUATION REQUIRED |
+
+Unknown performance remains explicitly unknown until evaluated.
+
+---
+
+# 553. World Model + Memory Separation
+
+Memory stores evidence and experience.
+
+The World Model interprets current relevant state.
+
+```text
+Memory
+≠
+World Model
+```
+
+Old memory may inform the World Model.
+
+It does not automatically define current state.
+
+---
+
+# 554. World Model + Knowledge Graph Separation
+
+The Knowledge Graph preserves structured knowledge and provenance.
+
+The World Model answers:
+
+```text
+What appears to be true now?
+```
+
+The Knowledge Graph may also contain historical states and superseded evidence.
+
+---
+
+# 555. World Model + Planner Separation
+
+The World Model represents state.
+
+The Planner selects candidate paths through state.
+
+```mermaid
+flowchart LR
+
+    WM[World Model]
+
+    WM --> PLAN[Planner]
+
+    PLAN --> ACTIONS[Candidate Actions]
+
+    ACTIONS --> SIM[Simulation]
+
+    SIM --> WM
+```
+
+---
+
+# 556. Cognitive Architecture Integration
+
+```mermaid
+flowchart TB
+
+    INPUT[Evidence Sources]
+
+    INPUT --> KG[Knowledge Graph]
+    INPUT --> MEMORY[Persistent Memory]
+
+    KG --> WM[World Model]
+    MEMORY --> WM
+
+    WM --> R[Reasoner]
+    WM --> P[Planner]
+    WM --> SIM[Simulation]
+
+    R --> C[Critic]
+    P --> C
+    SIM --> C
+
+    C --> V[Verifier]
+
+    V --> REC[Evidence-Bound Recommendation]
+
+    REC --> H[HANTER Governance Boundary]
+```
+
+---
+
+# 557. Predictive Mission Loop
+
+```mermaid
+flowchart LR
+
+    OBSERVE[Observe]
+    OBSERVE --> MODEL[Model State]
+    MODEL --> PREDICT[Predict]
+    PREDICT --> PLAN[Plan]
+    PLAN --> SIMULATE[Simulate]
+    SIMULATE --> CHALLENGE[Challenge]
+    CHALLENGE --> VERIFY[Verify]
+    VERIFY --> ACT[Governed Action]
+    ACT --> OBSERVE2[Observe Result]
+    OBSERVE2 --> LEARN[Update Model]
+    LEARN --> MODEL
+```
+
+---
+
+# 558. AGI Temporal Intelligence Principle
+
+A system cannot reason effectively over long horizons if it cannot distinguish:
+
+```text
+Past
+Current
+Predicted
+Possible
+Expired
+Stale
+Superseded
+```
+
+Temporal intelligence is therefore a foundational AGI capability.
+
+---
+
+# 559. AGI Causal Intelligence Principle
+
+A system that only observes correlations may optimize the wrong causes.
+
+IMPERIAL AGI should therefore progressively develop the ability to:
+
+```text
+Identify causes
+Challenge causal assumptions
+Run bounded interventions
+Compare alternatives
+Update causal models
+```
+
+while preserving uncertainty where causality remains unresolved.
+
+---
+
+# 560. Predictive Intelligence Principle
+
+A useful prediction must eventually face reality.
+
+> **Predictions that are never scored against outcomes are stories, not calibrated intelligence.**
+
+---
+
+# 561. World Model Security Invariant
+
+```text
+Observation
+≠
+Truth
+
+Memory
+≠
+Current State
+
+Prediction
+≠
+Observation
+
+Simulation
+≠
+Runtime
+
+Correlation
+≠
+Causation
+
+Confidence
+≠
+Evidence
+```
+
+---
+
+# 562. Target World Model Architecture
+
+```mermaid
+flowchart TB
+
+    ARCH["Architect<br/>Alexander Romaskevich"]
+
+    ARCH --> H["HANTER"]
+
+    H <--> AGI["IMPERIAL AGI"]
+
+    KG["IMPERIAL Knowledge Graph"] --> WM["Temporal World Model"]
+    MEM["Persistent Memory"] --> WM
+    OBS["Verified Observations"] --> WM
+    RUN["Runtime Evidence"] --> WM
+
+    WM --> CAUSAL["Causal Reasoning"]
+    WM --> TEMP["Temporal Reasoning"]
+    WM --> PRED["Prediction Engine"]
+    WM --> SIM["Scenario Simulation"]
+    WM --> PLAN["Long-Horizon Planner"]
+
+    CAUSAL --> C["Critic"]
+    TEMP --> C
+    PRED --> C
+    SIM --> C
+    PLAN --> C
+
+    C --> V["Verifier"]
+    V --> REC["Evidence-Bound Recommendation"]
+
+    REC --> H
+
+    H --> GOV["Governance"]
+    GOV --> EXEC["Bounded Execution"]
+    EXEC --> EVID["Runtime Evidence"]
+
+    EVID --> WM
+```
+
+---
+
+# 563. World Model Truth Boundary
+
+This section defines the public architectural direction for temporal World Models, causal reasoning, predictive intelligence, counterfactual simulation, belief revision and long-horizon state modelling.
+
+It does not claim that all capabilities described here are currently implemented.
+
+It does not claim runtime predictive accuracy.
+
+It does not claim production deployment.
+
+Architecture, specification, implementation, testing, runtime evidence and production remain explicitly separate.
+
+---
+
+## World Model Authorship & Digital Provenance
+
+**Architect & Original Author:** Alexander Romaskevich  
+**Founder • Owner • CEO • Chief Systems Architect — IMPERIAL Core**
+
+The Temporal World Model, Causal Reasoning, Counterfactual Intelligence, Predictive Simulation, Belief Revision and Multi-Horizon Planning architecture described here form part of the original IMPERIAL AGI architectural program under the direction of Alexander Romaskevich.
+
+**Canonical authorship:** Alexander Romaskevich  
+**Architecture:** IMPERIAL Core  
+**Component:** IMPERIAL AGI  
+**Executive Intelligence:** HANTER  
+**Repository:** IMPERIAL-AGI  
+**Year:** 2026
+
+Copyright © 2026 Alexander Romaskevich.
+
+---
+
+> **Observe reality. Model state. Understand causes. Predict carefully. Test predictions. Correct relentlessly.**
+
+> **A world model becomes valuable when reality is allowed to prove it wrong.**
+
+**IMPERIAL AGI — Architected by Alexander Romaskevich.**
