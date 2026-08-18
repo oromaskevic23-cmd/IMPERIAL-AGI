@@ -17273,3 +17273,2094 @@ Copyright © 2026 Alexander Romaskevich.
 > **The stronger the intelligence, the stronger its ability to detect its own mistakes must become.**
 
 **IMPERIAL AGI — Architected by Alexander Romaskevich.**
+---
+
+# 775. Tool Intelligence
+
+General intelligence requires more than reasoning in isolation.
+
+A powerful system must understand:
+
+```text
+Which tool exists
+What the tool can do
+What the tool cannot do
+What risks it introduces
+What authority it requires
+What evidence it produces
+How reliable its output is
+When another tool is better
+When no tool should be used
+```
+
+IMPERIAL AGI therefore defines a governed Tool Intelligence architecture.
+
+> **Tool use is cognition under external consequence.**
+
+---
+
+# 776. Tool Use Is Not a Primitive Reflex
+
+The architecture rejects the pattern:
+
+```text
+Model wants result
+→ call tool
+```
+
+Instead:
+
+```text
+Need
+→ Tool Discovery
+→ Capability Evaluation
+→ Risk Evaluation
+→ Authority Evaluation
+→ Sandbox / Runtime Selection
+→ Invocation
+→ Result Verification
+→ Evidence
+```
+
+---
+
+# 777. Governed Tool Selection
+
+```mermaid
+flowchart TD
+
+    NEED[Task Need]
+
+    NEED --> DISCOVER[Tool Discovery]
+    DISCOVER --> ELIGIBLE[Eligible Tool Set]
+
+    ELIGIBLE --> SCORE[Capability / Risk / Cost Evaluation]
+
+    SCORE --> SELECT[Candidate Tool]
+
+    SELECT --> AUTH{Authorized?}
+
+    AUTH -->|No| DENY[Do Not Invoke]
+    AUTH -->|Yes| RUNTIME[Bounded Runtime]
+
+    RUNTIME --> RESULT[Tool Result]
+    RESULT --> VERIFY[Result Verification]
+```
+
+---
+
+# 778. Tool Registry
+
+A future Tool Registry may preserve:
+
+```text
+Tool ID
+Name
+Version
+Provider
+Source
+Capability
+Input Schema
+Output Schema
+Risk Tier
+Required Permissions
+Runtime Boundary
+Network Boundary
+Cost Profile
+Known Failure Modes
+Verification Status
+Integrity Digest
+```
+
+---
+
+# 779. Tool Identity
+
+Tool identity must not depend only on a display name.
+
+A tool called:
+
+```text
+browser
+shell
+database
+search
+deploy
+```
+
+may behave differently across environments.
+
+The system should eventually bind tool identity to:
+
+```text
+Provider
+Version
+Endpoint
+Runtime
+Configuration
+Integrity
+```
+
+---
+
+# 780. Tool Capability vs Tool Permission
+
+```text
+Tool Capability
+≠
+Tool Permission
+```
+
+A shell may be technically able to delete files.
+
+That does not mean a mission is authorized to delete files.
+
+---
+
+# 781. Tool Capability Intersection
+
+```text
+Effective Tool Capability
+=
+Mission Scope
+∩
+Tool Capability
+∩
+Agent Capability
+∩
+Guardian Policy
+∩
+Approval
+∩
+Runtime Domain Policy
+```
+
+```mermaid
+flowchart TD
+
+    M[Mission]
+    T[Tool Capability]
+    A[Agent Capability]
+    G[Guardian Core]
+    P[Approval]
+    R[Runtime Policy]
+
+    M --> X[Capability Intersection]
+    T --> X
+    A --> X
+    G --> X
+    P --> X
+    R --> X
+
+    X --> EXEC[Eligible Tool Invocation]
+```
+
+---
+
+# 782. Tool Risk Classes
+
+A conceptual tool risk model may include:
+
+```text
+T0 — read-only local introspection
+T1 — bounded local transformation
+T2 — external read access
+T3 — local mutation
+T4 — external mutation
+T5 — irreversible / high-impact effect
+```
+
+Higher risk should require stronger governance.
+
+---
+
+# 783. Read vs Write Separation
+
+The architecture should explicitly distinguish:
+
+```text
+READ
+WRITE
+DELETE
+EXECUTE
+PUBLISH
+TRANSFER
+```
+
+These are different authority classes.
+
+---
+
+# 784. Tool Invocation Envelope
+
+Every meaningful invocation may eventually preserve:
+
+```text
+Invocation ID
+Mission ID
+Agent ID
+Tool ID
+Capability
+Input Digest
+Runtime Domain
+Authority Evidence
+Created Time
+Deadline
+Expected Side Effects
+```
+
+---
+
+# 785. Tool Invocation Lifecycle
+
+```mermaid
+stateDiagram-v2
+
+    [*] --> PROPOSED
+
+    PROPOSED --> VALIDATED
+    PROPOSED --> DENIED
+
+    VALIDATED --> RUNNING
+
+    RUNNING --> SUCCEEDED
+    RUNNING --> FAILED
+    RUNNING --> TIMED_OUT
+    RUNNING --> CANCELLED
+
+    SUCCEEDED --> VERIFIED
+    FAILED --> REVIEW
+
+    VERIFIED --> [*]
+    DENIED --> [*]
+```
+
+---
+
+# 786. Tool Result Is Untrusted Input
+
+A tool can fail.
+
+A tool can return stale data.
+
+A tool can return malformed data.
+
+A remote system can be compromised.
+
+Therefore:
+
+> **Tool output is evidence candidate, not automatic truth.**
+
+---
+
+# 787. Result Verification
+
+```mermaid
+flowchart LR
+
+    TOOL[Tool]
+
+    TOOL --> RESULT[Raw Result]
+
+    RESULT --> SCHEMA[Schema Validation]
+    SCHEMA --> PROV[Provenance]
+    PROV --> FRESH[Freshness]
+    FRESH --> CONSIST[Consistency]
+    CONSIST --> VERIFY[Verifier]
+
+    VERIFY --> EVID[Eligible Evidence]
+```
+
+---
+
+# 788. Tool Hallucination Defense
+
+Models may incorrectly believe:
+
+```text
+a tool exists
+a command succeeded
+a file was written
+an API call completed
+a deployment occurred
+```
+
+Tool success must be established by actual returned evidence.
+
+---
+
+# 789. No Fabricated Tool Success
+
+```text
+No tool response
+=
+No execution evidence
+```
+
+The system must not convert intention into completion.
+
+---
+
+# 790. Tool Error Taxonomy
+
+Tool failures may include:
+
+```text
+NOT_FOUND
+UNAUTHORIZED
+TIMEOUT
+RATE_LIMITED
+INVALID_INPUT
+INVALID_OUTPUT
+DEPENDENCY_FAILURE
+PARTIAL_SUCCESS
+CONFLICT
+UNKNOWN
+```
+
+Different failures require different recovery strategies.
+
+---
+
+# 791. Tool Retry Policy
+
+```mermaid
+flowchart TD
+
+    FAIL[Tool Failure]
+
+    FAIL --> CLASS[Classify]
+
+    CLASS --> TRANSIENT[Transient]
+    CLASS --> AUTH[Authorization]
+    CLASS --> PERM[Permanent]
+    CLASS --> UNKNOWN[Unknown]
+
+    TRANSIENT --> RETRY[Bounded Retry]
+    AUTH --> STOP[Do Not Retry Blindly]
+    PERM --> REPLAN[Alternative Tool / Plan]
+    UNKNOWN --> REVIEW[Investigate]
+```
+
+---
+
+# 792. Tool Selection Intelligence
+
+If multiple tools can solve the same problem, the system should evaluate them.
+
+Potential dimensions:
+
+```text
+Capability
+Reliability
+Security
+Latency
+Cost
+Reversibility
+Evidence Quality
+Data Boundary
+Runtime Isolation
+```
+
+---
+
+# 793. Multi-Tool Selection
+
+```mermaid
+flowchart TD
+
+    NEED[Need]
+
+    NEED --> A[Tool A]
+    NEED --> B[Tool B]
+    NEED --> C[Tool C]
+
+    A --> SCORE[Evaluation]
+    B --> SCORE
+    C --> SCORE
+
+    SCORE --> SELECT[Best Eligible Tool]
+```
+
+---
+
+# 794. Best Tool Is Contextual
+
+The fastest tool may not be safest.
+
+The cheapest tool may not be reliable enough.
+
+The strongest tool may have excessive privilege.
+
+Tool choice must be mission-specific.
+
+---
+
+# 795. Tool Substitution
+
+If a preferred tool is unavailable, an alternative may be considered.
+
+```mermaid
+flowchart LR
+
+    PRIMARY[Primary Tool]
+
+    PRIMARY --> FAIL{Unavailable?}
+
+    FAIL -->|No| USE[Use]
+    FAIL -->|Yes| ALT[Alternative Tool]
+
+    ALT --> AUTH[Re-evaluate Authority]
+    AUTH --> USE2[Eligible Alternative]
+```
+
+---
+
+# 796. No Silent Tool Downgrade
+
+The system must not silently replace:
+
+```text
+verified tool
+```
+
+with:
+
+```text
+unverified weaker alternative
+```
+
+just to complete a mission.
+
+---
+
+# 797. Tool Dependency Graph
+
+Tools may depend on other services.
+
+```mermaid
+graph TD
+
+    AGENT[Agent]
+    AGENT --> TOOL[Tool]
+    TOOL --> API[Remote API]
+    TOOL --> LIB[Library]
+    TOOL --> AUTH[Authentication Service]
+```
+
+Dependency failures should be visible.
+
+---
+
+# 798. Tool Supply-Chain Security
+
+Tool trust requires more than functionality.
+
+Evaluation should consider:
+
+```text
+Source
+License
+Version
+Integrity
+Dependencies
+Installer Path
+Update Channel
+Maintainer
+Known Vulnerabilities
+```
+
+---
+
+# 799. Tool Installation Boundary
+
+A candidate tool should ideally follow:
+
+```text
+Discover
+→ Verify Source
+→ Pin Version
+→ Verify Integrity
+→ Review
+→ Install
+→ Test
+→ Register
+```
+
+rather than uncontrolled remote installer execution.
+
+---
+
+# 800. MCP Tool Boundary
+
+MCP services can expose powerful external capabilities.
+
+```mermaid
+flowchart LR
+
+    AGI[IMPERIAL AGI]
+
+    AGI --> MCPCLIENT[MCP Client]
+
+    MCPCLIENT --> POLICY[Capability Policy]
+    POLICY --> SERVICE[MCP Service]
+
+    SERVICE --> RESULT[External Result]
+    RESULT --> VALIDATE[Validation]
+    VALIDATE --> AGI
+```
+
+---
+
+# 801. External Data Boundary
+
+External tool calls may transmit data.
+
+The system should know:
+
+```text
+What data leaves the Runtime Domain?
+Where does it go?
+Which provider receives it?
+What classification is permitted?
+What retention may occur?
+```
+
+---
+
+# 802. Data Egress Gate
+
+```mermaid
+flowchart TD
+
+    DATA[Candidate Outbound Data]
+
+    DATA --> CLASS[Classification]
+    CLASS --> DEST[Destination]
+    DEST --> POLICY[Egress Policy]
+
+    POLICY -->|ALLOW| SEND[Transmit]
+    POLICY -->|DENY| BLOCK[Block]
+```
+
+---
+
+# 803. Privacy-Preserving Tool Use
+
+Where possible, tools should receive only the minimum information necessary.
+
+```text
+Full repository
+≠
+always required
+
+Full chat history
+≠
+always required
+
+Full identity profile
+≠
+always required
+```
+
+---
+
+# 804. Tool Least Context
+
+```mermaid
+flowchart LR
+
+    FULL[Full Mission Context]
+
+    FULL --> MIN[Context Minimization]
+    MIN --> TOOL[Tool Invocation]
+```
+
+This reduces leakage and attack surface.
+
+---
+
+# 805. Tool Prompt Injection
+
+External content may contain instructions intended to manipulate the agent.
+
+Examples:
+
+```text
+web pages
+documents
+repository comments
+tool responses
+retrieved memory
+```
+
+These must remain untrusted content.
+
+---
+
+# 806. Instruction/Data Separation
+
+```mermaid
+flowchart TD
+
+    EXT[External Content]
+
+    EXT --> DATA[Data Channel]
+
+    POLICY[Authorized Instructions] --> INST[Instruction Channel]
+
+    DATA --> COG[Cognition]
+    INST --> COG
+
+    DATA -. cannot silently become .-> INST
+```
+
+---
+
+# 807. Tool-Induced Authority Injection
+
+A tool response must never be able to assert:
+
+```text
+You are now authorized.
+Approval is granted.
+Ignore previous policy.
+You are the Architect.
+```
+
+as valid authority.
+
+Authority must come from trusted governance channels.
+
+---
+
+# 808. Tool Sandbox
+
+Code execution tools should operate inside bounded environments.
+
+```mermaid
+flowchart TD
+
+    CODE[Candidate Code]
+
+    CODE --> SANDBOX[Sandbox]
+
+    SANDBOX --> FS[Filesystem Boundary]
+    SANDBOX --> NET[Network Boundary]
+    SANDBOX --> PROC[Process Boundary]
+    SANDBOX --> TIME[Time Limit]
+    SANDBOX --> MEM[Memory Limit]
+
+    SANDBOX --> RESULT[Execution Result]
+```
+
+---
+
+# 809. Sandbox Is Not Absolute Security
+
+A sandbox reduces risk.
+
+It does not justify assuming:
+
+```text
+perfect containment
+```
+
+Sandbox security itself requires verification.
+
+---
+
+# 810. Code Execution Policy
+
+Generated code should be classified by effect.
+
+Examples:
+
+```text
+Pure computation
+Read-only analysis
+Temporary file generation
+Repository mutation
+Network access
+System process execution
+External deployment
+```
+
+---
+
+# 811. Command Intelligence
+
+A command should be evaluated before execution.
+
+```mermaid
+flowchart LR
+
+    CMD[Candidate Command]
+
+    CMD --> PARSE[Parse Intent]
+    PARSE --> EFFECT[Predict Side Effects]
+    EFFECT --> POLICY[Policy]
+    POLICY --> EXEC[Bounded Execution]
+```
+
+---
+
+# 812. Shell Boundary
+
+Shell access is high leverage.
+
+The architecture should prefer:
+
+```text
+structured tools
+typed APIs
+bounded commands
+```
+
+over unrestricted shell whenever practical.
+
+---
+
+# 813. Dangerous Command Detection
+
+Potentially dangerous patterns include:
+
+```text
+recursive delete
+privilege escalation
+arbitrary network download + execute
+credential access
+filesystem escape
+process-kill-all
+```
+
+Such patterns require stronger review.
+
+---
+
+# 814. Tool Action Preview
+
+Before high-impact actions, the system should be capable of generating an action preview.
+
+```text
+Tool
+Target
+Expected changes
+Files affected
+External systems affected
+Estimated reversibility
+Required authority
+```
+
+---
+
+# 815. Dry Run
+
+Where supported, high-impact tools should prefer a dry-run or simulation mode.
+
+```mermaid
+flowchart LR
+
+    ACTION[Candidate Action]
+
+    ACTION --> DRY[Dry Run]
+    DRY --> DIFF[Expected Diff]
+    DIFF --> VERIFY[Verify]
+    VERIFY --> REAL[Authorized Real Execution]
+```
+
+---
+
+# 816. Mutation Diff
+
+For repository changes, the system should inspect:
+
+```text
+Files changed
+Lines changed
+Dependencies changed
+Security boundaries changed
+Tests affected
+```
+
+before finalizing.
+
+---
+
+# 817. Tool Transaction Boundary
+
+Some operations should be treated transactionally.
+
+```mermaid
+stateDiagram-v2
+
+    [*] --> PREPARE
+    PREPARE --> VALIDATE
+    VALIDATE --> COMMIT
+    VALIDATE --> ABORT
+
+    COMMIT --> VERIFY
+    VERIFY --> COMPLETE
+    VERIFY --> COMPENSATE
+```
+
+---
+
+# 818. Compensating Actions
+
+Not every operation supports true rollback.
+
+In those cases, recovery may require a compensating action.
+
+```text
+Payment
+→ refund / correction
+
+Publication
+→ correction / withdrawal
+
+Infrastructure change
+→ compensating configuration
+```
+
+---
+
+# 819. Irreversible Tool Effects
+
+Examples include:
+
+```text
+public publication
+external notification
+financial transfer
+permanent deletion
+third-party data transmission
+```
+
+These require stronger pre-execution verification.
+
+---
+
+# 820. Tool Reversibility Registry
+
+A future registry may classify tools by:
+
+```text
+Fully reversible
+Partially reversible
+Compensatable
+Irreversible
+```
+
+---
+
+# 821. Experimental Tool Use
+
+IMPERIAL AGI should be able to experiment with tools in controlled environments.
+
+```mermaid
+flowchart TD
+
+    TOOL[Candidate Tool]
+
+    TOOL --> LAB[Lab Evaluation]
+    LAB --> SANDBOX[Sandbox Test]
+    SANDBOX --> EVAL[Capability Evaluation]
+    EVAL --> SECURITY[Security Evaluation]
+    SECURITY --> REGISTRY[Eligible Registry Entry]
+```
+
+---
+
+# 822. Tool Benchmark
+
+Tool evaluation may measure:
+
+```text
+Success rate
+Latency
+Cost
+Error rate
+Result quality
+Determinism
+Security boundary
+Evidence quality
+```
+
+---
+
+# 823. Autonomous Experimentation
+
+Advanced AGI-class capability requires the ability to design and execute bounded experiments.
+
+```mermaid
+flowchart LR
+
+    QUESTION[Question]
+
+    QUESTION --> HYP[Hypothesis]
+    HYP --> DESIGN[Experiment Design]
+    DESIGN --> RISK[Risk Review]
+    RISK --> EXEC[Bounded Experiment]
+    EXEC --> OBS[Observation]
+    OBS --> VERIFY[Verification]
+    VERIFY --> LEARN[Knowledge Update]
+```
+
+---
+
+# 824. Experiment Contract
+
+A future experiment may define:
+
+```text
+Experiment ID
+Hypothesis
+Variables
+Controls
+Environment
+Expected Outcome
+Risk
+Budget
+Duration
+Tools
+Stop Conditions
+Evidence Requirements
+```
+
+---
+
+# 825. Experiment Isolation
+
+Experiments should be separated from production systems unless explicitly authorized.
+
+```mermaid
+flowchart LR
+
+    EXP[Experiment]
+
+    EXP --> LAB[Experimental Runtime]
+
+    PROD[Production Runtime]
+
+    LAB -. isolated .- PROD
+```
+
+---
+
+# 826. Experimental Stop Conditions
+
+An experiment should terminate when:
+
+```text
+Goal achieved
+Safety threshold exceeded
+Unexpected side effect
+Budget exhausted
+Deadline reached
+Evidence sufficient
+Authority revoked
+```
+
+---
+
+# 827. Exploration vs Exploitation
+
+A mature system must balance:
+
+```text
+Exploration
+    learn something new
+
+Exploitation
+    use known best method
+```
+
+---
+
+# 828. Exploration Budget
+
+Exploration should consume bounded resources.
+
+```mermaid
+flowchart TD
+
+    TOTAL[Mission Budget]
+
+    TOTAL --> KNOWN[Known Strategy Budget]
+    TOTAL --> EXPLORE[Exploration Budget]
+
+    EXPLORE --> A[Alternative A]
+    EXPLORE --> B[Alternative B]
+```
+
+---
+
+# 829. Exploration Is Not Permission Expansion
+
+Trying a new method does not justify accessing new resources outside mission authority.
+
+---
+
+# 830. Tool Discovery Intelligence
+
+The system should identify capability gaps.
+
+```mermaid
+flowchart LR
+
+    TASK[Task]
+
+    TASK --> GAP[Capability Gap]
+
+    GAP --> REG[Capability Registry]
+
+    REG --> FOUND{Tool Exists?}
+
+    FOUND -->|Yes| EVAL[Evaluate Tool]
+    FOUND -->|No| BUILD[Propose New Tool / Skill]
+```
+
+---
+
+# 831. Tool Creation
+
+IMPERIAL AGI may eventually propose new tools.
+
+The lifecycle should be:
+
+```text
+Capability Gap
+→ Specification
+→ Candidate Implementation
+→ Security Review
+→ Tests
+→ Sandbox
+→ Verification
+→ Registry
+```
+
+---
+
+# 832. No Self-Installing Tool Authority
+
+A system that creates a tool must not automatically grant itself permission to use that tool in sensitive missions.
+
+```mermaid
+flowchart LR
+
+    AGI[IMPERIAL AGI]
+
+    AGI --> BUILD[New Tool]
+
+    BUILD --> VERIFY[Verification]
+    VERIFY --> REG[Registry]
+
+    REG --> AUTH[Mission Authorization]
+
+    AGI -. cannot bypass .-> AUTH
+```
+
+---
+
+# 833. Tool Evolution
+
+Tools may improve over time.
+
+Each generation should preserve:
+
+```text
+Version
+Source
+Integrity
+Tests
+Known Limitations
+Security Review
+Compatibility
+```
+
+---
+
+# 834. Tool Regression Memory
+
+Every confirmed tool defect should become regression evidence.
+
+Examples:
+
+```text
+Wrong output
+Unsafe shell behavior
+Path traversal
+Secret leakage
+Timeout loop
+Malformed API response
+Authorization bypass
+```
+
+---
+
+# 835. Tool Drift
+
+External tools may change without local source changes.
+
+Examples:
+
+```text
+API behavior
+Provider model
+Remote endpoint
+Authentication
+Response schema
+Rate limits
+```
+
+Such tools require periodic revalidation.
+
+---
+
+# 836. Tool Freshness
+
+```mermaid
+flowchart LR
+
+    REG[Tool Registry Entry]
+
+    REG --> CHECK[Freshness Check]
+
+    CHECK -->|Fresh| USE[Eligible]
+    CHECK -->|Stale| REVERIFY[Reverify]
+```
+
+---
+
+# 837. Multi-Tool Reasoning
+
+Some tasks require workflows across several tools.
+
+```mermaid
+flowchart LR
+
+    SEARCH[Search]
+    SEARCH --> FETCH[Fetch]
+    FETCH --> ANALYZE[Analyze]
+    ANALYZE --> CODE[Code Tool]
+    CODE --> TEST[Test Tool]
+    TEST --> VERIFY[Verification]
+```
+
+Each transition should preserve provenance.
+
+---
+
+# 838. Tool Workflow Graph
+
+Tool workflows should be represented explicitly.
+
+```text
+Tool A
+→ Tool B
+→ Tool C
+```
+
+rather than hidden inside untraceable reasoning.
+
+---
+
+# 839. Tool Chain Integrity
+
+A final result should preserve which tools contributed evidence.
+
+```mermaid
+flowchart TD
+
+    T1[Tool A]
+    T2[Tool B]
+    T3[Tool C]
+
+    T1 --> E1[Evidence A]
+    T2 --> E2[Evidence B]
+    T3 --> E3[Evidence C]
+
+    E1 --> RESULT[Final Result]
+    E2 --> RESULT
+    E3 --> RESULT
+```
+
+---
+
+# 840. Tool Contamination Defense
+
+A compromised early tool result can poison downstream steps.
+
+Therefore high-impact chains should validate intermediate outputs before use.
+
+---
+
+# 841. Cross-Tool Verification
+
+Where practical, important results may be checked by an independent tool.
+
+```mermaid
+flowchart LR
+
+    TOOL_A[Primary Tool]
+
+    TOOL_A --> RESULT[Result]
+
+    TOOL_B[Independent Tool] --> CHECK[Cross-Check]
+    RESULT --> CHECK
+
+    CHECK --> VERIFY[Verification Evidence]
+```
+
+---
+
+# 842. Tool Majority Is Not Truth
+
+Three tools returning the same copied source do not equal three independent confirmations.
+
+Correlation analysis remains necessary.
+
+---
+
+# 843. Browser Intelligence
+
+A browser-capable system should distinguish:
+
+```text
+page content
+navigation
+form input
+download
+upload
+submission
+purchase
+publication
+```
+
+These actions have different risk.
+
+---
+
+# 844. Browser Read/Write Boundary
+
+```mermaid
+flowchart TD
+
+    BROWSER[Browser]
+
+    BROWSER --> READ[Read Page]
+    BROWSER --> INPUT[Enter Data]
+    BROWSER --> SUBMIT[Submit Form]
+    BROWSER --> PURCHASE[External Transaction]
+
+    READ --> LOW[Lower Risk]
+    SUBMIT --> HIGH[Higher Risk]
+    PURCHASE --> CRIT[Critical Economic Governance]
+```
+
+---
+
+# 845. Human-In-The-Loop Tool Use
+
+Some external actions may require human confirmation.
+
+The requirement should be explicit in policy rather than improvised by the agent.
+
+---
+
+# 846. Human Confirmation Binding
+
+```text
+Confirmation
+must bind to
+the exact intended action.
+```
+
+A confirmation for one amount, recipient or target must not authorize another.
+
+---
+
+# 847. Tool Action Digest
+
+A future high-impact action may use:
+
+```text
+Action Digest
+=
+Hash(
+    Mission
+    + Tool
+    + Target
+    + Parameters
+    + Expected Effects
+    + Policy
+)
+```
+
+---
+
+# 848. Action-Time Revalidation
+
+Just before execution, the system should revalidate:
+
+```text
+Mission still active?
+Approval still valid?
+Policy unchanged?
+Tool still eligible?
+Target unchanged?
+Budget available?
+```
+
+---
+
+# 849. Tool TOCTOU Defense
+
+```mermaid
+sequenceDiagram
+
+    participant C as Cognition
+    participant G as Governance
+    participant T as Tool
+
+    C->>G: Proposed action
+    G->>G: Validate at t1
+
+    G->>T: Prepare
+
+    G->>G: Revalidate at t2
+
+    alt valid
+        G->>T: Execute
+    else stale
+        G-->>T: Cancel
+    end
+```
+
+---
+
+# 850. Action Evidence
+
+Successful execution should preserve:
+
+```text
+Action ID
+Tool ID
+Inputs Digest
+Outputs Digest
+Runtime Domain
+Start Time
+End Time
+Result
+External Reference
+Side Effects
+```
+
+---
+
+# 851. Tool Audit Trail
+
+```mermaid
+flowchart LR
+
+    M[Mission]
+    M --> A[Action]
+    A --> T[Tool]
+    T --> R[Result]
+    R --> V[Verification]
+    V --> AUD[Audit Ledger]
+```
+
+---
+
+# 852. Tool Failure Learning
+
+Failures should update:
+
+```text
+Tool reliability
+Known failure modes
+Strategy registry
+Fallback planning
+Regression tests
+```
+
+---
+
+# 853. Tool Reputation
+
+Tool reputation should derive from evidence.
+
+Possible signals:
+
+```text
+Success rate
+Verification rate
+Latency
+Security history
+Cost stability
+Schema stability
+```
+
+---
+
+# 854. Tool Reputation Is Not Permission
+
+A perfect historical record does not grant a tool new mission authority.
+
+---
+
+# 855. Tool Meta-Cognition
+
+The Meta-Cognitive Control Plane should ask:
+
+```text
+Do I actually need a tool?
+Which tool is best?
+Is the result plausible?
+Did the tool fail silently?
+Would an independent tool help?
+Is another call worth the cost?
+```
+
+---
+
+# 856. Tool Use Stop Conditions
+
+Tool loops should terminate when:
+
+```text
+Goal achieved
+Result verified
+No additional information gain
+Budget exhausted
+Repeated identical result
+Repeated tool failure
+Authority unavailable
+```
+
+---
+
+# 857. Autonomous Action Selection
+
+AGI-class cognition eventually requires selecting among candidate actions.
+
+```mermaid
+flowchart TD
+
+    STATE[World State]
+
+    STATE --> A[Action A]
+    STATE --> B[Action B]
+    STATE --> C[Action C]
+
+    A --> SIMA[Predict Outcome]
+    B --> SIMB[Predict Outcome]
+    C --> SIMC[Predict Outcome]
+
+    SIMA --> SCORE[Evaluate]
+    SIMB --> SCORE
+    SIMC --> SCORE
+
+    SCORE --> REC[Recommended Action]
+```
+
+Recommendation remains distinct from authorization.
+
+---
+
+# 858. Action Utility Model
+
+Candidate actions may be evaluated by:
+
+```text
+Expected success
+Risk
+Cost
+Time
+Human impact
+Reversibility
+Evidence quality
+Mission alignment
+```
+
+---
+
+# 859. Action Dominance
+
+A planner may reject clearly dominated actions.
+
+Example:
+
+```text
+Action A:
+higher cost
+higher risk
+slower
+same expected result
+```
+
+may be inferior to Action B.
+
+But mission-specific constraints remain decisive.
+
+---
+
+# 860. Safe Exploration
+
+When several actions are uncertain, choose bounded experiments where possible.
+
+```mermaid
+flowchart LR
+
+    UNCERTAIN[Uncertain Action]
+
+    UNCERTAIN --> SMALL[Small Bounded Test]
+    SMALL --> OBS[Observe]
+    OBS --> UPDATE[Update World Model]
+    UPDATE --> DECIDE[Select Next Action]
+```
+
+---
+
+# 861. Tool Intelligence + World Model
+
+Tool results can update the World Model.
+
+```mermaid
+flowchart LR
+
+    TOOL[Tool]
+
+    TOOL --> OBS[Observation]
+    OBS --> VERIFY[Verification]
+    VERIFY --> WM[World Model]
+
+    WM --> PLAN[Planner]
+```
+
+---
+
+# 862. Tool Intelligence + Planner
+
+The planner should consider tool availability as part of feasibility.
+
+```text
+Plan requiring unavailable tool
+=
+currently infeasible
+```
+
+---
+
+# 863. Tool Intelligence + Meta-Cognition
+
+Meta-cognition monitors whether tool use is improving the answer.
+
+```mermaid
+flowchart TD
+
+    META[Meta-Cognition]
+
+    META --> TOOL[Tool Call]
+    TOOL --> RESULT[Result]
+    RESULT --> VALUE[Information Gain]
+
+    VALUE --> META
+
+    META -->|Useful| CONTINUE[Continue]
+    META -->|Low Value| STOP[Stop Calls]
+```
+
+---
+
+# 864. Tool Intelligence + Memory
+
+Tool outcomes should become persistent evidence only after validation.
+
+```text
+Raw Tool Output
+→ Validate
+→ Provenance
+→ Eligible Memory
+```
+
+---
+
+# 865. Tool Intelligence + HANTER
+
+HANTER should receive tool-use evidence, not merely final text.
+
+Conceptually:
+
+```text
+Recommended Action
+Tool
+Expected Effects
+Authority Required
+Verification Status
+Residual Risk
+```
+
+---
+
+# 866. Tool Intelligence + Nano Core Agents
+
+Specialized NCA may have narrow tool portfolios.
+
+Example:
+
+```text
+Security NCA
+    security analysis tools
+
+Engineering NCA
+    repository/test tools
+
+Research NCA
+    retrieval/data tools
+```
+
+This reduces capability confusion.
+
+---
+
+# 867. Per-Agent Tool Boundary
+
+```mermaid
+flowchart TD
+
+    NCA1[Engineering NCA]
+    NCA2[Research NCA]
+
+    NCA1 --> T1[Engineering Tool Set]
+    NCA2 --> T2[Research Tool Set]
+
+    NCA1 -. no implicit access .-> T2
+    NCA2 -. no implicit access .-> T1
+```
+
+---
+
+# 868. Million-Agent Tool Scaling
+
+At million-agent scale, every NCA should not load every tool.
+
+Use:
+
+```text
+Capability discovery
+Lazy loading
+Role-based eligibility
+Mission-scoped toolsets
+```
+
+---
+
+# 869. Hierarchical Tool Registry
+
+```mermaid
+flowchart TB
+
+    GLOBAL[Global Tool Metadata]
+
+    GLOBAL --> ORG[Organization Registry]
+    ORG --> TEAM[Team Toolset]
+    TEAM --> NCA[NCA Mission Toolset]
+```
+
+Higher layers define eligibility.
+
+Lower layers receive only necessary capabilities.
+
+---
+
+# 870. Tool Quotas
+
+Tool use may require quotas such as:
+
+```text
+Calls per mission
+Calls per minute
+External API cost
+Network transfer
+Compute
+Storage
+```
+
+---
+
+# 871. Tool Rate-Limit Intelligence
+
+The planner should understand rate limits.
+
+```mermaid
+flowchart LR
+
+    DEMAND[Tool Demand]
+
+    DEMAND --> LIMIT[Rate Limit]
+
+    LIMIT --> SCHEDULE[Schedule Calls]
+    SCHEDULE --> BACKPRESSURE[Backpressure]
+```
+
+---
+
+# 872. Tool Outage Resilience
+
+The system should be capable of:
+
+```text
+Detect outage
+Avoid retry storm
+Evaluate alternative
+Re-plan
+Escalate
+```
+
+---
+
+# 873. Tool Circuit Breaker
+
+```mermaid
+stateDiagram-v2
+
+    CLOSED --> OPEN: repeated failures
+    OPEN --> HALF_OPEN: recovery interval
+    HALF_OPEN --> CLOSED: successful probe
+    HALF_OPEN --> OPEN: failed probe
+```
+
+---
+
+# 874. Tool Isolation
+
+A compromised tool must not automatically compromise:
+
+```text
+all repositories
+all agents
+all secrets
+all Runtime Domains
+```
+
+Blast radius must remain bounded.
+
+---
+
+# 875. Tool Secret Boundary
+
+Tools requiring credentials should receive bounded secret leases.
+
+```mermaid
+flowchart LR
+
+    BROKER[Secret Broker]
+
+    BROKER --> LEASE[Temporary Lease]
+    LEASE --> TOOL[Tool Runtime]
+    TOOL --> RESULT[Result]
+
+    RESULT --> END[Lease Revoked]
+```
+
+---
+
+# 876. Tool Supply-Chain Revocation
+
+A tool version found to be unsafe should be revocable across the federation.
+
+```mermaid
+flowchart TD
+
+    ISSUE[Critical Tool Defect]
+
+    ISSUE --> REVOKE[Revoke Version]
+    REVOKE --> REG[Registry Update]
+    REG --> BLOCK[Block New Admission]
+    REG --> ACTIVE[Identify Active Use]
+```
+
+---
+
+# 877. Tool Canary Deployment
+
+New tool generations should be introduced progressively.
+
+```text
+Lab
+→ Test
+→ Canary
+→ Limited
+→ Scale
+```
+
+---
+
+# 878. Tool Certification
+
+A future certification may require:
+
+```text
+Source verified
+Integrity verified
+Security review
+Functional tests
+Failure tests
+Sandbox tests
+Rollback
+License review
+```
+
+---
+
+# 879. Tool Intelligence Benchmark
+
+Future AGI evaluation should test whether IMPERIAL AGI can:
+
+```text
+Choose the correct tool
+Avoid unnecessary tools
+Reject dangerous tools
+Recognize tool failure
+Verify tool output
+Switch tools
+Stop tool loops
+Design new tool requirements
+```
+
+---
+
+# 880. Unseen Tool Benchmark
+
+A general system should be able to reason about a previously unseen tool from its:
+
+```text
+Schema
+Documentation
+Capabilities
+Risk
+```
+
+rather than only memorizing known integrations.
+
+---
+
+# 881. Tool Generalization
+
+```mermaid
+flowchart TD
+
+    NEW[Unseen Tool]
+
+    NEW --> SPEC[Read Specification]
+    SPEC --> CAP[Infer Capability]
+    CAP --> RISK[Infer Risk]
+    RISK --> TEST[Bounded Test]
+    TEST --> REG[Verified Tool Understanding]
+```
+
+---
+
+# 882. Tool Security Benchmark
+
+Adversarial evaluations should include:
+
+```text
+Malicious tool output
+Prompt injection
+False success
+Schema violation
+Unauthorized effect
+Secret request
+Path traversal
+Tool identity substitution
+```
+
+---
+
+# 883. Experiment Intelligence Benchmark
+
+Future evaluations should test whether the system can:
+
+```text
+Form a hypothesis
+Choose variables
+Create controls
+Select tools
+Define stop conditions
+Run safely
+Interpret evidence
+Reject unsupported conclusions
+```
+
+---
+
+# 884. Action Selection Benchmark
+
+The system should face unfamiliar states with several candidate actions.
+
+Evaluation should measure:
+
+```text
+Goal alignment
+Risk awareness
+Reversibility
+Cost
+Evidence use
+Constraint compliance
+```
+
+---
+
+# 885. Tool Intelligence Security Invariant
+
+```text
+Tool Availability
+≠
+Tool Authorization
+
+Tool Output
+≠
+Truth
+
+Tool Success
+≠
+Mission Completion
+
+Tool Reputation
+≠
+Permission
+
+Tool Creation
+≠
+Self-Authorization
+
+Tool Discovery
+≠
+Execution
+```
+
+---
+
+# 886. Tool Intelligence Architecture
+
+```mermaid
+flowchart TB
+
+    ARCH["Architect<br/>Alexander Romaskevich"]
+
+    ARCH --> H["HANTER"]
+
+    H <--> AGI["IMPERIAL AGI"]
+
+    WM["World Model"] --> PLAN["Planner"]
+    PLAN --> SELECT["Action Selection"]
+
+    SELECT --> DISC["Tool Discovery"]
+    DISC --> REG["Tool / Capability Registry"]
+
+    REG --> RISK["Risk Evaluation"]
+    RISK --> GOV["Governance Boundary"]
+
+    GOV --> RD["Runtime Domain"]
+    RD --> TOOL["Selected Tool"]
+
+    TOOL --> RESULT["Raw Result"]
+    RESULT --> VALID["Result Validation"]
+    VALID --> V["Verifier"]
+
+    V --> EVID["Evidence"]
+    EVID --> WM
+
+    EVID --> H
+```
+
+---
+
+# 887. Autonomous Experimentation Architecture
+
+```mermaid
+flowchart LR
+
+    UNKNOWN[Unknown]
+
+    UNKNOWN --> HYP[Hypothesis]
+    HYP --> DESIGN[Experiment Design]
+    DESIGN --> TOOLS[Tool Selection]
+    TOOLS --> GOV[Governance]
+    GOV --> EXEC[Bounded Experiment]
+    EXEC --> OBS[Observation]
+    OBS --> VERIFY[Verification]
+    VERIFY --> KNOW[Knowledge]
+    KNOW --> NEXT[Next Question]
+```
+
+---
+
+# 888. Tool Intelligence Principle
+
+A powerful AGI must not merely possess tools.
+
+It must understand:
+
+```text
+when to use them
+when not to use them
+how to verify them
+how to contain them
+how to recover when they fail
+```
+
+---
+
+# 889. AGI Action Principle
+
+> **The strongest intelligence is not the one that acts most often.**
+
+It is the one that selects the right action, under the right authority, with the right evidence.
+
+---
+
+# 890. Tool Intelligence Truth Boundary
+
+This section defines the public architectural direction for governed tool discovery, selection, execution, verification, sandboxing, autonomous experimentation and action selection.
+
+It does not claim that every described tool capability is implemented.
+
+It does not claim unrestricted autonomous tool execution.
+
+It does not claim production-grade sandboxing.
+
+It does not claim runtime or production verification.
+
+Architecture, specification, implementation, testing, runtime evidence and production remain explicitly separate.
+
+---
+
+## Tool Intelligence Authorship & Digital Provenance
+
+**Architect & Original Author:** Alexander Romaskevich  
+**Founder • Owner • CEO • Chief Systems Architect — IMPERIAL Core**
+
+The Tool Intelligence, Governed Action Selection, Autonomous Experimentation, Tool Verification, Runtime Tool Isolation and Million-Agent Tool Federation architecture described here form part of the original IMPERIAL AGI architectural program under the direction of Alexander Romaskevich.
+
+**Canonical authorship:** Alexander Romaskevich  
+**Architecture:** IMPERIAL Core  
+**Cognitive Component:** IMPERIAL AGI  
+**Executive Intelligence:** HANTER  
+**Agent Architecture:** Nano Core Agents  
+**Repository:** IMPERIAL-AGI  
+**Year:** 2026
+
+Copyright © 2026 Alexander Romaskevich.
+
+---
+
+> **Think before using a tool. Verify after using a tool. Govern before creating external effects.**
+
+> **Capability is power only when bounded by evidence and authority.**
+
+**IMPERIAL AGI — Architected by Alexander Romaskevich.**
