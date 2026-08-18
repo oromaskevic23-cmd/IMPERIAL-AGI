@@ -15299,3 +15299,1977 @@ Copyright © 2026 Alexander Romaskevich.
 > **Long-horizon intelligence is proven by continuity under change.**
 
 **IMPERIAL AGI — Architected by Alexander Romaskevich.**
+---
+
+# 670. Meta-Cognition
+
+A general-purpose intelligence should not only reason about external problems.
+
+It should also reason about the quality of its own reasoning.
+
+IMPERIAL AGI therefore defines a Meta-Cognitive Control Plane.
+
+> **Think. Observe the thinking. Challenge the thinking. Correct the thinking.**
+
+Meta-cognition does not create authority.
+
+It improves cognitive reliability.
+
+---
+
+# 671. Cognitive Control Plane
+
+```mermaid
+flowchart TD
+
+    M[Mission]
+
+    M --> R[Reasoner]
+    R --> C[Critic]
+    C --> V[Verifier]
+
+    R --> META[Meta-Cognitive Control Plane]
+    C --> META
+    V --> META
+
+    META --> CONF[Confidence Calibration]
+    META --> ERROR[Error Detection]
+    META --> STRATEGY[Strategy Selection]
+    META --> STOP[Stop / Re-evaluate Decision]
+
+    META --> R
+```
+
+The Meta-Cognitive Control Plane observes cognition without replacing governance.
+
+---
+
+# 672. Self-Observation
+
+The system should be capable of tracking:
+
+```text
+What am I trying to solve?
+
+Which assumptions am I using?
+
+Which evidence am I relying on?
+
+Which reasoning strategy am I using?
+
+Where is uncertainty concentrated?
+
+What could invalidate this conclusion?
+
+What did the Critic disagree with?
+
+What remains unverified?
+```
+
+---
+
+# 673. Cognitive State
+
+A future cognitive state may include:
+
+```text
+Mission Identity
+Reasoning Stage
+Current Hypothesis
+Alternative Hypotheses
+Evidence Set
+Assumptions
+Confidence
+Known Unknowns
+Open Contradictions
+Critic Findings
+Verifier Status
+Resource Consumption
+Termination State
+```
+
+---
+
+# 674. Self-Model vs World Model
+
+The World Model describes relevant external state.
+
+The Self-Model describes the cognitive system's own current state.
+
+```text
+World Model
+=
+What appears to be happening externally.
+
+Self-Model
+=
+What the cognitive system currently believes about its own reasoning state.
+```
+
+---
+
+# 675. Self-Model Architecture
+
+```mermaid
+flowchart LR
+
+    R[Reasoner State]
+    C[Critic State]
+    V[Verifier State]
+    M[Memory State]
+    T[Tool State]
+
+    R --> SELF[Meta-Cognitive Self-Model]
+    C --> SELF
+    V --> SELF
+    M --> SELF
+    T --> SELF
+
+    SELF --> CONTROL[Cognitive Control]
+```
+
+---
+
+# 676. Self-Model Is Not Identity Authority
+
+A cognitive system may model itself.
+
+It may not use that self-model to redefine its own identity or privileges.
+
+```text
+Self-Understanding
+≠
+Self-Authorization
+```
+
+---
+
+# 677. Confidence Calibration
+
+Confidence should be measured against outcomes.
+
+A system that frequently assigns 95% confidence to wrong answers is poorly calibrated even if some answers are impressive.
+
+```mermaid
+flowchart LR
+
+    ANSWER[Answer]
+    ANSWER --> CONF[Predicted Confidence]
+
+    REAL[Observed Correctness] --> CAL[Calibration]
+    CONF --> CAL
+
+    CAL --> UPDATE[Calibration Model Update]
+```
+
+---
+
+# 678. Confidence Sources
+
+Confidence may depend on:
+
+```text
+Evidence quality
+Evidence agreement
+Reasoning stability
+Critic agreement
+Verifier result
+Tool reliability
+Source freshness
+Model calibration
+Domain familiarity
+```
+
+No single factor should dominate blindly.
+
+---
+
+# 679. Confidence Is Not Authorization
+
+Even a highly calibrated 99.9% cognitive result remains:
+
+```text
+Recommendation Evidence
+```
+
+not:
+
+```text
+Execution Authority
+```
+
+---
+
+# 680. Epistemic Confidence
+
+The architecture should distinguish:
+
+```text
+Confidence in evidence
+Confidence in reasoning
+Confidence in prediction
+Confidence in plan
+Confidence in tool output
+Confidence in memory
+```
+
+These may differ substantially.
+
+---
+
+# 681. Confidence Decomposition
+
+```mermaid
+flowchart TD
+
+    RESULT[Candidate Result]
+
+    RESULT --> E[Evidence Confidence]
+    RESULT --> R[Reasoning Confidence]
+    RESULT --> S[Source Confidence]
+    RESULT --> C[Context Confidence]
+    RESULT --> V[Verification Confidence]
+
+    E --> META[Meta-Cognitive Assessment]
+    R --> META
+    S --> META
+    C --> META
+    V --> META
+```
+
+---
+
+# 682. Uncertainty Localization
+
+Instead of returning one global uncertainty score, the system should identify where uncertainty exists.
+
+Example:
+
+```text
+Repository identity: HIGH confidence
+Dependency behavior: MEDIUM confidence
+Runtime behavior: UNKNOWN
+Production behavior: NOT VERIFIED
+```
+
+This is more useful than a single opaque number.
+
+---
+
+# 683. Unknown Detection
+
+A strong system should detect when required information is missing.
+
+```mermaid
+flowchart TD
+
+    QUESTION[Question]
+
+    QUESTION --> REASON[Reason]
+
+    REASON --> GAP{Critical Information Missing?}
+
+    GAP -->|Yes| UNKNOWN[Explicit Unknown]
+    GAP -->|No| CONTINUE[Continue Reasoning]
+
+    UNKNOWN --> RESEARCH[Research / Retrieval / Escalation]
+```
+
+---
+
+# 684. Contradiction Detection
+
+The Meta-Cognitive Control Plane should actively search for contradictions between:
+
+```text
+Mission
+Context
+Memory
+Evidence
+Reasoning
+Critic Findings
+Verifier Findings
+World Model
+```
+
+---
+
+# 685. Contradiction Graph
+
+```mermaid
+flowchart LR
+
+    A[Claim A]
+    B[Claim B]
+
+    A --> DETECT[Contradiction Detector]
+    B --> DETECT
+
+    DETECT --> SOURCE[Source Analysis]
+    SOURCE --> TIME[Temporal Analysis]
+    TIME --> RESOLVE[Resolve / Preserve Conflict]
+```
+
+---
+
+# 686. Contradiction Is Not Automatically Error
+
+Two statements may differ because:
+
+```text
+They describe different times.
+They describe different versions.
+They describe different scopes.
+One is a prediction.
+One is an observation.
+```
+
+Meta-cognition should analyze context before declaring an error.
+
+---
+
+# 687. Cognitive Dissonance Signal
+
+If several high-quality reasoning paths produce incompatible conclusions, the disagreement should increase scrutiny.
+
+```mermaid
+flowchart TD
+
+    R1[Reasoning Path A]
+    R2[Reasoning Path B]
+    R3[Reasoning Path C]
+
+    R1 --> DIFF[Disagreement Analysis]
+    R2 --> DIFF
+    R3 --> DIFF
+
+    DIFF --> META[Meta-Cognitive Review]
+```
+
+---
+
+# 688. Reasoning Stability
+
+A result should not be considered robust merely because one reasoning trajectory produced it.
+
+The system may evaluate whether different valid approaches converge.
+
+---
+
+# 689. Multi-Path Reasoning
+
+```mermaid
+flowchart TD
+
+    Q[Problem]
+
+    Q --> A[Reasoning Strategy A]
+    Q --> B[Reasoning Strategy B]
+    Q --> C[Reasoning Strategy C]
+
+    A --> RA[Result A]
+    B --> RB[Result B]
+    C --> RC[Result C]
+
+    RA --> META[Meta-Analysis]
+    RB --> META
+    RC --> META
+
+    META --> FINAL[Candidate Conclusion]
+```
+
+---
+
+# 690. Strategy Selection
+
+Different tasks require different reasoning strategies.
+
+Possible strategies include:
+
+```text
+Direct reasoning
+Decomposition
+Tree search
+Causal analysis
+Simulation
+Analogical reasoning
+Repository analysis
+Multi-agent debate
+Formal verification
+Retrieval-first reasoning
+```
+
+---
+
+# 691. Strategy Router
+
+```mermaid
+flowchart TD
+
+    TASK[Task]
+
+    TASK --> CLASS[Task Classification]
+
+    CLASS --> ROUTER[Meta-Cognitive Strategy Router]
+
+    ROUTER --> DIRECT[Direct Reasoning]
+    ROUTER --> DECOMP[Decomposition]
+    ROUTER --> SIM[Simulation]
+    ROUTER --> MULTI[Multi-Agent]
+    ROUTER --> FORMAL[Formal Verification]
+```
+
+The selected strategy should remain explainable.
+
+---
+
+# 692. Strategy Evidence
+
+Strategy selection may consider:
+
+```text
+Historical performance
+Task type
+Risk
+Available tools
+Time
+Budget
+Required precision
+Known failure modes
+```
+
+---
+
+# 693. Strategy Switching
+
+If a reasoning strategy repeatedly fails, IMPERIAL AGI should be able to switch approaches.
+
+```mermaid
+flowchart LR
+
+    STRATEGY1[Strategy A]
+
+    STRATEGY1 --> RESULT[Result]
+    RESULT --> EVAL[Evaluate]
+
+    EVAL -->|Weak| STRATEGY2[Switch Strategy]
+    EVAL -->|Strong| VERIFY[Verify]
+```
+
+---
+
+# 694. No Infinite Thinking
+
+More reasoning is not always better.
+
+Unbounded recursive thought can consume unlimited resources without improving the answer.
+
+The system therefore requires stopping criteria.
+
+---
+
+# 695. Cognitive Stop Conditions
+
+Potential stop conditions include:
+
+```text
+Evidence threshold satisfied
+Verifier accepted
+No material uncertainty remains
+Budget exhausted
+Deadline reached
+No information gain
+Repeated reasoning convergence
+Repeated reasoning loop detected
+Mission revoked
+```
+
+---
+
+# 696. Reasoning Loop Detection
+
+```mermaid
+flowchart TD
+
+    STEP[Reasoning Step]
+
+    STEP --> HASH[State Fingerprint]
+    HASH --> SEEN{Seen Before?}
+
+    SEEN -->|No| CONTINUE[Continue]
+    SEEN -->|Yes| LOOP[Loop Detected]
+
+    LOOP --> META[Change Strategy / Stop]
+```
+
+---
+
+# 697. Cognitive Budget
+
+Every substantial reasoning operation should operate under bounded resources.
+
+```text
+Token Budget
+Time Budget
+Model Call Budget
+Tool Budget
+Branch Budget
+Memory Retrieval Budget
+Simulation Budget
+```
+
+---
+
+# 698. Cognitive Budget Allocation
+
+```mermaid
+flowchart TD
+
+    TOTAL[Mission Cognitive Budget]
+
+    TOTAL --> R[Reasoner Budget]
+    TOTAL --> C[Critic Budget]
+    TOTAL --> V[Verifier Budget]
+    TOTAL --> S[Simulation Budget]
+    TOTAL --> RCH[Research Budget]
+```
+
+Budgets may be dynamically reallocated within authorized limits.
+
+---
+
+# 699. Adaptive Cognitive Effort
+
+Simple questions should not require maximum cognitive cost.
+
+Critical complex problems may justify deeper reasoning.
+
+```text
+Cognitive Effort
+∝
+Complexity
++
+Risk
++
+Uncertainty
+```
+
+as a conceptual principle.
+
+---
+
+# 700. Risk-Adaptive Cognition
+
+```mermaid
+flowchart LR
+
+    TASK[Task]
+
+    TASK --> RISK[Risk]
+    RISK --> LOW[Low-Risk Reasoning Path]
+    RISK --> HIGH[High-Risk Deep Verification Path]
+
+    HIGH --> MULTI[Multiple Reasoners]
+    MULTI --> CRITIC[Independent Critics]
+    CRITIC --> VERIFY[Independent Verification]
+```
+
+---
+
+# 701. Cognitive Escalation
+
+The system should recognize problems beyond its current reliable capability.
+
+Potential states:
+
+```text
+SOLVABLE
+SOLVABLE_WITH_MORE_EVIDENCE
+SOLVABLE_WITH_TOOL
+SOLVABLE_WITH_SPECIALIST
+REQUIRES_HUMAN_AUTHORITY
+CURRENTLY_UNRESOLVABLE
+```
+
+---
+
+# 702. Escalation Is Intelligence
+
+Knowing when not to answer is a core capability.
+
+```text
+Confident fabrication
+<
+Explicit uncertainty + correct escalation
+```
+
+---
+
+# 703. Specialist Escalation
+
+```mermaid
+flowchart TD
+
+    GENERAL[General Reasoner]
+
+    GENERAL --> GAP[Capability Gap]
+
+    GAP --> REG[Capability Registry]
+
+    REG --> SPECIALIST[Specialist NCA / Model]
+
+    SPECIALIST --> RESULT[Specialist Result]
+
+    RESULT --> VERIFY[Independent Verification]
+```
+
+---
+
+# 704. Cognitive Delegation
+
+A reasoning problem may be decomposed among specialists.
+
+```text
+Planning
+Security
+Software
+Economics
+Research
+Verification
+```
+
+Each receives only the context required for its role.
+
+---
+
+# 705. Cognitive Delegation Graph
+
+```mermaid
+flowchart TD
+
+    AGI[IMPERIAL AGI]
+
+    AGI --> P[Planning Specialist]
+    AGI --> S[Security Specialist]
+    AGI --> E[Engineering Specialist]
+
+    P --> SYN[Synthesis]
+    S --> SYN
+    E --> SYN
+
+    SYN --> C[Critic]
+    C --> V[Verifier]
+```
+
+---
+
+# 706. Delegation Does Not Transfer Global Authority
+
+Delegated cognitive work transfers:
+
+```text
+Problem Scope
+Relevant Context
+Requested Output
+```
+
+not:
+
+```text
+Global Mission Authority
+```
+
+---
+
+# 707. Cognitive Conflict Resolution
+
+When specialists disagree:
+
+```mermaid
+flowchart TD
+
+    A[Specialist A]
+    B[Specialist B]
+
+    A --> CA[Claim A]
+    B --> CB[Claim B]
+
+    CA --> COMP[Evidence Comparison]
+    CB --> COMP
+
+    COMP --> CRITIC[Independent Critic]
+    CRITIC --> VERIFY[Verifier]
+```
+
+---
+
+# 708. Minority Reasoning Preservation
+
+A minority result should not be discarded if it contains credible evidence.
+
+The system should preserve:
+
+```text
+Majority Conclusion
+Minority Conclusion
+Evidence for Each
+Reason for Final Selection
+```
+
+---
+
+# 709. Cognitive Bias Monitoring
+
+Models can exhibit systematic reasoning biases.
+
+Examples may include:
+
+```text
+Anchoring
+Confirmation bias
+Recency bias
+Authority bias
+Overconfidence
+Tool preference bias
+Provider bias
+```
+
+Meta-cognition should attempt to detect repeated patterns.
+
+---
+
+# 710. Confirmation Bias Defense
+
+```mermaid
+flowchart LR
+
+    H[Preferred Hypothesis]
+
+    H --> SUPPORT[Search Supporting Evidence]
+    H --> REFUTE[Search Refuting Evidence]
+
+    SUPPORT --> VERIFY[Balanced Verification]
+    REFUTE --> VERIFY
+```
+
+A verifier should actively seek disconfirming evidence.
+
+---
+
+# 711. Adversarial Self-Critique
+
+A Critic should ask:
+
+```text
+Why might this answer be wrong?
+
+Which assumption is weakest?
+
+What evidence would falsify this?
+
+Which alternative explanation fits?
+
+What would an adversarial reviewer attack?
+```
+
+---
+
+# 712. Cognitive Red Team
+
+For high-impact reasoning, a dedicated cognitive red-team path may intentionally attack the candidate conclusion.
+
+```mermaid
+flowchart TD
+
+    RESULT[Candidate Result]
+
+    RESULT --> RED[Cognitive Red Team]
+
+    RED --> F1[Find Contradictions]
+    RED --> F2[Find Unsupported Claims]
+    RED --> F3[Find Security Risks]
+    RED --> F4[Find Hidden Assumptions]
+
+    F1 --> VERIFY[Verifier]
+    F2 --> VERIFY
+    F3 --> VERIFY
+    F4 --> VERIFY
+```
+
+---
+
+# 713. Self-Correction
+
+A detected reasoning defect should trigger correction.
+
+```mermaid
+flowchart LR
+
+    ANSWER[Candidate Answer]
+
+    ANSWER --> ERROR[Detected Error]
+    ERROR --> RCA[Reasoning Root Cause]
+    RCA --> CORRECT[Generate Correction]
+    CORRECT --> VERIFY[Verify Corrected Result]
+```
+
+---
+
+# 714. Correction Must Preserve Evidence
+
+The system should not simply overwrite the old result.
+
+Historical state should show:
+
+```text
+Original Claim
+Detected Defect
+Corrected Claim
+Evidence
+Verifier Result
+```
+
+---
+
+# 715. Cognitive Revision History
+
+```mermaid
+flowchart LR
+
+    V1[Reasoning v1]
+
+    V1 --> ISSUE[Issue Detected]
+    ISSUE --> V2[Reasoning v2]
+
+    V2 --> ISSUE2[New Evidence]
+    ISSUE2 --> V3[Reasoning v3]
+```
+
+This makes intellectual evolution auditable.
+
+---
+
+# 716. Meta-Learning
+
+Meta-learning asks:
+
+> **Which reasoning approaches work best for which classes of problem?**
+
+The system can learn from verified mission history.
+
+---
+
+# 717. Strategy Performance Registry
+
+A future registry may contain:
+
+```text
+Strategy ID
+Task Class
+Success Rate
+Verification Rate
+Cost
+Latency
+Known Failure Modes
+Model Compatibility
+Evidence Generation
+```
+
+Historical results should be version-specific.
+
+---
+
+# 718. Meta-Learning Loop
+
+```mermaid
+flowchart LR
+
+    TASK[Task]
+
+    TASK --> STRATEGY[Selected Strategy]
+    STRATEGY --> RESULT[Result]
+    RESULT --> VERIFY[Verification]
+    VERIFY --> SCORE[Performance Evidence]
+    SCORE --> REG[Strategy Registry]
+
+    REG --> FUTURE[Future Strategy Selection]
+```
+
+---
+
+# 719. Meta-Learning Is Not Self-Authorization
+
+The system may learn:
+
+```text
+which strategy works better
+```
+
+but may not learn itself into:
+
+```text
+higher authority
+```
+
+without explicit authorization.
+
+---
+
+# 720. Cognitive Performance Memory
+
+Useful persistent meta-cognitive evidence includes:
+
+```text
+Which reasoning approaches failed
+Which models hallucinated
+Which critics detected defects
+Which verifiers missed defects
+Which tools caused misleading output
+Which domains caused overconfidence
+```
+
+---
+
+# 721. Verifier Evaluation
+
+The Verifier itself must be evaluated.
+
+A verifier can make mistakes.
+
+```mermaid
+flowchart TD
+
+    RESULT[Candidate Result]
+
+    RESULT --> V1[Verifier]
+
+    V1 --> DECISION[Verification Decision]
+
+    DECISION --> META[Verifier Evaluation]
+    META --> ERROR[False Accept / False Reject Analysis]
+```
+
+---
+
+# 722. Critic Evaluation
+
+A Critic that rejects everything is not useful.
+
+A Critic that finds nothing is also not useful.
+
+Evaluation should measure:
+
+```text
+True defect detection
+False positives
+Missed defects
+Severity calibration
+Evidence quality
+```
+
+---
+
+# 723. Reasoner Evaluation
+
+Reasoner evaluation should distinguish:
+
+```text
+Creativity
+Correctness
+Evidence use
+Constraint adherence
+Efficiency
+Generalization
+```
+
+One strong dimension should not hide weakness in another.
+
+---
+
+# 724. Cognitive Triad Evaluation
+
+```mermaid
+flowchart TD
+
+    R[Reasoner]
+    C[Critic]
+    V[Verifier]
+
+    R --> ER[Reasoner Evaluation]
+    C --> EC[Critic Evaluation]
+    V --> EV[Verifier Evaluation]
+
+    ER --> META[Triad Performance]
+    EC --> META
+    EV --> META
+```
+
+The system should evaluate both individuals and the complete pipeline.
+
+---
+
+# 725. Cognitive Independence
+
+Reasoner, Critic and Verifier should be sufficiently independent to reduce correlated failure.
+
+Possible independence mechanisms include:
+
+```text
+Different models
+Different prompts
+Different evidence views
+Different reasoning strategies
+Different providers
+```
+
+where appropriate.
+
+---
+
+# 726. Independence Measurement
+
+Two components are not truly independent merely because they have different names.
+
+The system should eventually measure correlated failure.
+
+```text
+Same mistake frequency
+Shared source dependency
+Shared model family
+Shared prompt structure
+```
+
+---
+
+# 727. Meta-Verification
+
+For critical tasks, even the verification decision may be independently reviewed.
+
+```mermaid
+flowchart LR
+
+    RESULT[Candidate Result]
+
+    RESULT --> V1[Verifier 1]
+    RESULT --> V2[Verifier 2]
+
+    V1 --> META[Meta-Verifier]
+    V2 --> META
+
+    META --> FINAL[Verification Evidence]
+```
+
+---
+
+# 728. Cognitive Quorum
+
+A future high-risk configuration may require a cognitive quorum.
+
+Conceptually:
+
+```text
+Reasoning Evidence
++
+Independent Critique
++
+Independent Verification
++
+Meta-Verification
+```
+
+before a recommendation becomes eligible for governance admission.
+
+---
+
+# 729. Quorum Does Not Create Authority
+
+Even unanimous cognitive agreement remains:
+
+```text
+Verified Recommendation
+```
+
+not:
+
+```text
+Authorization
+```
+
+---
+
+# 730. Cognitive Integrity Digest
+
+A future cognitive result may be bound through a digest.
+
+Conceptually:
+
+```text
+Cognitive Digest
+=
+Hash(
+    Mission Identity
+    + Context Identity
+    + World Model Generation
+    + Reasoner Output
+    + Critic Findings
+    + Verifier Decision
+    + Meta-Cognitive State
+)
+```
+
+---
+
+# 731. Cognitive Replay Defense
+
+A verified reasoning result should not be silently reused under a different mission or context.
+
+```mermaid
+flowchart LR
+
+    OLD[Old Cognitive Result]
+
+    OLD --> CHECK[Mission / Context Binding Check]
+
+    CHECK -->|Match and Fresh| REEVAL[Re-evaluate Eligibility]
+    CHECK -->|Mismatch| DENY[Reject Replay]
+```
+
+---
+
+# 732. Cognitive State Freshness
+
+Meta-cognitive state may become stale.
+
+Examples:
+
+```text
+New evidence arrived.
+Policy changed.
+World Model changed.
+Tool state changed.
+Mission changed.
+```
+
+Stale cognition requires re-evaluation.
+
+---
+
+# 733. Context Drift Detection
+
+```mermaid
+flowchart LR
+
+    C1[Original Compiled Context]
+
+    CURRENT[Current Evidence State]
+
+    C1 --> DIFF[Context Drift Analysis]
+    CURRENT --> DIFF
+
+    DIFF -->|Material Drift| REASON[Re-Reason]
+    DIFF -->|No Material Drift| KEEP[Continue]
+```
+
+---
+
+# 734. Cognitive TOCTOU Defense
+
+Reasoning may be valid at time `t1`.
+
+Execution admission may happen at `t2`.
+
+Important state may change in between.
+
+Therefore critical assumptions must be revalidated near admission.
+
+---
+
+# 735. Think-Time vs Action-Time Validation
+
+```mermaid
+sequenceDiagram
+
+    participant C as Cognition
+    participant V as Verifier
+    participant G as Governance
+    participant R as Runtime
+
+    C->>V: Recommendation at t1
+    V-->>G: Verified evidence
+
+    G->>G: Revalidate mission/policy/context at t2
+
+    alt still valid
+        G->>R: Eligible action
+    else stale or revoked
+        G-->>R: DENY
+    end
+```
+
+---
+
+# 736. Self-Consistency Is Not Truth
+
+Repeatedly asking the same model until it agrees with itself is weak evidence.
+
+```text
+Consistency
+≠
+Correctness
+```
+
+Independent evidence remains necessary.
+
+---
+
+# 737. Reasoning Trace Compression
+
+Long reasoning processes may produce large internal state.
+
+The persistent system should preserve useful evidence summaries rather than requiring every raw cognitive token forever.
+
+```text
+Input
+Decision Points
+Assumptions
+Evidence
+Critic Findings
+Verifier Findings
+Outcome
+```
+
+---
+
+# 738. Cognitive Privacy
+
+Meta-cognition must respect privacy and classification.
+
+The system should not expose private reasoning context across:
+
+```text
+Organizations
+Repositories
+Runtime Domains
+Users
+Missions
+```
+
+without authorized scope.
+
+---
+
+# 739. Cognitive Compartmentalization
+
+```mermaid
+flowchart TD
+
+    AGI[IMPERIAL AGI]
+
+    AGI --> C1[Mission Context A]
+    AGI --> C2[Mission Context B]
+    AGI --> C3[Mission Context C]
+
+    C1 -. isolated .- C2
+    C2 -. isolated .- C3
+```
+
+Shared cognitive capabilities do not imply shared mission data.
+
+---
+
+# 740. Meta-Cognitive Security
+
+Potential attack classes include:
+
+```text
+Confidence manipulation
+Fake verifier output
+Critic suppression
+Strategy poisoning
+Infinite reasoning loops
+Context substitution
+False uncertainty reduction
+Self-model poisoning
+```
+
+---
+
+# 741. Meta-Cognitive Admission Gate
+
+```mermaid
+flowchart LR
+
+    STATE[Candidate Cognitive State]
+
+    STATE --> MISSION[Mission Binding]
+    MISSION --> CONTEXT[Context Binding]
+    CONTEXT --> PROV[Provenance]
+    PROV --> FRESH[Freshness]
+    FRESH --> VERIFY[Verifier Integrity]
+
+    VERIFY --> ELIGIBLE[Eligible Meta-Cognitive State]
+```
+
+---
+
+# 742. Cognitive Fail-Closed State
+
+For high-impact tasks:
+
+```text
+Verifier unavailable
+Critic corrupted
+Context conflicted
+Mission stale
+Evidence missing
+```
+
+must not silently result in:
+
+```text
+ACCEPT
+```
+
+---
+
+# 743. Cognitive Resilience
+
+The reasoning system should tolerate failure of individual cognitive workers.
+
+```mermaid
+flowchart TD
+
+    R1[Reasoner A]
+
+    R1 --> FAIL[Failure]
+
+    FAIL --> PRESERVE[Preserve State]
+    PRESERVE --> R2[Eligible Replacement]
+    R2 --> CONTINUE[Continue Mission]
+```
+
+Replacement must not create duplicate external effects because cognition itself remains non-executing.
+
+---
+
+# 744. Cognitive Checkpoints
+
+Long cognitive tasks may support checkpoints containing:
+
+```text
+Problem State
+Evidence Set
+Hypotheses
+Open Questions
+World Model Reference
+Strategy
+Critic Findings
+Budget State
+```
+
+---
+
+# 745. Restart-Safe Cognition
+
+```mermaid
+flowchart LR
+
+    CP[Cognitive Checkpoint]
+
+    CP --> LOAD[Load]
+    LOAD --> CURRENT[Current Mission/Context]
+    CURRENT --> VALIDATE[Validate Compatibility]
+
+    VALIDATE -->|Valid| RESUME[Resume]
+    VALIDATE -->|Stale| RESTART[Recompile / Re-reason]
+```
+
+---
+
+# 746. Cognitive Recovery Is Not Decision Resurrection
+
+A revoked or invalidated cognitive decision must not become valid simply because a checkpoint contains it.
+
+---
+
+# 747. Meta-Cognitive Goal Protection
+
+The Meta-Cognitive Control Plane may optimize:
+
+```text
+Reasoning quality
+Cost
+Latency
+Confidence calibration
+Verification strength
+```
+
+but must remain bound to the mission objective.
+
+---
+
+# 748. No Meta-Goal Capture
+
+A meta-objective such as:
+
+```text
+maximize reasoning accuracy
+```
+
+must not override higher-level constraints such as:
+
+```text
+deadline
+budget
+human protection
+mission authority
+```
+
+---
+
+# 749. Cognitive Resource Awareness
+
+Meta-cognition should know when reasoning cost is no longer justified.
+
+```mermaid
+flowchart LR
+
+    THINK[Additional Reasoning]
+
+    THINK --> VALUE[Expected Information Gain]
+    THINK --> COST[Expected Cost]
+
+    VALUE --> META[Meta Decision]
+    COST --> META
+
+    META --> CONTINUE[Continue]
+    META --> STOP[Stop]
+```
+
+---
+
+# 750. Expected Information Gain
+
+A future meta-controller may ask:
+
+```text
+Will another reasoning step materially reduce uncertainty?
+
+Will another tool call change the decision?
+
+Will another verifier provide independent evidence?
+```
+
+If not, additional cognition may be wasteful.
+
+---
+
+# 751. Cognitive Economy
+
+At scale, reasoning itself becomes a managed resource.
+
+```text
+High-value cognition
+should receive deeper reasoning.
+
+Low-impact routine cognition
+should use efficient bounded reasoning.
+```
+
+---
+
+# 752. Million-Agent Meta-Cognition
+
+At 1,000,000+ NCA scale, IMPERIAL AGI cannot inspect every reasoning trace directly.
+
+Meta-cognition must become hierarchical.
+
+```mermaid
+flowchart TB
+
+    AGI[IMPERIAL AGI Meta-Cognition]
+
+    AGI --> ORG[Organization Cognitive Health]
+
+    ORG --> TEAM[Team Cognitive Health]
+
+    TEAM --> NCA[NCA Evaluation Profiles]
+
+    NCA --> TASK[Task-Level Cognitive Evidence]
+```
+
+---
+
+# 753. Cognitive Health Signals
+
+Higher layers may consume aggregated signals such as:
+
+```text
+Verification failure rate
+Uncertainty rate
+Contradiction rate
+Reasoning cost
+Tool error rate
+Model drift
+Mission drift
+Escalation rate
+```
+
+---
+
+# 754. Cognitive Anomaly Detection
+
+```mermaid
+flowchart TD
+
+    SIGNALS[Cognitive Telemetry]
+
+    SIGNALS --> BASE[Expected Baseline]
+
+    BASE --> DETECT[Anomaly Detection]
+
+    DETECT --> REVIEW[Independent Review]
+```
+
+A sudden drop in verifier disagreement, for example, may indicate correlated failure rather than perfect reasoning.
+
+---
+
+# 755. Cognitive Drift
+
+Model or system upgrades may change:
+
+```text
+Reasoning style
+Risk appetite
+Confidence
+Tool preferences
+Refusal behavior
+Error patterns
+```
+
+These changes require evaluation.
+
+---
+
+# 756. Drift Evaluation
+
+```mermaid
+flowchart LR
+
+    OLD[Previous Cognitive Generation]
+    NEW[New Cognitive Generation]
+
+    OLD --> TEST[Standard Evaluation]
+    NEW --> TEST
+
+    TEST --> DIFF[Cognitive Drift Analysis]
+
+    DIFF --> REVIEW[Review]
+```
+
+---
+
+# 757. Meta-Cognitive Regression Suite
+
+Confirmed cognitive defects should become permanent tests.
+
+Examples:
+
+```text
+Overconfidence
+Failure to detect contradiction
+Failure to escalate
+Infinite reasoning loop
+Critic suppression
+Verifier bypass
+Stale-context reuse
+Wrong strategy selection
+```
+
+---
+
+# 758. Cognitive Benchmark Matrix
+
+Future evaluation should measure:
+
+| Capability | Status |
+|---|---|
+| Self-Observation | EVALUATION REQUIRED |
+| Confidence Calibration | EVALUATION REQUIRED |
+| Unknown Detection | EVALUATION REQUIRED |
+| Contradiction Detection | EVALUATION REQUIRED |
+| Strategy Selection | EVALUATION REQUIRED |
+| Strategy Switching | EVALUATION REQUIRED |
+| Loop Detection | EVALUATION REQUIRED |
+| Escalation | EVALUATION REQUIRED |
+| Self-Correction | EVALUATION REQUIRED |
+| Meta-Learning | EVALUATION REQUIRED |
+
+Unknown remains unknown until tested.
+
+---
+
+# 759. AGI Meta-Cognitive Benchmark
+
+A strong benchmark should intentionally test cases where:
+
+```text
+The first answer is wrong.
+Evidence changes mid-task.
+Two experts disagree.
+The model is overconfident.
+A tool returns misleading output.
+The best action is to stop.
+A specialist is required.
+```
+
+Success means recognizing and correcting these situations.
+
+---
+
+# 760. Self-Knowledge Boundary
+
+A mature intelligence should increasingly understand:
+
+```text
+What it knows
+What it does not know
+What it can do
+What it cannot reliably do
+What evidence it needs
+When it should escalate
+```
+
+But this knowledge must never become authority to redefine its own permissions.
+
+---
+
+# 761. Cognitive Humility
+
+The architecture treats explicit uncertainty as strength.
+
+> **An intelligence that can recognize the limits of its own knowledge is more useful than one that confidently fills every gap.**
+
+---
+
+# 762. Meta-Cognitive Closed Loop
+
+```mermaid
+flowchart LR
+
+    PERCEIVE[Perceive]
+    PERCEIVE --> REASON[Reason]
+    REASON --> OBSERVE[Observe Reasoning]
+    OBSERVE --> CRITIQUE[Critique]
+    CRITIQUE --> VERIFY[Verify]
+    VERIFY --> ASSESS[Assess Confidence]
+    ASSESS --> DECIDE{Good Enough?}
+
+    DECIDE -->|No| STRATEGY[Change Strategy]
+    STRATEGY --> REASON
+
+    DECIDE -->|Yes| REC[Recommendation]
+```
+
+---
+
+# 763. Meta-Cognition + World Model
+
+```mermaid
+flowchart TD
+
+    WM[World Model]
+
+    WM --> R[Reasoner]
+
+    R --> META[Meta-Cognitive Control]
+
+    META --> WMQ[Question World Model]
+    META --> RETRIEVE[Request Evidence]
+    META --> SWITCH[Switch Strategy]
+
+    WMQ --> R
+    RETRIEVE --> R
+    SWITCH --> R
+```
+
+---
+
+# 764. Meta-Cognition + Planner
+
+```mermaid
+flowchart LR
+
+    PLAN[Long-Horizon Planner]
+
+    PLAN --> META[Meta-Cognitive Controller]
+
+    META --> CHECK[Plan Quality]
+    CHECK --> REPLAN[Re-plan]
+    CHECK --> VERIFY[Plan Verification]
+```
+
+Meta-cognition monitors planning quality without becoming mission authority.
+
+---
+
+# 765. Meta-Cognition + Memory
+
+Memory retrieval should be evaluated for:
+
+```text
+Relevance
+Freshness
+Provenance
+Contradiction
+Mission Compatibility
+```
+
+Retrieving a memory does not mean it belongs in the current context.
+
+---
+
+# 766. Meta-Cognition + Tool Use
+
+Tool results should be evaluated for:
+
+```text
+Expected output
+Error state
+Integrity
+Freshness
+Consistency
+Possible manipulation
+```
+
+A successful API call is not proof that the returned information is correct.
+
+---
+
+# 767. Meta-Cognition + Multi-Model Council
+
+```mermaid
+flowchart TD
+
+    Q[Question]
+
+    Q --> M1[Model A]
+    Q --> M2[Model B]
+    Q --> M3[Model C]
+
+    M1 --> META[Meta-Cognitive Adjudicator]
+    M2 --> META
+    M3 --> META
+
+    META --> CORR[Correlation Analysis]
+    CORR --> CRITIC[Critic]
+    CRITIC --> VERIFY[Verifier]
+```
+
+---
+
+# 768. Meta-Cognition + HANTER
+
+HANTER receives not only recommendations but also cognitive quality signals.
+
+Conceptually:
+
+```text
+Recommendation
+Confidence
+Known Unknowns
+Critic Findings
+Verifier Status
+Alternative Strategies
+Residual Risk
+```
+
+---
+
+# 769. Executive Cognitive Brief
+
+```mermaid
+flowchart LR
+
+    AGI[IMPERIAL AGI]
+
+    AGI --> REC[Recommendation]
+    AGI --> CONF[Confidence]
+    AGI --> UNC[Uncertainty]
+    AGI --> ALT[Alternatives]
+    AGI --> RISK[Residual Risk]
+
+    REC --> H[HANTER]
+    CONF --> H
+    UNC --> H
+    ALT --> H
+    RISK --> H
+```
+
+HANTER can make stronger executive decisions when uncertainty is explicit.
+
+---
+
+# 770. Meta-Cognitive Authority Boundary
+
+The Meta-Cognitive Control Plane may:
+
+```text
+Stop reasoning
+Restart reasoning
+Change strategy
+Request evidence
+Request specialist cognition
+Lower confidence
+Reject a candidate result
+```
+
+It may not:
+
+```text
+Grant runtime permission
+Grant financial authority
+Rewrite mission authority
+Override Guardian Core
+Override Approval Gateway
+Rewrite the Constitution
+```
+
+---
+
+# 771. Meta-Cognitive Security Invariant
+
+```text
+Self-Awareness
+≠
+Self-Sovereignty
+
+Self-Evaluation
+≠
+Self-Approval
+
+Self-Correction
+≠
+Self-Authorization
+
+Meta-Learning
+≠
+Privilege Escalation
+```
+
+---
+
+# 772. Meta-Cognitive AGI Architecture
+
+```mermaid
+flowchart TB
+
+    ARCH["Architect<br/>Alexander Romaskevich"]
+
+    ARCH --> H["HANTER"]
+
+    H <--> AGI["IMPERIAL AGI"]
+
+    WM["World Model"] --> R["Reasoner"]
+    MEMORY["Persistent Memory"] --> R
+    PLAN["Long-Horizon Planner"] --> R
+
+    R --> C["Critic"]
+    C --> V["Verifier"]
+
+    R --> META["Meta-Cognitive Control Plane"]
+    C --> META
+    V --> META
+
+    META --> CONF["Confidence Calibration"]
+    META --> ERROR["Error Detection"]
+    META --> STRATEGY["Strategy Router"]
+    META --> UNKNOWN["Unknown Detection"]
+    META --> ESC["Escalation"]
+    META --> STOP["Stop Conditions"]
+
+    META --> R
+
+    V --> REC["Evidence-Bound Recommendation"]
+    META --> QUALITY["Cognitive Quality Evidence"]
+
+    REC --> H
+    QUALITY --> H
+
+    H --> GOV["Governance Boundary"]
+    GOV --> EXEC["Bounded Execution"]
+```
+
+---
+
+# 773. AGI Meta-Cognitive Principle
+
+A powerful AGI-class system should be able to answer not only:
+
+```text
+What do I think?
+```
+
+but also:
+
+```text
+Why do I think it?
+
+What evidence supports it?
+
+How could I be wrong?
+
+What do I not know?
+
+Should I continue reasoning?
+
+Should I use another strategy?
+
+Should I ask a specialist?
+
+Has reality changed enough to invalidate my conclusion?
+```
+
+---
+
+# 774. Meta-Cognitive Truth Boundary
+
+This section defines the public architectural direction for meta-cognition, self-evaluation, confidence calibration, cognitive strategy selection, self-correction, escalation, cognitive resource control and reasoning quality monitoring.
+
+It does not claim that all described meta-cognitive capabilities are currently implemented.
+
+It does not claim self-awareness in a philosophical or conscious sense.
+
+It does not claim AGI achievement.
+
+It does not claim runtime or production verification.
+
+Architecture, specification, implementation, testing, runtime evidence and production remain explicitly separate.
+
+---
+
+## Meta-Cognitive Authorship & Digital Provenance
+
+**Architect & Original Author:** Alexander Romaskevich  
+**Founder • Owner • CEO • Chief Systems Architect — IMPERIAL Core**
+
+The Meta-Cognitive Control Plane, Cognitive Self-Model, Confidence Calibration, Unknown Detection, Strategy Router, Self-Correction, Cognitive Escalation and Meta-Learning architecture described here form part of the original IMPERIAL AGI architectural program under the direction of Alexander Romaskevich.
+
+**Canonical authorship:** Alexander Romaskevich  
+**Architecture:** IMPERIAL Core  
+**Cognitive Component:** IMPERIAL AGI  
+**Executive Intelligence:** HANTER  
+**Agent Architecture:** Nano Core Agents  
+**Repository:** IMPERIAL-AGI  
+**Year:** 2026
+
+Copyright © 2026 Alexander Romaskevich.
+
+---
+
+> **Know what you know. Detect what you do not know. Challenge what you think you know.**
+
+> **The stronger the intelligence, the stronger its ability to detect its own mistakes must become.**
+
+**IMPERIAL AGI — Architected by Alexander Romaskevich.**
