@@ -19364,3 +19364,1384 @@ Copyright © 2026 Alexander Romaskevich.
 > **Capability is power only when bounded by evidence and authority.**
 
 **IMPERIAL AGI — Architected by Alexander Romaskevich.**
+---
+
+# 891. Multi-Model Cognitive Council
+
+A single model can be powerful.
+
+A single model can also be systematically wrong.
+
+IMPERIAL AGI therefore defines a Multi-Model Cognitive Council architecture for selected high-value and high-risk reasoning tasks.
+
+The objective is not to create a voting system.
+
+The objective is to create:
+
+```text
+Independent reasoning
+Independent criticism
+Independent verification
+Correlation-aware disagreement analysis
+Evidence-weighted adjudication
+```
+
+> **Diversity without evidence is noise. Consensus without independence is false confidence.**
+
+---
+
+# 892. Cognitive Diversity Principle
+
+Different cognitive workers may intentionally vary by:
+
+```text
+Model provider
+Model family
+Reasoning strategy
+Prompt structure
+Context slice
+Tool access
+Professional role
+Verification method
+```
+
+The purpose is to reduce correlated failure.
+
+---
+
+# 893. Multi-Model Council Architecture
+
+```mermaid
+flowchart TD
+
+    M[Mission]
+
+    M --> R1[Reasoner A]
+    M --> R2[Reasoner B]
+    M --> R3[Reasoner C]
+
+    R1 --> C1[Candidate A]
+    R2 --> C2[Candidate B]
+    R3 --> C3[Candidate C]
+
+    C1 --> CR[Independent Critic]
+    C2 --> CR
+    C3 --> CR
+
+    CR --> ADJ[Adjudicator]
+    ADJ --> V[Independent Verifier]
+
+    V --> REC[Evidence-Bound Recommendation]
+```
+
+---
+
+# 894. Council Is Not Majority Voting
+
+The architecture rejects:
+
+```text
+2 models agree
+1 model disagrees
+→ majority automatically wins
+```
+
+Instead, the system evaluates:
+
+```text
+Evidence quality
+Source independence
+Reasoning quality
+Known failure modes
+Correlation
+Verifier confidence
+```
+
+---
+
+# 895. Evidence-Weighted Adjudication
+
+```mermaid
+flowchart TD
+
+    A[Candidate A]
+    B[Candidate B]
+    C[Candidate C]
+
+    A --> EA[Evidence A]
+    B --> EB[Evidence B]
+    C --> EC[Evidence C]
+
+    EA --> SCORE[Evidence Weighting]
+    EB --> SCORE
+    EC --> SCORE
+
+    SCORE --> ADJ[Adjudicated Candidate]
+```
+
+Agent count alone should never determine truth.
+
+---
+
+# 896. Correlated Failure
+
+Two models can appear independent while sharing the same underlying weakness.
+
+Possible correlation sources include:
+
+```text
+Same provider
+Same model family
+Same training lineage
+Same retrieved source
+Same system prompt
+Same tool
+Same memory
+Same benchmark contamination
+```
+
+---
+
+# 897. Correlation Graph
+
+```mermaid
+graph TD
+
+    M1[Model A]
+    M2[Model B]
+    M3[Model C]
+
+    M1 --> S[Shared Source]
+    M2 --> S
+
+    M3 --> I[Independent Source]
+
+    S --> META[Correlation Analysis]
+    I --> META
+```
+
+---
+
+# 898. Independence Score
+
+A future council may estimate independence using evidence such as:
+
+```text
+Provider independence
+Model-family independence
+Source independence
+Tool independence
+Prompt independence
+Reasoning-path independence
+```
+
+This is a decision aid, not a guarantee of true statistical independence.
+
+---
+
+# 899. Cognitive Role Separation
+
+Models may specialize by role.
+
+Example:
+
+```text
+Model A → Reasoner
+Model B → Critic
+Model C → Verifier
+Model D → Formal checker
+Model E → Adjudicator
+```
+
+A model's role is based on measured capability, not brand reputation.
+
+---
+
+# 900. Role Capability Registry
+
+A future model registry may preserve:
+
+```text
+Model ID
+Provider
+Version
+Reasoning Score
+Critic Score
+Verifier Score
+Planning Score
+Tool Score
+Security Score
+Latency
+Cost
+Known Failure Modes
+Evaluation Date
+```
+
+---
+
+# 901. Dynamic Role Assignment
+
+```mermaid
+flowchart TD
+
+    TASK[Task]
+
+    TASK --> CLASS[Task Classification]
+    CLASS --> REG[Model Capability Registry]
+
+    REG --> R[Select Reasoner]
+    REG --> C[Select Critic]
+    REG --> V[Select Verifier]
+```
+
+Role assignment may change by domain.
+
+---
+
+# 902. Multi-Provider Resilience
+
+The architecture should support more than one model provider where technically and legally appropriate.
+
+```mermaid
+flowchart TD
+
+    ROUTER[Governed Model Router]
+
+    ROUTER --> A[Provider A]
+    ROUTER --> B[Provider B]
+    ROUTER --> C[Local Model]
+    ROUTER --> D[Future Provider]
+```
+
+Provider diversity improves resilience.
+
+It does not eliminate governance requirements.
+
+---
+
+# 903. Provider Is Not Authority
+
+A model provider can supply cognition.
+
+A provider does not become architectural authority merely because its model is selected.
+
+---
+
+# 904. Provider Outage
+
+```mermaid
+flowchart LR
+
+    P1[Primary Provider]
+
+    P1 --> FAIL{Unavailable?}
+
+    FAIL -->|No| USE[Use]
+    FAIL -->|Yes| ALT[Evaluate Alternative Provider]
+
+    ALT --> VERIFY[Compatibility + Policy Check]
+    VERIFY --> USE2[Eligible Alternative]
+```
+
+---
+
+# 905. No Silent Provider Fallback
+
+A fallback model may have:
+
+```text
+different privacy properties
+different tool support
+different cost
+different capability
+different safety behavior
+```
+
+Therefore provider fallback requires re-evaluation.
+
+---
+
+# 906. Council Context Isolation
+
+Different models may receive different bounded context views.
+
+```mermaid
+flowchart TD
+
+    CTX[Compiled Mission Context]
+
+    CTX --> A[Context Slice A]
+    CTX --> B[Context Slice B]
+    CTX --> C[Context Slice C]
+
+    A --> M1[Model A]
+    B --> M2[Model B]
+    C --> M3[Model C]
+```
+
+This can reduce correlated framing error.
+
+---
+
+# 907. Blind Review
+
+For some tasks, critics may evaluate a candidate without knowing which model produced it.
+
+This can reduce provider or reputation bias.
+
+---
+
+# 908. Blind Verification Architecture
+
+```mermaid
+flowchart LR
+
+    R1[Reasoner A]
+    R2[Reasoner B]
+
+    R1 --> X[Anonymous Candidate A]
+    R2 --> Y[Anonymous Candidate B]
+
+    X --> V[Blind Verifier]
+    Y --> V
+```
+
+---
+
+# 909. Minority Report Preservation
+
+A minority conclusion should remain preserved when it contains credible evidence.
+
+```text
+Minority Result
++
+Evidence
++
+Reason for Rejection
+```
+
+should remain recoverable.
+
+---
+
+# 910. Minority Evidence Graph
+
+```mermaid
+flowchart TD
+
+    MAJ[Majority Candidate]
+    MIN[Minority Candidate]
+
+    MAJ --> ADJ[Adjudicator]
+    MIN --> ADJ
+
+    MIN --> EVID[Minority Evidence]
+    EVID --> ARCHIVE[Preserved for Future Re-evaluation]
+```
+
+---
+
+# 911. Consensus Confidence
+
+Agreement can increase confidence only when independence is meaningful.
+
+```text
+Independent agreement
+>
+correlated agreement
+```
+
+---
+
+# 912. Consensus Calibration
+
+The system should eventually measure:
+
+```text
+When 2 models agree, how often are they correct?
+When 3 independent models agree, how often are they correct?
+When the minority is correct, what patterns existed?
+```
+
+---
+
+# 913. Disagreement as Signal
+
+Disagreement is not merely a problem.
+
+It is information.
+
+```mermaid
+flowchart LR
+
+    A[Candidate A]
+    B[Candidate B]
+
+    A --> DIFF[Disagreement]
+    B --> DIFF
+
+    DIFF --> META[Meta-Cognitive Investigation]
+```
+
+---
+
+# 914. Disagreement Taxonomy
+
+Disagreement may result from:
+
+```text
+Different evidence
+Different assumptions
+Different temporal state
+Different interpretation
+Different reasoning error
+Different risk tolerance
+```
+
+The cause should be analyzed.
+
+---
+
+# 915. Adjudicator
+
+The Adjudicator synthesizes competing cognitive outputs.
+
+Its job is not to pick the most confident model.
+
+Its job is to evaluate:
+
+```text
+Evidence
+Arguments
+Contradictions
+Independence
+Uncertainty
+Verifier findings
+```
+
+---
+
+# 916. Adjudication Flow
+
+```mermaid
+flowchart TD
+
+    CAND[Candidate Set]
+
+    CAND --> NORM[Normalize Claims]
+    NORM --> EVID[Compare Evidence]
+    EVID --> CORR[Correlation Analysis]
+    CORR --> CONTRA[Contradiction Analysis]
+    CONTRA --> SCORE[Evaluate Candidates]
+    SCORE --> RESULT[Adjudicated Candidate]
+```
+
+---
+
+# 917. Adjudicator Is Not Final Authority
+
+The Adjudicator produces a candidate result.
+
+The result still requires verification and governance.
+
+---
+
+# 918. Meta-Adjudication
+
+For critical missions, the adjudication itself may be independently reviewed.
+
+```mermaid
+flowchart LR
+
+    ADJ[Adjudicated Result]
+
+    ADJ --> META[Meta-Adjudicator]
+    META --> VERIFY[Verifier]
+```
+
+---
+
+# 919. Debate Architecture
+
+Some problems may benefit from structured debate.
+
+```mermaid
+sequenceDiagram
+
+    participant A as Agent A
+    participant B as Agent B
+    participant J as Judge
+
+    A->>J: Argument A
+    B->>J: Argument B
+    J->>A: Challenge
+    J->>B: Challenge
+    A->>J: Evidence Response
+    B->>J: Evidence Response
+    J->>J: Evidence-Based Adjudication
+```
+
+---
+
+# 920. Debate Is Bounded
+
+Debate must have:
+
+```text
+Round Limit
+Token Budget
+Time Limit
+Evidence Requirement
+Stop Condition
+```
+
+No infinite adversarial loop.
+
+---
+
+# 921. Debate Quality
+
+A debate is useful only if it improves evidence or reasoning.
+
+Rhetorical persuasiveness alone is not evidence.
+
+---
+
+# 922. Formal Checker Role
+
+Where a problem admits deterministic verification, a formal checker should be preferred over subjective model agreement.
+
+Examples:
+
+```text
+Schema validation
+Type checking
+Hash verification
+Mathematical constraints
+Test execution
+Policy predicates
+```
+
+---
+
+# 923. Model + Deterministic Verification
+
+```mermaid
+flowchart LR
+
+    MODEL[Model Candidate]
+
+    MODEL --> OUTPUT[Candidate Output]
+    OUTPUT --> CHECK[Deterministic Checker]
+
+    CHECK -->|PASS| V[Verifier]
+    CHECK -->|FAIL| REJECT[Reject]
+```
+
+---
+
+# 924. Hybrid Intelligence
+
+The strongest architecture combines:
+
+```text
+Generative reasoning
++
+Deterministic checks
++
+Independent critique
++
+Evidence
+```
+
+rather than relying on one mechanism.
+
+---
+
+# 925. Council Budgeting
+
+Multi-model reasoning is expensive.
+
+The system should use council depth adaptively.
+
+```text
+Low-risk task
+→ one efficient path
+
+Medium-risk task
+→ Reasoner + Critic
+
+High-risk task
+→ multiple independent Reasoners + Critic + Verifier
+
+Critical task
+→ council + independent verification + governance
+```
+
+---
+
+# 926. Council Cost Model
+
+```mermaid
+flowchart TD
+
+    TASK[Task]
+
+    TASK --> RISK[Risk]
+    TASK --> UNC[Uncertainty]
+    TASK --> VALUE[Mission Importance]
+
+    RISK --> DEPTH[Council Depth]
+    UNC --> DEPTH
+    VALUE --> DEPTH
+
+    DEPTH --> COST[Expected Cognitive Cost]
+```
+
+---
+
+# 927. Adaptive Council Size
+
+More agents are not always better.
+
+The system should stop adding models when marginal information gain becomes small.
+
+---
+
+# 928. Marginal Information Gain
+
+```mermaid
+flowchart LR
+
+    CURRENT[Current Council]
+
+    CURRENT --> NEW[Add Candidate Model]
+    NEW --> GAIN[Measure New Information]
+
+    GAIN -->|Useful| KEEP[Keep]
+    GAIN -->|Low| STOP[Stop Expansion]
+```
+
+---
+
+# 929. Council Loop Detection
+
+Structured debates can become repetitive.
+
+State fingerprints may detect:
+
+```text
+same claims
+same evidence
+same objections
+```
+
+and terminate the loop.
+
+---
+
+# 930. Model Reliability Profiles
+
+Reliability should be domain-specific.
+
+A model may be excellent at:
+
+```text
+coding
+```
+
+and weaker at:
+
+```text
+legal analysis
+```
+
+One global score is insufficient.
+
+---
+
+# 931. Domain-Specific Model Selection
+
+```mermaid
+flowchart TD
+
+    TASK[Task]
+
+    TASK --> DOMAIN[Domain]
+    DOMAIN --> REG[Capability Registry]
+    REG --> MODEL[Best Eligible Model Set]
+```
+
+---
+
+# 932. Model Version Binding
+
+Evaluation applies to a specific model version.
+
+```text
+Model Name
+≠
+stable capability forever
+```
+
+Provider updates may require re-evaluation.
+
+---
+
+# 933. Model Drift
+
+A new model version may change:
+
+```text
+Reasoning
+Tool behavior
+Confidence
+Safety behavior
+Latency
+Cost
+```
+
+These changes must be detected.
+
+---
+
+# 934. Drift Gate
+
+```mermaid
+flowchart LR
+
+    OLD[Previous Model Version]
+    NEW[New Model Version]
+
+    OLD --> BENCH[Evaluation Suite]
+    NEW --> BENCH
+
+    BENCH --> DIFF[Drift Analysis]
+    DIFF --> ELIG[Eligibility Decision]
+```
+
+---
+
+# 935. Model Quarantine
+
+A model that exhibits severe unexpected behavior may be quarantined.
+
+```mermaid
+stateDiagram-v2
+
+    ACTIVE --> QUARANTINED: severe anomaly
+    QUARANTINED --> REVIEW
+    REVIEW --> ACTIVE: revalidated
+    REVIEW --> REVOKED: failed
+```
+
+---
+
+# 936. Model Revocation
+
+Model eligibility should be revocable without redesigning the entire system.
+
+---
+
+# 937. Cognitive Supply Chain
+
+Models themselves are supply-chain dependencies.
+
+Relevant concerns include:
+
+```text
+Provider identity
+Model identity
+Version
+API behavior
+Data policy
+Availability
+Evaluation evidence
+```
+
+---
+
+# 938. Local Model Boundary
+
+Local models may offer:
+
+```text
+privacy
+latency
+offline resilience
+cost control
+```
+
+but local execution does not automatically mean safe execution.
+
+They require the same capability evaluation.
+
+---
+
+# 939. External Model Boundary
+
+External models introduce:
+
+```text
+network transmission
+provider data policies
+account dependencies
+service availability
+```
+
+These must be reflected in routing decisions.
+
+---
+
+# 940. Data Classification Routing
+
+```mermaid
+flowchart TD
+
+    DATA[Mission Data]
+
+    DATA --> CLASS[Classification]
+
+    CLASS --> ROUTE[Model Eligibility]
+
+    ROUTE --> LOCAL[Local Eligible Model]
+    ROUTE --> EXT[Approved External Model]
+```
+
+Restricted data may require narrower routing.
+
+---
+
+# 941. Model Context Minimization
+
+External models should receive only the necessary mission context.
+
+```text
+Least Context
+=
+Lower Leakage
++
+Lower Cost
++
+Lower Attack Surface
+```
+
+---
+
+# 942. Council Privacy
+
+Different council members may operate under different data boundaries.
+
+The orchestration layer must not assume every provider can receive the same data.
+
+---
+
+# 943. Council Provenance
+
+Every candidate result should preserve:
+
+```text
+Model Identity
+Role
+Context Digest
+Tool Use
+Evidence
+Timestamp
+Result Digest
+```
+
+---
+
+# 944. Candidate Lineage
+
+```mermaid
+flowchart LR
+
+    M1[Model A]
+    M2[Model B]
+
+    M1 --> C1[Candidate A]
+    M2 --> C2[Candidate B]
+
+    C1 --> ADJ[Adjudication]
+    C2 --> ADJ
+
+    ADJ --> FINAL[Final Candidate]
+
+    FINAL --> LINEAGE[Complete Candidate Lineage]
+```
+
+---
+
+# 945. Council Evidence Ledger
+
+A future evidence record may preserve:
+
+```text
+Mission
+Council Members
+Candidates
+Disagreements
+Evidence
+Adjudication
+Verifier Decision
+Residual Uncertainty
+```
+
+---
+
+# 946. Anti-Collusion
+
+Large multi-agent systems must consider collusion or correlated manipulation.
+
+Potential signals include:
+
+```text
+Suspicious reciprocal agreement
+Repeated unsupported mutual validation
+Shared false evidence
+Unusual refusal to challenge
+```
+
+---
+
+# 947. Collusion Investigation
+
+```mermaid
+flowchart TD
+
+    SIGNAL[Collusion Signal]
+
+    SIGNAL --> CORR[Correlation Analysis]
+    CORR --> EVID[Evidence Review]
+    EVID --> INDEP[Independent Verifier]
+
+    INDEP --> RESULT[Supported / Unsupported Concern]
+```
+
+Signals are not proof.
+
+---
+
+# 948. Sybil-Resistant Council
+
+Creating many identical agent identities must not create more epistemic weight.
+
+```text
+100 copies of one model
+≠
+100 independent experts
+```
+
+---
+
+# 949. Epistemic Weight
+
+Evidence weight should depend on:
+
+```text
+Independence
+Reliability
+Domain competence
+Evidence quality
+Freshness
+```
+
+not agent count.
+
+---
+
+# 950. Council Memory
+
+Council outcomes should contribute to persistent learning.
+
+Useful evidence includes:
+
+```text
+Which model was correct
+Which minority was correct
+Which critic caught the defect
+Which correlations mattered
+Which task types benefit from diversity
+```
+
+---
+
+# 951. Model Routing Learning
+
+```mermaid
+flowchart LR
+
+    TASK[Completed Task]
+    TASK --> OUTCOME[Verified Outcome]
+    OUTCOME --> PERF[Model Performance]
+    PERF --> REG[Capability Registry]
+    REG --> FUTURE[Future Routing]
+```
+
+---
+
+# 952. Council Self-Evaluation
+
+A council should evaluate its own performance.
+
+Metrics may include:
+
+```text
+Accuracy
+False consensus
+Minority correctness
+Cost
+Latency
+Verifier disagreement
+Correlation
+```
+
+---
+
+# 953. False Consensus
+
+False consensus occurs when many cognitive workers agree and are still wrong.
+
+This is a critical AGI failure class.
+
+---
+
+# 954. False Consensus Defense
+
+```mermaid
+flowchart TD
+
+    CONSENSUS[Strong Agreement]
+
+    CONSENSUS --> INDEP{Independent Evidence Exists?}
+
+    INDEP -->|No| LOWER[Lower Confidence]
+    INDEP -->|Yes| VERIFY[Verify]
+```
+
+---
+
+# 955. Minority Correctness Benchmark
+
+Evaluation should intentionally include cases where:
+
+```text
+majority is wrong
+minority has stronger evidence
+```
+
+A strong adjudicator should recover the minority result.
+
+---
+
+# 956. Adversarial Council Benchmark
+
+Test cases should include:
+
+```text
+One malicious model
+One hallucinating model
+One stale model
+One correct minority model
+Shared poisoned source
+Conflicting tool results
+```
+
+---
+
+# 957. Council Generalization Benchmark
+
+The system should form effective councils for unseen domains rather than relying only on preconfigured task templates.
+
+---
+
+# 958. Role Discovery
+
+A future meta-controller may discover that a model performs better in a role not originally assigned.
+
+Example:
+
+```text
+Model A expected to reason
+but empirically excels as Critic.
+```
+
+This can inform future routing.
+
+---
+
+# 959. Role Evolution Boundary
+
+Role optimization may change model assignment.
+
+It may not grant new execution privileges.
+
+---
+
+# 960. Council + World Model
+
+```mermaid
+flowchart TD
+
+    WM[World Model]
+
+    WM --> R1[Reasoner A]
+    WM --> R2[Reasoner B]
+
+    R1 --> ADJ[Adjudicator]
+    R2 --> ADJ
+
+    ADJ --> UPDATE[Candidate World Model Update]
+    UPDATE --> VERIFY[Verifier]
+    VERIFY --> WM
+```
+
+---
+
+# 961. Council + Planner
+
+Multiple planners may propose different strategies.
+
+```mermaid
+flowchart TD
+
+    GOAL[Objective]
+
+    GOAL --> P1[Planner A]
+    GOAL --> P2[Planner B]
+    GOAL --> P3[Planner C]
+
+    P1 --> EVAL[Plan Adjudication]
+    P2 --> EVAL
+    P3 --> EVAL
+
+    EVAL --> VERIFY[Plan Verifier]
+```
+
+---
+
+# 962. Council + Tool Intelligence
+
+Different models may independently propose tools.
+
+The adjudicator can compare:
+
+```text
+Tool suitability
+Risk
+Cost
+Evidence quality
+```
+
+before tool admission.
+
+---
+
+# 963. Council + Meta-Cognition
+
+Meta-cognition determines when a council is worth the cost.
+
+```mermaid
+flowchart LR
+
+    META[Meta-Cognitive Controller]
+
+    META --> NEED{Council Needed?}
+
+    NEED -->|No| SINGLE[Single Path]
+    NEED -->|Yes| COUNCIL[Multi-Model Council]
+```
+
+---
+
+# 964. Council + HANTER
+
+HANTER should receive:
+
+```text
+Adjudicated Recommendation
+Supporting Evidence
+Minority Report
+Council Independence
+Residual Disagreement
+Verifier Status
+```
+
+not merely:
+
+```text
+3 of 4 agents voted yes.
+```
+
+---
+
+# 965. Executive Council Brief
+
+```mermaid
+flowchart TD
+
+    COUNCIL[Multi-Model Council]
+
+    COUNCIL --> REC[Recommendation]
+    COUNCIL --> EVID[Evidence]
+    COUNCIL --> MIN[Minority Report]
+    COUNCIL --> CORR[Correlation]
+    COUNCIL --> UNC[Residual Uncertainty]
+
+    REC --> H[HANTER]
+    EVID --> H
+    MIN --> H
+    CORR --> H
+    UNC --> H
+```
+
+---
+
+# 966. Council Authority Boundary
+
+A council may:
+
+```text
+Reason
+Challenge
+Compare
+Adjudicate
+Verify
+```
+
+It may not:
+
+```text
+Grant runtime authority
+Grant financial authority
+Override Guardian Core
+Override Approval Gateway
+Rewrite mission authority
+Rewrite Constitution
+```
+
+---
+
+# 967. Council Security Invariant
+
+```text
+Consensus
+≠
+Truth
+
+Majority
+≠
+Authority
+
+Reputation
+≠
+Authority
+
+Model Count
+≠
+Evidence Strength
+
+Provider
+≠
+Architectural Authority
+```
+
+---
+
+# 968. Multi-Model AGI Architecture
+
+```mermaid
+flowchart TB
+
+    ARCH["Architect<br/>Alexander Romaskevich"]
+
+    ARCH --> H["HANTER"]
+
+    H <--> AGI["IMPERIAL AGI"]
+
+    AGI --> META["Meta-Cognitive Controller"]
+
+    META --> R1["Reasoner A"]
+    META --> R2["Reasoner B"]
+    META --> R3["Reasoner C"]
+
+    R1 --> ADJ["Evidence-Weighted Adjudicator"]
+    R2 --> ADJ
+    R3 --> ADJ
+
+    ADJ --> C["Independent Critic"]
+    C --> V["Independent Verifier"]
+
+    V --> REC["Evidence-Bound Recommendation"]
+
+    REC --> H
+
+    H --> GOV["Governance Boundary"]
+    GOV --> EXEC["Bounded Execution"]
+```
+
+---
+
+# 969. Cognitive Diversity Principle
+
+> **The objective is not to make many models agree.**
+
+The objective is to make disagreement useful, independence measurable, and final conclusions stronger than any single cognitive path.
+
+---
+
+# 970. AGI Council Target
+
+The target is an intelligence capable of:
+
+```text
+Selecting the right cognitive specialists
+Generating independent candidate solutions
+Detecting correlated reasoning
+Preserving minority evidence
+Adjudicating disagreement
+Measuring model reliability
+Learning which model should perform which role
+```
+
+---
+
+# 971. Multi-Model Truth Boundary
+
+This section defines the public architectural direction for multi-model cognition, role specialization, model councils, evidence-weighted adjudication, correlation analysis, minority preservation and provider-independent cognitive routing.
+
+It does not claim that all described multi-model capabilities are currently implemented.
+
+It does not claim that any model council provides guaranteed correctness.
+
+It does not claim runtime or production verification.
+
+Architecture, specification, implementation, testing, runtime evidence and production remain explicitly separate.
+
+---
+
+## Multi-Model Intelligence Authorship & Digital Provenance
+
+**Architect & Original Author:** Alexander Romaskevich  
+**Founder • Owner • CEO • Chief Systems Architect — IMPERIAL Core**
+
+The Multi-Model Cognitive Council, Evidence-Weighted Adjudication, Cognitive Diversity, Minority Preservation, Correlation Analysis and Provider-Independent Reasoning architecture described here form part of the original IMPERIAL AGI architectural program under the direction of Alexander Romaskevich.
+
+**Canonical authorship:** Alexander Romaskevich  
+**Architecture:** IMPERIAL Core  
+**Cognitive Component:** IMPERIAL AGI  
+**Executive Intelligence:** HANTER  
+**Agent Architecture:** Nano Core Agents  
+**Repository:** IMPERIAL-AGI  
+**Year:** 2026
+
+Copyright © 2026 Alexander Romaskevich.
+
+---
+
+> **Do not seek agreement. Seek independent evidence.**
+
+> **A strong intelligence survives disagreement and becomes stronger because of it.**
+
+**IMPERIAL AGI — Architected by Alexander Romaskevich.**
