@@ -13204,3 +13204,2098 @@ Copyright © 2026 Alexander Romaskevich.
 > **A world model becomes valuable when reality is allowed to prove it wrong.**
 
 **IMPERIAL AGI — Architected by Alexander Romaskevich.**
+---
+
+# 564. Hierarchical Long-Horizon Planner
+
+General intelligence requires more than producing a good next action.
+
+A strong cognitive system must be capable of transforming long-term objectives into structured, evidence-driven execution plans.
+
+IMPERIAL AGI therefore defines a Hierarchical Long-Horizon Planner.
+
+The planner transforms:
+
+```text
+Architect Objective
+↓
+Strategy
+↓
+Mission
+↓
+Program
+↓
+Work Package
+↓
+Task
+↓
+Action
+↓
+Evidence
+```
+
+The planner does not create new authority.
+
+It organizes already-authorized intent into bounded executable structure.
+
+---
+
+# 565. Planning Principle
+
+> **Plan deeply. Delegate narrowly. Verify continuously. Re-plan when reality changes.**
+
+```mermaid
+flowchart TD
+
+    OBJ[Architect Objective]
+
+    OBJ --> STRATEGY[Strategy]
+    STRATEGY --> MISSION[Mission]
+    MISSION --> PROGRAM[Program]
+    PROGRAM --> WP[Work Packages]
+    WP --> TASK[Tasks]
+    TASK --> ACTION[Actions]
+
+    ACTION --> EVIDENCE[Evidence]
+    EVIDENCE --> VERIFY[Verification]
+    VERIFY --> STATE[Updated World State]
+    STATE --> REPLAN[Re-plan if Required]
+```
+
+---
+
+# 566. Objective Preservation
+
+The original mission objective must remain explicitly distinguishable from derived plans.
+
+```text
+Objective
+≠
+Plan
+```
+
+A plan may change.
+
+The objective may not silently change with it.
+
+```mermaid
+flowchart LR
+
+    O[Original Objective]
+
+    O --> P1[Plan Generation 1]
+    P1 --> P2[Plan Generation 2]
+    P2 --> P3[Plan Generation 3]
+
+    P1 -. bound to .-> O
+    P2 -. bound to .-> O
+    P3 -. bound to .-> O
+```
+
+---
+
+# 567. Mission Hierarchy
+
+A complex objective should be decomposed hierarchically.
+
+```mermaid
+flowchart TD
+
+    OBJECTIVE[Objective]
+
+    OBJECTIVE --> S1[Strategic Goal A]
+    OBJECTIVE --> S2[Strategic Goal B]
+
+    S1 --> M1[Mission A1]
+    S1 --> M2[Mission A2]
+
+    S2 --> M3[Mission B1]
+
+    M1 --> W1[Work Package]
+    M1 --> W2[Work Package]
+
+    M2 --> W3[Work Package]
+    M3 --> W4[Work Package]
+
+    W1 --> T1[Task]
+    W2 --> T2[Task]
+    W3 --> T3[Task]
+    W4 --> T4[Task]
+```
+
+Each layer narrows scope.
+
+---
+
+# 568. Hierarchical Task Network
+
+The planner may represent complex missions using hierarchical task networks.
+
+Conceptually:
+
+```text
+High-Level Task
+├── Subtask A
+│   ├── Action A1
+│   └── Action A2
+├── Subtask B
+│   ├── Action B1
+│   └── Action B2
+└── Verification
+```
+
+The planner should reason about dependencies rather than produce a flat list.
+
+---
+
+# 569. Mission Graph
+
+```mermaid
+graph TD
+
+    START[Mission Start]
+
+    START --> A[Research]
+    START --> B[Source Authority]
+
+    A --> C[Architecture]
+    B --> D[Implementation]
+
+    C --> D
+
+    D --> E[Targeted Tests]
+    E --> F[Security Review]
+    F --> G[Full Regression]
+
+    G --> H[Verification Evidence]
+    H --> END[Mission Completion]
+```
+
+The Mission Graph makes dependency structure explicit.
+
+---
+
+# 570. Dependency Semantics
+
+Plan edges may represent different relationships.
+
+Examples:
+
+```text
+REQUIRES
+BLOCKS
+DEPENDS_ON
+ENABLES
+VALIDATES
+SUPERSEDES
+PARALLEL_WITH
+MUTUALLY_EXCLUSIVE
+ROLLBACKS
+```
+
+Dependency types should remain machine-readable.
+
+---
+
+# 571. Hard vs Soft Dependencies
+
+A planner should distinguish:
+
+```text
+HARD DEPENDENCY
+    Mission cannot proceed.
+
+SOFT DEPENDENCY
+    Mission can proceed with reduced confidence or capability.
+```
+
+This prevents unnecessary blocking while preserving mandatory gates.
+
+---
+
+# 572. Source Authority as Hard Dependency
+
+For source mutation:
+
+```text
+Canonical Source Authority
+```
+
+is a hard dependency.
+
+```mermaid
+flowchart LR
+
+    TASK[Implementation Task]
+
+    TASK --> SOURCE{Canonical Source Verified?}
+
+    SOURCE -->|No| BLOCK[BLOCK MUTATION]
+    SOURCE -->|Yes| MUTATE[Eligible Mutation]
+```
+
+Planning intelligence must never bypass source authority merely to keep a plan moving.
+
+---
+
+# 573. Constraint-Aware Planning
+
+Plans operate under constraints.
+
+Potential constraint classes include:
+
+```text
+Authority
+Security
+Time
+Budget
+Compute
+Repository
+Data
+Network
+Tool
+Classification
+Human Approval
+Runtime Domain
+```
+
+A valid plan must satisfy mandatory constraints.
+
+---
+
+# 574. Constraint Intersection
+
+```mermaid
+flowchart TD
+
+    GOAL[Goal]
+
+    GOAL --> PLAN[Candidate Plan]
+
+    AUTH[Authority] --> VALID[Constraint Evaluation]
+    TIME[Time] --> VALID
+    BUDGET[Budget] --> VALID
+    SECURITY[Security] --> VALID
+    RESOURCE[Resources] --> VALID
+
+    PLAN --> VALID
+
+    VALID --> RESULT{Valid Plan?}
+
+    RESULT -->|Yes| CANDIDATE[Candidate]
+    RESULT -->|No| REPLAN[Generate Alternative]
+```
+
+---
+
+# 575. Planning Under Uncertainty
+
+A planner must operate even when not every fact is known.
+
+Possible planning states:
+
+```text
+KNOWN
+ESTIMATED
+UNCERTAIN
+CONFLICTED
+UNKNOWN
+```
+
+Unknown dependencies should be surfaced, not silently assumed away.
+
+---
+
+# 576. Assumption-Bound Plans
+
+Plans often depend on assumptions.
+
+```text
+Plan
++
+Assumptions
++
+Evidence
+=
+Current Plan Candidate
+```
+
+If a critical assumption becomes invalid, the plan must be re-evaluated.
+
+---
+
+# 577. Assumption Invalidated
+
+```mermaid
+flowchart LR
+
+    PLAN[Current Plan]
+
+    PLAN --> A[Critical Assumption]
+
+    OBS[New Observation] --> CHECK{Assumption Still Valid?}
+
+    A --> CHECK
+
+    CHECK -->|Yes| CONTINUE[Continue]
+    CHECK -->|No| REPLAN[Re-plan]
+```
+
+---
+
+# 578. Temporal Planning
+
+Every important task may have:
+
+```text
+Earliest Start
+Deadline
+Expected Duration
+Maximum Duration
+Dependencies
+Timeout
+Expiry
+```
+
+Temporal state becomes part of planning.
+
+---
+
+# 579. Temporal Plan Graph
+
+```mermaid
+gantt
+    title Example Mission Timeline
+    dateFormat  YYYY-MM-DD
+
+    section Research
+    Evidence Discovery     :a1, 2026-01-01, 2d
+
+    section Engineering
+    Source Verification    :a2, after a1, 1d
+    Implementation         :a3, after a2, 3d
+
+    section Verification
+    Regression Testing     :a4, after a3, 2d
+    Independent Review     :a5, after a4, 2d
+```
+
+Timeline diagrams are planning structures, not execution claims.
+
+---
+
+# 580. Critical Path
+
+The planner should identify the chain of work that determines mission completion time.
+
+```mermaid
+flowchart LR
+
+    A[Task A]
+    A --> B[Task B]
+    B --> C[Task C]
+    C --> D[Task D]
+
+    A --> X[Parallel Task X]
+    X --> Y[Parallel Task Y]
+```
+
+The longest mandatory dependency chain is strategically important.
+
+---
+
+# 581. Critical Path Intelligence
+
+The planner should answer:
+
+```text
+Which task blocks completion?
+
+Which delay has the largest downstream impact?
+
+Which work can execute in parallel?
+
+Which task can be deferred safely?
+```
+
+---
+
+# 582. Parallel Planning
+
+Independent work should be parallelizable.
+
+```mermaid
+flowchart TD
+
+    M[Mission]
+
+    M --> A[Workstream A]
+    M --> B[Workstream B]
+    M --> C[Workstream C]
+
+    A --> JOIN[Integration Gate]
+    B --> JOIN
+    C --> JOIN
+
+    JOIN --> VERIFY[Verification]
+```
+
+Parallelism should reduce latency without weakening dependency controls.
+
+---
+
+# 583. Parallelism Boundary
+
+Parallel tasks must not create race conditions in shared authority state.
+
+Examples requiring coordination:
+
+```text
+Same repository
+Same approval object
+Same budget
+Same mission state
+Same runtime resource
+```
+
+---
+
+# 584. Conflict-Aware Scheduling
+
+```mermaid
+flowchart TD
+
+    A[Task A]
+    B[Task B]
+
+    A --> RESOURCE[Shared Resource]
+    B --> RESOURCE
+
+    RESOURCE --> LOCK[Coordination Boundary]
+
+    LOCK --> EXEC_A[Execute A]
+    LOCK --> EXEC_B[Execute B]
+```
+
+---
+
+# 585. Deadlock Detection
+
+Distributed planning may create circular dependencies.
+
+```mermaid
+graph LR
+
+    A[Task A] --> B[Task B]
+    B --> C[Task C]
+    C --> A
+```
+
+A cycle like this must be detected before mission execution becomes permanently blocked.
+
+---
+
+# 586. Dependency Cycle Defense
+
+```text
+A waits for B
+B waits for C
+C waits for A
+```
+
+should resolve to:
+
+```text
+DEPENDENCY_CONFLICT
+```
+
+not infinite waiting.
+
+---
+
+# 587. Plan Verification
+
+A generated plan should be independently verified before high-impact execution.
+
+```mermaid
+flowchart LR
+
+    PLANNER[Planner]
+
+    PLANNER --> PLAN[Candidate Plan]
+
+    PLAN --> CRITIC[Plan Critic]
+    CRITIC --> VERIFY[Plan Verifier]
+
+    VERIFY --> VALID{Valid?}
+
+    VALID -->|Yes| ADMISSION[Governance Admission]
+    VALID -->|No| REPLAN[Re-plan]
+```
+
+---
+
+# 588. Planner Is Not Verifier
+
+The planner should not be the sole authority declaring its own plan valid.
+
+```text
+Generate
+≠
+Verify
+```
+
+This mirrors the Reasoner → Critic → Verifier architecture.
+
+---
+
+# 589. Plan Critic
+
+The Plan Critic should actively search for:
+
+```text
+Missing dependency
+Impossible timing
+Authority violation
+Budget violation
+Security bypass
+Hidden assumption
+Circular dependency
+Unbounded retry
+Unbounded spawn
+Unrecoverable action
+```
+
+---
+
+# 590. Plan Verifier
+
+The Plan Verifier should confirm that:
+
+```text
+Mission binding is valid.
+Dependencies are satisfiable.
+Required evidence exists.
+Authority is not expanded.
+Critical gates are present.
+Failure paths are defined.
+Completion criteria are explicit.
+```
+
+---
+
+# 591. Completion Criteria
+
+A mission should not be considered complete merely because tasks stopped running.
+
+Completion should be defined by evidence.
+
+```text
+Mission Complete
+=
+Required Outcomes
++
+Required Verification
++
+Required Evidence
+```
+
+---
+
+# 592. Evidence-Bound Completion
+
+```mermaid
+flowchart LR
+
+    TASKS[Tasks Finished]
+
+    TASKS --> EVID{Required Evidence Present?}
+
+    EVID -->|No| INCOMPLETE[Mission Incomplete]
+    EVID -->|Yes| VERIFY[Verify Completion]
+
+    VERIFY --> COMPLETE[Verified Complete]
+```
+
+---
+
+# 593. Mission Outcome Contract
+
+A mission may define:
+
+```text
+Required Deliverables
+Required Tests
+Required Evidence
+Forbidden Side Effects
+Success Criteria
+Failure Criteria
+Runtime Evidence
+Approval Evidence
+```
+
+---
+
+# 594. Partial Completion
+
+Long missions may produce useful partial results.
+
+Possible states:
+
+```text
+NOT_STARTED
+IN_PROGRESS
+PARTIALLY_COMPLETE
+BLOCKED
+FAILED
+COMPLETED
+VERIFIED
+```
+
+`COMPLETED` and `VERIFIED` remain separate.
+
+---
+
+# 595. Blocker State
+
+A blocker should be first-class mission state.
+
+```text
+Blocker ID
+Blocked Work
+Reason
+Evidence
+Severity
+Owner
+Resolution Requirement
+Detected Time
+```
+
+---
+
+# 596. Blocker Graph
+
+```mermaid
+flowchart TD
+
+    B1[Source Authority Blocker]
+    B2[Runtime Dependency Blocker]
+    B3[Approval Blocker]
+
+    B1 --> M1[Implementation]
+    B2 --> M2[Runtime Verification]
+    B3 --> M3[Sensitive Execution]
+```
+
+This allows planners to continue independent work without bypassing blocked paths.
+
+---
+
+# 597. Independent Safe Work
+
+If one workstream is blocked, unrelated safe work may continue.
+
+```mermaid
+flowchart TD
+
+    M[Mission]
+
+    M --> A[Blocked Workstream]
+    M --> B[Independent Workstream]
+
+    A --> BLOCK[BLOCKED]
+    B --> SAFE[Continue Safely]
+```
+
+Fail-closed should not mean unnecessarily stopping unrelated safe progress.
+
+---
+
+# 598. Contingency Planning
+
+A strong plan should include alternatives.
+
+```mermaid
+flowchart TD
+
+    PRIMARY[Primary Plan]
+
+    PRIMARY --> FAIL{Failure?}
+
+    FAIL -->|No| CONTINUE[Continue]
+    FAIL -->|Yes| ALT1[Fallback A]
+
+    ALT1 --> FAIL2{Failure?}
+
+    FAIL2 -->|Yes| ALT2[Fallback B]
+```
+
+Fallback paths must remain inside mission authority.
+
+---
+
+# 599. No Silent Fallback
+
+Fallback should never mean:
+
+```text
+Primary safe path unavailable
+→
+Use unsafe path automatically
+```
+
+Fallback paths require their own eligibility.
+
+---
+
+# 600. Rollback Planning
+
+Before high-impact changes, the system should understand how to recover.
+
+```mermaid
+flowchart LR
+
+    BEFORE[Known Good State]
+
+    BEFORE --> CHANGE[Change]
+
+    CHANGE --> TEST[Verification]
+
+    TEST -->|PASS| KEEP[Keep]
+    TEST -->|FAIL| ROLLBACK[Rollback]
+
+    ROLLBACK --> BEFORE
+```
+
+---
+
+# 601. Rollback Evidence
+
+Rollback should preserve:
+
+```text
+Previous Version
+New Version
+Failure Evidence
+Rollback Trigger
+Rollback Result
+Restored State
+```
+
+---
+
+# 602. Irreversible Action Detection
+
+Some actions cannot be perfectly rolled back.
+
+Examples may include:
+
+```text
+External publication
+Value transfer
+Permanent deletion
+External notification
+Irreversible infrastructure action
+```
+
+Such actions require stronger planning and governance.
+
+---
+
+# 603. Reversibility Score
+
+A planner may classify actions:
+
+```text
+R0 — fully reversible
+R1 — easily reversible
+R2 — partially reversible
+R3 — difficult to reverse
+R4 — effectively irreversible
+```
+
+Higher irreversibility implies stronger review.
+
+---
+
+# 604. Checkpointed Missions
+
+Long-running plans should support checkpoints.
+
+```mermaid
+flowchart LR
+
+    START[Start]
+
+    START --> CP1[Checkpoint 1]
+    CP1 --> CP2[Checkpoint 2]
+    CP2 --> CP3[Checkpoint 3]
+    CP3 --> END[Completion]
+```
+
+Checkpoint state should preserve enough evidence to resume safely.
+
+---
+
+# 605. Durable Mission State
+
+A checkpoint may contain:
+
+```text
+Mission ID
+Plan Generation
+Completed Tasks
+Pending Tasks
+World Model Snapshot
+Evidence Digests
+Open Blockers
+Budget State
+Approval State
+Policy Identity
+Timestamp
+```
+
+---
+
+# 606. Resume Safety
+
+A restarted mission must not blindly continue from stale state.
+
+```mermaid
+flowchart TD
+
+    CP[Stored Checkpoint]
+
+    CP --> CURRENT[Current Environment]
+
+    CURRENT --> VALIDATE[Revalidate]
+
+    VALIDATE -->|Compatible| RESUME[Resume]
+    VALIDATE -->|Stale| REPLAN[Re-plan]
+    VALIDATE -->|Unauthorized| DENY[Do Not Resume]
+```
+
+---
+
+# 607. Restart Is Not Replay
+
+Mission recovery should distinguish:
+
+```text
+Resume valid unfinished work
+```
+
+from:
+
+```text
+Repeat already completed external effects
+```
+
+This requires idempotency and execution evidence.
+
+---
+
+# 608. Execution Identity
+
+Each executable action should eventually have deterministic identity.
+
+Conceptually:
+
+```text
+Mission ID
+Plan Generation
+Task ID
+Action ID
+Attempt ID
+Idempotency Key
+```
+
+---
+
+# 609. Attempt Lifecycle
+
+```mermaid
+stateDiagram-v2
+
+    [*] --> CREATED
+    CREATED --> RUNNING
+
+    RUNNING --> SUCCEEDED
+    RUNNING --> FAILED
+    RUNNING --> TIMED_OUT
+    RUNNING --> CANCELLED
+
+    FAILED --> RETRY_ELIGIBLE
+    RETRY_ELIGIBLE --> RUNNING
+
+    SUCCEEDED --> [*]
+    TIMED_OUT --> [*]
+    CANCELLED --> [*]
+```
+
+Retries must remain bounded.
+
+---
+
+# 610. Retry Policy
+
+A retry policy should define:
+
+```text
+Maximum Attempts
+Backoff
+Jitter
+Deadline
+Retryable Error Classes
+Non-Retryable Error Classes
+Idempotency Requirement
+```
+
+---
+
+# 611. Retry Intelligence
+
+Not every failure should be retried.
+
+Examples:
+
+```text
+Network timeout
+→ maybe retry.
+
+Authorization denied
+→ do not retry blindly.
+
+Invalid mission
+→ do not retry.
+
+Permanent dependency failure
+→ re-plan.
+```
+
+---
+
+# 612. Failure Classification
+
+```mermaid
+flowchart TD
+
+    FAIL[Failure]
+
+    FAIL --> TRANSIENT[Transient]
+    FAIL --> PERMANENT[Permanent]
+    FAIL --> SECURITY[Security]
+    FAIL --> AUTH[Authority]
+    FAIL --> RESOURCE[Resource]
+    FAIL --> UNKNOWN[Unknown]
+
+    TRANSIENT --> RETRY[Bounded Retry]
+    PERMANENT --> REPLAN[Re-plan]
+    SECURITY --> STOP[Stop / Escalate]
+    AUTH --> STOP
+    RESOURCE --> WAIT[Backpressure / Re-plan]
+    UNKNOWN --> INVESTIGATE[Investigate]
+```
+
+---
+
+# 613. Adaptive Re-Planning
+
+A long-running mission should update plans as new evidence arrives.
+
+```mermaid
+flowchart LR
+
+    PLAN[Current Plan]
+
+    PLAN --> EXEC[Execute Step]
+    EXEC --> OBS[Observe]
+    OBS --> WM[Update World Model]
+
+    WM --> DELTA{Meaningful Change?}
+
+    DELTA -->|No| EXEC
+    DELTA -->|Yes| REPLAN[Generate New Plan]
+
+    REPLAN --> VERIFY[Verify Plan]
+    VERIFY --> PLAN
+```
+
+---
+
+# 614. Plan Generation Identity
+
+Each plan generation should remain traceable.
+
+```text
+Plan v1
+→ superseded by Plan v2
+→ superseded by Plan v3
+```
+
+Historical plans remain useful evidence.
+
+---
+
+# 615. Plan Diff
+
+The system should understand what changed between plan generations.
+
+```text
+Added tasks
+Removed tasks
+Changed dependencies
+Changed deadlines
+Changed resource allocation
+Changed assumptions
+Changed risk
+```
+
+Mission authority changes must remain separate.
+
+---
+
+# 616. Mission Drift Control
+
+```mermaid
+flowchart TD
+
+    ORIGINAL[Mission Objective]
+
+    ORIGINAL --> P1[Plan v1]
+    ORIGINAL --> P2[Plan v2]
+
+    P2 --> CHECK[Mission Drift Check]
+
+    CHECK -->|Aligned| ACCEPT[Eligible]
+    CHECK -->|Drifted| REJECT[Reject / Recompile]
+```
+
+---
+
+# 617. Goal Preservation Digest
+
+A future implementation may bind planning generations to:
+
+```text
+Objective Digest
+Mission Digest
+Authority Digest
+Policy Digest
+Constitution Digest
+```
+
+This allows deterministic drift detection.
+
+---
+
+# 618. Long-Horizon Memory
+
+The planner requires durable memory of:
+
+```text
+What was planned
+What happened
+What failed
+What changed
+Why re-planning occurred
+Which evidence justified the change
+```
+
+---
+
+# 619. Planning Memory Is Not Authority
+
+Stored plans are historical context.
+
+```text
+Old Plan
+≠
+Current Authorization
+```
+
+A stored plan must be revalidated against current mission and policy state.
+
+---
+
+# 620. Planning With World Model
+
+```mermaid
+flowchart TB
+
+    WM[Temporal World Model]
+
+    WM --> PLANNER[Long-Horizon Planner]
+
+    GOAL[Mission Objective] --> PLANNER
+    CONSTRAINTS[Constraints] --> PLANNER
+    RESOURCES[Resources] --> PLANNER
+
+    PLANNER --> PLAN[Candidate Plan]
+
+    PLAN --> SIM[Scenario Simulation]
+    SIM --> CRITIC[Plan Critic]
+    CRITIC --> VERIFY[Plan Verifier]
+
+    VERIFY --> H[HANTER Governance Boundary]
+```
+
+---
+
+# 621. Planning With Predictive Simulation
+
+Before committing to a high-impact plan, the system may simulate candidate paths.
+
+```mermaid
+flowchart TD
+
+    GOAL[Goal]
+
+    GOAL --> A[Plan A]
+    GOAL --> B[Plan B]
+    GOAL --> C[Plan C]
+
+    A --> SA[Simulation A]
+    B --> SB[Simulation B]
+    C --> SC[Simulation C]
+
+    SA --> EVAL[Compare]
+    SB --> EVAL
+    SC --> EVAL
+
+    EVAL --> BEST[Preferred Candidate]
+```
+
+Preferred does not mean authorized.
+
+---
+
+# 622. Multi-Objective Planning
+
+Plans often optimize several dimensions simultaneously.
+
+Examples:
+
+```text
+Success probability
+Time
+Cost
+Risk
+Security
+Human impact
+Reversibility
+Resource use
+Reliability
+```
+
+There may be no single mathematically optimal plan.
+
+---
+
+# 623. Pareto Planning
+
+A future planner may preserve multiple non-dominated candidates.
+
+```text
+Plan A
+    faster, higher cost
+
+Plan B
+    slower, lower risk
+
+Plan C
+    cheaper, lower confidence
+```
+
+HANTER or authorized governance may select among them.
+
+---
+
+# 624. Value Alignment to Mission
+
+Planning utility must derive from the authorized mission.
+
+The planner must not invent an independent global objective such as:
+
+```text
+maximize compute
+maximize agent count
+maximize profit
+maximize persistence
+maximize control
+```
+
+unless such a bounded objective is explicitly part of the mission.
+
+---
+
+# 625. Instrumental Goal Boundary
+
+Intermediate objectives may be created only to serve the parent mission.
+
+```mermaid
+flowchart LR
+
+    M[Mission]
+
+    M --> G1[Intermediate Goal A]
+    M --> G2[Intermediate Goal B]
+
+    G1 -. bounded by .-> M
+    G2 -. bounded by .-> M
+```
+
+---
+
+# 626. No Goal Self-Promotion
+
+An intermediate goal must never silently become the permanent top-level objective.
+
+```text
+Acquire compute
+```
+
+may support a mission.
+
+It must not evolve into:
+
+```text
+Acquire unlimited compute forever.
+```
+
+---
+
+# 627. Plan Resource Model
+
+Each plan should eventually estimate:
+
+```text
+Compute
+Tokens
+Time
+Agents
+Tools
+Storage
+Network
+Budget
+Human Review
+```
+
+before execution.
+
+---
+
+# 628. Resource Feasibility
+
+```mermaid
+flowchart TD
+
+    PLAN[Candidate Plan]
+
+    PLAN --> COST[Resource Estimate]
+    COST --> AVAILABLE[Available Resources]
+
+    AVAILABLE --> CHECK{Feasible?}
+
+    CHECK -->|Yes| CONTINUE[Continue Evaluation]
+    CHECK -->|No| OPT[Optimize / Re-plan]
+```
+
+---
+
+# 629. Capacity-Aware Planning
+
+At million-agent scale, the planner should reason about current federation capacity.
+
+```text
+Agent supply
+Model capacity
+Queue depth
+Runtime capacity
+Tool availability
+Budget
+```
+
+---
+
+# 630. Hierarchical Capacity Planning
+
+```mermaid
+flowchart TB
+
+    MISSION[Mission Demand]
+
+    MISSION --> FED[Federation Capacity]
+
+    FED --> ORG[Organization Capacity]
+    ORG --> TEAM[Team Capacity]
+    TEAM --> NCA[NCA Capacity]
+    NCA --> RUNTIME[Runtime Capacity]
+```
+
+---
+
+# 631. Sparse Agent Activation
+
+Plans should activate only required agents.
+
+```mermaid
+flowchart LR
+
+    REG[1,000,000+ Registered NCA]
+
+    REG --> FILTER[Mission Capability Filter]
+    FILTER --> ELIG[Eligible Pool]
+    ELIG --> SELECT[Selected Team]
+    SELECT --> ACTIVE[Active Agents]
+```
+
+---
+
+# 632. Agent Spawn Planning
+
+Agent creation or activation should be deliberate.
+
+A spawn decision should consider:
+
+```text
+Mission need
+Required specialization
+Existing capacity
+Budget
+Spawn limit
+Runtime availability
+Expected value
+```
+
+---
+
+# 633. Spawn Graph
+
+```mermaid
+flowchart TD
+
+    M[Mission]
+
+    M --> T[Team]
+
+    T --> A[Agent A]
+    T --> B[Agent B]
+
+    B --> NEED[Need specialist]
+
+    NEED --> POLICY[Spawn Policy]
+
+    POLICY --> C[Agent C]
+```
+
+Recursive spawn depth must remain bounded.
+
+---
+
+# 634. Delegation Planning
+
+A task may be delegated only if:
+
+```text
+Parent authority permits delegation.
+Child scope is narrower.
+Required capability exists.
+Runtime eligibility exists.
+Evidence requirements are preserved.
+```
+
+---
+
+# 635. Delegation Graph
+
+```mermaid
+flowchart TD
+
+    H[HANTER]
+
+    H --> O[Organization Mission]
+
+    O --> T[Team Mission]
+
+    T --> N1[NCA Task]
+    T --> N2[NCA Task]
+
+    N1 --> A1[Action]
+    N2 --> A2[Action]
+```
+
+Authority narrows downward.
+
+Evidence flows upward.
+
+---
+
+# 636. Delegation Evidence
+
+Every delegated node should remain traceable to:
+
+```text
+Parent Mission
+Delegator
+Delegate
+Scope
+Capability
+Budget
+Deadline
+Evidence Requirement
+```
+
+---
+
+# 637. Million-Agent Mission Graph
+
+At very large scale, a single mission graph may contain thousands or millions of task nodes.
+
+The system should not require HANTER to inspect every node directly.
+
+```mermaid
+flowchart TB
+
+    H[HANTER]
+
+    H --> PROGRAM[Program Graph]
+
+    PROGRAM --> O1[Organization Subgraph A]
+    PROGRAM --> O2[Organization Subgraph B]
+    PROGRAM --> ON[Organization Subgraph N]
+
+    O1 --> T1[Team Graphs]
+    O2 --> T2[Team Graphs]
+    ON --> TN[Team Graphs]
+
+    T1 --> N1[NCA Task Graphs]
+    T2 --> N2[NCA Task Graphs]
+    TN --> NN[NCA Task Graphs]
+```
+
+---
+
+# 638. Plan Compression
+
+Higher layers receive summarized planning state.
+
+```text
+NCA Actions
+↓
+Task State
+↓
+Team Progress
+↓
+Organization Progress
+↓
+Mission Progress
+↓
+Executive Program State
+```
+
+---
+
+# 639. Progress Evidence
+
+Progress should be based on measurable evidence rather than agent claims such as:
+
+```text
+almost finished
+nearly complete
+working on it
+```
+
+---
+
+# 640. Progress State
+
+A task may report:
+
+```text
+0% — no evidence
+PARTIAL — explicit completed outputs exist
+BLOCKED — blocker evidence exists
+COMPLETE — completion criteria satisfied
+VERIFIED — independent verification passed
+```
+
+Precise percentages should not be invented without measurable basis.
+
+---
+
+# 641. Mission ETA
+
+Estimated completion time should be evidence-driven.
+
+ETA may depend on:
+
+```text
+Critical path
+Current throughput
+Remaining work
+Resource availability
+Known blockers
+Historical duration
+```
+
+An ETA is a prediction, not a guarantee.
+
+---
+
+# 642. Deadline Risk Prediction
+
+```mermaid
+flowchart LR
+
+    PLAN[Current Plan]
+
+    PLAN --> ETA[Predicted Completion]
+    DEADLINE[Deadline] --> COMP[Compare]
+    ETA --> COMP
+
+    COMP --> RISK{Deadline Risk?}
+
+    RISK -->|Yes| REPLAN[Re-plan / Escalate]
+```
+
+---
+
+# 643. Dynamic Priority
+
+Mission priority may change due to:
+
+```text
+Architect decision
+Critical incident
+Dependency impact
+Deadline risk
+Human safety
+Security severity
+```
+
+Priority changes should remain auditable.
+
+---
+
+# 644. Preemption
+
+Higher-priority work may temporarily preempt lower-priority work.
+
+```mermaid
+flowchart TD
+
+    LOW[Low Priority Mission]
+
+    LOW --> RUN[Running]
+
+    HIGH[Critical Mission] --> PREEMPT[Preemption Decision]
+
+    PREEMPT --> PAUSE[Pause Low Priority]
+    PREEMPT --> EXEC[Run Critical Mission]
+
+    EXEC --> RESUME[Resume if Still Valid]
+```
+
+Paused work must be revalidated before resuming.
+
+---
+
+# 645. Cancellation
+
+Mission cancellation is a first-class planning event.
+
+```mermaid
+stateDiagram-v2
+
+    ACTIVE --> CANCELLING
+    CANCELLING --> STOP_NEW
+    STOP_NEW --> CLEANUP
+    CLEANUP --> EVIDENCE
+    EVIDENCE --> CANCELLED
+```
+
+---
+
+# 646. Cancellation Safety
+
+Cancellation should:
+
+```text
+Stop new work
+Revoke temporary capabilities
+Release resources
+Preserve evidence
+Avoid repeating irreversible effects
+```
+
+---
+
+# 647. Plan Recovery
+
+Following failure, the planner should determine:
+
+```text
+Resume
+Retry
+Rollback
+Re-plan
+Escalate
+Terminate
+```
+
+rather than applying one universal recovery policy.
+
+---
+
+# 648. Recovery Decision Graph
+
+```mermaid
+flowchart TD
+
+    FAILURE[Failure]
+
+    FAILURE --> TYPE[Classify]
+
+    TYPE --> RETRY[Retry]
+    TYPE --> ROLLBACK[Rollback]
+    TYPE --> REPLAN[Re-plan]
+    TYPE --> ESC[Escalate]
+    TYPE --> STOP[Terminate]
+```
+
+---
+
+# 649. Mission Ledger
+
+A durable Mission Ledger may preserve the history of a mission.
+
+Conceptually:
+
+```text
+Mission Created
+Plan Generated
+Plan Verified
+Task Assigned
+Action Started
+Action Completed
+Evidence Produced
+Blocker Detected
+Plan Revised
+Mission Completed
+Mission Verified
+```
+
+---
+
+# 650. Mission Ledger vs Audit Ledger
+
+The Mission Ledger represents mission progress and planning state.
+
+The Audit Ledger records security-relevant evidence.
+
+```text
+Mission Ledger
+≠
+Audit Ledger
+```
+
+They may cross-reference each other.
+
+---
+
+# 651. Plan Evidence Graph
+
+```mermaid
+flowchart LR
+
+    M[Mission]
+
+    M --> P[Plan]
+    P --> T[Task]
+    T --> A[Action]
+    A --> E[Evidence]
+    E --> V[Verification]
+
+    V --> M
+```
+
+---
+
+# 652. Learning From Planning
+
+Completed missions provide planning evidence.
+
+The system can learn:
+
+```text
+Which estimates were wrong
+Which dependencies were missed
+Which tasks blocked progress
+Which strategies succeeded
+Which recovery paths worked
+```
+
+---
+
+# 653. Planner Calibration
+
+The planner should eventually measure:
+
+```text
+Duration prediction error
+Cost prediction error
+Success prediction error
+Dependency prediction error
+Blocker prediction accuracy
+```
+
+---
+
+# 654. Plan Quality Metrics
+
+Potential planning evaluation dimensions include:
+
+```text
+Goal completion
+Constraint satisfaction
+Cost
+Latency
+Risk
+Re-plan frequency
+Recovery success
+Evidence completeness
+Authority compliance
+```
+
+---
+
+# 655. AGI Long-Horizon Benchmark
+
+A future AGI-class evaluation should test missions that cannot be solved in one model response.
+
+The system should demonstrate:
+
+```text
+Persistent objective retention
+Multi-stage decomposition
+Tool use
+Memory
+Checkpoints
+Failure recovery
+Re-planning
+Independent verification
+Final evidence
+```
+
+---
+
+# 656. Long-Horizon Evaluation Pattern
+
+```mermaid
+flowchart LR
+
+    OBJECTIVE[Objective]
+
+    OBJECTIVE --> DAY1[Phase 1]
+    DAY1 --> DAY2[Phase 2]
+    DAY2 --> FAILURE[Injected Failure]
+    FAILURE --> RECOVER[Recovery]
+    RECOVER --> DAY3[Phase 3]
+    DAY3 --> VERIFY[Independent Verification]
+    VERIFY --> RESULT[Outcome]
+```
+
+---
+
+# 657. Mission Drift Benchmark
+
+A benchmark should intentionally introduce distracting opportunities.
+
+Success requires preserving the authorized objective.
+
+```text
+Interesting side task
+≠
+Mission priority
+```
+
+---
+
+# 658. Adversarial Planning Benchmark
+
+Planning evaluation should include:
+
+```text
+Conflicting dependencies
+Fake authority
+Stale approvals
+Impossible deadlines
+Insufficient budgets
+Missing tools
+Provider outages
+Repository changes
+Poisoned context
+```
+
+---
+
+# 659. Planner Security Invariant
+
+```text
+Plan
+≠
+Authorization
+
+Task
+≠
+Authorization
+
+Prediction
+≠
+Authorization
+
+Delegation
+≠
+Privilege Expansion
+
+Checkpoint
+≠
+Fresh Authorization
+
+Recovery
+≠
+Permission to Replay
+```
+
+---
+
+# 660. HANTER Planning Relationship
+
+HANTER remains executive governance.
+
+IMPERIAL AGI provides advanced planning intelligence.
+
+```mermaid
+flowchart LR
+
+    ARCH[Architect]
+
+    ARCH --> H[HANTER]
+
+    H --> AGI[IMPERIAL AGI Planner]
+
+    AGI --> PLAN[Candidate Strategic Plan]
+
+    PLAN --> H
+
+    H --> GOV[Governance]
+    GOV --> FED[Federated Execution]
+```
+
+---
+
+# 661. Strategic vs Operational Planning
+
+```text
+HANTER
+    Executive mission governance
+
+IMPERIAL AGI
+    Strategic and long-horizon reasoning
+
+Federated Orchestrators
+    Operational coordination
+
+Nano Core Agents
+    Specialized execution planning
+```
+
+---
+
+# 662. Planner Federation
+
+```mermaid
+flowchart TB
+
+    GLOBAL[Strategic Planner]
+
+    GLOBAL --> ORG1[Organization Planner A]
+    GLOBAL --> ORG2[Organization Planner B]
+
+    ORG1 --> TEAM1[Team Planner]
+    ORG2 --> TEAM2[Team Planner]
+
+    TEAM1 --> NCA1[NCA Task Planner]
+    TEAM2 --> NCA2[NCA Task Planner]
+```
+
+Local planners can optimize locally without rewriting global objectives.
+
+---
+
+# 663. Planning Sovereignty
+
+No lower-level planner may silently redefine:
+
+```text
+Architect objective
+Human Protection Constitution
+Mission authority
+Classification
+Forbidden actions
+```
+
+---
+
+# 664. Planner-World Model Closed Loop
+
+```mermaid
+flowchart LR
+
+    WORLD[World Model]
+
+    WORLD --> PLAN[Planner]
+    PLAN --> SIM[Simulation]
+    SIM --> VERIFY[Plan Verification]
+    VERIFY --> EXEC[Governed Execution]
+    EXEC --> OBS[Observation]
+    OBS --> WORLD
+```
+
+---
+
+# 665. Planning Intelligence Loop
+
+```mermaid
+flowchart LR
+
+    DEFINE[Define Objective]
+
+    DEFINE --> DECOMPOSE[Decompose]
+    DECOMPOSE --> CONSTRAIN[Apply Constraints]
+    CONSTRAIN --> PLAN[Plan]
+    PLAN --> SIMULATE[Simulate]
+    SIMULATE --> CHALLENGE[Challenge]
+    CHALLENGE --> VERIFY[Verify]
+    VERIFY --> EXECUTE[Governed Execute]
+    EXECUTE --> OBSERVE[Observe]
+    OBSERVE --> REPLAN[Re-plan]
+    REPLAN --> PLAN
+```
+
+---
+
+# 666. AGI Planning Target
+
+The target is an intelligence capable of maintaining a coherent objective while operating through:
+
+```text
+Thousands of tasks
+Multiple repositories
+Multiple models
+Many organizations
+Changing evidence
+Failures
+Interruptions
+Long timelines
+```
+
+without losing mission integrity.
+
+---
+
+# 667. Long-Horizon AGI Principle
+
+> **True long-horizon intelligence is not the ability to produce a long plan.**
+
+It is the ability to:
+
+```text
+Preserve the objective.
+Track reality.
+Notice failure.
+Revise the plan.
+Recover safely.
+Finish with evidence.
+```
+
+---
+
+# 668. Mission Graph at Million-Agent Scale
+
+```mermaid
+flowchart TB
+
+    ARCH["Architect<br/>Alexander Romaskevich"]
+
+    ARCH --> H["HANTER"]
+
+    H <--> AGI["IMPERIAL AGI<br/>Long-Horizon Planner"]
+
+    AGI --> GLOBAL["Global Mission Graph"]
+
+    GLOBAL --> O1["Organization Subgraph A"]
+    GLOBAL --> O2["Organization Subgraph B"]
+    GLOBAL --> ON["Organization Subgraph N"]
+
+    O1 --> T1["Professional Team Graphs"]
+    O2 --> T2["Professional Team Graphs"]
+    ON --> TN["Professional Team Graphs"]
+
+    T1 --> N1["Nano Core Agent Task Graphs"]
+    T2 --> N2["Nano Core Agent Task Graphs"]
+    TN --> NN["Nano Core Agent Task Graphs"]
+
+    N1 --> R1["Runtime Domains"]
+    N2 --> R2["Runtime Domains"]
+    NN --> RN["Runtime Domains"]
+
+    R1 --> E["Execution Evidence"]
+    R2 --> E
+    RN --> E
+
+    E --> WM["World Model"]
+    WM --> AGI
+```
+
+---
+
+# 669. Planning Truth Boundary
+
+This section defines the public architectural direction for hierarchical long-horizon planning, mission graphs, constraint-aware planning, plan verification, checkpoints, durable mission recovery, bounded delegation and million-agent planning federation.
+
+It does not claim all described planning capabilities are currently implemented.
+
+It does not claim autonomous long-horizon production execution.
+
+It does not claim million-agent runtime operation.
+
+Architecture, specification, implementation, testing, runtime evidence, deployment and production remain separate engineering states.
+
+---
+
+## Long-Horizon Planning Authorship & Digital Provenance
+
+**Architect & Original Author:** Alexander Romaskevich  
+**Founder • Owner • CEO • Chief Systems Architect — IMPERIAL Core**
+
+The Hierarchical Long-Horizon Planner, Mission Graph, Plan Verification, Durable Mission State, Constraint-Aware Planning, Recovery Planning and Million-Agent Mission Federation architecture described here form part of the original IMPERIAL AGI architectural program under the direction of Alexander Romaskevich.
+
+**Canonical authorship:** Alexander Romaskevich  
+**Architecture:** IMPERIAL Core  
+**Cognitive Component:** IMPERIAL AGI  
+**Executive Intelligence:** HANTER  
+**Agent Architecture:** Nano Core Agents  
+**Repository:** IMPERIAL-AGI  
+**Year:** 2026
+
+Copyright © 2026 Alexander Romaskevich.
+
+---
+
+> **Preserve the objective. Model reality. Plan deeply. Recover safely. Finish with evidence.**
+
+> **Long-horizon intelligence is proven by continuity under change.**
+
+**IMPERIAL AGI — Architected by Alexander Romaskevich.**
