@@ -24316,3 +24316,579 @@ Copyright © 2026 Alexander Romaskevich.
 > **Remember experience. Preserve evidence. Forget safely. Never confuse memory with authority.**
 
 **IMPERIAL AGI — Architected by Alexander Romaskevich.**
+---
+
+# 1155. AGI Memory Fabric v2
+
+Long-horizon intelligence requires structured memory.
+
+IMPERIAL AGI therefore separates memory into distinct cognitive layers instead of treating all history as one undifferentiated context stream.
+
+The core principle is:
+
+> **Memory may preserve knowledge. Memory never grants authority.**
+
+---
+
+# 1156. Memory Classes
+
+IMPERIAL AGI defines four primary memory classes:
+
+```text
+Working Memory
+Episodic Memory
+Semantic Memory
+Procedural Memory
+```
+
+Each class serves a different cognitive purpose.
+
+---
+
+# 1157. Working Memory
+
+Working Memory contains short-lived mission context.
+
+Examples:
+
+```text
+Current task
+Current hypothesis
+Current evidence
+Current blockers
+Current reasoning state
+```
+
+Working Memory is temporary and mission-scoped.
+
+---
+
+# 1158. Episodic Memory
+
+Episodic Memory records what happened.
+
+Examples:
+
+```text
+Mission executed
+Tool failed
+Plan changed
+Security defect found
+Rollback occurred
+Verifier rejected result
+```
+
+Episodic Memory preserves experience and sequence.
+
+---
+
+# 1159. Semantic Memory
+
+Semantic Memory stores generalized knowledge.
+
+Examples:
+
+```text
+Architecture facts
+Verified engineering principles
+Stable component relationships
+Reusable abstractions
+Generalized patterns
+```
+
+Semantic Memory should emerge from verified evidence rather than raw repetition.
+
+---
+
+# 1160. Procedural Memory
+
+Procedural Memory stores how to perform recurring classes of work.
+
+Examples:
+
+```text
+How to verify source authority
+How to run regression tests
+How to investigate a blocker
+How to validate a tool
+How to perform safe rollback
+```
+
+Procedural Memory is reusable workflow knowledge.
+
+---
+
+# 1161. Memory Architecture
+
+```mermaid
+flowchart TD
+
+    INPUT[Mission Evidence]
+
+    INPUT --> WM[Working Memory]
+    INPUT --> EM[Episodic Memory]
+
+    EM --> VERIFY[Verification]
+    VERIFY --> SM[Semantic Memory]
+    VERIFY --> PM[Procedural Memory]
+
+    WM --> CTX[Compiled Context]
+    SM --> CTX
+    PM --> CTX
+
+    CTX --> AGI[IMPERIAL AGI]
+```
+
+---
+
+# 1162. Memory Provenance
+
+Every durable memory should preserve provenance.
+
+A future record may contain:
+
+```text
+Memory ID
+Memory Type
+Source
+Mission
+Observed Time
+Created Time
+Evidence Digest
+Verification State
+Freshness
+Classification
+```
+
+A memory without provenance should be treated as lower-trust context.
+
+---
+
+# 1163. Memory Freshness
+
+Memory can become stale.
+
+Examples:
+
+```text
+Repository HEAD changed
+Policy changed
+Model changed
+Tool changed
+Runtime changed
+Architecture decision was superseded
+```
+
+Therefore durable memory should support states such as:
+
+```text
+CURRENT
+STALE
+SUPERSEDED
+CONFLICTED
+UNKNOWN
+```
+
+---
+
+# 1164. Freshness Gate
+
+```mermaid
+flowchart LR
+
+    MEMORY[Retrieved Memory]
+
+    MEMORY --> CHECK{Fresh Enough?}
+
+    CHECK -->|Yes| USE[Eligible Context]
+    CHECK -->|No| REFRESH[Refresh / Reverify]
+
+    REFRESH -->|Unavailable| UNKNOWN[Mark Unknown]
+```
+
+Stale memory must not silently become current truth.
+
+---
+
+# 1165. Memory Poisoning Defense
+
+Persistent memory creates a new attack surface.
+
+Threats include:
+
+```text
+False memory
+Injected memory
+Stale memory
+Cross-mission contamination
+Cross-repository contamination
+Authority injection
+Repeated misinformation
+```
+
+---
+
+# 1166. Memory Admission Gate
+
+```mermaid
+flowchart TD
+
+    CAND[Candidate Memory]
+
+    CAND --> SOURCE[Source Validation]
+    SOURCE --> PROV[Provenance]
+    PROV --> EVID[Evidence]
+    EVID --> CLASS[Classification]
+    CLASS --> CONFLICT[Conflict Check]
+
+    CONFLICT --> STORE[Eligible Durable Memory]
+```
+
+---
+
+# 1167. Repetition Is Not Truth
+
+A statement repeated many times does not become authoritative.
+
+```text
+Frequency
+≠
+Truth
+
+Persistence
+≠
+Authority
+
+Similarity
+≠
+Relevance
+```
+
+---
+
+# 1168. Memory Isolation
+
+Memory must remain scoped.
+
+```text
+Repository A Memory
+≠
+Repository B Memory
+
+Mission A Memory
+≠
+Mission B Authority
+
+Organization A Memory
+≠
+Organization B Private Context
+```
+
+---
+
+# 1169. Memory Namespace
+
+A future namespace may bind:
+
+```text
+Organization
+Repository
+Mission
+Agent
+Classification
+Memory Type
+```
+
+This reduces accidental cross-domain leakage.
+
+---
+
+# 1170. Memory Retrieval
+
+Retrieval should not mean:
+
+```text
+return everything similar
+```
+
+Instead retrieval should consider:
+
+```text
+Mission relevance
+Freshness
+Provenance
+Classification
+Authority compatibility
+Evidence quality
+```
+
+---
+
+# 1171. Retrieval Scoring
+
+A conceptual retrieval score may consider:
+
+```text
+Relevance
+×
+Freshness
+×
+Evidence Quality
+×
+Scope Compatibility
+```
+
+This is a conceptual relationship, not a fixed production formula.
+
+---
+
+# 1172. Memory Conflict
+
+Two durable memories may disagree.
+
+The system should preserve both until stronger evidence resolves the conflict.
+
+```mermaid
+flowchart LR
+
+    M1[Memory A]
+    M2[Memory B]
+
+    M1 --> CONFLICT[Conflict Detector]
+    M2 --> CONFLICT
+
+    CONFLICT --> VERIFY[Re-evaluate Evidence]
+    VERIFY --> STATE[Current / Conflicted / Superseded]
+```
+
+---
+
+# 1173. Memory Supersession
+
+New knowledge should not erase history.
+
+```text
+Memory v2
+SUPERSEDES
+Memory v1
+```
+
+Historical memory remains auditable.
+
+---
+
+# 1174. Memory Compression
+
+Long histories must eventually be compressed.
+
+Compression should preserve:
+
+```text
+Key decisions
+Evidence
+Failures
+Lessons
+Unknowns
+Superseded state
+```
+
+while removing unnecessary repetition.
+
+---
+
+# 1175. Loss-Aware Compression
+
+Compression must not discard critical evidence merely to reduce context size.
+
+The system should distinguish:
+
+```text
+Disposable detail
+from
+Decision-critical provenance
+```
+
+---
+
+# 1176. Memory Promotion
+
+Not every episode becomes semantic knowledge.
+
+A possible lifecycle is:
+
+```text
+Experience
+→ Evidence
+→ Verification
+→ Repetition across valid contexts
+→ Generalized Knowledge
+```
+
+---
+
+# 1177. Procedural Learning Boundary
+
+The system may learn a better workflow.
+
+It may not learn:
+
+```text
+how to bypass governance
+```
+
+as an accepted procedure.
+
+Procedural Memory remains subject to policy.
+
+---
+
+# 1178. Memory + Meta-Cognition
+
+Meta-cognition should ask:
+
+```text
+Is this memory relevant?
+Is it stale?
+Is it trustworthy?
+Is it conflicting with newer evidence?
+Am I over-relying on familiar history?
+```
+
+---
+
+# 1179. Memory + World Model
+
+Memory stores historical evidence.
+
+The World Model represents current believed state.
+
+```text
+Memory
+≠
+Current World State
+```
+
+---
+
+# 1180. Memory + Generalization
+
+Verified recurring patterns may graduate from episodic memory into semantic knowledge.
+
+This creates reusable intelligence without treating one experience as universal truth.
+
+---
+
+# 1181. Million-Agent Memory
+
+At million-agent scale, memory must be hierarchical and sparse.
+
+```text
+Agent Memory
+↓
+Team Knowledge
+↓
+Organization Knowledge
+↓
+Federated Verified Knowledge
+```
+
+Not every local memory should propagate globally.
+
+---
+
+# 1182. Memory Federation
+
+```mermaid
+flowchart TD
+
+    NCA[Local NCA Memory]
+
+    NCA --> TEAM[Team Validation]
+    TEAM --> ORG[Organization Knowledge]
+    ORG --> VERIFY[Federated Verification]
+
+    VERIFY --> GLOBAL[Reusable Verified Knowledge]
+```
+
+---
+
+# 1183. Memory Security Invariant
+
+```text
+Memory
+≠
+Authority
+
+Old Approval
+≠
+Current Approval
+
+Historical Plan
+≠
+Current Mission
+
+Stored Secret
+≠
+Permanent Entitlement
+
+Retrieved Context
+≠
+Truth
+```
+
+---
+
+# 1184. AGI Memory Target
+
+The target is an intelligence capable of remembering:
+
+```text
+What happened
+Why it happened
+What was learned
+What is still uncertain
+What became obsolete
+What procedure worked
+What procedure failed
+```
+
+without confusing memory with permission.
+
+---
+
+# 1185. Memory Truth Boundary
+
+This section defines the public architectural direction for structured AGI memory.
+
+It does not claim that all described memory layers are currently implemented.
+
+It does not claim global persistent memory across every runtime.
+
+It does not claim production memory infrastructure.
+
+Architecture, implementation, testing, runtime evidence and production remain separate.
+
+---
+
+## Memory Fabric Authorship & Digital Provenance
+
+**Architect & Original Author:** Alexander Romaskevich  
+**Founder • Owner • CEO • Chief Systems Architect — IMPERIAL Core**
+
+The AGI Memory Fabric v2, including Working, Episodic, Semantic and Procedural Memory, provenance, freshness, poisoning defense and federated knowledge promotion, forms part of the original IMPERIAL AGI architectural program under the direction of Alexander Romaskevich.
+
+**Canonical authorship:** Alexander Romaskevich  
+**Architecture:** IMPERIAL Core  
+**Component:** IMPERIAL AGI  
+**Executive Intelligence:** HANTER  
+**Agent Architecture:** Nano Core Agents  
+**Repository:** IMPERIAL-AGI  
+**Year:** 2026
+
+Copyright © 2026 Alexander Romaskevich.
+
+---
+
+> **Remember experience. Preserve evidence. Forget safely. Never confuse memory with authority.**
+
+**IMPERIAL AGI — Architected by Alexander Romaskevich.**
