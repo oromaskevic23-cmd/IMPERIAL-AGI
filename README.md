@@ -1,5 +1,8 @@
 # IMPERIAL AGI
 
+**Project creator / founding architect:** Alexander Nikolaevich Romaskevich (RomaskevicH). [Authorship](AUTHORS.md) · [License review](governance/LICENSE_INVENTORY.md).
+
+
 Governed reasoning, independent critique and evidence-oriented verification architecture.
 
 **Status: SPECIFIED — public architecture; no achieved AGI or production runtime is claimed.**  
