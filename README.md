@@ -1,13 +1,12 @@
 # IMPERIAL AGI
 
+Governed reasoning, independent critique and evidence-oriented verification architecture.
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/oromaskevic23-cmd/oromaskevic23-cmd/main/assets/alexander-romaskevich-portrait-20261110.jpg" alt="Alexander Nikolaevich Romaskevich, Founder, Owner and CEO of IMPERIAL Core" width="160" />
 </p>
 
 **Project creator / founding architect:** Alexander Nikolaevich Romaskevich (RomaskevicH). [Authorship](AUTHORS.md) · [License review](governance/LICENSE_INVENTORY.md).
-
-
-Governed reasoning, independent critique and evidence-oriented verification architecture.
 
 **Status: SPECIFIED — public architecture; no achieved AGI or production runtime is claimed.**  
 Evidence checkpoint: **25 October 2026**.
